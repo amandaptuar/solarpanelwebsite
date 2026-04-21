@@ -37,7 +37,7 @@ function Layout() {
         <div className="row align-items-center">
           <div className="col-lg-3 col-md-6">
             <div className="logo">
-              <Link to="/"><img src="assets/images/logo.png" alt="Solar Panel Logo" style={{maxHeight:'60px', width:'auto'}} loading="lazy" /></Link>
+              <Link to="/"><img src="./assets/images/logo.png" alt="TechOps Global Logo" style={{maxHeight:'60px', width:'auto'}} loading="lazy" /></Link>
             </div>
           </div>
           <div className="col-lg-6 col-md-6 d-none d-lg-block">
@@ -98,7 +98,7 @@ function Layout() {
           <div className="col-lg-3 col-md-6">
             <div className="footer-wiget ">
               <div className="footer-wiget-log">
-                <Link to="/"><img src="assets/images/logo.png" alt="Solar Panel Logo" loading="lazy" /></Link>
+                <Link to="/"><img src="./assets/images/logo.png" alt="TechOps Global Logo" style={{maxHeight:'60px', width:'auto'}} loading="lazy" /></Link>
               </div>
               <div className="footer-wiget-text">
                 <p>TechOps-Global Sierra Leone, a subsidiary of TechOps-Global Group LTD, is a renewable energy firm dedicated to providing sustainable power solutions and enhancing economic development.</p>

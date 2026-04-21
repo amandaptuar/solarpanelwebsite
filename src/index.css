@@ -8,10 +8,14 @@ html {
     animation-name: none !important;
 }
 
-/* Ensure Hero is visible immediately before Slider/WOW init */
-.slider-list.owl-carousel {
-    display: block;
-    opacity: 1;
+/* Ensure Hero is hidden until Slider init to prevent broken UI flash */
+.slider-list.owl-carousel:not(.owl-loaded) {
+    display: none !important;
+}
+
+.slider-list.owl-carousel.owl-loaded {
+    display: block !important;
+    opacity: 1 !important;
 }
 
 .slider-section {
