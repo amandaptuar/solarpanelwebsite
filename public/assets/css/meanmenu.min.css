@@ -2,7 +2,7 @@ a.meanmenu-reveal{display:none}
 .mean-container .mean-bar {
   background: #FF3B00;
   float: left;
-  min-height: 60px;
+  min-height: 75px;
   padding: 4px 0 0;
   position: relative;
   width: 100%;

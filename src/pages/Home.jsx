@@ -5,31 +5,6 @@ function Home() {
 	// Re-initialize jQuery theme plugins when this page mounts
 	useEffect(() => {
 		window.scrollTo(0, 0);
-		
-		let retries = 0;
-		const maxRetries = 30; // 3 seconds total
-
-		const initAttempt = () => {
-			try {
-				if (window.initTheme && window.jQuery) {
-					window.initTheme(window.jQuery);
-					window.dispatchEvent(new Event('resize'));
-					return true;
-				}
-			} catch (err) {
-				console.error("Theme init error on Home page:", err);
-			}
-			return false;
-		};
-
-		const interval = setInterval(() => {
-			if (initAttempt() || retries >= maxRetries) {
-				clearInterval(interval);
-			}
-			retries++;
-		}, 100);
-
-		return () => clearInterval(interval);
 	}, []);
 
 	return (

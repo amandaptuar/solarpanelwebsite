@@ -17,6 +17,32 @@ function Layout() {
     if (window.hidePageLoader) {
       window.hidePageLoader();
     }
+
+    // Re-initialize theme scripts globally after route transitions
+    let retries = 0;
+    const maxRetries = 30; // 3 seconds total
+
+    const initAttempt = () => {
+      try {
+        if (window.initTheme && window.jQuery) {
+          window.initTheme(window.jQuery);
+          window.dispatchEvent(new Event('resize'));
+          return true;
+        }
+      } catch (err) {
+        console.error("Theme init error on Layout:", err);
+      }
+      return false;
+    };
+
+    const interval = setInterval(() => {
+      if (initAttempt() || retries >= maxRetries) {
+        clearInterval(interval);
+      }
+      retries++;
+    }, 100);
+
+    return () => clearInterval(interval);
   }, [location.pathname]);
 
 
@@ -30,7 +56,7 @@ function Layout() {
         <div className="row align-items-center">
           <div className="col-lg-2 col-md-3">
             <div className="logo">
-              <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'80px', width:'auto', padding:'5px 0'}} loading="lazy" /></Link>
+              <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'100px', width:'auto', padding:'5px 0'}} loading="lazy" /></Link>
             </div>
           </div>
           <div className="col-lg-7 col-md-9 d-none d-lg-block">
@@ -57,7 +83,7 @@ function Layout() {
     {/* Solar Mobile Menu Area */}
     <div className="mobile-menu-area sticky d-sm-block d-md-block d-lg-none ">
       <div className="mobile-logo" style={{position: 'absolute', top: '5px', left: '15px', zIndex: '9999'}}>
-        <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'50px', width:'auto'}} loading="lazy" /></Link>
+        <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'65px', width:'auto'}} loading="lazy" /></Link>
       </div>
       <div className="mobile-menu">
         <nav className="solar_menu">

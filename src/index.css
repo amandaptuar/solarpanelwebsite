@@ -105,7 +105,7 @@ html {
 .mobile-logo {
     display: flex;
     align-items: center;
-    height: 60px; /* Matches the mean-bar height */
+    height: 75px; /* Matches the new enlarged mean-bar height */
 }
 
 .sticky-nav {
