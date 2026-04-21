@@ -13,17 +13,9 @@ function Layout() {
 
   useEffect(() => {
     // Hide the preloader once the layout is ready
-    const hideLoader = () => {
-      const loaderWrapper = document.querySelector('.loader-wrapper');
-      if (loaderWrapper) {
-        loaderWrapper.classList.add('hidden');
-      }
-    };
-    
-    hideLoader();
-    // Safety fallback for preloader
-    const timer = setTimeout(hideLoader, 500);
-    return () => clearTimeout(timer);
+    if (window.hidePageLoader) {
+      window.hidePageLoader();
+    }
   }, [location.pathname]);
 
 
