@@ -35,10 +35,10 @@ function Home() {
 	return (
 		<>
 		{/*==================================================*/}
-		{/* Start Solar Panel  slider Section */}
+		{/* Start Solar Panel  Hero Section (Static) */}
 		{/*==================================================*/}
-		<div id="home" className="slider-list owl-carousel">
-			<div className="slider-section d-flex align-items-center">
+		<div id="home" className="slider-list owl-carousel" style={{background: '#1c1632'}}>
+			<div className="slider-section d-flex align-items-center" style={{backgroundImage: 'url("assets/images/slider/slider2.jpg")', backgroundSize: 'cover', backgroundPosition: 'center bottom'}}>
 				<div className="container">
 					<div className="row align-items-center">
 						<div className="col-lg-12">
@@ -58,29 +58,9 @@ function Home() {
 					</div>
 				</div>
 			</div>
-			<div className="slider-section style-three d-flex align-items-center">
-				<div className="container">
-					<div className="row align-items-center">
-						<div className="col-lg-12">
-							<div className="slider-content ">
-								<h4> Our Solar Systems</h4>
-								<h1>Financial Savings</h1>
-								<h1>With Solar System</h1>
-								<p>Mitigate rising fuel costs and demand-based utility fees. Our commercial solar systems offer significant financial savings and long-term energy security for industrial and corporate partners.</p>
-								<div className="solar-btn slider1 ">
-									<Link to="/contact">Our Service <i className="bi bi-arrow-right"></i></Link>
-								</div>
-								<div className="solar-btn slider2  ">
-									<Link to="/about">More About! <i className="bi bi-arrow-right"></i></Link>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 		{/*==================================================*/}
-		{/*End Solar Panel  slider Section  */}
+		{/*End Solar Panel Hero Section  */}
 		{/*==================================================*/}
 
 

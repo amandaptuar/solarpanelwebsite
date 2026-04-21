@@ -8,20 +8,22 @@ html {
     animation-name: none !important;
 }
 
-/* Ensure Hero is hidden until Slider init to prevent broken UI flash */
-.slider-list.owl-carousel:not(.owl-loaded) {
+.slider-list {
+    display: block;
+    opacity: 1;
+    background: #1c1632; /* TechOps Dark Theme Primary */
+}
+
+/* Explicitly hide Owl Carousel navigation arrows */
+.slider-list .owl-nav,
+.slider-section .owl-nav {
     display: none !important;
 }
 
-.slider-list.owl-carousel.owl-loaded {
-    display: block !important;
-    opacity: 1 !important;
-}
-
 .slider-section {
-    display: flex;
-    visibility: visible;
-    height: 800px; /* Base height to prevent jump */
+    display: flex !important;
+    visibility: visible !important;
+    height: 650px !important;
     position: relative;
 }
 
@@ -29,10 +31,10 @@ html {
     .slider-section { height: 550px !important; }
 }
 @media (max-width: 767px) {
-    .slider-section { height: 420px !important; }
+    .slider-section { height: auto !important; min-height: 480px !important; padding: 60px 0 !important; }
 }
 @media (max-width: 480px) {
-    .slider-section { height: 340px !important; }
+    .slider-section { height: auto !important; min-height: 420px !important; padding: 50px 0 !important; }
 }
 
 /* Hero Slider Visibility Enhancements */
@@ -61,6 +63,13 @@ html {
 .slider-content p {
     color: rgba(255,255,255,0.9) !important;
     max-width: 700px;
+    margin-bottom: 30px !important; 
+}
+
+/* Force buttons down from the text */
+.slider-content .solar-btn {
+    margin-top: 40px !important;
+    display: inline-block;
 }
 
 /* Why Choose Us Visibility Enhancements */
@@ -89,7 +98,24 @@ html {
 }
 
 .row.choose .about-discription p {
-    color: rgba(255,255,255,0.8) !important;
+    color: rgba(255,255,255,0.9) !important;
+}
+
+/* Navbar Logo and UI Fixes */
+.mobile-logo {
+    display: flex;
+    align-items: center;
+    height: 60px; /* Matches the mean-bar height */
+}
+
+.mobile-menu-area {
+    padding: 0 !important;
+    background: #ffffff !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.sticky-nav {
+    transition: all 0.3s ease-in-out;
 }
 
 /* Hide Hero Slider Arrows Globally */

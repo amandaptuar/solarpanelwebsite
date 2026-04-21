@@ -120,12 +120,7 @@ a.meanmenu-reveal{display:none}
   background: #fff;
 }
 .mean-container .mean-bar::before {
-    color: #fff;
-    content: "Solar Panel ";
-    font-size: 28px;
-    font-weight: 600;
-    left: 10px;
-    position: absolute;
-    top: 18px;
+    display: none !important;
+    content: "";
 }
 

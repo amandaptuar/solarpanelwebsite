@@ -6,6 +6,7 @@ import Services from "./pages/Services";
 import Team from "./pages/Team";
 import FounderProfile from "./pages/FounderProfile";
 import Contact from "./pages/Contact";
+import logoImg from "./assets/logo.png";
 
 // Inner layout that re-initializes jQuery theme on every route change
 function Layout() {
@@ -29,7 +30,7 @@ function Layout() {
         <div className="row align-items-center">
           <div className="col-lg-3 col-md-6">
             <div className="logo">
-              <Link to="/"><img src="./assets/images/logo.png" alt="TechOps Global Logo" style={{maxHeight:'60px', width:'auto'}} loading="lazy" /></Link>
+              <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'60px', width:'auto'}} loading="lazy" /></Link>
             </div>
           </div>
           <div className="col-lg-6 col-md-6 d-none d-lg-block">
@@ -55,6 +56,9 @@ function Layout() {
     </header>
     {/* Solar Mobile Menu Area */}
     <div className="mobile-menu-area sticky d-sm-block d-md-block d-lg-none ">
+      <div className="mobile-logo" style={{position: 'absolute', top: '12px', left: '15px', zIndex: '9999'}}>
+        <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'40px', width:'auto'}} loading="lazy" /></Link>
+      </div>
       <div className="mobile-menu">
         <nav className="solar_menu">
           <ul className="nav_scroll">
@@ -90,7 +94,7 @@ function Layout() {
           <div className="col-lg-3 col-md-6">
             <div className="footer-wiget ">
               <div className="footer-wiget-log">
-                <Link to="/"><img src="./assets/images/logo.png" alt="TechOps Global Logo" style={{maxHeight:'60px', width:'auto'}} loading="lazy" /></Link>
+                <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'60px', width:'auto'}} loading="lazy" /></Link>
               </div>
               <div className="footer-wiget-text">
                 <p>TechOps-Global Sierra Leone, a subsidiary of TechOps-Global Group LTD, is a renewable energy firm dedicated to providing sustainable power solutions and enhancing economic development.</p>
