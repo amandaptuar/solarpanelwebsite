@@ -1,0 +1,71 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Failsafe exactly for React + WOW.js reload issues */
+.wow {
+    visibility: visible !important;
+    animation-name: none !important;
+}
+
+/* Hero Slider Visibility Enhancements */
+.slider-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);
+    z-index: 1;
+}
+
+.slider-content {
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.slider-content h1 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+.slider-content p {
+    color: rgba(255,255,255,0.9) !important;
+    max-width: 700px;
+}
+
+/* Why Choose Us Visibility Enhancements */
+.row.choose {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.row.choose::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(28, 22, 50, 0.85); /* Matches dark theme secondary color */
+    z-index: -1;
+}
+
+.row.choose .section-main-title h2,
+.row.choose .about-discription p,
+.row.choose .choose-us-list ul li,
+.row.choose .choose-us-phone h5 {
+    color: #ffffff !important;
+}
+
+.row.choose .about-discription p {
+    color: rgba(255,255,255,0.8) !important;
+}
+
+/* Hide Hero Slider Arrows Globally */
+.slider-section .owl-nav {
+    display: none !important;
+}

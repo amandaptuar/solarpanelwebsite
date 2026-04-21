@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solar Panel - Reliable Clean Energy Solutions</title>
+    <meta name="description" content="Providing residential and commercial solar energy solutions including solar panel installation, battery storage, and rooftop solar PV systems." />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="56x56" href="assets/images/fav-icon/icon.png">
+
+    <!-- Preload critical hero image for LCP -->
+    <link rel="preload" as="image" href="assets/images/slider/slider-bg.jpg">
+
+    <!-- Critical CSS first (render-blocking intentionally small) -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="assets/css/bootstrap-icons.css" media="all">
+    <link rel="stylesheet" href="assets/css/all.min.css" media="all">
+
+    <!-- Deferred non-critical CSS -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/owl.transitions.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/animate.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/flaticon.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/theme-default.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/meanmenu.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="venobox/venobox.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/responsive.css" media="print" onload="this.media='all'">
+
+    <!-- Main Style CSS (load normally) -->
+    <link rel="stylesheet" href="assets/css/style.css" media="all">
+
+    <!-- Fallback for browsers that don't support onload -->
+    <noscript>
+      <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+      <link rel="stylesheet" href="/assets/css/animate.min.css">
+      <link rel="stylesheet" href="/assets/css/flaticon.css">
+      <link rel="stylesheet" href="/assets/css/theme-default.css">
+      <link rel="stylesheet" href="/assets/css/meanmenu.min.css">
+      <link rel="stylesheet" href="/venobox/venobox.css">
+      <link rel="stylesheet" href="/assets/css/responsive.css">
+    </noscript>
+    <style>
+      /* Fail-safe to hide loader after 3 seconds even if scripts crash */
+      .loader-wrapper.hidden { display: none !important; opacity: 0; pointer-events: none; }
+
+      /* Hero Section Sharpness & Visibility Overrides */
+      .slider-section {
+          background-image: url("./assets/images/slider/slider-bg.jpg") !important;
+          filter: none !important;
+          backdrop-filter: none !important;
+      }
+      .slider-section::before, .slider-section::after {
+          display: none !important;
+          background: none !important;
+      }
+      .slider-section.style-three {
+          background-image: url("./assets/images/slider/slider3.jpg") !important;
+      }
+    </style>
+    <script>
+      // Global fail-safe loader hiding
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var loader = document.querySelector('.loader-wrapper');
+          if (loader) loader.classList.add('hidden');
+        }, 1500);
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Preloader moved to index.html for instant display and reliable removal -->
+    <div class="loader-wrapper">
+      <div class="loader"></div>
+      <div class="loder-section left-section"></div>
+      <div class="loder-section right-section"></div>
+    </div>
+
+    <div id="root"></div>
+
+    <!-- jQuery and Modernizr must load BEFORE main.jsx -->
+    <script src="/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="/assets/js/vendor/jquery-3.6.2.min.js"></script>
+
+    <!-- React app (Vite module) -->
+    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- All other scripts deferred — don't block render -->
+    <script src="/assets/js/popper.min.js" defer></script>
+    <script src="/assets/js/bootstrap.min.js" defer></script>
+    <script src="/assets/js/owl.carousel.min.js" defer></script>
+    <script src="/assets/js/jquery.counterup.min.js" defer></script>
+    <script src="/assets/js/waypoints.min.js" defer></script>
+    <script src="/assets/js/wow.min.js" defer></script> <!-- Added WOW JS -->
+    <script src="/assets/js/imagesloaded.pkgd.min.js" defer></script>
+    <script src="/assets/js/isotope.pkgd.min.js" defer></script>
+    <script src="/assets/js/jquery.meanmenu.js" defer></script>
+    <script src="/assets/js/jquery.scrollUp.js" defer></script>
+    <script src="/assets/js/jquery.barfiller.js" defer></script>
+    <script src="/venobox/venobox.min.js" defer></script>
+    <script src="/assets/js/animated-text.js" defer></script>
+    <script src="/assets/js/ajax-mail.js" defer></script>
+    <script src="/assets/js/theme.js" defer></script>
+  </body>
+</html>
