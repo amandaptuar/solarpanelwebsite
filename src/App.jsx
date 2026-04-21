@@ -28,12 +28,12 @@ function Layout() {
     <header className="solar-header-section" id="sticky-header">
       <div className="container">
         <div className="row align-items-center">
-          <div className="col-lg-3 col-md-6">
+          <div className="col-lg-2 col-md-3">
             <div className="logo">
-              <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'60px', width:'auto'}} loading="lazy" /></Link>
+              <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'80px', width:'auto', padding:'5px 0'}} loading="lazy" /></Link>
             </div>
           </div>
-          <div className="col-lg-6 col-md-6 d-none d-lg-block">
+          <div className="col-lg-7 col-md-9 d-none d-lg-block">
             <div className="solar-menu">
               <ul>
                 <li><Link to="/">Home</Link></li>
@@ -44,7 +44,7 @@ function Layout() {
               </ul>
             </div>
           </div>
-          <div className="col-lg-3 col-md-6 d-none d-lg-block">
+          <div className="col-lg-3 col-md-12 d-none d-lg-block">
             <div className="solar-search-button">
               <div className="solar-btn">
                 <Link to="/contact">Get A Quote <i className="bi bi-arrow-right"></i></Link>
@@ -56,8 +56,8 @@ function Layout() {
     </header>
     {/* Solar Mobile Menu Area */}
     <div className="mobile-menu-area sticky d-sm-block d-md-block d-lg-none ">
-      <div className="mobile-logo" style={{position: 'absolute', top: '12px', left: '15px', zIndex: '9999'}}>
-        <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'40px', width:'auto'}} loading="lazy" /></Link>
+      <div className="mobile-logo" style={{position: 'absolute', top: '5px', left: '15px', zIndex: '9999'}}>
+        <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'50px', width:'auto'}} loading="lazy" /></Link>
       </div>
       <div className="mobile-menu">
         <nav className="solar_menu">
