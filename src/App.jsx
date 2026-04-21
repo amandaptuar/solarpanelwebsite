@@ -24,7 +24,8 @@ function Layout() {
 
     const initAttempt = () => {
       try {
-        if (window.initTheme && window.jQuery) {
+        // Ensure the scripts are loaded AND the DOM target actually exists
+        if (window.initTheme && window.jQuery && window.jQuery('.mobile-menu nav').length > 0) {
           window.initTheme(window.jQuery);
           window.dispatchEvent(new Event('resize'));
           return true;
