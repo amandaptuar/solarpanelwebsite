@@ -8,6 +8,28 @@ html {
     animation-name: none !important;
 }
 
+/* Ensure Hero is visible immediately before Slider/WOW init */
+.slider-list.owl-carousel {
+    display: block !important;
+    opacity: 1 !important;
+}
+
+.slider-section {
+    display: flex !important;
+    visibility: visible !important;
+    height: 800px; /* Force height to match desktop style.css to prevent jump */
+}
+
+@media (max-width: 991px) {
+    .slider-section { height: 550px !important; }
+}
+@media (max-width: 767px) {
+    .slider-section { height: 420px !important; }
+}
+@media (max-width: 480px) {
+    .slider-section { height: 340px !important; }
+}
+
 /* Hero Slider Visibility Enhancements */
 .slider-section::before {
     content: '';

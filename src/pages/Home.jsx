@@ -9,11 +9,13 @@ function Home() {
 			try {
 				if (window.initTheme && window.jQuery) {
 					window.initTheme(window.jQuery);
+					// Force a resize event to ensure Owl Carousel calculates correctly
+					window.dispatchEvent(new Event('resize'));
 				}
 			} catch (err) {
 				console.error("Theme init error on Home page:", err);
 			}
-		}, 100);
+		}, 20);
 		return () => clearTimeout(timer);
 	}, []);
 

@@ -8,13 +8,6 @@ export default defineConfig({
   build: {
     // Increase chunk size warning limit
     chunkSizeWarningLimit: 1000,
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
     rollupOptions: {
       output: {
         manualChunks: (id) => {
@@ -24,13 +17,7 @@ export default defineConfig({
             return 'vendor';
           }
         },
-        assetFileNames: (assetInfo) => {
-          let extType = assetInfo.name.split('.').at(1);
-          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
-            extType = 'img';
-          }
-          return `assets/${extType}/[name]-[hash][extname]`;
-        },
+        assetFileNames: 'assets/[ext]/[name]-[hash][extname]',
         chunkFileNames: 'assets/js/[name]-[hash].js',
         entryFileNames: 'assets/js/[name]-[hash].js',
       },
