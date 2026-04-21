@@ -10,14 +10,15 @@ html {
 
 /* Ensure Hero is visible immediately before Slider/WOW init */
 .slider-list.owl-carousel {
-    display: block !important;
-    opacity: 1 !important;
+    display: block;
+    opacity: 1;
 }
 
 .slider-section {
-    display: flex !important;
-    visibility: visible !important;
-    height: 800px; /* Force height to match desktop style.css to prevent jump */
+    display: flex;
+    visibility: visible;
+    height: 800px; /* Base height to prevent jump */
+    position: relative;
 }
 
 @media (max-width: 991px) {
