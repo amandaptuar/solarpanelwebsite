@@ -61,8 +61,8 @@ function Layout() {
       <div className="container">
         <div className="row align-items-center justify-content-between">
           <div className="col-8 col-md-3 col-lg-3">
-            <div className="logo">
-              <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'180px', width:'auto', padding:'15px 0'}} loading="lazy" /></Link>
+            <div className="logo" style={{ padding: '15px 0' }}>
+              <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'150px', width:'auto', borderRadius: '10px', display: 'block', overflow: 'hidden'}} loading="lazy" /></Link>
             </div>
           </div>
 
@@ -125,7 +125,7 @@ function Layout() {
           <div className="col-lg-3 col-md-6">
             <div className="footer-wiget ">
               <div className="footer-wiget-log">
-                <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'60px', width:'auto'}} loading="lazy" /></Link>
+                <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'60px', width:'auto', borderRadius: '6px', display: 'block', overflow: 'hidden'}} loading="lazy" /></Link>
               </div>
               <div className="footer-wiget-text">
                 <p>TechOps-Global Sierra Leone, a subsidiary of TechOps-Global Group LTD, is a renewable energy firm dedicated to providing sustainable power solutions and enhancing economic development.</p>
@@ -178,22 +178,11 @@ function Layout() {
           </div>
         </div>
         <div className="row footer-line">
-          <div className="col-lg-3 col-md-6">
-            <div className="copyright-text ">
-              <p>© 2023-25 | Alrights reserved by <Link to="/contact">TechTime</Link></p>
+          <div className="col-lg-12">
+            <div className="copyright-text text-center">
+              <p>&copy; {new Date().getFullYear()} TechOps Global. All rights reserved.</p>
             </div>
           </div>
-          <div className="col-lg-2"></div>
-          <div className="col-lg-4 col-md-6">
-            <div className="footer-condition ">
-              <ul>
-                <li><Link to="/contact">Privacy</Link></li>
-                <li><Link to="/contact">Term &amp; Conditions</Link></li>
-                <li><Link to="/contact">Legal</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="col-lg-3"></div>
         </div>
       </div>
     </footer>
