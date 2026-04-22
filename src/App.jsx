@@ -6,7 +6,7 @@ import Services from "./pages/Services";
 import Team from "./pages/Team";
 import FounderProfile from "./pages/FounderProfile";
 import Contact from "./pages/Contact";
-import logoImg from "./assets/logo.png";
+import logoImg from "./assets/image.png";
 
 // Inner layout that re-initializes jQuery theme on every route change
 function Layout() {
