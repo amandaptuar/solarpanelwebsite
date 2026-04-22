@@ -62,7 +62,7 @@ function Layout() {
         <div className="row align-items-center justify-content-between">
           <div className="col-8 col-md-3 col-lg-3">
             <div className="logo">
-              <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'140px', width:'auto', padding:'15px 0'}} loading="lazy" /></Link>
+              <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'180px', width:'auto', padding:'15px 0'}} loading="lazy" /></Link>
             </div>
           </div>
 
