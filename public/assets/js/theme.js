@@ -1,14 +1,7 @@
 window.initTheme = function ($) {
     'use strict';
 
-    // Mobile Menu
-    $('.mobile-menu .mean-bar').remove();
-    $('.mobile-menu nav').meanmenu({
-        meanScreenWidth: "991",
-        meanMenuContainer: ".mobile-menu",
-        meanMenuOpen: "<span></span> <span></span> <span></span>",
-        onePage: true,
-    });
+    // Mobile Menu initialization removed for React custom navbar
 
     $(document).ready(function(){ 
         // sticky menu===================

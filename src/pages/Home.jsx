@@ -670,59 +670,7 @@ function Home() {
 
 
 
-		{/*==================================================*/}
-		{/* Start Solar Panel  Team  Section */}
-		{/*==================================================*/}
-		<div id="team" className="team-section">
-			<div className="container">
-				<div className="row">
-					<div className="col-lg-12">
-						<div className="section-title text-center ">
-							<div className="section-sub-title">
-								<h4>Our Team Members</h4>
-							</div>
-							<div className="section-main-title ">
-								<h2>Meet Experience Team</h2>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div className="row">
-					{[
-						{ img: 'team1.png', name: 'John L. Huggins', role: 'Executive Vice President' },
-						{ img: 'team2.png', name: 'Preetam Bagalkotkar', role: 'Technical Director' },
-						{ img: 'team3.png', name: 'Hermon Wooden', role: 'Operations Manager' },
-						{ img: 'team4.png', name: 'Jasson Roy', role: 'Chief Engineer' },
-					].map((member) => (
-						<div className="col-lg-3 col-md-6" key={member.name}>
-							<div className="team-items-box">
-								<div className="team-thumb">
-									<img src={`assets/images/team/${member.img}`} alt="" loading="lazy" />
-									<div className="team-icon">
-										<ul>
-											<li><Link to="/contact"><i className="fab fa-facebook-f"></i></Link></li>
-											<li><Link to="/contact"><i className="fab fa-twitter"></i></Link></li>
-											<li><Link to="/contact"><i className="fab fa-vimeo-v"></i></Link></li>
-											<li><Link to="/contact"><i className="fab fa-instagram"></i></Link></li>
-										</ul>
-									</div>
-									<div className="team-main-icon">
-										<Link to="/contact"><i className="bi bi-plus"></i></Link>
-									</div>
-									<div className="team-content">
-										<h4><Link to="/contact">{member.name}</Link></h4>
-										<span>{member.role}</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					))}
-				</div>
-			</div>
-		</div>
-		{/*==================================================*/}
-		{/* End Solar Panel  Team  Section */}
-		{/*==================================================*/}
+
 
 		{/*==================================================*/}
 		{/* Start Solar Panel  Appointment  Section */}

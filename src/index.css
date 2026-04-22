@@ -116,3 +116,65 @@ html {
 .slider-section .owl-nav {
     display: none !important;
 }
+
+/* Responsive Navbar Styles */
+@media (min-width: 992px) {
+    .mobile-nav-wrapper {
+        display: contents;
+    }
+}
+
+@media (max-width: 991px) {
+    .mobile-nav-wrapper {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        background-color: #ffffff;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    .mobile-nav-wrapper.open {
+        max-height: 500px;
+    }
+    .mobile-nav-wrapper .solar-menu {
+        padding: 10px 20px 0 20px;
+    }
+    .mobile-nav-wrapper .solar-menu ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+    .mobile-nav-wrapper .solar-menu ul li {
+        margin: 0;
+        display: block;
+    }
+    .mobile-nav-wrapper .solar-menu ul li a {
+        color: #1c1632;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: capitalize;
+        display: block;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .mobile-nav-wrapper .solar-menu ul li:last-child a {
+        border-bottom: none;
+    }
+    .mobile-nav-wrapper .solar-menu ul li a:hover {
+        color: #e63a27;
+    }
+    
+    .mobile-nav-wrapper .solar-search-button {
+        padding: 10px 20px 20px 20px;
+    }
+    .mobile-nav-wrapper .solar-btn {
+        margin: 0;
+        text-align: center;
+    }
+    .mobile-nav-wrapper .solar-btn a {
+        display: inline-block;
+    }
+}

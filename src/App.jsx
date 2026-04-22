@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { HashRouter, Routes, Route, Link, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -11,6 +11,7 @@ import logoImg from "./assets/logo.png";
 // Inner layout that re-initializes jQuery theme on every route change
 function Layout() {
   const location = useLocation();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     // Hide the preloader once the layout is ready
@@ -25,7 +26,7 @@ function Layout() {
     const initAttempt = () => {
       try {
         // Ensure the scripts are loaded AND the DOM target actually exists
-        if (window.initTheme && window.jQuery && window.jQuery('.mobile-menu nav').length > 0) {
+        if (window.initTheme && window.jQuery && window.jQuery('.solar-menu').length > 0) {
           window.initTheme(window.jQuery);
           window.dispatchEvent(new Event('resize'));
           return true;
@@ -46,6 +47,10 @@ function Layout() {
     return () => clearInterval(interval);
   }, [location.pathname]);
 
+  // Close mobile menu on route changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
 
   return (
     <>
@@ -54,50 +59,49 @@ function Layout() {
     {/*==================================================*/}
     <header className="solar-header-section" id="sticky-header">
       <div className="container">
-        <div className="row align-items-center">
-          <div className="col-lg-2 col-md-3">
+        <div className="row align-items-center justify-content-between">
+          <div className="col-8 col-md-3 col-lg-3">
             <div className="logo">
-              <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'100px', width:'auto', padding:'5px 0'}} loading="lazy" /></Link>
+              <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'140px', width:'auto', padding:'15px 0'}} loading="lazy" /></Link>
             </div>
           </div>
-          <div className="col-lg-7 col-md-9 d-none d-lg-block">
-            <div className="solar-menu">
-              <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/services">Services</Link></li>
-                <li><Link to="/team">Team</Link></li>
-                <li><Link to="/contact">Contacts</Link></li>
-              </ul>
-            </div>
+
+          {/* Mobile Toggle Button */}
+          <div className="col-4 col-md-9 d-lg-none text-end">
+            <button 
+              className="mobile-nav-toggle" 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle navigation"
+              style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}
+            >
+              <i className={isMobileMenuOpen ? "bi bi-x" : "bi bi-list"} style={{ fontSize: '2.5rem', color: '#1c1632' }}></i>
+            </button>
           </div>
-          <div className="col-lg-3 col-md-12 d-none d-lg-block">
-            <div className="solar-search-button">
-              <div className="solar-btn">
-                <Link to="/contact">Get A Quote <i className="bi bi-arrow-right"></i></Link>
+
+          {/* Collapsible Wrapper for Mobile / display:contents for Desktop */}
+          <div className={`mobile-nav-wrapper ${isMobileMenuOpen ? 'open' : ''}`}>
+            <div className="col-12 col-lg-6">
+              <div className="solar-menu">
+                <ul>
+                  <li><Link to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
+                  <li><Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>About</Link></li>
+                  <li><Link to="/services" onClick={() => setIsMobileMenuOpen(false)}>Services</Link></li>
+                  <li><Link to="/team" onClick={() => setIsMobileMenuOpen(false)}>Team</Link></li>
+                  <li><Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contacts</Link></li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-12 col-lg-3 pb-4 pb-lg-0">
+              <div className="solar-search-button">
+                <div className="solar-btn">
+                  <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Get A Quote <i className="bi bi-arrow-right"></i></Link>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </header>
-    {/* Solar Mobile Menu Area */}
-    <div className="mobile-menu-area sticky d-sm-block d-md-block d-lg-none ">
-      <div className="mobile-logo" style={{position: 'absolute', top: '5px', left: '15px', zIndex: '9999'}}>
-        <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'65px', width:'auto'}} loading="lazy" /></Link>
-      </div>
-      <div className="mobile-menu">
-        <nav className="solar_menu">
-          <ul className="nav_scroll">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/services">Services</Link></li>
-            <li><Link to="/team">Team</Link></li>
-            <li><Link to="/contact">Contacts</Link></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
     {/*==================================================*/}
     {/* End Solar Panel  Header Section */}
     {/*==================================================*/}

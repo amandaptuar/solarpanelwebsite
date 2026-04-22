@@ -4854,7 +4854,7 @@ img {
 }
 
 /* ==================
-   TABLET (768–991px)
+   TABLET (768ï¿½991px)
    ================== */
 @media (max-width: 991px) {
     .slider-section { height: 550px !important; }
@@ -4863,7 +4863,7 @@ img {
     .about-section .col-lg-6 { margin-bottom: 30px; }
     .team-box { margin-bottom: 30px; }
     .footer-thumb { display: none; }
-    .solar-menu { display: none; }
+    
 }
 
 /* ====================
@@ -5111,7 +5111,7 @@ img[src*='header-shape'] {
     display: none !important;
 }
 
-/* Section wrapper — rich gradient background instead of blank */
+/* Section wrapper ï¿½ rich gradient background instead of blank */
 .contact-us-section {
     background: linear-gradient(135deg, #1c1632 0%, #e63a27 60%, #f59c19 100%) !important;
     padding: 0 !important;
@@ -5140,7 +5140,7 @@ img[src*='header-shape'] {
     z-index: 1;
 }
 
-/* Remove the solid red row background — let gradient show */
+/* Remove the solid red row background ï¿½ let gradient show */
 .row.contact-us {
     background: transparent !important;
     padding: 70px 0 70px !important;

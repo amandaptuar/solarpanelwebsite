@@ -19,10 +19,6 @@ function Team() {
 
 	const teamMembers = [
 		{ name: "Dr. Francis St. Holder, PhD", role: "President & Managing Director", img: "/WhatsApp Image 2026-04-20 at 1.01.03 PM.jpeg", isFounder: true },
-		{ name: "John L. Huggins", role: "Executive Vice President", img: "assets/images/team/team1.png" },
-		{ name: "Preetam Bagalkotkar", role: "Technical Director", img: "assets/images/team/team2.png" },
-		{ name: "Hermon Wooden", role: "Operations Manager", img: "assets/images/team/team3.png" },
-		{ name: "Jasson Roy", role: "Chief Engineer", img: "assets/images/team/team4.png" },
 	];
 
 	return (
