@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Team from "./pages/Team";
 import FounderProfile from "./pages/FounderProfile";
+import JohnProfile from "./pages/JohnProfile";
 import Contact from "./pages/Contact";
 import logoImg from "./assets/image.png";
 
@@ -19,32 +20,19 @@ function Layout() {
       window.hidePageLoader();
     }
 
-    // Re-initialize theme scripts globally after route transitions
-    let retries = 0;
-    const maxRetries = 30; // 3 seconds total
-
-    const initAttempt = () => {
+    // Call initTheme once after React renders the new route
+    const timer = setTimeout(() => {
       try {
-        // Ensure the scripts are loaded AND the DOM target actually exists
-        if (window.initTheme && window.jQuery && window.jQuery('.solar-menu').length > 0) {
+        if (window.initTheme && window.jQuery) {
           window.initTheme(window.jQuery);
           window.dispatchEvent(new Event('resize'));
-          return true;
         }
       } catch (err) {
         console.error("Theme init error on Layout:", err);
       }
-      return false;
-    };
+    }, 150);
 
-    const interval = setInterval(() => {
-      if (initAttempt() || retries >= maxRetries) {
-        clearInterval(interval);
-      }
-      retries++;
-    }, 100);
-
-    return () => clearInterval(interval);
+    return () => clearTimeout(timer);
   }, [location.pathname]);
 
   // Close mobile menu on route changes
@@ -113,6 +101,7 @@ function Layout() {
       <Route path="/services" element={<Services />} />
       <Route path="/team" element={<Team />} />
       <Route path="/founder" element={<FounderProfile />} />
+      <Route path="/john-huggins" element={<JohnProfile />} />
       <Route path="/contact" element={<Contact />} />
     </Routes>
 

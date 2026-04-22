@@ -17,6 +17,28 @@ function About() {
 		return () => clearTimeout(timer);
 	}, []);
 
+	// Set dynamic SEO Meta Tags for About Page
+	useEffect(() => {
+		document.title = "Techops Global LLC | Best Solar Energy Solution Company in Sierra Leone";
+
+		const setMetaTag = (attrName, attrValue, content) => {
+			let element = document.querySelector(`meta[${attrName}="${attrValue}"]`);
+			if (!element) {
+				element = document.createElement('meta');
+				element.setAttribute(attrName, attrValue);
+				document.head.appendChild(element);
+			}
+			element.setAttribute('content', content);
+		};
+
+		setMetaTag('name', 'title', 'Techops Global LLC | Best Solar Energy Solution Company in Sierra Leone ');
+		setMetaTag('name', 'description', 'TechOps Global delivers advanced solar, wind, and battery energy storage solutions for commercial and industrial projects across the USA. Reliable, scalable, and cost-efficient clean energy systems.');
+		setMetaTag('name', 'keywords', 'industrial solar energy storage solutions in Sierra Leone, solar energy solution Maryland, solar energy solution  Sierra Leone, mini grid solar solutions  Sierra Leone, solar plus storage solutions for industries  Sierra Leone, solar energy company in sierra Leone ');
+		setMetaTag('name', 'robots', 'index, follow');
+		setMetaTag('http-equiv', 'Content-Type', 'text/html; charset=utf-8');
+		setMetaTag('name', 'language', 'English');
+	}, []);
+
 
 	return (
 		<>
@@ -313,7 +335,7 @@ function About() {
 				</div>
 				<div className="row">
 					{[
-						{ img: 'team1.png', name: 'John L. Huggins', role: 'Executive Vice President' },
+						{ img: 'john-huggins.jpeg', name: 'John L. Huggins', role: 'Executive Vice President' },
 						{ img: 'team2.png', name: 'Preetam Bagalkotkar', role: 'Technical Director' },
 						{ img: 'team3.png', name: 'Hermon Wooden', role: 'Operations Manager' },
 						{ img: 'team4.png', name: 'Jasson Roy', role: 'Chief Engineer' },

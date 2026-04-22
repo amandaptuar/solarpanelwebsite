@@ -18,7 +18,8 @@ function Team() {
 	}, []);
 
 	const teamMembers = [
-		{ name: "Dr. Francis St. Holder, PhD", role: "President & Managing Director", img: "/img/founder-profile.jpg", isFounder: true },
+		{ name: "Dr. Francis St. Holder, PhD", role: "President & Managing Director", img: "/img/founder-profile.jpg", profileLink: "/founder" },
+		{ name: "John L. Huggins, Jr.", role: "Executive Vice President", img: "/assets/images/team/john-huggins.jpeg", profileLink: "/john-huggins" },
 	];
 
 	return (
@@ -81,11 +82,11 @@ function Team() {
 										</ul>
 									</div>
 									<div className="team-content">
-										<h4><Link to={member.isFounder ? "/founder" : "/contact"}>{member.name}</Link></h4>
+										<h4><Link to={member.profileLink || "/contact"}>{member.name}</Link></h4>
 										<span>{member.role}</span>
-										{member.isFounder && (
+										{member.profileLink && (
 											<div className="mt-2">
-												<Link to="/founder" style={{ color: '#fba500', fontWeight: 'bold', fontSize: '13px', textTransform: 'uppercase' }}>Founder Profile <i className="bi bi-arrow-right"></i></Link>
+												<Link to={member.profileLink} style={{ color: '#fba500', fontWeight: 'bold', fontSize: '13px', textTransform: 'uppercase' }}>View Profile <i className="bi bi-arrow-right"></i></Link>
 											</div>
 										)}
 									</div>

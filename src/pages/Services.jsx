@@ -17,6 +17,28 @@ function Services() {
 		return () => clearTimeout(timer);
 	}, []);
 
+	// Set dynamic SEO Meta Tags for Services Page
+	useEffect(() => {
+		document.title = "Techops Global LLC | Best Wind Energy Storage Company in USA | Best Wind Energy Company in Sierra Leone";
+
+		const setMetaTag = (attrName, attrValue, content) => {
+			let element = document.querySelector(`meta[${attrName}="${attrValue}"]`);
+			if (!element) {
+				element = document.createElement('meta');
+				element.setAttribute(attrName, attrValue);
+				document.head.appendChild(element);
+			}
+			element.setAttribute('content', content);
+		};
+
+		setMetaTag('name', 'title', 'Techops Global LLC | Best Wind Energy Storage Company in USA | Best Wind Energy Company in Sierra Leone ');
+		setMetaTag('name', 'description', 'TechOps Global delivers advanced solar, wind, and battery energy storage solutions for commercial and industrial projects across the USA. Reliable, scalable, and cost-efficient clean energy systems.');
+		setMetaTag('name', 'keywords', 'wind energy company in sierra Leone, wind energy company in USA, battery storage company in sierra Leone,  solar energy company in sierra Leone, solar energy company in Maryland ');
+		setMetaTag('name', 'robots', 'index, follow');
+		setMetaTag('http-equiv', 'Content-Type', 'text/html; charset=utf-8');
+		setMetaTag('name', 'language', 'English');
+	}, []);
+
 	return (
 		<>
 		{/*==================================================*/}

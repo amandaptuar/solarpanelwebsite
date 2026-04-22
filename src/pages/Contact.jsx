@@ -177,15 +177,12 @@ function Contact() {
 			<div className="container-fluid p-0">
 				<div className="row">
 					<div className="col-lg-12 col-md-12">
-						<iframe
-							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126435.0392815152!2d-13.2458428172!3d8.484444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xf048ecbc0000000%3A0x0!2sFreetown%2C%20Sierra%20Leone!5e0!3m2!1sen!2ssl!4v1635150422284!5m2!1sen!2ssl"
-							width="100%"
-							height="500"
-							style={{ border: 0 }}
-							allowFullScreen=""
-							loading="lazy"
-							title="Contact Map"
-						></iframe>
+						<img 
+							src="/img/business-solution-2026-03-10-02-05-05-utc.JPG" 
+							alt="TechOps Global Location" 
+							style={{ width: '100%', height: '500px', objectFit: 'cover', display: 'block' }} 
+							loading="lazy" 
+						/>
 					</div>
 				</div>
 			</div>
