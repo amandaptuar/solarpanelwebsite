@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { HashRouter, Routes, Route, Link, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -140,23 +140,23 @@ function Layout() {
               </div>
             </div>
           </div>
-          <div className="col-lg-3 col-md-6">
+          <div className="col-lg-2 col-md-6">
             <div className="footer-wiget ">
               <div className="footer-wiget-title">
                 <h4>Industry Sectors</h4>
               </div>
               <div className="footer-wiget-menu">
                 <ul>
-                  <li><Link to="/contact">Contact us</Link></li>
-                  <li><Link to="/contact">How it Works</Link></li>
-                  <li><Link to="/contact"> Office Create</Link></li>
-                  <li><Link to="/contact">Residential Explore</Link></li>
-                  <li><Link to="/contact">Terms &amp; Services</Link></li>
+                  <li><Link to="/services">Healthcare</Link></li>
+                  <li><Link to="/services">Education</Link></li>
+                  <li><Link to="/services">Government</Link></li>
+                  <li><Link to="/services">Finance</Link></li>
+                  <li><Link to="/services">Commercial</Link></li>
                 </ul>
               </div>
             </div>
           </div>
-          <div className="col-lg-3 col-md-6">
+          <div className="col-lg-4 col-md-6">
             <div className="footer-wiget-quick-contanct ">
               <div className="footer-wiget-title">
                 <h4>Get In Touch</h4>
@@ -165,7 +165,7 @@ function Layout() {
                 <ul>
                   <li>USA: 7454 Old Alexandria Ferry Road Clinton, Md. 20744</li>
                   <li>SL: 2 Taylor Lewis Drive Freetown, Sierra Leone</li>
-                  <li>USA: +1 (240) 351-3209 | SL: +232 33 448 065</li>
+                  <li style={{ whiteSpace: 'nowrap' }}>USA: +1 (240) 351-3209 | SL: +232 33 448 065</li>
                   <li><Link to="/contact">info@techops-global.com</Link></li>
                 </ul>
               </div>
@@ -240,9 +240,9 @@ function Layout() {
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Layout />
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

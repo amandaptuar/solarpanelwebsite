@@ -22,7 +22,7 @@ function FounderProfile() {
 		{/*==================================================*/}
 		{/* Start Solar Panel  slider Section */}
 		{/*==================================================*/}
-		<div className="breatcome-section">
+		<div className="breatcome-section" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/img/concept-of-an-energy-storage-system-based-on-elect-2026-03-24-07-19-07-utc.jpg")', backgroundSize: 'cover', backgroundPosition: 'center center' }}>
 			<div className="container">
 				<div className="row">
 					<div className="col-lg-12 col-md-12">
@@ -49,9 +49,9 @@ function FounderProfile() {
 		<style>
 			{`
 			.profile-container {
-				max-width: 1120px;
-				margin: 80px auto;
-				padding: 0 24px;
+				max-width: 1200px;
+				margin: 100px auto;
+				padding: 0 32px;
 			}
 			.profile-card {
 				display: grid;
@@ -60,7 +60,11 @@ function FounderProfile() {
 				background: #ffffff;
 				border-radius: 24px;
 				overflow: hidden;
-				box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+				box-shadow: 0 30px 70px rgba(0,0,0,0.08);
+				transition: transform 0.3s ease;
+			}
+			.profile-card:hover {
+				transform: translateY(-5px);
 			}
 			.profile-photo {
 				width: 100%;
@@ -138,7 +142,7 @@ function FounderProfile() {
 			<div className="profile-card">
 				<img 
 					className="profile-photo" 
-					src="/WhatsApp Image 2026-04-20 at 1.01.03 PM.jpeg" 
+					src="/img/founder-profile.jpg" 
 					alt="Dr. Francis St. Holder, PhD" 
 				/>
 				<div className="profile-bio">

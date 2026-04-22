@@ -22,7 +22,7 @@ function Contact() {
 		{/*==================================================*/}
 		{/* Breadcrumb / Page Title Banner */}
 		{/*==================================================*/}
-		<div className="breatcome-section">
+		<div className="breatcome-section" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/img/business-solution-2026-03-10-02-05-05-utc.JPG")', backgroundSize: 'cover', backgroundPosition: 'center center' }}>
 			<div className="container">
 				<div className="row">
 					<div className="col-lg-12 col-md-12">
@@ -91,7 +91,7 @@ function Contact() {
 							</div>
 							<div className="contact-adress">
 								<h5>Call Us Today</h5>
-								<span>USA: +1 (240) 351-3209 <br /> SL: +232 33 448 065</span>
+								<span>USA: +1 (240) 351-3209 | SL: +232 33 448 065</span>
 							</div>
 						</div>
 
@@ -109,7 +109,7 @@ function Contact() {
 					{/* Right — Form */}
 					<div className="col-lg-6 col-md-12">
 						<div className="choose-contact-box contact-inner">
-							<form action="https://formspree.io/f/myyleorq" method="POST" id="contact-page-form">
+							<form action="https://formsubmit.co/atul@techops-global.com" method="POST" id="contact-page-form">
 								<div className="row">
 									<div className="col-lg-6 col-md-6">
 										<div className="form-box contact-inner">
@@ -131,8 +131,15 @@ function Contact() {
 									</div>
 									<div className="col-lg-12">
 										<div className="form-box">
-											<input type="text" name="subject" placeholder="Select Service *" />
-											<i className="bi bi-pencil-square"></i>
+											<select name="subject" defaultValue="">
+												<option value="" disabled>Select Service *</option>
+												<option value="Commercial Solar">Commercial Solar</option>
+												<option value="Battery Storage">Battery Storage</option>
+												<option value="Wind Energy">Wind Energy</option>
+												<option value="Solar Maintenance">Solar Maintenance</option>
+												<option value="Energy Audits">Energy Audits</option>
+											</select>
+											<i className="bi bi-chevron-down" style={{ pointerEvents: 'none' }}></i>
 										</div>
 									</div>
 									<div className="col-lg-12">

@@ -23,7 +23,7 @@ function About() {
 		{/*==================================================*/}
 		{/* Breadcrumb / Page Title Banner */}
 		{/*==================================================*/}
-		<div className="breatcome-section">
+		<div className="breatcome-section" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/img/multigeneration-family-walking-on-field-on-wind-fa-2026-01-05-22-45-03-utc.jpg")', backgroundSize: 'cover', backgroundPosition: 'center center' }}>
 			<div className="container">
 				<div className="row">
 					<div className="col-lg-12 col-md-12">
@@ -120,7 +120,7 @@ function About() {
 												</div>
 											</div>
 											<div className="solar-btn about">
-												<Link to="/contact">Our Service <i className="bi bi-arrow-right"></i></Link>
+												<Link to="/services">Our Service <i className="bi bi-arrow-right"></i></Link>
 											</div>
 										</div>
 									</div>
@@ -150,7 +150,7 @@ function About() {
 												</div>
 											</div>
 											<div className="solar-btn about">
-												<Link to="/contact">Our Service <i className="bi bi-arrow-right"></i></Link>
+												<Link to="/services">Our Service <i className="bi bi-arrow-right"></i></Link>
 											</div>
 										</div>
 									</div>
@@ -180,7 +180,7 @@ function About() {
 												</div>
 											</div>
 											<div className="solar-btn about">
-												<Link to="/contact">Our Service <i className="bi bi-arrow-right"></i></Link>
+												<Link to="/services">Our Service <i className="bi bi-arrow-right"></i></Link>
 											</div>
 										</div>
 									</div>
@@ -368,11 +368,11 @@ function About() {
 					{[
 						{ title: "Healthcare", desc: "Providing mission-critical backup power and energy independence to ensure life-saving medical equipment operates without interruption.", icon: "bi-hospital" },
 						{ title: "Education", desc: "Reducing operational costs for schools and universities with high-efficiency solar campuses, enabling more funds for student success.", icon: "bi-book" },
-						{ title: "Government", desc: "Supporting energy security and infrastructure stability with reliable, large-scale renewable projects tailored for public utility needs.", icon: "bi-building-gov-house" },
-						{ title: "Finance", desc: "Optimizing ROI through predictable energy overheads and long-term asset management of renewable energy portfolios.", icon: "bi-bank" }
+						{ title: "Government", desc: "Supporting energy security and infrastructure stability with reliable, large-scale renewable projects tailored for public utility needs.", icon: "bi-bank2" },
+						{ title: "Finance", desc: "Optimizing ROI through predictable energy overheads and long-term asset management of renewable energy portfolios.", icon: "bi-currency-dollar" }
 					].map((industry, i) => (
 						<div className="col-lg-3 col-md-6" key={i}>
-							<div className="service-box style-two" style={{ padding: '30px', background: '#fff', borderRadius: '10px', boxShadow: '0 5px 15px rgba(0,0,0,0.05)', height: '100%' }}>
+							<div className="service-box style-two text-center" style={{ padding: '30px', background: '#fff', borderRadius: '10px', boxShadow: '0 5px 15px rgba(0,0,0,0.05)', height: '100%' }}>
 								<div className="industry-icon mb-3" style={{ fontSize: '40px', color: '#fba500' }}>
 									<i className={`bi ${industry.icon}`}></i>
 								</div>
@@ -402,7 +402,7 @@ function About() {
 						</div>
 					</div>
 					<div className="col-lg-6 col-md-6">
-						<form action="https://formspree.io/f/myyleorq" method="POST" id="about-subscribe-form">
+						<form action="https://formsubmit.co/atul@techops-global.com" method="POST" id="about-subscribe-form">
 							<div className="form-box Subscribe wow animate__slideInRight">
 								<input type="text" name="email" placeholder="Your Email Address..." />
 								<button type="submit" className="icons">

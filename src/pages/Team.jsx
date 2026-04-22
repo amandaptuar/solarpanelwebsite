@@ -18,7 +18,7 @@ function Team() {
 	}, []);
 
 	const teamMembers = [
-		{ name: "Dr. Francis St. Holder, PhD", role: "President & Managing Director", img: "/WhatsApp Image 2026-04-20 at 1.01.03 PM.jpeg", isFounder: true },
+		{ name: "Dr. Francis St. Holder, PhD", role: "President & Managing Director", img: "/img/founder-profile.jpg", isFounder: true },
 	];
 
 	return (
@@ -26,7 +26,7 @@ function Team() {
 		{/*==================================================*/}
 		{/* Start Solar Panel  slider Section */}
 		{/*==================================================*/}
-		<div className="breatcome-section">
+		<div className="breatcome-section" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/img/low-angle-shot-of-a-group-of-businesspeople-joinin-2026-01-09-09-45-09-utc.jpg")', backgroundSize: 'cover', backgroundPosition: 'center center' }}>
 			<div className="container">
 				<div className="row">
 					<div className="col-lg-12 col-md-12">
@@ -115,7 +115,7 @@ function Team() {
 						</div>
 					</div>
 					<div className="col-lg-6 col-md-6">
-						<form action="https://formspree.io/f/myyleorq" method="POST" id="it-form">
+						<form action="https://formsubmit.co/atul@techops-global.com" method="POST" id="it-form">
 							<div className="form-box Subscribe wow animate__slideInRight">
 								<input type="text" name="email" placeholder="Your Email Address..." />
 								<button type="submit" className="icons">

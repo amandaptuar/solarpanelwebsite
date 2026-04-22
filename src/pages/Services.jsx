@@ -22,7 +22,7 @@ function Services() {
 		{/*==================================================*/}
 		{/* Start Solar Panel  slider Section */}
 		{/*==================================================*/}
-		<div className="breatcome-section">
+		<div className="breatcome-section" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/img/team-technicians-carrying-photovoltaic-solar-modul-2026-01-09-10-53-57-utc.jpg")', backgroundSize: 'cover', backgroundPosition: 'center center' }}>
 			<div className="container">
 				<div className="row">
 					<div className="col-lg-12 col-md-12">
@@ -157,7 +157,7 @@ function Services() {
 							<div className="choose-contact-title">
 								<h4>Make an Appointment</h4>
 							</div>
-							<form action="https://formspree.io/f/myyleorq" method="POST" id="it-form">
+							<form action="https://formsubmit.co/atul@techops-global.com" method="POST" id="it-form">
 								<div className="row">
 									<div className="col-lg-12">
 										<div className="form-box">
@@ -173,8 +173,15 @@ function Services() {
 									</div>
 									<div className="col-lg-12">
 										<div className="form-box">
-											<input type="text" name="subject" placeholder="Select Service *" />
-											<i className="bi bi-pencil-square"></i>
+											<select name="subject" defaultValue="">
+												<option value="" disabled>Select Service *</option>
+												<option value="Commercial Solar">Commercial Solar</option>
+												<option value="Battery Storage">Battery Storage</option>
+												<option value="Wind Energy">Wind Energy</option>
+												<option value="Solar Maintenance">Solar Maintenance</option>
+												<option value="Energy Audits">Energy Audits</option>
+											</select>
+											<i className="bi bi-chevron-down" style={{ pointerEvents: 'none' }}></i>
 										</div>
 									</div>
 									<div className="col-lg-12 col-md-12">
@@ -215,7 +222,7 @@ function Services() {
 						</div>
 					</div>
 					<div className="col-lg-6 col-md-6">
-						<form action="https://formspree.io/f/myyleorq" method="POST" id="contact-form">
+						<form action="https://formsubmit.co/atul@techops-global.com" method="POST" id="contact-form">
 							<div className="form-box Subscribe wow animate__slideInRight">
 								<input type="text" name="email" placeholder="Your Email Address..." />
 								<button type="submit" className="icons">

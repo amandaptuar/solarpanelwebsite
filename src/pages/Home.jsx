@@ -1,37 +1,104 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+const heroSlides = [
+	{
+		img: '/img/business-solution-2026-03-10-02-05-05-utc.JPG',
+		subtitle: 'Our Solar Systems',
+		title1: 'Energize Society By',
+		title2: 'Reliable Energy',
+		desc: 'Universal energy access is critical for economic growth. TechOps Global is committed to supplying 1–4.5 GW of sustainable power to Sierra Leone through strategic infrastructure and technology partnerships.',
+	},
+	{
+		img: '/img/concept-of-an-energy-storage-system-based-on-elect-2026-03-24-07-19-07-utc.jpg',
+		subtitle: 'Energy Storage',
+		title1: 'Advanced Energy',
+		title2: 'Storage Solutions',
+		desc: 'Cutting-edge battery energy storage systems enabling peak demand shaving, emergency backup, and full off-grid independence for industrial and utility-scale operations.',
+	},
+	{
+		img: '/img/low-angle-shot-of-a-group-of-businesspeople-joinin-2026-01-09-09-45-09-utc.jpg',
+		subtitle: 'Business Partnerships',
+		title1: 'Building Stronger',
+		title2: 'Business Solutions',
+		desc: 'TechOps Global forges strategic partnerships with governments, utilities, and industrial operators across West Africa to deliver bankable, scalable clean energy solutions.',
+	},
+];
+
 function Home() {
+	const [activeSlide, setActiveSlide] = useState(0);
+
 	// Re-initialize jQuery theme plugins when this page mounts
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
 
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setActiveSlide((prev) => (prev + 1) % heroSlides.length);
+		}, 5000);
+		return () => clearInterval(interval);
+	}, []);
+
 	return (
 		<>
 		{/*==================================================*/}
-		{/* Start Solar Panel  Hero Section (Static) */}
+		{/* Start Solar Panel Hero Section (Auto-Carousel) */}
 		{/*==================================================*/}
-		<div id="home" className="slider-list owl-carousel" style={{background: '#1c1632'}}>
-			<div className="slider-section d-flex align-items-center" style={{backgroundImage: 'url("assets/images/slider/slider2.jpg")', backgroundSize: 'cover', backgroundPosition: 'center bottom'}}>
-				<div className="container">
-					<div className="row align-items-center">
-						<div className="col-lg-12">
-							<div className="slider-content ">
-								<h4> Our Solar Systems</h4>
-								<h1>Energize Society By</h1>
-								<h1>Reliable Energy</h1>
-								<p>Universal energy access is critical for economic growth. TechOps Global is committed to supplying 1–4.5 GW of sustainable power to Sierra Leone through strategic infrastructure and technology partnerships.</p>
-								<div className="solar-btn slider1 ">
-									<Link to="/contact">Our Service <i className="bi bi-arrow-right"></i></Link>
-								</div>
-								<div className="solar-btn slider2  ">
-									<Link to="/about">More About! <i className="bi bi-arrow-right"></i></Link>
+		<div id="home" style={{ position: 'relative', overflow: 'hidden', background: '#1c1632' }}>
+			{heroSlides.map((slide, i) => (
+				<div
+					key={i}
+					className="slider-section d-flex align-items-center"
+					style={{
+						backgroundImage: `url("${slide.img}")`,
+						backgroundSize: 'cover',
+						backgroundPosition: 'center center',
+						position: i === 0 ? 'relative' : 'absolute',
+						top: 0, left: 0, right: 0, bottom: 0,
+						opacity: activeSlide === i ? 1 : 0,
+						transition: 'opacity 1s ease-in-out',
+						zIndex: activeSlide === i ? 2 : 1,
+					}}
+				>
+					<div className="container">
+						<div className="row align-items-center">
+							<div className="col-lg-12">
+								<div className="slider-content">
+									<h4>{slide.subtitle}</h4>
+									<h1>{slide.title1}</h1>
+									<h1>{slide.title2}</h1>
+									<p>{slide.desc}</p>
+									<div className="solar-btn slider1">
+										<Link to="/services">Our Service <i className="bi bi-arrow-right"></i></Link>
+									</div>
+									<div className="solar-btn slider2">
+										<Link to="/about">More About! <i className="bi bi-arrow-right"></i></Link>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+			))}
+			{/* Dot Indicators */}
+			<div style={{ position: 'absolute', bottom: '30px', left: '50%', transform: 'translateX(-50%)', zIndex: 10, display: 'flex', gap: '10px' }}>
+				{heroSlides.map((_, i) => (
+					<button
+						key={i}
+						onClick={() => setActiveSlide(i)}
+						style={{
+							width: activeSlide === i ? '32px' : '12px',
+							height: '12px',
+							borderRadius: '6px',
+							background: activeSlide === i ? '#e63a27' : 'rgba(255,255,255,0.6)',
+							border: 'none',
+							cursor: 'pointer',
+							transition: 'all 0.3s ease',
+							padding: 0,
+						}}
+					/>
+				))}
 			</div>
 		</div>
 		{/*==================================================*/}
@@ -118,7 +185,7 @@ function Home() {
 												</div>
 											</div>
 											<div className="solar-btn about ">
-												<Link to="/contact">Our Service <i className="bi bi-arrow-right"></i></Link>
+												<Link to="/services">Our Service <i className="bi bi-arrow-right"></i></Link>
 											</div>
 										</div>
 									</div>
@@ -149,7 +216,7 @@ function Home() {
 												</div>
 											</div>
 											<div className="solar-btn about">
-												<Link to="/contact">Our Service <i className="bi bi-arrow-right"></i></Link>
+												<Link to="/services">Our Service <i className="bi bi-arrow-right"></i></Link>
 											</div>
 										</div>
 									</div>		
@@ -180,7 +247,7 @@ function Home() {
 												</div>
 											</div>
 											<div className="solar-btn about">
-												<Link to="/contact">Our Service <i className="bi bi-arrow-right"></i></Link>
+												<Link to="/services">Our Service <i className="bi bi-arrow-right"></i></Link>
 											</div>
 										</div>
 									</div>		
@@ -369,12 +436,12 @@ function Home() {
 		{/*==================================================*/}
 		{/* Start Solar Panel  Call Do Action  Section */}
 		{/*==================================================*/}
-		 <div className="call-do-action-section">
+		 <div className="call-do-action-section" style={{ height: '450px', backgroundImage: 'url("/assets/images/resource/call-do-bg.jpg")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
 			<div className="container">
 				<div className="row">
 					<div className="col-lg-12">
-						{/* Background Image Section - Video Removed */}
-						<div style={{ height: '140px' }}></div>
+						{/* Background Image restored via CSS class or inline if needed */}
+						<div style={{ height: '200px' }}></div>
 					</div>
 				</div>
 			</div>
@@ -388,9 +455,9 @@ function Home() {
 		{/*==================================================*/}
 		{/* Start Solar Panel  Choose Us  Section */}
 		{/*==================================================*/}
-		 <div className="choose-us-section">
+		 <div className="choose-us-section" style={{ marginTop: '-220px', position: 'relative', zIndex: 10 }}>
 			<div className="container">
-				<div className="row choose">
+				<div className="row choose" style={{ backgroundImage: 'url("/assets/images/resource/choose-bg.png")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
 					<div className="col-lg-6 col-md-12">
 						<div className="section-title ">
 							<div className="section-sub-title choose">
@@ -433,7 +500,7 @@ function Home() {
 							<div className="choose-contact-title">
 								<h4>Make an Appointment</h4>
 							</div>
-							<form action="https://formspree.io/f/myyleorq" method="POST" id="it-form">
+							<form action="https://formsubmit.co/atul@techops-global.com" method="POST" id="it-form">
 								<div className="row">
 									<div className="col-lg-12">
 										<div className="form-box">
@@ -449,8 +516,15 @@ function Home() {
 									</div>
 									<div className="col-lg-12">
 										<div className="form-box">
-											<input type="text" name="subject" placeholder="Select Service *" />
-											<i className="bi bi-pencil-square"></i>
+											<select name="subject" defaultValue="">
+												<option value="" disabled>Select Service *</option>
+												<option value="Commercial Solar">Commercial Solar</option>
+												<option value="Battery Storage">Battery Storage</option>
+												<option value="Wind Energy">Wind Energy</option>
+												<option value="Solar Maintenance">Solar Maintenance</option>
+												<option value="Energy Audits">Energy Audits</option>
+											</select>
+											<i className="bi bi-chevron-down" style={{ pointerEvents: 'none' }}></i>
 										</div>
 									</div>
 									<div className="col-lg-12 col-md-12">
@@ -699,7 +773,7 @@ function Home() {
 					</div>
 					<div className="col-lg-5 col-md-6">
 						<div className="choose-contact-box appointment ">
-							<form action="https://formspree.io/f/myyleorq" method="POST" id="appt-form">
+							<form action="https://formsubmit.co/atul@techops-global.com" method="POST" id="appt-form">
 								<div className="row">
 									<div className="col-lg-12">
 										<div className="form-box appointment">
@@ -750,11 +824,11 @@ function Home() {
 					{[
 						{ title: "Healthcare", desc: "Providing mission-critical backup power and energy independence to ensure life-saving medical equipment operates without interruption.", icon: "bi-hospital" },
 						{ title: "Education", desc: "Reducing operational costs for schools and universities with high-efficiency solar campuses, enabling more funds for student success.", icon: "bi-book" },
-						{ title: "Government", desc: "Supporting energy security and infrastructure stability with reliable, large-scale renewable projects tailored for public utility needs.", icon: "bi-building-gov-house" },
-						{ title: "Finance", desc: "Optimizing ROI through predictable energy overheads and long-term asset management of renewable energy portfolios.", icon: "bi-bank" }
+						{ title: "Government", desc: "Supporting energy security and infrastructure stability with reliable, large-scale renewable projects tailored for public utility needs.", icon: "bi-bank2" },
+						{ title: "Finance", desc: "Optimizing ROI through predictable energy overheads and long-term asset management of renewable energy portfolios.", icon: "bi-currency-dollar" }
 					].map((industry, i) => (
 						<div className="col-lg-3 col-md-6" key={i}>
-							<div className="service-box style-two" style={{ padding: '30px', background: '#fff', borderRadius: '10px', boxShadow: '0 5px 15px rgba(0,0,0,0.05)', height: '100%' }}>
+							<div className="service-box style-two text-center" style={{ padding: '30px', background: '#fff', borderRadius: '10px', boxShadow: '0 5px 15px rgba(0,0,0,0.05)', height: '100%' }}>
 								<div className="industry-icon mb-3" style={{ fontSize: '40px', color: '#fba500' }}>
 									<i className={`bi ${industry.icon}`}></i>
 								</div>
@@ -786,7 +860,7 @@ function Home() {
 						</div>
 					</div>
 					<div className="col-lg-6 col-md-6">
-						<form action="https://formspree.io/f/myyleorq" method="POST" id="contact-form">
+						<form action="https://formsubmit.co/atul@techops-global.com" method="POST" id="contact-form">
 							<div className="form-box Subscribe ">
 								<input type="text" name="email" placeholder="Your Email Address..." />
 								<button type="submit" className="icons">
