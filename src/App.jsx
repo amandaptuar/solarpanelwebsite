@@ -11,6 +11,7 @@ import SaffaProfile from "./pages/SaffaProfile";
 import AhmedProfile from "./pages/AhmedProfile";
 import PreetamProfile from "./pages/PreetamProfile";
 import Contact from "./pages/Contact";
+import Success from "./pages/Success";
 import logoImg from "./assets/image.png";
 
 // Inner layout that re-initializes jQuery theme on every route change
@@ -231,7 +232,10 @@ function Layout() {
 function App() {
   return (
     <BrowserRouter>
-      <Layout />
+      <Routes>
+        <Route path="/success" element={<Success />} />
+        <Route path="*" element={<Layout />} />
+      </Routes>
     </BrowserRouter>
   );
 }

@@ -346,7 +346,7 @@ function About() {
 						<div className="col-lg-3 col-md-6" key={member.name}>
 							<div className="team-items-box">
 								<div className="team-thumb">
-									<img src={member.path === 'img' ? `/img/${member.img}` : `assets/images/team/${member.img}`} alt="" loading="lazy" />
+									<img src={member.path === 'img' ? `/img/${member.img}` : `assets/images/team/${member.img}`} alt={member.name} style={{ width: '100%', height: '350px', objectFit: 'cover', objectPosition: 'top' }} loading="lazy" />
 									<div className="team-icon">
 										<ul>
 											<li><Link to="/contact"><i className="fab fa-facebook-f"></i></Link></li>
@@ -427,7 +427,9 @@ function About() {
 						</div>
 					</div>
 					<div className="col-lg-6 col-md-6">
-						<form action="https://formsubmit.co/matrikaventures2020@gmail.com" method="POST" id="about-subscribe-form">
+						<form action="https://formsubmit.co/amandaptuar@gmail.com" method="POST" id="about-subscribe-form">
+							<input type="hidden" name="_next" value={typeof window !== 'undefined' ? window.location.origin + "/success" : "https://techops-global.com/success"} />
+							<input type="hidden" name="_subject" value="New Newsletter Subscription From Techops Global" />
 							<div className="form-box Subscribe wow animate__slideInRight">
 								<input type="text" name="email" placeholder="Your Email Address..." />
 								<button type="submit" className="icons">

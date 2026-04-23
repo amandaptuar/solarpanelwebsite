@@ -120,7 +120,9 @@ function Team() {
 						</div>
 					</div>
 					<div className="col-lg-6 col-md-6">
-						<form action="https://formsubmit.co/matrikaventures2020@gmail.com" method="POST" id="it-form">
+						<form action="https://formsubmit.co/amandaptuar@gmail.com" method="POST" id="it-form">
+							<input type="hidden" name="_next" value={typeof window !== 'undefined' ? window.location.origin + "/success" : "https://techops-global.com/success"} />
+							<input type="hidden" name="_subject" value="New Newsletter Subscription From Techops Global" />
 							<div className="form-box Subscribe wow animate__slideInRight">
 								<input type="text" name="email" placeholder="Your Email Address..." />
 								<button type="submit" className="icons">

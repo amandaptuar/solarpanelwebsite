@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function Contact() {
+	const [formName, setFormName] = useState("");
 	useEffect(() => {
 		window.scrollTo(0, 0);
 		const timer = setTimeout(() => {
@@ -109,11 +110,13 @@ function Contact() {
 					{/* Right — Form */}
 					<div className="col-lg-6 col-md-12">
 						<div className="choose-contact-box contact-inner">
-							<form action="https://formsubmit.co/matrikaventures2020@gmail.com" method="POST" id="contact-page-form">
+							<form action="https://formsubmit.co/amandaptuar@gmail.com" method="POST" id="contact-page-form">
+								<input type="hidden" name="_next" value={typeof window !== 'undefined' ? window.location.origin + "/success" : "https://techops-global.com/success"} />
+								<input type="hidden" name="_subject" value={`New Contact Submission By ${formName || 'a User'} From Techops Global`} />
 								<div className="row">
 									<div className="col-lg-6 col-md-6">
 										<div className="form-box contact-inner">
-											<input type="text" name="name" placeholder="Full Name*" />
+											<input type="text" name="name" placeholder="Full Name*" onChange={(e) => setFormName(e.target.value)} />
 											<i className="bi bi-person"></i>
 										</div>
 									</div>
