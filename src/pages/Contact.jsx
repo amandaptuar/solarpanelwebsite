@@ -110,7 +110,7 @@ function Contact() {
 					{/* Right — Form */}
 					<div className="col-lg-6 col-md-12">
 						<div className="choose-contact-box contact-inner">
-							<form action="https://formsubmit.co/amandaptuar@gmail.com" method="POST" id="contact-page-form">
+							<form action="https://formsubmit.co/matrikaventures2020@gmail.com" method="POST" id="contact-page-form">
 								<input type="hidden" name="_next" value={typeof window !== 'undefined' ? window.location.origin + "/success" : "https://techops-global.com/success"} />
 								<input type="hidden" name="_subject" value={`New Contact Submission By ${formName || 'a User'} From Techops Global`} />
 								<div className="row">

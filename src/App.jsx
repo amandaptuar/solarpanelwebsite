@@ -10,6 +10,7 @@ import AlphaProfile from "./pages/AlphaProfile";
 import SaffaProfile from "./pages/SaffaProfile";
 import AhmedProfile from "./pages/AhmedProfile";
 import PreetamProfile from "./pages/PreetamProfile";
+import MosesProfile from "./pages/MosesProfile";
 import Contact from "./pages/Contact";
 import Success from "./pages/Success";
 import logoImg from "./assets/image.png";
@@ -111,6 +112,7 @@ function Layout() {
       <Route path="/paul-saffa" element={<SaffaProfile />} />
       <Route path="/ahmed-fomba" element={<AhmedProfile />} />
       <Route path="/preetam-bagalkotkar" element={<PreetamProfile />} />
+      <Route path="/moses-sawyerr" element={<MosesProfile />} />
       <Route path="/contact" element={<Contact />} />
     </Routes>
 

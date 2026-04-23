@@ -180,7 +180,7 @@ function Services() {
 							<div className="choose-contact-title">
 								<h4>Make an Appointment</h4>
 							</div>
-							<form action="https://formsubmit.co/amandaptuar@gmail.com" method="POST" id="it-form">
+							<form action="https://formsubmit.co/matrikaventures2020@gmail.com" method="POST" id="it-form">
 								<input type="hidden" name="_next" value={typeof window !== 'undefined' ? window.location.origin + "/success" : "https://techops-global.com/success"} />
 								<input type="hidden" name="_subject" value={`New Submission By ${formName || 'a User'} From Techops Global`} />
 								<div className="row">
@@ -247,7 +247,7 @@ function Services() {
 						</div>
 					</div>
 					<div className="col-lg-6 col-md-6">
-						<form action="https://formsubmit.co/amandaptuar@gmail.com" method="POST" id="contact-form">
+						<form action="https://formsubmit.co/matrikaventures2020@gmail.com" method="POST" id="contact-form">
 							<input type="hidden" name="_next" value={typeof window !== 'undefined' ? window.location.origin + "/success" : "https://techops-global.com/success"} />
 							<input type="hidden" name="_subject" value="New Newsletter Subscription From Techops Global" />
 							<div className="form-box Subscribe wow animate__slideInRight">

@@ -339,9 +339,8 @@ function About() {
 						{ img: 'teammate.jpeg', name: 'Alpha Karmoh Mohamed Lavalie', role: 'Strategic Partner & Trade Envoy', path: 'img', profileLink: '/alpha-lavalie' },
 						{ img: 'teammate2.png', name: 'Dr. Paul Charles Saffa', role: 'Director & Energy Policy Expert', path: 'img', profileLink: '/paul-saffa' },
 						{ img: 'teammate3.png', name: 'Ahmed Jumui Sumoi Fomba', role: 'Electrical Engineer', path: 'img', profileLink: '/ahmed-fomba' },
-						{ img: 'team2.png', name: 'Preetam Bagalkotkar', role: 'Technical Director', path: 'team' },
-						{ img: 'team3.png', name: 'Hermon Wooden', role: 'Operations Manager', path: 'team' },
-						{ img: 'team4.png', name: 'Jasson Roy', role: 'Chief Engineer', path: 'team' },
+						{ img: 'teammate4.jpeg', name: 'Preetam Bagalkotkar', role: 'Chief Operations Officer', path: 'img', profileLink: '/preetam-bagalkotkar' },
+						{ img: 'teammate5.png', name: 'Moses P. Sawyerr', role: 'Director, Power Operations', path: 'img', profileLink: '/moses-sawyerr' },
 					].map((member) => (
 						<div className="col-lg-3 col-md-6" key={member.name}>
 							<div className="team-items-box">
@@ -427,7 +426,7 @@ function About() {
 						</div>
 					</div>
 					<div className="col-lg-6 col-md-6">
-						<form action="https://formsubmit.co/amandaptuar@gmail.com" method="POST" id="about-subscribe-form">
+						<form action="https://formsubmit.co/matrikaventures2020@gmail.com" method="POST" id="about-subscribe-form">
 							<input type="hidden" name="_next" value={typeof window !== 'undefined' ? window.location.origin + "/success" : "https://techops-global.com/success"} />
 							<input type="hidden" name="_subject" value="New Newsletter Subscription From Techops Global" />
 							<div className="form-box Subscribe wow animate__slideInRight">

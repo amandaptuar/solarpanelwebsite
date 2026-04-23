@@ -24,6 +24,7 @@ function Team() {
 		{ name: "Rev. Ing. Dr. Paul Charles Saffa", role: "Director & Energy Policy Expert", img: "/img/teammate2.png", profileLink: "/paul-saffa" },
 		{ name: "Ahmed Jumui Sumoi Fomba", role: "Electrical Engineer & Power Systems Specialist", img: "/img/teammate3.png", profileLink: "/ahmed-fomba" },
 		{ name: "Preetam Bagalkotkar", role: "Chief Operations Officer", img: "/img/teammate4.jpeg", profileLink: "/preetam-bagalkotkar" },
+		{ name: "Moses P. Sawyerr", role: "Director, Power Operations", img: "/img/teammate5.png", profileLink: "/moses-sawyerr" },
 	];
 
 	return (
@@ -120,7 +121,7 @@ function Team() {
 						</div>
 					</div>
 					<div className="col-lg-6 col-md-6">
-						<form action="https://formsubmit.co/amandaptuar@gmail.com" method="POST" id="it-form">
+						<form action="https://formsubmit.co/matrikaventures2020@gmail.com" method="POST" id="it-form">
 							<input type="hidden" name="_next" value={typeof window !== 'undefined' ? window.location.origin + "/success" : "https://techops-global.com/success"} />
 							<input type="hidden" name="_subject" value="New Newsletter Subscription From Techops Global" />
 							<div className="form-box Subscribe wow animate__slideInRight">
