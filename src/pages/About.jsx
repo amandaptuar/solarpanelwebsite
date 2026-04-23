@@ -338,7 +338,7 @@ function About() {
 						{ img: 'john-huggins.jpeg', name: 'John L. Huggins', role: 'Executive Vice President', path: 'team', profileLink: '/john-huggins' },
 						{ img: 'teammate.jpeg', name: 'Alpha Karmoh Mohamed Lavalie', role: 'Strategic Partner & Trade Envoy', path: 'img', profileLink: '/alpha-lavalie' },
 						{ img: 'teammate2.png', name: 'Dr. Paul Charles Saffa', role: 'Director & Energy Policy Expert', path: 'img', profileLink: '/paul-saffa' },
-						{ img: 'teammate3.png', name: 'Ahmed Jumui Sumoi Fomba', role: 'Electrical Engineer', path: 'img', profileLink: '/ahmed-fomba' },
+						{ img: 'teammate3.png', name: 'Ahmed Jumui Sumoi Fomba', role: 'Electrical Engineer & Power Systems Specialist', path: 'img', profileLink: '/ahmed-fomba' },
 						{ img: 'teammate4.jpeg', name: 'Preetam Bagalkotkar', role: 'Chief Operations Officer', path: 'img', profileLink: '/preetam-bagalkotkar' },
 						{ img: 'teammate5.png', name: 'Moses P. Sawyerr', role: 'Director, Power Operations', path: 'img', profileLink: '/moses-sawyerr' },
 					].map((member) => (

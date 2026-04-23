@@ -154,40 +154,38 @@ function AhmedProfile() {
 					<h2 className="profile-title">Electrical Engineer & Power Systems Specialist</h2>
 					
 					<p className="profile-text">
-						Ahmed Jumui Sumoi Fomba is a highly skilled Electrical Engineer with over 10 years of experience in the power sector, specializing in power systems, grid interconnections, and renewable energy.
+						Ahmed Jumui Sumoi Fomba is a highly accomplished Electrical Engineer with over a decade of experience in the power and energy sector, specializing in power systems engineering, grid interconnections, and renewable energy integration. He combines strong technical expertise with practical project leadership, contributing to the design, development, and optimization of large-scale electrical infrastructure.
 					</p>
 
 					<div className="profile-list-section">
-						<h4>Contact Information</h4>
-						<ul>
-							<li><strong>Location:</strong> Columbus, Ohio, USA</li>
-							<li><strong>Phone:</strong> 906-299-2282</li>
-							<li><strong>Email:</strong> fombasl82@gmail.com</li>
-						</ul>
+						<h4>Professional Summary</h4>
+						<p className="profile-text">
+							Ahmed has a proven track record in delivering complex transmission and distribution projects, with hands-on experience across grid design, substation engineering, and renewable energy systems. His work focuses on enhancing grid reliability, improving operational efficiency, and supporting the transition toward sustainable energy solutions.
+						</p>
 
-						<h4>Expertise</h4>
+						<h4>Core Expertise</h4>
 						<ul>
-							<li>Power Systems & Grid Interconnections</li>
-							<li>Renewable Energy (Solar & BESS)</li>
+							<li>Power Systems Engineering & Grid Interconnections</li>
+							<li>Renewable Energy Integration (Solar PV & Battery Energy Storage Systems – BESS)</li>
+							<li>Electrical Grid & Substation Design</li>
 							<li>Project & Construction Management</li>
-							<li>Electrical Grid Design</li>
 							<li>Data Analysis & Technical Problem Solving</li>
 						</ul>
 
 						<h4>Professional Experience</h4>
 						<ul>
-							<li><strong>Project Lead (2020–2024):</strong> Led transmission & distribution projects for large-scale grid infrastructure (225kV, 66kV, 33kV).</li>
-							<li><strong>Planning Engineer (2015–2020):</strong> Designed substations and transmission systems, reducing operational costs by 20%.</li>
-							<li><strong>Freelance Consultant:</strong> Currently focusing on power system studies and utility project development.</li>
+							<li><strong>Project Lead (2020–2024):</strong> Led the execution of large-scale transmission and distribution projects, including 225kV, 66kV, and 33kV infrastructure, ensuring timely delivery, compliance, and operational efficiency.</li>
+							<li><strong>Planning Engineer (2015–2020):</strong> Designed and optimized substations and transmission systems, achieving a 20% reduction in operational costs through improved system planning and engineering efficiency.</li>
+							<li><strong>Freelance Consultant (Current):</strong> Provides specialized consulting in power system studies, grid optimization, and utility-scale project development, supporting clients in both conventional and renewable energy sectors.</li>
 						</ul>
-						
+
 						<h4>Education</h4>
 						<ul>
-							<li>Master’s in Engineering Management – Michigan Technological University (2025)</li>
-							<li>Master’s in Electrical Engineering – Universitas Diponegoro (2019)</li>
-							<li>Bachelor’s in Electrical & Electronic Engineering – University of Sierra Leone</li>
+							<li><strong>Master’s in Engineering Management:</strong> Michigan Technological University, USA (2025)</li>
+							<li><strong>Master’s in Electrical Engineering:</strong> Universitas Diponegoro, Indonesia (2019)</li>
+							<li><strong>Bachelor’s in Electrical & Electronic Engineering:</strong> University of Sierra Leone</li>
 						</ul>
-						
+
 						<h4>Certifications</h4>
 						<ul>
 							<li>Substation Design & Construction (2025)</li>
@@ -195,14 +193,21 @@ function AhmedProfile() {
 							<li>Solar PV Design & Installation (2021)</li>
 						</ul>
 
-						<h4>Tools & Technologies</h4>
+						<h4>Technical Tools</h4>
 						<p className="profile-text">
-							Proficient in ETAP, PVsyst, AutoCAD, Microsoft Project, MATLAB / Simulink, and Primavera P6.
+							Proficient in ETAP, PVsyst, AutoCAD, Microsoft Project, MATLAB/Simulink, and Primavera P6, enabling advanced system modeling, project planning, and performance optimization.
 						</p>
 
-						<h4>Memberships</h4>
+						<h4>Professional Memberships</h4>
 						<ul>
-							<li>Member of the National Society of Black Engineers</li>
+							<li>Member, National Society of Black Engineers (NSBE)</li>
+						</ul>
+
+						<h4>Location & Contact</h4>
+						<ul>
+							<li><strong>Location:</strong> Columbus, Ohio, USA</li>
+							<li><strong>Phone:</strong> +1 906-299-2282</li>
+							<li><strong>Email:</strong> fombasl82@gmail.com</li>
 						</ul>
 					</div>
 				</div>

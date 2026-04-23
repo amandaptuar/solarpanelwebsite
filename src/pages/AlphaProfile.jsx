@@ -154,36 +154,40 @@ function AlphaProfile() {
 					<h2 className="profile-title">Strategic Partner & Trade Envoy</h2>
 					
 					<p className="profile-text">
-						Alpha Karmoh Mohamed Lavalie is a Sierra Leonean trade, investment, and business development executive with experience spanning government, private-sector management, tax advisory, logistics, and international investment promotion.
+						Alpha Karmoh Mohamed Lavalie is a seasoned trade, investment, and business development executive from Sierra Leone, bringing a diverse portfolio of experience across government, private sector leadership, tax advisory, logistics, and international investment promotion. He has a proven track record of driving cross-border partnerships, facilitating trade, and positioning emerging markets for sustainable growth.
 					</p>
 
 					<div className="profile-list-section">
 						<h4>Current Role</h4>
 						<p className="profile-text">
-							He currently serves as a Trade Envoy for the Government of Sierra Leone, where he supports national trade interests, identifies investment opportunities, and collaborates with government ministries, departments, and agencies to position Sierra Leone as a competitive destination for foreign direct investment.
+							Alpha currently serves as a Trade Envoy for the Government of Sierra Leone, where he plays a pivotal role in advancing the country’s trade and investment agenda. In this capacity, he actively promotes Sierra Leone as a competitive and attractive destination for foreign direct investment (FDI), identifies strategic investment opportunities, and collaborates closely with key ministries, departments, and regulatory agencies to strengthen the national business ecosystem.
 						</p>
 
-						<h4>Experience</h4>
+						<h4>Professional Experience</h4>
 						<ul>
-							<li><strong>Managing Director:</strong> Led business operations, sales strategy, and stakeholder engagement at MANN SL Ltd.</li>
-							<li><strong>Tax Associate:</strong> Five years with KPMG Sierra Leone advising on tax compliance, audits, and regulatory obligations.</li>
-							<li><strong>Public Sector:</strong> Extensive experience in government relations and international investment promotion.</li>
+							<li><strong>Managing Director – MANN SL Ltd.</strong> Successfully led corporate operations, business development strategy, and stakeholder engagement, driving revenue growth and strengthening market positioning.</li>
+							<li><strong>Tax Associate – KPMG Sierra Leone</strong> Accumulated over five years of experience in tax advisory, compliance, audits, and regulatory frameworks, supporting both local and international clients.</li>
+							<li><strong>Public Sector & Investment Promotion</strong> Extensive involvement in government relations, trade facilitation, and international investment promotion initiatives, contributing to policy alignment and economic development.</li>
 						</ul>
-						
-						<h4>Expertise for TechOps Global</h4>
+
+						<h4>Core Expertise</h4>
 						<ul>
 							<li>Government Relations & Trade Facilitation</li>
 							<li>Investment Promotion & Strategic Partnerships</li>
-							<li>Stakeholder Engagement</li>
-							<li>Market Development across Sierra Leone & International Growth Markets</li>
+							<li>Stakeholder Engagement & Negotiation</li>
+							<li>Market Expansion in Sierra Leone & International Growth Markets</li>
 						</ul>
-						
+
 						<h4>Education & Leadership</h4>
 						<ul>
-							<li>Master’s Degree in Development Management (IPAM, University of Sierra Leone)</li>
-							<li>Bachelor of Arts in Political Science with Honours (Fourah Bay College)</li>
-							<li>Established the first Confucius Institute at Fourah Bay College in 2011</li>
+							<li><strong>Master’s Degree in Development Management</strong> Institute of Public Administration and Management (IPAM), University of Sierra Leone</li>
+							<li><strong>Bachelor of Arts (Hons.) in Political Science</strong> Fourah Bay College, University of Sierra Leone</li>
 						</ul>
+
+						<h4>Leadership Achievement</h4>
+						<p className="profile-text">
+							Instrumental in establishing the first Confucius Institute at Fourah Bay College in 2011, fostering international academic collaboration and cultural exchange.
+						</p>
 					</div>
 				</div>
 			</div>

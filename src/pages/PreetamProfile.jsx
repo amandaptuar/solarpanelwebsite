@@ -154,27 +154,46 @@ function PreetamProfile() {
 					<h2 className="profile-title">Chief Operations Officer</h2>
 					
 					<p className="profile-text">
-						Preetam Bagalkotkar is the Chief Operations Officer. He has successfully accomplished infrastructure development executive with deep expertise in strategic planning, project finance, EPC procurement, and operational planning across the renewable energy sector.
-					</p>
-
-					<p className="profile-text">
-						He brings over two decades of experience managing complex, multi-stakeholder programs — including oversight of federal programs exceeding $1 billion in scope — with a proven track record in institutional governance, procurement integrity, and large-scale program delivery.
+						Preetam Bagalkotkar serves as Chief Operations Officer, bringing over two decades of leadership in infrastructure development, with specialized expertise across renewable energy, strategic planning, project finance, EPC procurement, and large-scale operational delivery.
 					</p>
 
 					<div className="profile-list-section">
-						<h4>Expertise & Innovation</h4>
+						<h4>Professional Overview</h4>
 						<p className="profile-text">
-							A forward-thinking technologist, Mr. Bagalkotkar leads the integration of automation, AI-driven workflows, advanced battery storage, SCADA monitoring, and next-generation O&M platforms that push solar and BESS assets to their highest potential.
+							Mr. Bagalkotkar has an extensive track record of managing complex, multi-stakeholder programs at scale, including oversight of federal and institutional initiatives exceeding $1 billion in value. His experience spans end-to-end project lifecycle management—from financial structuring and procurement governance to execution and long-term operational optimization—ensuring efficiency, transparency, and measurable impact.
 						</p>
 
-						<h4>Global Frameworks</h4>
+						<h4>Operational Leadership & Expertise</h4>
+						<ul>
+							<li>Strategic Planning & Infrastructure Development</li>
+							<li>Project Finance & Investment Structuring</li>
+							<li>EPC Procurement & Contract Management</li>
+							<li>Large-Scale Program Execution & Delivery</li>
+							<li>Institutional Governance & Procurement Integrity</li>
+						</ul>
+
+						<h4>Technology & Innovation</h4>
 						<p className="profile-text">
-							Equally fluent in sovereign government engagement and multilateral institutional frameworks, he works directly with national ministries and aligns projects to the standards of institutions such as the World Bank and the United Nations Sustainable Development Goals.
+							A forward-looking leader, Mr. Bagalkotkar drives the adoption of advanced technologies across energy infrastructure. His work includes integrating:
+						</p>
+						<ul>
+							<li>AI-driven operational workflows</li>
+							<li>SCADA-based monitoring systems</li>
+							<li>Advanced Battery Energy Storage Systems (BESS)</li>
+							<li>Next-generation Operations & Maintenance (O&M) platforms</li>
+						</ul>
+						<p className="profile-text">
+							These innovations enhance performance, reliability, and lifecycle value of solar and energy assets.
 						</p>
 
-						<h4>Vision</h4>
+						<h4>Global Engagement & Frameworks</h4>
 						<p className="profile-text">
-							He is driven by the conviction that well-executed energy infrastructure is a generational investment — creating lasting economic opportunity, energy access, and resilience for the communities and nations that need it most.
+							With deep experience in international development environments, he actively collaborates with sovereign governments, national ministries, and multilateral institutions. His approach aligns projects with global best practices, including frameworks set by the World Bank and the United Nations Sustainable Development Goals (SDGs).
+						</p>
+
+						<h4>Leadership Vision</h4>
+						<p className="profile-text">
+							Mr. Bagalkotkar believes that well-executed energy infrastructure represents a generational investment—one that drives economic growth, expands energy access, and builds long-term resilience for communities and nations worldwide.
 						</p>
 					</div>
 				</div>

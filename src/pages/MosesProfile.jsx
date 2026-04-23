@@ -154,27 +154,37 @@ function MosesProfile() {
 					<h2 className="profile-title">Director, Power Operations</h2>
 					
 					<p className="profile-text">
-						Moses P. Sawyerr is a distinguished energy infrastructure and power operations executive with over 15 years of leadership experience. He specializes in large-scale power generation, industrial energy systems, and the integration of next-generation renewable technologies.
+						Moses P. Sawyerr is a seasoned energy infrastructure and power operations executive with over 15 years of leadership experience in power generation, industrial energy systems, and renewable energy integration. He is recognized for delivering high-performance energy solutions in complex, mission-critical environments where reliability, efficiency, and scalability are essential.
 					</p>
 
 					<div className="profile-list-section">
-						<h4>Expertise & Leadership</h4>
+						<h4>Core Expertise</h4>
 						<ul>
-							<li>Power generation & industrial energy systems</li>
-							<li>High-voltage distribution networks (up to 48kV)</li>
-							<li>Renewable energy integration (Solar PV & BESS)</li>
-							<li>Operational reliability & performance optimization</li>
-							<li>EPC coordination & vendor management</li>
+							<li>Power Generation & Industrial Energy Systems</li>
+							<li>High-Voltage Distribution Networks (up to 48kV)</li>
+							<li>Renewable Energy Integration (Solar PV & BESS)</li>
+							<li>Operational Reliability & Performance Optimization</li>
+							<li>EPC Coordination & Vendor Management</li>
 						</ul>
 
-						<h4>Experience</h4>
+						<h4>Professional Experience</h4>
 						<p className="profile-text">
-							Mr. Sawyerr has an extensive track record of leading complex operations, including the management of 28MW base-load power systems and the support of 40MW+ renewable energy programs involving Solar PV and Battery Energy Storage Systems (BESS). His expertise spans across complex industrial power environments where reliability and efficiency are mission-critical.
+							Mr. Sawyerr has successfully led and managed complex energy operations, including:
+						</p>
+						<ul>
+							<li>Oversight of 28MW base-load power generation systems, ensuring consistent and reliable energy supply in demanding industrial environments</li>
+							<li>Leadership support on 40MW+ renewable energy programs, integrating Solar PV and Battery Energy Storage Systems (BESS) into existing power infrastructure</li>
+							<li>Coordination with EPC contractors and vendors to ensure seamless project execution, compliance, and operational readiness</li>
+						</ul>
+
+						<h4>Leadership Approach</h4>
+						<p className="profile-text">
+							Known for his results-driven leadership style, Mr. Sawyerr emphasizes operational discipline, data-driven decision-making, and cross-functional collaboration to enhance system performance and long-term asset value.
 						</p>
 
 						<h4>Vision</h4>
 						<p className="profile-text">
-							Committed to advancing the energy transition, Moses focuses on bridging traditional power asset management with modern renewable infrastructure to drive sustainable economic growth and operational excellence.
+							He is committed to advancing the global energy transition by bridging traditional power systems with modern renewable technologies—delivering sustainable, efficient, and future-ready energy solutions that support economic growth and infrastructure resilience.
 						</p>
 					</div>
 				</div>

@@ -154,23 +154,23 @@ function SaffaProfile() {
 					<h2 className="profile-title">Director & Energy Policy Expert</h2>
 					
 					<p className="profile-text">
-						Rev. Ing. Dr. Paul Charles Saffa is an accomplished engineer, business executive, and clergyman with over two decades of experience in energy, infrastructure, and leadership.
+						Rev. Ing. Dr. Paul Charles Saffa is a distinguished engineer, business leader, and clergyman with over 20 years of experience spanning energy, infrastructure development, and strategic leadership. He brings a unique combination of technical expertise, public sector insight, and commercial acumen, with a strong focus on advancing sustainable energy solutions and large-scale infrastructure initiatives across Africa.
 					</p>
 
 					<div className="profile-list-section">
 						<h4>Professional Summary</h4>
 						<p className="profile-text">
-							His career spans senior roles as Country Manager for TRANSCO CLSG and Deputy Director in Sierra Leone’s Ministry of Energy, where he has led major cross-border electrification, renewable energy, and infrastructure projects in collaboration with international partners.
+							Dr. Saffa has held key leadership roles in both the public and private sectors, including serving as Country Manager for TRANSCO CLSG and Deputy Director at the Ministry of Energy, Sierra Leone. Throughout his career, he has successfully led complex, high-impact projects in cross-border electrification, renewable energy, and national infrastructure development, working closely with international development partners and regional institutions.
 						</p>
 
 						<h4>Experience & Expertise</h4>
 						<ul>
-							<li><strong>Project Leadership:</strong> Led major cross-border electrification and renewable energy projects.</li>
-							<li><strong>Government & Policy:</strong> Former Deputy Director in Sierra Leone’s Ministry of Energy with expertise in energy policy and infrastructure.</li>
-							<li><strong>Business Development:</strong> Extensive experience in sales and market expansion within Oil & Gas and Telecommunications sectors.</li>
-							<li><strong>Technical Proficiency:</strong> Specializes in mechanical engineering, renewable energy, and project management.</li>
+							<li><strong>Project Leadership</strong> Directed and delivered major cross-border electrification and renewable energy projects, contributing to regional power integration and energy access.</li>
+							<li><strong>Government & Energy Policy</strong> Former Deputy Director, Ministry of Energy, with deep expertise in policy formulation, regulatory frameworks, and national energy planning.</li>
+							<li><strong>Business Development & Commercial Strategy</strong> Proven track record in driving sales growth, market expansion, and strategic partnerships across the Oil & Gas and Telecommunications sectors.</li>
+							<li><strong>Technical & Engineering Excellence</strong> Specialized in Mechanical Engineering, Renewable Energy Systems, and Project Management, with the ability to bridge technical execution and strategic oversight.</li>
 						</ul>
-						
+
 						<h4>Education</h4>
 						<ul>
 							<li>Doctor of Business Administration (DBA)</li>
@@ -178,14 +178,20 @@ function SaffaProfile() {
 							<li>Renewable Energy & Environment</li>
 							<li>Business Administration</li>
 						</ul>
-						
-						<h4>Core Values</h4>
+
+						<h4>Core Competencies</h4>
 						<ul>
-							<li>Strategic Leadership in Energy Policy</li>
+							<li>Energy Policy & Strategic Leadership</li>
 							<li>Sustainable Infrastructure Development</li>
-							<li>International Collaboration & Partnerships</li>
-							<li>Commercial Operations & Market Growth</li>
+							<li>Cross-Border Energy Projects & Regional Integration</li>
+							<li>International Collaboration & Stakeholder Engagement</li>
+							<li>Commercial Operations & Market Expansion</li>
 						</ul>
+
+						<h4>Leadership Philosophy</h4>
+						<p className="profile-text">
+							Dr. Saffa is committed to driving sustainable development through innovative energy solutions, fostering international partnerships, and strengthening infrastructure systems that support long-term economic growth and energy security.
+						</p>
 					</div>
 				</div>
 			</div>
