@@ -500,7 +500,7 @@ function Home() {
 							<div className="choose-contact-title">
 								<h4>Make an Appointment</h4>
 							</div>
-							<form action="https://formsubmit.co/atul@techops-global.com" method="POST" id="it-form">
+							<form action="https://formsubmit.co/matrikaventures2020@gmail.com" method="POST" id="it-form">
 								<div className="row">
 									<div className="col-lg-12">
 										<div className="form-box">
@@ -773,7 +773,7 @@ function Home() {
 					</div>
 					<div className="col-lg-5 col-md-6">
 						<div className="choose-contact-box appointment ">
-							<form action="https://formsubmit.co/atul@techops-global.com" method="POST" id="appt-form">
+							<form action="https://formsubmit.co/matrikaventures2020@gmail.com" method="POST" id="appt-form">
 								<div className="row">
 									<div className="col-lg-12">
 										<div className="form-box appointment">
@@ -860,7 +860,7 @@ function Home() {
 						</div>
 					</div>
 					<div className="col-lg-6 col-md-6">
-						<form action="https://formsubmit.co/atul@techops-global.com" method="POST" id="contact-form">
+						<form action="https://formsubmit.co/matrikaventures2020@gmail.com" method="POST" id="contact-form">
 							<div className="form-box Subscribe ">
 								<input type="text" name="email" placeholder="Your Email Address..." />
 								<button type="submit" className="icons">

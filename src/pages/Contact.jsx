@@ -109,7 +109,7 @@ function Contact() {
 					{/* Right — Form */}
 					<div className="col-lg-6 col-md-12">
 						<div className="choose-contact-box contact-inner">
-							<form action="https://formsubmit.co/atul@techops-global.com" method="POST" id="contact-page-form">
+							<form action="https://formsubmit.co/matrikaventures2020@gmail.com" method="POST" id="contact-page-form">
 								<div className="row">
 									<div className="col-lg-6 col-md-6">
 										<div className="form-box contact-inner">

@@ -179,7 +179,7 @@ function Services() {
 							<div className="choose-contact-title">
 								<h4>Make an Appointment</h4>
 							</div>
-							<form action="https://formsubmit.co/atul@techops-global.com" method="POST" id="it-form">
+							<form action="https://formsubmit.co/matrikaventures2020@gmail.com" method="POST" id="it-form">
 								<div className="row">
 									<div className="col-lg-12">
 										<div className="form-box">
@@ -244,7 +244,7 @@ function Services() {
 						</div>
 					</div>
 					<div className="col-lg-6 col-md-6">
-						<form action="https://formsubmit.co/atul@techops-global.com" method="POST" id="contact-form">
+						<form action="https://formsubmit.co/matrikaventures2020@gmail.com" method="POST" id="contact-form">
 							<div className="form-box Subscribe wow animate__slideInRight">
 								<input type="text" name="email" placeholder="Your Email Address..." />
 								<button type="submit" className="icons">

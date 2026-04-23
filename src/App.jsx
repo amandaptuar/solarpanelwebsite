@@ -6,6 +6,10 @@ import Services from "./pages/Services";
 import Team from "./pages/Team";
 import FounderProfile from "./pages/FounderProfile";
 import JohnProfile from "./pages/JohnProfile";
+import AlphaProfile from "./pages/AlphaProfile";
+import SaffaProfile from "./pages/SaffaProfile";
+import AhmedProfile from "./pages/AhmedProfile";
+import PreetamProfile from "./pages/PreetamProfile";
 import Contact from "./pages/Contact";
 import logoImg from "./assets/image.png";
 
@@ -102,6 +106,10 @@ function Layout() {
       <Route path="/team" element={<Team />} />
       <Route path="/founder" element={<FounderProfile />} />
       <Route path="/john-huggins" element={<JohnProfile />} />
+      <Route path="/alpha-lavalie" element={<AlphaProfile />} />
+      <Route path="/paul-saffa" element={<SaffaProfile />} />
+      <Route path="/ahmed-fomba" element={<AhmedProfile />} />
+      <Route path="/preetam-bagalkotkar" element={<PreetamProfile />} />
       <Route path="/contact" element={<Contact />} />
     </Routes>
 
@@ -212,6 +220,10 @@ function Layout() {
     {/*==================================================*/}
     {/* End scrollup section Area */}
     {/*==================================================*/}
+    {/* WhatsApp Floating Button */}
+    <a href="https://wa.me/12403513209" className="whatsapp-float" target="_blank" rel="noopener noreferrer">
+      <i className="fab fa-whatsapp"></i>
+    </a>
     </>
   );
 }

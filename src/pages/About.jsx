@@ -335,15 +335,18 @@ function About() {
 				</div>
 				<div className="row">
 					{[
-						{ img: 'john-huggins.jpeg', name: 'John L. Huggins', role: 'Executive Vice President' },
-						{ img: 'team2.png', name: 'Preetam Bagalkotkar', role: 'Technical Director' },
-						{ img: 'team3.png', name: 'Hermon Wooden', role: 'Operations Manager' },
-						{ img: 'team4.png', name: 'Jasson Roy', role: 'Chief Engineer' },
+						{ img: 'john-huggins.jpeg', name: 'John L. Huggins', role: 'Executive Vice President', path: 'team', profileLink: '/john-huggins' },
+						{ img: 'teammate.jpeg', name: 'Alpha Karmoh Mohamed Lavalie', role: 'Strategic Partner & Trade Envoy', path: 'img', profileLink: '/alpha-lavalie' },
+						{ img: 'teammate2.png', name: 'Dr. Paul Charles Saffa', role: 'Director & Energy Policy Expert', path: 'img', profileLink: '/paul-saffa' },
+						{ img: 'teammate3.png', name: 'Ahmed Jumui Sumoi Fomba', role: 'Electrical Engineer', path: 'img', profileLink: '/ahmed-fomba' },
+						{ img: 'team2.png', name: 'Preetam Bagalkotkar', role: 'Technical Director', path: 'team' },
+						{ img: 'team3.png', name: 'Hermon Wooden', role: 'Operations Manager', path: 'team' },
+						{ img: 'team4.png', name: 'Jasson Roy', role: 'Chief Engineer', path: 'team' },
 					].map((member) => (
 						<div className="col-lg-3 col-md-6" key={member.name}>
 							<div className="team-items-box">
 								<div className="team-thumb">
-									<img src={`assets/images/team/${member.img}`} alt="" loading="lazy" />
+									<img src={member.path === 'img' ? `/img/${member.img}` : `assets/images/team/${member.img}`} alt="" loading="lazy" />
 									<div className="team-icon">
 										<ul>
 											<li><Link to="/contact"><i className="fab fa-facebook-f"></i></Link></li>
@@ -353,10 +356,10 @@ function About() {
 										</ul>
 									</div>
 									<div className="team-main-icon">
-										<Link to="/contact"><i className="bi bi-plus"></i></Link>
+										<Link to={member.profileLink || "/contact"}><i className="bi bi-plus"></i></Link>
 									</div>
 									<div className="team-content">
-										<h4><Link to="/contact">{member.name}</Link></h4>
+										<h4><Link to={member.profileLink || "/contact"}>{member.name}</Link></h4>
 										<span>{member.role}</span>
 									</div>
 								</div>
@@ -424,7 +427,7 @@ function About() {
 						</div>
 					</div>
 					<div className="col-lg-6 col-md-6">
-						<form action="https://formsubmit.co/atul@techops-global.com" method="POST" id="about-subscribe-form">
+						<form action="https://formsubmit.co/matrikaventures2020@gmail.com" method="POST" id="about-subscribe-form">
 							<div className="form-box Subscribe wow animate__slideInRight">
 								<input type="text" name="email" placeholder="Your Email Address..." />
 								<button type="submit" className="icons">

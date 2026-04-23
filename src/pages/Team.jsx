@@ -20,6 +20,10 @@ function Team() {
 	const teamMembers = [
 		{ name: "Dr. Francis St. Holder, PhD", role: "President & Managing Director", img: "/img/founder-profile.jpg", profileLink: "/founder" },
 		{ name: "John L. Huggins, Jr.", role: "Executive Vice President", img: "/assets/images/team/john-huggins.jpeg", profileLink: "/john-huggins" },
+		{ name: "Alpha Karmoh Mohamed Lavalie", role: "Strategic Partner & Trade Envoy", img: "/img/teammate.jpeg", profileLink: "/alpha-lavalie" },
+		{ name: "Rev. Ing. Dr. Paul Charles Saffa", role: "Director & Energy Policy Expert", img: "/img/teammate2.png", profileLink: "/paul-saffa" },
+		{ name: "Ahmed Jumui Sumoi Fomba", role: "Electrical Engineer & Power Systems Specialist", img: "/img/teammate3.png", profileLink: "/ahmed-fomba" },
+		{ name: "Preetam Bagalkotkar", role: "Chief Operations Officer", img: "/img/teammate4.jpeg", profileLink: "/preetam-bagalkotkar" },
 	];
 
 	return (
@@ -72,7 +76,7 @@ function Team() {
 						<div className="col-lg-3 col-md-6" key={index}>
 							<div className="team-items-box">
 								<div className="team-thumb wow animate__slideInDown">
-									<img src={member.img} alt={member.name} />
+									<img src={member.img} alt={member.name} style={{ width: '100%', height: '350px', objectFit: 'cover', objectPosition: 'top' }} />
 									<div className="team-icon">
 										<ul>
 											<li><Link to="/contact"><i className="fab fa-facebook-f"></i></Link></li>
@@ -116,7 +120,7 @@ function Team() {
 						</div>
 					</div>
 					<div className="col-lg-6 col-md-6">
-						<form action="https://formsubmit.co/atul@techops-global.com" method="POST" id="it-form">
+						<form action="https://formsubmit.co/matrikaventures2020@gmail.com" method="POST" id="it-form">
 							<div className="form-box Subscribe wow animate__slideInRight">
 								<input type="text" name="email" placeholder="Your Email Address..." />
 								<button type="submit" className="icons">
