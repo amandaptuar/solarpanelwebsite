@@ -11,8 +11,11 @@ import SaffaProfile from "./pages/SaffaProfile";
 import AhmedProfile from "./pages/AhmedProfile";
 import PreetamProfile from "./pages/PreetamProfile";
 import MosesProfile from "./pages/MosesProfile";
+import RobinProfile from "./pages/RobinProfile";
+import SaioProfile from "./pages/SaioProfile";
 import Contact from "./pages/Contact";
 import Success from "./pages/Success";
+import Videos from "./pages/Videos";
 import logoImg from "./assets/image.png";
 
 // Inner layout that re-initializes jQuery theme on every route change
@@ -81,6 +84,7 @@ function Layout() {
                   <li><Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>About</Link></li>
                   <li><Link to="/services" onClick={() => setIsMobileMenuOpen(false)}>Services</Link></li>
                   <li><Link to="/team" onClick={() => setIsMobileMenuOpen(false)}>Team</Link></li>
+                  <li><Link to="/videos" onClick={() => setIsMobileMenuOpen(false)}>Videos</Link></li>
                   <li><Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contacts</Link></li>
                 </ul>
               </div>
@@ -113,7 +117,10 @@ function Layout() {
       <Route path="/ahmed-fomba" element={<AhmedProfile />} />
       <Route path="/preetam-bagalkotkar" element={<PreetamProfile />} />
       <Route path="/moses-sawyerr" element={<MosesProfile />} />
+      <Route path="/robin-mansaray" element={<RobinProfile />} />
+      <Route path="/saio-conteh" element={<SaioProfile />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/videos" element={<Videos />} />
     </Routes>
 
     {/*==================================================*/}
@@ -128,7 +135,7 @@ function Layout() {
                 <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'60px', width:'auto', borderRadius: '6px', display: 'block', overflow: 'hidden'}} loading="lazy" /></Link>
               </div>
               <div className="footer-wiget-text">
-                <p>TechOps-Global Sierra Leone, a subsidiary of TechOps-Global Group LTD, is a renewable energy firm dedicated to providing sustainable power solutions and enhancing economic development.</p>
+                <p>TechOps Global delivers scalable, technology-driven solutions for governments, utilities, and industries across the USA, Dubai, and Sierra Leone.</p>
               </div>
               <div className="footer-wiget-social">
                 <ul>

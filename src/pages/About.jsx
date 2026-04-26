@@ -106,7 +106,7 @@ function About() {
 								<h4>Our Introduction</h4>
 							</div>
 							<div className="about-section-main-title">
-								<h2>We're Developing Future Solar Solutions </h2>
+								<h2>TechOps Global is shaping the future of solar energy </h2>
 							</div>
 						</div>
 						{/* tab */}
@@ -341,6 +341,7 @@ function About() {
 						{ img: 'teammate3.png', name: 'Ahmed Jumui Sumoi Fomba', role: 'Electrical Engineer & Power Systems Specialist', path: 'img', profileLink: '/ahmed-fomba' },
 						{ img: 'teammate4.jpeg', name: 'Preetam Bagalkotkar', role: 'Chief Operations Officer', path: 'img', profileLink: '/preetam-bagalkotkar' },
 						{ img: 'teammate5.png', name: 'Moses P. Sawyerr', role: 'Director, Power Operations', path: 'img', profileLink: '/moses-sawyerr' },
+						{ img: 'teammate6.png', name: 'Robin Fola Mansaray', role: 'Renewable Energy Specialist & Policy Advisor', path: 'img', profileLink: '/robin-mansaray' },
 					].map((member) => (
 						<div className="col-lg-3 col-md-6" key={member.name}>
 							<div className="team-items-box">

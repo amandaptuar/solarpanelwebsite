@@ -142,7 +142,7 @@ function FounderProfile() {
 			<div className="profile-card">
 				<img 
 					className="profile-photo" 
-					src="/img/founder-profile.jpg" 
+					src="/img/newfounder.jpeg" 
 					alt="Dr. Francis St. Holder, PhD" 
 				/>
 				<div className="profile-bio">

@@ -148,8 +148,7 @@ function Home() {
 								<h4>Our Introduction</h4>
 							</div>
 							<div className="about-section-main-title ">
-								<h2>We're Developing Future
-									Solar Solutions </h2>
+								<h2>TechOps Global is shaping the future of solar energy </h2>
 							</div>
 						</div>
 						{/* tab */}
@@ -165,7 +164,7 @@ function Home() {
 								<div className="tabs_item" >
 									<div className="tabs-items-content">
 										<div className="about-content-discription ">
-											<p>TechOps Global is an international project development, technology, and infrastructure firm. We focus on designing bankable, scalable solutions for governments, utilities, and industrial operators in West Africa.</p>
+											<p>TechOps Global is a global infrastructure and technology partner committed to developing bankable, scalable projects across energy, utilities, and industrial sectors. Operating in the USA, Dubai, and Sierra Leone, we enable governments and enterprises to build future-ready infrastructure with strong financial viability and long-term impact.</p>
 										</div>
 										<div className="row">
 											<div className="col-lg-6 col-md-6 col-sm-6 col-6">
@@ -470,7 +469,7 @@ function Home() {
 								<h2>Energy Strategy</h2>
 							</div>
 							<div className="about-discription">
-								<p>Techops Global will analyses technical, commercial, and financial prefeasibility & feasibility for our partners. We develop optimized technical concepts and negotiate commercial Power Purchase Agreements (PPA) to ensure Solar Solutions Reliability and performance. </p>
+								<p>TechOps Global conducts comprehensive technical, commercial, and financial pre-feasibility and feasibility analyses for its partners. We develop optimized engineering solutions and lead the negotiation of bankable Power Purchase Agreements (PPAs), ensuring high reliability, performance, and long-term sustainability of solar energy projects.</p>
 							</div>
 						</div>
 						<div className="choose-us-content ">

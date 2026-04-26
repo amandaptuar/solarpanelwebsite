@@ -119,16 +119,16 @@ function Services() {
 		{/*==================================================*/}
 		{/* Start Solar Panel  Call Do Action  Section */}
 		{/*==================================================*/}
-		<div className="call-do-action-section">
+		 <div className="call-do-action-section" style={{ height: '450px', backgroundImage: 'url("/assets/images/resource/call-do-bg.jpg")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
 			<div className="container">
 				<div className="row">
 					<div className="col-lg-12">
-						{/* Background Image Section - Video Removed */}
-						<div style={{ height: '140px' }}></div>
+						{/* Background Image restored via CSS class or inline if needed */}
+						<div style={{ height: '200px' }}></div>
 					</div>
 				</div>
 			</div>
-		</div>
+		 </div>
 		{/*==================================================*/}
 		{/* End Solar Panel  Call Do Action  Section */}
 		{/*==================================================*/}
@@ -136,9 +136,9 @@ function Services() {
 		{/*==================================================*/}
 		{/* Start Solar Panel  Choose Us  Section */}
 		{/*==================================================*/}
-		<div className="choose-us-section">
+		 <div className="choose-us-section" style={{ marginTop: '-220px', position: 'relative', zIndex: 10 }}>
 			<div className="container">
-				<div className="row choose">
+				<div className="row choose" style={{ backgroundImage: 'url("/assets/images/resource/choose-bg.png")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
 					<div className="col-lg-6 col-md-12">
 						<div className="section-title">
 							<div className="section-sub-title choose">

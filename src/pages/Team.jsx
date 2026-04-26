@@ -18,13 +18,15 @@ function Team() {
 	}, []);
 
 	const teamMembers = [
-		{ name: "Dr. Francis St. Holder, PhD", role: "President & Managing Director", img: "/img/founder-profile.jpg", profileLink: "/founder" },
+		{ name: "Dr. Francis St. Holder, PhD", role: "President & Managing Director", img: "/img/newfounder.jpeg", profileLink: "/founder" },
 		{ name: "John L. Huggins, Jr.", role: "Executive Vice President", img: "/assets/images/team/john-huggins.jpeg", profileLink: "/john-huggins" },
 		{ name: "Alpha Karmoh Mohamed Lavalie", role: "Strategic Partner & Trade Envoy", img: "/img/teammate.jpeg", profileLink: "/alpha-lavalie" },
 		{ name: "Rev. Ing. Dr. Paul Charles Saffa", role: "Director & Energy Policy Expert", img: "/img/teammate2.png", profileLink: "/paul-saffa" },
 		{ name: "Ahmed Jumui Sumoi Fomba", role: "Electrical Engineer & Power Systems Specialist", img: "/img/teammate3.png", profileLink: "/ahmed-fomba" },
 		{ name: "Preetam Bagalkotkar", role: "Chief Operations Officer", img: "/img/teammate4.jpeg", profileLink: "/preetam-bagalkotkar" },
 		{ name: "Moses P. Sawyerr", role: "Director, Power Operations", img: "/img/teammate5.png", profileLink: "/moses-sawyerr" },
+		{ name: "Robin Fola Mansaray", role: "Renewable Energy Specialist & Policy Advisor", img: "/img/teammate6.png", profileLink: "/robin-mansaray" },
+		{ name: "Saio Millicent Conteh", role: "Barrister & Solicitor", img: "/img/teammate7.jpeg", profileLink: "/saio-conteh" },
 	];
 
 	return (
