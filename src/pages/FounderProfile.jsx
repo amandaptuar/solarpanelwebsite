@@ -55,7 +55,7 @@ function FounderProfile() {
 			}
 			.profile-card {
 				display: grid;
-				grid-template-columns: 400px 1fr;
+				grid-template-columns: 500px 1fr;
 				gap: 50px;
 				background: #ffffff;
 				border-radius: 24px;
@@ -69,11 +69,10 @@ function FounderProfile() {
 			.profile-photo {
 				width: 100%;
 				height: 100%;
-				min-height: 550px;
-				object-fit: cover;
-				object-position: center top;
+				min-height: 100%;
+				object-fit: contain;
 				display: block;
-				background: #f8f9fa;
+				background: #ffffff;
 			}
 			.profile-bio {
 				padding: 50px 50px 50px 0;
