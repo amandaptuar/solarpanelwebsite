@@ -1,7 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "../Team.css";
+import { teamMembers } from "../data/TeamData";
 
 function Team() {
+	const [selectedMember, setSelectedMember] = useState(null);
+
 	// Re-initialize jQuery theme plugins when this page mounts
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -17,17 +21,17 @@ function Team() {
 		return () => clearTimeout(timer);
 	}, []);
 
-	const teamMembers = [
-		{ name: "Dr. Francis St. Holder, PhD", role: "President & Managing Director", img: "/img/newfounder.jpeg", profileLink: "/founder" },
-		{ name: "John L. Huggins, Jr.", role: "Executive Vice President", img: "/assets/images/team/john-huggins.jpeg", profileLink: "/john-huggins" },
-		{ name: "Alpha Karmoh Mohamed Lavalie", role: "Strategic Partner & Trade Envoy", img: "/img/teammate.jpeg", profileLink: "/alpha-lavalie" },
-		{ name: "Rev. Ing. Dr. Paul Charles Saffa", role: "Director & Energy Policy Expert", img: "/img/teammate2.png", profileLink: "/paul-saffa" },
-		{ name: "Ahmed Jumui Sumoi Fomba", role: "Electrical Engineer & Power Systems Specialist", img: "/img/teammate3.png", profileLink: "/ahmed-fomba" },
-		{ name: "Preetam Bagalkotkar", role: "Chief Operations Officer", img: "/img/teammate4.jpeg", profileLink: "/preetam-bagalkotkar" },
-		{ name: "Moses P. Sawyerr", role: "Director, Power Operations", img: "/img/teammate5.png", profileLink: "/moses-sawyerr" },
-		{ name: "Robin Fola Mansaray", role: "Renewable Energy Specialist & Policy Advisor", img: "/img/teammate6.png", profileLink: "/robin-mansaray" },
-		{ name: "Saio Millicent Conteh", role: "Barrister & Solicitor", img: "/img/teammate7.jpeg", profileLink: "/saio-conteh" },
-	];
+	// Handle body scroll locking when modal is open
+	useEffect(() => {
+		if (selectedMember) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = 'unset';
+		}
+		return () => {
+			document.body.style.overflow = 'unset';
+		};
+	}, [selectedMember]);
 
 	return (
 		<>
@@ -53,9 +57,6 @@ function Team() {
 				</div>
 			</div>
 		</div>
-		{/*==================================================*/}
-		{/*End Solar Panel  slider Section  */}
-		{/*==================================================*/}
 
 		{/*==================================================*/}
 		{/* Start Solar Panel  Team  Section */}
@@ -79,27 +80,27 @@ function Team() {
 				</div>
 				<div className="row">
 					{teamMembers.map((member, index) => (
-						<div className="col-lg-3 col-md-6" key={index}>
-							<div className="team-items-box">
-								<div className="team-thumb wow animate__slideInDown">
-									<img src={member.img} alt={member.name} style={{ width: '100%', height: '350px', objectFit: 'cover', objectPosition: 'top' }} />
-									<div className="team-icon">
-										<ul>
-											<li><Link to="/contact"><i className="fab fa-facebook-f"></i></Link></li>
-											<li><Link to="/contact"><i className="fab fa-twitter"></i></Link></li>
-											<li><Link to="/contact"><i className="fab fa-vimeo-v"></i></Link></li>
-											<li><Link to="/contact"><i className="fab fa-instagram"></i></Link></li>
-										</ul>
-									</div>
-									<div className="team-content">
-										<h4><Link to={member.profileLink || "/contact"}>{member.name}</Link></h4>
-										<span>{member.role}</span>
-										{member.profileLink && (
-											<div className="mt-2">
-												<Link to={member.profileLink} style={{ color: '#fba500', fontWeight: 'bold', fontSize: '13px', textTransform: 'uppercase' }}>View Profile <i className="bi bi-arrow-right"></i></Link>
+						<div className="col-lg-3 col-md-6 mb-4" key={index}>
+							<div className="rh-team-card wow animate__slideInUp">
+								<div className="rh-team-img-wrapper">
+									<div className="rh-team-img-inner">
+										<div className="rh-team-img-front">
+											<img src={member.img} alt={member.name} className="rh-team-img" />
+										</div>
+										<div className="rh-team-img-back">
+											<div className="rh-quote-content">
+												<p className="rh-quote-text">"{member.quote}"</p>
+												<span className="rh-quote-author">— {member.name.split(' ')[0]}</span>
 											</div>
-										)}
+										</div>
 									</div>
+								</div>
+								<div className="rh-team-info">
+									<h4 className="rh-team-name">{member.name}</h4>
+									<span className="rh-team-role">{member.role}</span>
+									<button onClick={() => setSelectedMember(member)} className="rh-team-btn" style={{ cursor: 'pointer' }}>
+										MEET {member.name.split(' ')[0].toUpperCase()} <i className="bi bi-arrow-right"></i>
+									</button>
 								</div>
 							</div>
 						</div>
@@ -107,9 +108,6 @@ function Team() {
 				</div>
 			</div>
 		</div>
-		{/*==================================================*/}
-		{/* End Solar Panel  Team  Section */}
-		{/*==================================================*/}
 
 		{/*==================================================*/}
 		{/* Start Solar Panel  Subscribe  Section */}
@@ -145,9 +143,52 @@ function Team() {
 				</div>
 			</div>
 		</div>
+
 		{/*==================================================*/}
-		{/* End Solar Panel  Subscribe  Section */}
-		{/*==================================================*/} 
+		{/* Modal Overlay */}
+		{/*==================================================*/}
+		{selectedMember && (
+			<div className={`rh-modal-overlay ${selectedMember ? 'active' : ''}`} onClick={() => setSelectedMember(null)}>
+				<div className="rh-modal-container" onClick={e => e.stopPropagation()}>
+					<button className="rh-modal-close" onClick={() => setSelectedMember(null)}>
+						<i className="bi bi-x-lg"></i>
+					</button>
+					<div className="rh-modal-grid">
+						<div className="rh-modal-left">
+							<img src={selectedMember.img} alt={selectedMember.name} />
+						</div>
+						<div className="rh-modal-right">
+							<div className="rh-modal-header">
+								<h2>{selectedMember.name}</h2>
+								<h3>{selectedMember.role}</h3>
+							</div>
+							<div className="rh-modal-body">
+								{selectedMember.bio}
+							</div>
+						</div>
+					</div>
+					<div className="rh-modal-footer">
+						<div className="rh-modal-footer-title">
+							By The Numbers:
+						</div>
+						<div className="rh-modal-footer-stats">
+							<div className="rh-stat">
+								<strong>85°</strong>
+								<span>ideal outdoor<br/>temperature</span>
+							</div>
+							<div className="rh-stat">
+								<strong>30+</strong>
+								<span>years of<br/>experience</span>
+							</div>
+							<div className="rh-stat">
+								<strong>6</strong>
+								<span>cups of coffee<br/>per day</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		)}
 		</>
 	);
 }

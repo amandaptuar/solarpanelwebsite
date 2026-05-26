@@ -4,15 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Team from "./pages/Team";
-import FounderProfile from "./pages/FounderProfile";
-import JohnProfile from "./pages/JohnProfile";
-import AlphaProfile from "./pages/AlphaProfile";
-import SaffaProfile from "./pages/SaffaProfile";
-import AhmedProfile from "./pages/AhmedProfile";
-import PreetamProfile from "./pages/PreetamProfile";
-import MosesProfile from "./pages/MosesProfile";
-import RobinProfile from "./pages/RobinProfile";
-import SaioProfile from "./pages/SaioProfile";
+
 import Contact from "./pages/Contact";
 import Success from "./pages/Success";
 import Videos from "./pages/Videos";
@@ -54,49 +46,57 @@ function Layout() {
     {/*==================================================*/}
     {/* Start Solar Panel  Header Section */}
     {/*==================================================*/}
-    <header className="solar-header-section" id="sticky-header">
-      <div className="container">
-        <div className="row align-items-center justify-content-between">
-          <div className="col-8 col-md-3 col-lg-3">
-            <div className="logo" style={{ padding: '15px 0' }}>
-              <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'150px', width:'auto', borderRadius: '10px', display: 'block', overflow: 'hidden'}} loading="lazy" /></Link>
+    <header className="custom-dark-navbar" id="sticky-header" style={{position: 'absolute', top: 0, left: 0, width: '100%', zIndex: 1000, background: 'transparent'}}>
+      <div className="container-fluid px-4 px-lg-5">
+        <div className="row align-items-center justify-content-between py-3">
+          {/* Logo */}
+          <div className="col-auto">
+            <div className="logo">
+              <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{height: '45px', width: 'auto'}} loading="lazy" /></Link>
             </div>
           </div>
 
-          {/* Mobile Toggle Button */}
-          <div className="col-4 col-md-9 d-lg-none text-end">
+          {/* Desktop Nav Links */}
+          <div className="col-auto d-none d-lg-flex">
+            <nav className="d-flex align-items-center gap-4 custom-nav-links">
+              <Link to="/">Home</Link>
+              <Link to="/about">About</Link>
+              <Link to="/services">Services</Link>
+              <Link to="/team">Team</Link>
+              <Link to="/videos">Videos</Link>
+              <Link to="/contact">Contacts</Link>
+            </nav>
+          </div>
+
+          {/* Right Area: Button & Hamburger */}
+          <div className="col-auto d-flex align-items-center gap-3">
+            <Link to="/contact" className="btn-nav-outline d-none d-md-inline-flex">
+              GET A QUOTE
+            </Link>
+            
             <button 
-              className="mobile-nav-toggle" 
+              className="mobile-nav-toggle ms-3" 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle navigation"
               style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}
             >
-              <i className={isMobileMenuOpen ? "bi bi-x" : "bi bi-list"} style={{ fontSize: '2.5rem', color: '#1c1632' }}></i>
+              <i className={isMobileMenuOpen ? "bi bi-x" : "bi bi-list"} style={{ fontSize: '2rem', color: '#fff' }}></i>
             </button>
           </div>
+        </div>
+      </div>
 
-          {/* Collapsible Wrapper for Mobile / display:contents for Desktop */}
-          <div className={`mobile-nav-wrapper ${isMobileMenuOpen ? 'open' : ''}`}>
-            <div className="col-12 col-lg-6">
-              <div className="solar-menu">
-                <ul>
-                  <li><Link to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
-                  <li><Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>About</Link></li>
-                  <li><Link to="/services" onClick={() => setIsMobileMenuOpen(false)}>Services</Link></li>
-                  <li><Link to="/team" onClick={() => setIsMobileMenuOpen(false)}>Team</Link></li>
-                  <li><Link to="/videos" onClick={() => setIsMobileMenuOpen(false)}>Videos</Link></li>
-                  <li><Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contacts</Link></li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-12 col-lg-3 pb-4 pb-lg-0">
-              <div className="solar-search-button">
-                <div className="solar-btn">
-                  <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Get A Quote <i className="bi bi-arrow-right"></i></Link>
-                </div>
-              </div>
-            </div>
-          </div>
+      {/* Mobile Nav Wrapper (Hidden on Desktop) */}
+      <div className={`mobile-nav-wrapper ${isMobileMenuOpen ? 'open' : ''} d-lg-none`} style={{background: '#161821'}}>
+        <div className="solar-menu" style={{padding: '20px'}}>
+          <ul style={{listStyle:'none', padding:0, margin:0, display:'flex', flexDirection:'column', gap:'15px'}}>
+            <li><Link to="/" onClick={() => setIsMobileMenuOpen(false)} style={{color:'#fff', textDecoration:'none', fontWeight: 600}}>Home</Link></li>
+            <li><Link to="/about" onClick={() => setIsMobileMenuOpen(false)} style={{color:'#fff', textDecoration:'none', fontWeight: 600}}>About</Link></li>
+            <li><Link to="/services" onClick={() => setIsMobileMenuOpen(false)} style={{color:'#fff', textDecoration:'none', fontWeight: 600}}>Services</Link></li>
+            <li><Link to="/team" onClick={() => setIsMobileMenuOpen(false)} style={{color:'#fff', textDecoration:'none', fontWeight: 600}}>Team</Link></li>
+            <li><Link to="/videos" onClick={() => setIsMobileMenuOpen(false)} style={{color:'#fff', textDecoration:'none', fontWeight: 600}}>Videos</Link></li>
+            <li><Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} style={{color:'#fff', textDecoration:'none', fontWeight: 600}}>Contacts</Link></li>
+          </ul>
         </div>
       </div>
     </header>
@@ -110,15 +110,7 @@ function Layout() {
       <Route path="/about" element={<About />} />
       <Route path="/services" element={<Services />} />
       <Route path="/team" element={<Team />} />
-      <Route path="/founder" element={<FounderProfile />} />
-      <Route path="/john-huggins" element={<JohnProfile />} />
-      <Route path="/alpha-lavalie" element={<AlphaProfile />} />
-      <Route path="/paul-saffa" element={<SaffaProfile />} />
-      <Route path="/ahmed-fomba" element={<AhmedProfile />} />
-      <Route path="/preetam-bagalkotkar" element={<PreetamProfile />} />
-      <Route path="/moses-sawyerr" element={<MosesProfile />} />
-      <Route path="/robin-mansaray" element={<RobinProfile />} />
-      <Route path="/saio-conteh" element={<SaioProfile />} />
+
       <Route path="/contact" element={<Contact />} />
       <Route path="/videos" element={<Videos />} />
     </Routes>
@@ -126,70 +118,85 @@ function Layout() {
     {/*==================================================*/}
     {/* Start Solar Panel  Footer  Section */}
     {/*==================================================*/} 
-     <footer className="footer-section">
+     <footer className="footer-section" style={{background: '#0b0c10', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '60px', paddingBottom: '20px', fontFamily: "'Inter', sans-serif"}}>
       <div className="container">
-        <div className="row">
-          <div className="col-lg-3 col-md-6">
-            <div className="footer-wiget ">
-              <div className="footer-wiget-log">
-                <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'60px', width:'auto', borderRadius: '6px', display: 'block', overflow: 'hidden'}} loading="lazy" /></Link>
-              </div>
-              <div className="footer-wiget-text">
-                <p>TechOps Global is a forward-thinking energy solutions company committed to building reliable and sustainable power systems for businesses, communities, and governments.</p>
-              </div>
-              <div className="footer-wiget-social">
-                <ul>
-                  <li><Link to="/contact"><i className="fab fa-facebook-f"></i></Link></li>
-                  <li><Link to="/contact"><i className="fab fa-twitter"></i></Link></li>
-                  <li><Link to="/contact"><i className="fab fa-vimeo-v"></i></Link></li>
-                  <li><Link to="/contact"><i className="fab fa-instagram"></i></Link></li>
-                </ul>
-              </div>
+        <div className="row mb-5">
+          {/* Column 1: Logo & About */}
+          <div className="col-lg-3 col-md-6 mb-4 mb-lg-0">
+            <div className="footer-logo mb-4">
+              <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{height: '40px'}} loading="lazy" /></Link>
+            </div>
+            <p className="text-gray" style={{fontSize: '0.85rem', lineHeight: '1.6', marginBottom: '20px'}}>
+              AI-powered energy infrastructure developer specializing in behind-the-meter solar, battery storage, and VPP solutions across the PJM markets.
+            </p>
+            <div className="d-flex gap-3">
+              <Link to="#" className="text-gray" style={{fontSize: '1.2rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#fff'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}><i className="bi bi-linkedin"></i></Link>
+              <Link to="#" className="text-gray" style={{fontSize: '1.2rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#fff'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}><i className="bi bi-twitter-x"></i></Link>
+              <Link to="#" className="text-gray" style={{fontSize: '1.2rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#fff'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}><i className="bi bi-instagram"></i></Link>
+              <Link to="#" className="text-gray" style={{fontSize: '1.2rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#fff'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}><i className="bi bi-youtube"></i></Link>
             </div>
           </div>
-          <div className="col-lg-2 col-md-6">
-            <div className="footer-wiget ">
-              <div className="footer-wiget-title">
-                <h4>Industry Sectors</h4>
-              </div>
-              <div className="footer-wiget-menu">
-                <ul>
-                  <li><Link to="/services">Healthcare</Link></li>
-                  <li><Link to="/services">Education</Link></li>
-                  <li><Link to="/services">Government</Link></li>
-                  <li><Link to="/services">Finance</Link></li>
-                  <li><Link to="/services">Commercial</Link></li>
-                </ul>
-              </div>
-            </div>
+
+          {/* Column 2: Solutions */}
+          <div className="col-lg-2 col-md-6 mb-4 mb-lg-0">
+            <h6 className="text-white mb-4" style={{fontSize: '0.8rem', letterSpacing: '1px'}}>SOLUTIONS</h6>
+            <ul style={{listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px'}}>
+              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Warehouse & Logistics</Link></li>
+              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Idle Land</Link></li>
+              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Parking Lots</Link></li>
+              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Battery Storage</Link></li>
+              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>VPP & Markets</Link></li>
+            </ul>
           </div>
-          <div className="col-lg-4 col-md-6">
-            <div className="footer-wiget-quick-contanct ">
-              <div className="footer-wiget-title">
-                <h4>Get In Touch</h4>
-              </div>
-              <div className="footer-wiget-contact-menu">
-                <ul>
-                  <li>USA: 7454 Old Alexandria Ferry Road Clinton, Md. 20744</li>
-                  <li>SL: 2 Taylor Lewis Drive Freetown, Sierra Leone</li>
-                  <li style={{ whiteSpace: 'nowrap' }}>USA: +1 (240) 351-3209 | SL: +232 33 448 065</li>
-                  <li><Link to="/contact">info@techops-global.com</Link></li>
-                </ul>
-              </div>
-            </div>
+
+          {/* Column 3: Company */}
+          <div className="col-lg-2 col-md-4 mb-4 mb-lg-0">
+            <h6 className="text-white mb-4" style={{fontSize: '0.8rem', letterSpacing: '1px'}}>COMPANY</h6>
+            <ul style={{listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px'}}>
+              <li><Link to="/about" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>About Us</Link></li>
+              <li><Link to="/team" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Leadership</Link></li>
+              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Careers</Link></li>
+              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>News</Link></li>
+              <li><Link to="/contact" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Contact Us</Link></li>
+            </ul>
           </div>
-          <div className="col-lg-3">
-            <div className="footer-thumb ">
-              <img src="assets/images/resource/footer-thumb.png" alt="" loading="lazy" />
+
+          {/* Column 4: Resources */}
+          <div className="col-lg-2 col-md-4 mb-4 mb-lg-0">
+            <h6 className="text-white mb-4" style={{fontSize: '0.8rem', letterSpacing: '1px'}}>RESOURCES</h6>
+            <ul style={{listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px'}}>
+              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Case Studies</Link></li>
+              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Whitepapers</Link></li>
+              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Blog</Link></li>
+              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>FAQs</Link></li>
+              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Investor Relations</Link></li>
+            </ul>
+          </div>
+
+          {/* Column 5: Contact Us */}
+          <div className="col-lg-3 col-md-4">
+            <h6 className="text-white mb-4" style={{fontSize: '0.8rem', letterSpacing: '1px'}}>CONTACT US</h6>
+            <ul style={{listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px'}}>
+              <li className="text-gray" style={{fontSize: '0.85rem'}}>hello@techopsglobal.com</li>
+              <li className="text-gray" style={{fontSize: '0.85rem'}}><i className="bi bi-telephone text-white me-2"></i> (609) 555-0123</li>
+              <li className="text-gray" style={{fontSize: '0.85rem'}}><i className="bi bi-geo-alt text-white me-2"></i> Princeton, NJ</li>
+            </ul>
+            {/* Outline Map Placeholder */}
+            <div className="mt-4" style={{height: '100px', width: '100px', border: '1px dashed rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px', opacity: 0.5}}>
+               <i className="bi bi-map" style={{fontSize: '2rem', color: '#fff'}}></i>
             </div>
           </div>
         </div>
-        <div className="row footer-line">
-          <div className="col-lg-12">
-            <div className="copyright-text text-center">
-              <p>TechOps Global © 2026 All Rights Reserved</p>
-              <p style={{ marginTop: '10px', fontSize: '0.9rem', opacity: 0.8 }}>Renewable Energy | Industrial Power | Infrastructure Solutions</p>
-            </div>
+
+        {/* Footer Bottom */}
+        <div className="d-flex flex-column flex-md-row justify-content-between align-items-center pt-4" style={{borderTop: '1px solid rgba(255,255,255,0.05)'}}>
+          <p className="text-gray mb-3 mb-md-0" style={{fontSize: '0.8rem'}}>© 2025 TechOps Global. All rights reserved.</p>
+          <div className="d-flex gap-3">
+            <Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.8rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#fff'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Privacy Policy</Link>
+            <span className="text-gray" style={{fontSize: '0.8rem'}}>|</span>
+            <Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.8rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#fff'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Terms of Service</Link>
+            <span className="text-gray" style={{fontSize: '0.8rem'}}>|</span>
+            <Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.8rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#fff'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Sitemap</Link>
           </div>
         </div>
       </div>
