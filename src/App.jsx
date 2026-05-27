@@ -48,7 +48,7 @@ function Layout() {
     {/* Start Solar Panel  Header Section */}
     {/*==================================================*/}
     <header className="custom-dark-navbar" id="sticky-header" style={{position: 'absolute', top: 0, left: 0, width: '100%', zIndex: 1000, background: 'transparent'}}>
-      <div className="container-fluid px-4 px-lg-5">
+      <div className="container-fluid px-[50px]">
         <div className="row align-items-center justify-content-between py-3">
           {/* Logo */}
           <div className="col-auto">
@@ -67,22 +67,22 @@ function Layout() {
           {/* Desktop Nav Links */}
           <div className="col-auto d-none d-lg-flex">
             <nav className="d-flex align-items-center gap-4 custom-nav-links">
-              <Link to="/" className="text-white text-decoration-none uppercase tracking-wider hover-orange" style={{fontSize: '11px', fontWeight: '800'}}>
+              <Link to="/" className="text-white text-decoration-none uppercase tracking-wider hover-orange" style={{fontSize: '14px', fontWeight: '800'}}>
                 Home
               </Link>
-              <Link to="/about" className="text-white text-decoration-none uppercase tracking-wider hover-orange" style={{fontSize: '11px', fontWeight: '800'}}>
+              <Link to="/about" className="text-white text-decoration-none uppercase tracking-wider hover-orange" style={{fontSize: '14px', fontWeight: '800'}}>
                 About
               </Link>
-              <Link to="/services" className="text-white text-decoration-none uppercase tracking-wider hover-orange" style={{fontSize: '11px', fontWeight: '800'}}>
+              <Link to="/services" className="text-white text-decoration-none uppercase tracking-wider hover-orange" style={{fontSize: '14px', fontWeight: '800'}}>
                 Service
               </Link>
-              <Link to="/team" className="text-white text-decoration-none uppercase tracking-wider hover-orange" style={{fontSize: '11px', fontWeight: '800'}}>
+              <Link to="/team" className="text-white text-decoration-none uppercase tracking-wider hover-orange" style={{fontSize: '14px', fontWeight: '800'}}>
                 Team
               </Link>
-              <Link to="/videos" className="text-white text-decoration-none uppercase tracking-wider hover-orange" style={{fontSize: '11px', fontWeight: '800'}}>
+              <Link to="/videos" className="text-white text-decoration-none uppercase tracking-wider hover-orange" style={{fontSize: '14px', fontWeight: '800'}}>
                 Videos
               </Link>
-              <Link to="/contact" className="text-white text-decoration-none uppercase tracking-wider hover-orange" style={{fontSize: '11px', fontWeight: '800'}}>
+              <Link to="/contact" className="text-white text-decoration-none uppercase tracking-wider hover-orange" style={{fontSize: '14px', fontWeight: '800'}}>
                 Contact
               </Link>
             </nav>
@@ -97,7 +97,7 @@ function Layout() {
                 background: '#ff7a00',
                 border: '1px solid #ff7a00', 
                 color: '#000000', 
-                fontSize: '10px', 
+                fontSize: '14px', 
                 fontWeight: '800', 
                 letterSpacing: '1px', 
                 borderRadius: '4px'
@@ -163,14 +163,14 @@ function Layout() {
     {/*==================================================*/} 
     {location.pathname !== '/' && (
      <footer className="footer-section" style={{background: '#0b0c10', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '60px', paddingBottom: '20px', fontFamily: "'Inter', sans-serif"}}>
-      <div className="container-fluid px-4 px-xxl-5">
+      <div className="container-fluid px-[50px]">
         <div className="row mb-5">
           {/* Column 1: Logo & About */}
           <div className="col-lg-3 col-md-6 mb-4 mb-lg-0">
             <div className="footer-logo mb-4">
               <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{height: '40px'}} loading="lazy" /></Link>
             </div>
-            <p className="text-gray" style={{fontSize: '0.85rem', lineHeight: '1.6', marginBottom: '20px'}}>
+            <p className="text-gray" style={{fontSize: '14px', lineHeight: '1.6', marginBottom: '20px'}}>
               AI-powered energy infrastructure developer specializing in behind-the-meter solar, battery storage, and VPP solutions across the PJM markets.
             </p>
             <div className="d-flex gap-3">
@@ -183,47 +183,47 @@ function Layout() {
 
           {/* Column 2: Solutions */}
           <div className="col-lg-2 col-md-6 mb-4 mb-lg-0">
-            <h6 className="text-white mb-4" style={{fontSize: '0.8rem', letterSpacing: '1px'}}>SOLUTIONS</h6>
+            <h6 className="text-white mb-4" style={{fontSize: '14px', letterSpacing: '1px'}}>SOLUTIONS</h6>
             <ul style={{listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px'}}>
-              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Warehouse & Logistics</Link></li>
-              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Idle Land</Link></li>
-              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Parking Lots</Link></li>
-              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Battery Storage</Link></li>
-              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>VPP & Markets</Link></li>
+              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '14px', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Warehouse & Logistics</Link></li>
+              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '14px', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Idle Land</Link></li>
+              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '14px', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Parking Lots</Link></li>
+              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '14px', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Battery Storage</Link></li>
+              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '14px', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>VPP & Markets</Link></li>
             </ul>
           </div>
 
           {/* Column 3: Company */}
           <div className="col-lg-2 col-md-4 mb-4 mb-lg-0">
-            <h6 className="text-white mb-4" style={{fontSize: '0.8rem', letterSpacing: '1px'}}>COMPANY</h6>
+            <h6 className="text-white mb-4" style={{fontSize: '14px', letterSpacing: '1px'}}>COMPANY</h6>
             <ul style={{listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px'}}>
-              <li><Link to="/about" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>About Us</Link></li>
-              <li><Link to="/team" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Leadership</Link></li>
-              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Careers</Link></li>
-              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>News</Link></li>
-              <li><Link to="/contact" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Contact Us</Link></li>
+              <li><Link to="/about" className="text-gray text-decoration-none" style={{fontSize: '14px', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>About Us</Link></li>
+              <li><Link to="/team" className="text-gray text-decoration-none" style={{fontSize: '14px', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Leadership</Link></li>
+              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '14px', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Careers</Link></li>
+              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '14px', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>News</Link></li>
+              <li><Link to="/contact" className="text-gray text-decoration-none" style={{fontSize: '14px', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Contact Us</Link></li>
             </ul>
           </div>
 
           {/* Column 4: Resources */}
           <div className="col-lg-2 col-md-4 mb-4 mb-lg-0">
-            <h6 className="text-white mb-4" style={{fontSize: '0.8rem', letterSpacing: '1px'}}>RESOURCES</h6>
+            <h6 className="text-white mb-4" style={{fontSize: '14px', letterSpacing: '1px'}}>RESOURCES</h6>
             <ul style={{listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px'}}>
-              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Case Studies</Link></li>
-              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Whitepapers</Link></li>
-              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Blog</Link></li>
-              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>FAQs</Link></li>
-              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.85rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Investor Relations</Link></li>
+              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '14px', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Case Studies</Link></li>
+              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '14px', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Whitepapers</Link></li>
+              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '14px', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Blog</Link></li>
+              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '14px', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>FAQs</Link></li>
+              <li><Link to="#" className="text-gray text-decoration-none" style={{fontSize: '14px', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Investor Relations</Link></li>
             </ul>
           </div>
 
           {/* Column 5: Contact Us */}
           <div className="col-lg-3 col-md-4">
-            <h6 className="text-white mb-4" style={{fontSize: '0.8rem', letterSpacing: '1px'}}>CONTACT US</h6>
+            <h6 className="text-white mb-4" style={{fontSize: '14px', letterSpacing: '1px'}}>CONTACT US</h6>
             <ul style={{listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px'}}>
-              <li className="text-gray" style={{fontSize: '0.85rem'}}>hello@techopsglobal.com</li>
-              <li className="text-gray" style={{fontSize: '0.85rem'}}><i className="bi bi-telephone text-white me-2"></i> (609) 555-0123</li>
-              <li className="text-gray" style={{fontSize: '0.85rem'}}><i className="bi bi-geo-alt text-white me-2"></i> Princeton, NJ</li>
+              <li className="text-gray" style={{fontSize: '14px'}}>hello@techopsglobal.com</li>
+              <li className="text-gray" style={{fontSize: '14px'}}><i className="bi bi-telephone text-white me-2"></i> (609) 555-0123</li>
+              <li className="text-gray" style={{fontSize: '14px'}}><i className="bi bi-geo-alt text-white me-2"></i> Princeton, NJ</li>
             </ul>
             {/* Outline Map Placeholder */}
             <div className="mt-4" style={{height: '100px', width: '100px', border: '1px dashed rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px', opacity: 0.5}}>
@@ -234,13 +234,13 @@ function Layout() {
 
         {/* Footer Bottom */}
         <div className="d-flex flex-column flex-md-row justify-content-between align-items-center pt-4" style={{borderTop: '1px solid rgba(255,255,255,0.05)'}}>
-          <p className="text-gray mb-3 mb-md-0" style={{fontSize: '0.8rem'}}>© 2025 TechOps Global. All rights reserved.</p>
+          <p className="text-gray mb-3 mb-md-0" style={{fontSize: '14px'}}>© 2025 TechOps Global. All rights reserved.</p>
           <div className="d-flex gap-3">
-            <Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.8rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#fff'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Privacy Policy</Link>
-            <span className="text-gray" style={{fontSize: '0.8rem'}}>|</span>
-            <Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.8rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#fff'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Terms of Service</Link>
-            <span className="text-gray" style={{fontSize: '0.8rem'}}>|</span>
-            <Link to="#" className="text-gray text-decoration-none" style={{fontSize: '0.8rem', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#fff'} onMouseOut={(e)=>e.target.style.color='#9ca3af'}>Sitemap</Link>
+            <Link to="#" className="text-white text-decoration-none" style={{fontSize: '14px', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#fff'}>Privacy Policy</Link>
+            <span className="text-gray" style={{fontSize: '14px'}}>|</span>
+            <Link to="#" className="text-white text-decoration-none" style={{fontSize: '14px', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#fff'}>Terms of Service</Link>
+            <span className="text-gray" style={{fontSize: '14px'}}>|</span>
+            <Link to="#" className="text-white text-decoration-none" style={{fontSize: '14px', transition: 'color 0.3s'}} onMouseOver={(e)=>e.target.style.color='#f97316'} onMouseOut={(e)=>e.target.style.color='#fff'}>Sitemap</Link>
           </div>
         </div>
       </div>

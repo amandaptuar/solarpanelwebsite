@@ -46,7 +46,7 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-black/95 backdrop-blur-md border-b border-white/5 py-0.5" : "bg-[#05070a]/80 backdrop-blur-sm border-b border-white/10 py-1"}`}>
-      <div className="container mx-auto px-6 flex items-center justify-between">
+      <div className="w-full px-[50px] flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <img src={logoImg} alt="TechOps Global" className="h-2 object-contain" />
         </Link>
@@ -54,7 +54,7 @@ const Navbar = () => {
         {/* Desktop Links */}
         <div className="hidden lg:flex items-center gap-7">
           {navLinks.map((item) => (
-            <Link key={item.label} to="#" className="text-[12px] font-medium tracking-wide text-gray-300 hover:text-white transition-colors flex items-center gap-1">
+            <Link key={item.label} to="#" className="text-[14px] font-medium tracking-wide text-gray-300 hover:text-white transition-colors flex items-center gap-1">
               {item.label} {item.dropdown && <ChevronRight size={12} className="rotate-90 opacity-60" />}
             </Link>
           ))}
@@ -62,7 +62,7 @@ const Navbar = () => {
 
         {/* Right Nav */}
         <div className="hidden lg:flex items-center gap-6">
-          <Link to="/contact" className="px-5 py-2 rounded text-[11px] font-bold tracking-wider border border-white/30 hover:border-white text-white transition-all duration-300">
+          <Link to="/contact" className="px-5 py-2 rounded text-[14px] font-bold tracking-wider border border-white/30 hover:border-white text-white transition-all duration-300">
             GET SITE ASSESSMENT
           </Link>
           <button className="text-white hover:text-orange-500 transition-colors">
@@ -87,7 +87,7 @@ const Navbar = () => {
           >
             <div className="px-6 py-6 flex flex-col gap-4">
               {navLinks.map((item) => (
-                <Link key={item.label} to="#" className="text-lg font-medium text-gray-300 flex justify-between">
+                <Link key={item.label} to="#" className="text-[25px] font-medium text-gray-300 flex justify-between">
                   {item.label} {item.dropdown && <ChevronRight size={18} className="opacity-60" />}
                 </Link>
               ))}
@@ -120,17 +120,17 @@ export default function Home() {
           <div className="absolute top-1/3 right-0 w-[500px] h-[300px] bg-[#ff7a00]/10 blur-[150px] rounded-full pointer-events-none"></div>
         </div>
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="w-full px-[50px] relative z-10">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             {/* Left Content */}
-            <motion.div variants={fadeUp} initial="hidden" animate="visible" className="lg:col-span-6 pt-24 lg:pt-32 lg:-ml-8 xl:-ml-16">
-              <div className="mb-4 text-[#ff7a00] text-sm lg:text-[15px] font-bold tracking-[4px] uppercase">
+            <motion.div variants={fadeUp} initial="hidden" animate="visible" className="lg:col-span-6 pt-24 lg:pt-32 lg:-ml-8 xl:-ml-16 translate-x-[50px]">
+              <div className="mb-4 text-[#ff7a00] text-[20px] lg:text-[15px] font-bold tracking-[4px] uppercase">
                 AI POWER. REAL ESTATE. REAL REVENUE.
               </div>
-              <h1 className="text-5xl lg:text-[80px] font-bold leading-[1.05] tracking-wide mb-6 text-white">
+              <h1 className="text-[67px] lg:text-[80px] font-bold leading-[1.05] tracking-wide mb-6 text-white">
                 Turn Your PJM<br/>Real Estate Footprint<br/>into a <span className="text-[#ff7a00]">Zero-Capex<br/>Revenue Engine.</span>
               </h1>
-              <p className="text-lg lg:text-[22px] text-gray-300 mb-8 max-w-xl leading-relaxed font-light tracking-[0.5px]">
+              <p className="text-[25px] lg:text-[22px] text-gray-300 mb-8 max-w-xl leading-relaxed font-light tracking-[0.5px]">
                 Monetize your unused warehouse rooftops, vacant acreage, and parking lots in Pennsylvania, <span className="text-white font-semibold">New Jersey</span>, and <span className="text-white font-semibold">Maryland</span>. We deploy behind-the-meter solar and battery storage systems at <span className="text-white font-semibold">zero cost</span> to you, driving immediate energy savings and massive grid-balancing cash flow.
               </p>
               <div className="flex flex-wrap items-center gap-5">
@@ -156,8 +156,8 @@ export default function Home() {
                       <DollarSign size={20} />
                     </div>
                     <div>
-                      <h4 className="text-white font-bold mb-1 text-sm tracking-wide">ZERO CAPEX</h4>
-                      <p className="text-xs text-gray-400">We fund, build, own & operate.</p>
+                      <h4 className="text-white font-bold mb-1 text-[20px] tracking-wide">ZERO CAPEX</h4>
+                      <p className="text-[17px] text-gray-400">We fund, build, own & operate.</p>
                     </div>
                   </div>
                   
@@ -167,8 +167,8 @@ export default function Home() {
                       <Activity size={20} />
                     </div>
                     <div>
-                      <h4 className="text-white font-bold mb-1 text-sm tracking-wide">DUAL INCOME STREAM</h4>
-                      <p className="text-xs text-gray-400">Lease income + Energy savings<br/>& market revenue.</p>
+                      <h4 className="text-white font-bold mb-1 text-[20px] tracking-wide">DUAL INCOME STREAM</h4>
+                      <p className="text-[17px] text-gray-400">Lease income + Energy savings<br/>& market revenue.</p>
                     </div>
                   </div>
                   
@@ -178,8 +178,8 @@ export default function Home() {
                       <Zap size={20} />
                     </div>
                     <div>
-                      <h4 className="text-white font-bold mb-1 text-sm tracking-wide">PJM MARKET EXPOSURE</h4>
-                      <p className="text-xs text-gray-400">Tap into billions in grid-balancing<br/>opportunities.</p>
+                      <h4 className="text-white font-bold mb-1 text-[20px] tracking-wide">PJM MARKET EXPOSURE</h4>
+                      <p className="text-[17px] text-gray-400">Tap into billions in grid-balancing<br/>opportunities.</p>
                     </div>
                   </div>
                 </div>
@@ -190,11 +190,11 @@ export default function Home() {
       </section>
 
       {/* 2. DUAL BENEFIT FRAMEWORK */}
-      <section className="py-24 relative bg-[#05070a]">
-        <div className="container mx-auto px-6">
+      <section className="py-[60px] relative bg-[#05070a]">
+        <div className="w-full px-[50px]">
           <div className="flex items-center justify-center gap-6 mb-12">
             <div className="h-[1px] flex-1 max-w-[100px] bg-white/20"></div>
-            <h2 className="text-sm font-bold tracking-[3px] text-white uppercase">THE DUAL-BENEFIT FRAMEWORK</h2>
+            <h2 className="text-[20px] font-bold tracking-[3px] text-white uppercase">THE DUAL-BENEFIT FRAMEWORK</h2>
             <div className="h-[1px] flex-1 max-w-[100px] bg-white/20"></div>
           </div>
 
@@ -213,7 +213,7 @@ export default function Home() {
                 </div>
                 <div className="pt-1">
                   <h3 className="text-[15px] font-bold text-white mb-2 uppercase tracking-wide">1. GUARANTEED LEASE INCOME</h3>
-                  <p className="text-gray-400 text-base leading-relaxed">Predictable land/roof rental payments<br/>over a 15–20 year term.</p>
+                  <p className="text-gray-400 text-[22px] leading-relaxed">Predictable land/roof rental payments<br/>over a 15–20 year term.</p>
                 </div>
               </div>
 
@@ -224,7 +224,7 @@ export default function Home() {
                 </div>
                 <div className="pt-1">
                   <h3 className="text-[15px] font-bold text-white mb-2 uppercase tracking-wide">2. BEHIND-THE-METER (BTM) PEAK SHAVING</h3>
-                  <p className="text-gray-400 text-base leading-relaxed">Shield your facility from PJM's exploding<br/>capacity pass-through costs (30%+<br/>of corporate electric bills).</p>
+                  <p className="text-gray-400 text-[22px] leading-relaxed">Shield your facility from PJM's exploding<br/>capacity pass-through costs (30%+<br/>of corporate electric bills).</p>
                 </div>
               </div>
             </div>
@@ -246,7 +246,7 @@ export default function Home() {
                   </div>
                   <div className="flex flex-col text-left">
                     <h4 className="text-[15px] font-bold text-white mb-1 leading-tight">{stat.val}</h4>
-                    <p className="text-[11px] text-gray-400 leading-relaxed whitespace-pre-line">{stat.desc}</p>
+                    <p className="text-[14px] text-gray-400 leading-relaxed whitespace-pre-line">{stat.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -256,10 +256,10 @@ export default function Home() {
       </section>
 
       {/* 3. PROPERTY TYPE CARDS */}
-      <section className="py-24 bg-[#0a0c10] relative border-t border-white/5">
-        <div className="container mx-auto px-6">
+      <section className="py-[60px] bg-[#0a0c10] relative border-t border-white/5">
+        <div className="w-full px-[50px]">
           <div className="flex items-center justify-start gap-6 mb-12">
-            <h2 className="text-sm font-bold tracking-[2px] text-white uppercase">TAILORED SOLUTIONS FOR EVERY PROPERTY TYPE</h2>
+            <h2 className="text-[20px] font-bold tracking-[2px] text-white uppercase">TAILORED SOLUTIONS FOR EVERY PROPERTY TYPE</h2>
             <div className="h-[1px] flex-1 bg-white/10 max-w-2xl"></div>
           </div>
 
@@ -275,7 +275,7 @@ export default function Home() {
                 points: ["Zero roof penetrations", "Preserve warranties", "100,000+ sq ft of roof monetized", "Containerized battery storage"]
               },
               {
-                img: "https://images.unsplash.com/photo-1509391366360-12009a349c89?q=80&w=600",
+                img: "/demo/buffer1.png",
                 icon: <TreePine size={20} />,
                 color: "text-[#8dff4d] border-[#8dff4d]/30",
                 title: "IDLE LAND &\nBUFFER ACREAGE",
@@ -284,7 +284,7 @@ export default function Home() {
                 points: ["Ground-mounted solar + storage", "Bypass long utility interconnection", "Plug into local distribution grids", "Operate as a Virtual Power Plant (VPP)"]
               },
               {
-                img: "https://images.unsplash.com/photo-1594818821905-24b31b029532?q=80&w=600",
+                img: "/demo/ChatGPT%20Image%20May%2027,%202026,%2005_06_12%20PM.png",
                 icon: <CarFront size={20} />,
                 color: "text-[#8dff4d] border-[#8dff4d]/30",
                 title: "COMMERCIAL\nPARKING LOTS",
@@ -298,7 +298,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: i * 0.15 }} viewport={{ once: true }}
                 className="group bg-[#111318] rounded-xl overflow-hidden border border-white/5 transition-all duration-300 flex flex-col relative"
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-72 overflow-hidden">
                   <img src={card.img} alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" />
                 </div>
                 <div className="p-8 pt-10 flex-1 flex flex-col relative">
@@ -308,18 +308,18 @@ export default function Home() {
                   </div>
                   
                   <div className="mb-4">
-                    <h3 className="text-lg font-bold text-white mb-2 whitespace-pre-line leading-tight uppercase">{card.title}</h3>
-                    <span className="text-[11px] font-bold tracking-widest text-[#ff7a00] uppercase">{card.loc}</span>
+                    <h3 className="text-[25px] font-bold text-white mb-2 whitespace-pre-line leading-tight uppercase">{card.title}</h3>
+                    <span className="text-[14px] font-bold tracking-widest text-[#ff7a00] uppercase">{card.loc}</span>
                   </div>
-                  <p className="text-white font-medium mb-6 text-base whitespace-pre-line">{card.desc}</p>
+                  <p className="text-white font-medium mb-6 text-[22px] whitespace-pre-line">{card.desc}</p>
                   <ul className="space-y-3 mb-8 flex-1">
                     {card.points.map((pt, j) => (
-                      <li key={j} className="flex items-start gap-3.5 text-sm text-gray-400">
+                      <li key={j} className="flex items-start gap-3.5 text-[20px] text-gray-400">
                         <CheckCircle2 size={18} fill="#8dff4d" stroke="#111318" strokeWidth={2.5} className="mt-0.5 shrink-0 drop-shadow-[0_0_5px_rgba(141,255,77,0.3)]" /> {pt}
                       </li>
                     ))}
                   </ul>
-                  <Link to="#" className="inline-flex items-center gap-2 text-[11px] font-bold text-orange-custom uppercase tracking-wider transition-colors group/link mt-auto">
+                  <Link to="#" className="inline-flex items-center gap-2 text-[20px] font-bold text-orange-custom uppercase tracking-wider transition-colors group/link mt-auto pt-6">
                     EXPLORE SOLUTION <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
                   </Link>
                 </div>
@@ -330,39 +330,42 @@ export default function Home() {
       </section>
 
       {/* 4. AI PLATFORM */}
-      <section className="py-24 bg-[#05070a] relative border-t border-white/5 overflow-hidden">
-        <div className="w-full px-[20px] relative z-10">
+      <section className="py-[60px] bg-[#05070a] relative border-t border-white/5 overflow-hidden">
+        <div className="w-full px-[50px] relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}
-            className="bg-[#05070a] rounded-2xl shadow-2xl flex flex-col lg:flex-row overflow-hidden w-full mx-auto"
+            className="bg-[#0b0d13] border border-white/5 rounded-2xl shadow-2xl flex flex-col lg:flex-row overflow-hidden w-full mx-auto"
           >
             {/* Left */}
-            <div className="lg:w-[45%] p-10 lg:p-14 flex flex-col justify-center">
-              <div className="mb-4 text-[#ff7a00] text-xs font-bold tracking-[2px] uppercase">
-                HOW IT WORKS
-              </div>
-              <h2 className="text-3xl lg:text-[40px] font-bold text-white mb-6 leading-[1.15]">
-                AI-Powered VPP Platform.<br/>Autonomous. Intelligent.<br/>Profitable.
-              </h2>
-              <p className="text-[15px] text-gray-400 mb-8 leading-relaxed font-light">
-                Our proprietary AI platform continuously analyzes market prices, weather, grid conditions, and facility loads to autonomously decide the most profitable actions.
-              </p>
-              <ul className="space-y-4 mb-10">
-                {[
-                  "Forecast generation, load & market prices",
-                  "Optimize battery charge/discharge",
-                  "Reduce peak demand automatically",
-                  "Sell into PJM markets at the right time",
-                  "Maximize revenue. Minimize risk."
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3.5 text-gray-300 text-[14px] font-medium tracking-wide">
-                    <CheckCircle2 size={20} fill="#8dff4d" stroke="#05070a" strokeWidth={2.5} className="shrink-0 drop-shadow-[0_0_5px_rgba(141,255,77,0.3)]" /> {item}
-                  </li>
-                ))}
-              </ul>
+            <div className="lg:w-[45%] p-10 lg:p-14 flex flex-col justify-between h-full">
               <div>
-                <Link to="/about" className="px-6 py-3 rounded-lg border border-[#ff7a00] hover:bg-[#ff7a00]/10 text-white font-bold text-[11px] tracking-wider uppercase transition-all inline-flex items-center gap-2 w-fit">
-                  VIEW PLATFORM <span className="text-[#ff7a00] font-sans text-sm ml-1">→</span>
+                <div className="mb-4 text-[#ff7a00] text-[17px] font-bold tracking-[2px] uppercase">
+                  HOW IT WORKS
+                </div>
+                <h2 className="text-[42px] lg:text-[40px] font-bold text-white mb-6 leading-[1.15]">
+                  AI-Powered VPP Platform.<br/>Autonomous. Intelligent.<br/>Profitable.
+                </h2>
+                <p className="text-[20px] text-gray-400 mb-8 leading-relaxed font-light">
+                  Our proprietary AI platform continuously analyzes market prices, weather patterns, grid conditions, and facility loads in real-time. By leveraging advanced machine learning models, it autonomously executes the most profitable actions—dispatching energy seamlessly without disrupting your daily operations.
+                </p>
+                <ul className="space-y-5 mb-10">
+                  {[
+                    "Forecast generation, facility load & market prices",
+                    "Dynamically optimize battery charge/discharge",
+                    "Reduce peak demand charges automatically",
+                    "Sell stored energy into PJM markets at peak rates",
+                    "Maximize passive revenue while minimizing risk",
+                    "Real-time anomaly detection and reporting"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-4 text-gray-300 text-[18px] font-medium tracking-wide">
+                      <CheckCircle2 size={24} fill="#8dff4d" stroke="#0b0d13" strokeWidth={2} className="shrink-0 drop-shadow-[0_0_5px_rgba(141,255,77,0.3)]" /> {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mt-auto pt-6">
+                <Link to="/about" className="px-8 py-4 rounded-lg border border-[#ff7a00] hover:bg-[#ff7a00]/10 text-white font-bold text-[16px] tracking-wider uppercase transition-all inline-flex items-center gap-2 w-fit">
+                  VIEW PLATFORM <span className="text-[#ff7a00] font-sans text-[20px] ml-1">→</span>
                 </Link>
               </div>
             </div>
@@ -371,7 +374,7 @@ export default function Home() {
             <div className="lg:w-[55%] flex flex-col md:flex-row font-sans border-l border-white/5 bg-[#0b0d13]">
               {/* Sidebar */}
               <div className="w-16 md:w-48 bg-[#07090e] border-r border-white/5 p-4 flex flex-col hidden sm:flex shrink-0">
-                <div className="text-white font-bold text-base tracking-tight mb-8 hidden md:flex items-center gap-1.5">
+                <div className="text-white font-bold text-[22px] tracking-tight mb-8 hidden md:flex items-center gap-1.5">
                   TECHOPS AI <div className="w-1.5 h-1.5 bg-[#8dff4d] rounded-full mb-1"></div>
                 </div>
                 <div className="flex flex-col gap-1.5">
@@ -388,7 +391,7 @@ export default function Home() {
                   ].map((item, i) => (
                     <div key={i} className={`flex items-center gap-2.5 px-3 py-2 rounded-lg cursor-pointer transition-colors ${item.active ? 'text-[#ff7a00] font-bold bg-[#ff7a00]/10' : 'text-gray-500 hover:text-gray-300'}`}>
                       {item.icon}
-                      <span className={`text-xs hidden md:block ${item.active ? 'font-bold' : 'font-medium'}`}>{item.label}</span>
+                      <span className={`text-[17px] hidden md:block ${item.active ? 'font-bold' : 'font-medium'}`}>{item.label}</span>
                     </div>
                   ))}
                 </div>
@@ -398,10 +401,10 @@ export default function Home() {
               <div className="flex-1 p-5 flex flex-col bg-[#0b0d13] gap-4 overflow-hidden">
                 {/* Header Row */}
                 <div className="flex justify-between items-center">
-                  <h3 className="text-base font-bold text-white">Real-Time Overview</h3>
+                  <h3 className="text-[22px] font-bold text-white">Real-Time Overview</h3>
                   <div className="flex items-center gap-2 bg-[#12141a] px-3 py-1.5 rounded-lg border border-white/5">
-                    <span className="text-[10px] text-gray-500 uppercase tracking-wider font-semibold">System Status</span>
-                    <span className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-[#8dff4d]/10 text-[#8dff4d] text-[10px] font-bold border border-[#8dff4d]/20">
+                    <span className="text-[14px] text-gray-500 uppercase tracking-wider font-semibold">System Status</span>
+                    <span className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-[#8dff4d]/10 text-[#8dff4d] text-[14px] font-bold border border-[#8dff4d]/20">
                       <div className="w-1.5 h-1.5 bg-[#8dff4d] rounded-full shadow-[0_0_5px_rgba(141,255,77,0.5)]"></div> OPTIMAL
                     </span>
                   </div>
@@ -416,8 +419,8 @@ export default function Home() {
                     { l: "Live Generation", v: "12.7", u: "MW" }
                   ].map((s, i) => (
                     <div key={i} className="bg-[#12141a] border border-white/5 rounded-xl p-3 flex flex-col">
-                      <div className="text-[10px] text-gray-500 mb-1 font-medium">{s.l}</div>
-                      <div className="text-xl font-bold text-white leading-none">{s.v} <span className="text-[10px] font-normal text-gray-400 ml-0.5">{s.u}</span></div>
+                      <div className="text-[14px] text-gray-500 mb-1 font-medium">{s.l}</div>
+                      <div className="text-[28px] font-bold text-white leading-none">{s.v} <span className="text-[14px] font-normal text-gray-400 ml-0.5">{s.u}</span></div>
                     </div>
                   ))}
                 </div>
@@ -427,8 +430,8 @@ export default function Home() {
                   {/* Line Chart Panel */}
                   <div className="lg:col-span-2 bg-[#12141a] border border-white/5 rounded-xl p-4 flex flex-col relative">
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-3">
-                       <div className="text-[11px] text-white font-semibold">Power Flow</div>
-                       <div className="flex flex-wrap justify-end gap-2 text-[9px] text-gray-400 font-medium mt-2 md:mt-0">
+                       <div className="text-[14px] text-white font-semibold">Power Flow</div>
+                       <div className="flex flex-wrap justify-end gap-2 text-[14px] text-gray-400 font-medium mt-2 md:mt-0">
                          <span className="flex items-center gap-1"><div className="w-1.5 h-1.5 bg-[#ff7a00] rounded-full"></div> Solar Generation</span>
                          <span className="flex items-center gap-1"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Facility Load</span>
                          <span className="flex items-center gap-1"><div className="w-1.5 h-1.5 bg-[#8dff4d] rounded-full"></div> Battery Charge</span>
@@ -450,15 +453,15 @@ export default function Home() {
                         <path fill="none" stroke="#8dff4d" strokeWidth="2" strokeDasharray="4" d="M0,120 L100,120 L150,50 L200,120 L300,120" />
                       </svg>
                     </div>
-                    <div className="flex justify-between text-[9px] text-gray-500 mt-1.5 font-medium">
+                    <div className="flex justify-between text-[14px] text-gray-500 mt-1.5 font-medium">
                        <span>00:00</span><span>04:00</span><span>08:00</span><span>12:00</span><span>16:00</span><span>20:00</span><span>24:00</span>
                     </div>
                   </div>
 
                   {/* Donut Chart Panel */}
                   <div className="col-span-1 bg-[#12141a] border border-white/5 rounded-xl p-4 flex flex-col">
-                     <div className="text-[11px] text-white font-semibold mb-1">Revenue Today</div>
-                     <div className="text-xl font-bold text-white leading-none mb-3">$128,540</div>
+                     <div className="text-[14px] text-white font-semibold mb-1">Revenue Today</div>
+                     <div className="text-[28px] font-bold text-white leading-none mb-3">$128,540</div>
                      
                      <div className="flex justify-center mb-3">
                        <svg viewBox="0 0 36 36" className="w-16 h-16">
@@ -470,7 +473,7 @@ export default function Home() {
                        </svg>
                      </div>
 
-                     <div className="mt-auto flex flex-col gap-1 text-[8px] text-gray-400 font-medium">
+                     <div className="mt-auto flex flex-col gap-1 text-[14px] text-gray-400 font-medium">
                         <div className="flex justify-between items-center"><span><span className="inline-block w-1.5 h-1.5 rounded-full bg-[#ff7a00] mr-1.5"></span>Energy Arbitrage</span><span className="text-white">45%</span></div>
                         <div className="flex justify-between items-center"><span><span className="inline-block w-1.5 h-1.5 rounded-full bg-blue-500 mr-1.5"></span>Demand Response</span><span className="text-white">25%</span></div>
                         <div className="flex justify-between items-center"><span><span className="inline-block w-1.5 h-1.5 rounded-full bg-[#8dff4d] mr-1.5"></span>Capacity Market</span><span className="text-white">20%</span></div>
@@ -483,31 +486,31 @@ export default function Home() {
                 <div className="bg-[#12141a] border border-white/5 rounded-xl p-3 px-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shrink-0">
                   <div className="flex flex-wrap items-center gap-6 flex-1">
                      <div>
-                        <div className="text-[9px] text-gray-500 uppercase font-semibold mb-1">AI Dispatch Status</div>
-                        <span className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-[#8dff4d]/10 text-[#8dff4d] text-[10px] font-bold border border-[#8dff4d]/20">
+                        <div className="text-[14px] text-gray-500 uppercase font-semibold mb-1">AI Dispatch Status</div>
+                        <span className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-[#8dff4d]/10 text-[#8dff4d] text-[14px] font-bold border border-[#8dff4d]/20">
                           <div className="w-1.5 h-1.5 bg-[#8dff4d] rounded-full shadow-[0_0_5px_rgba(141,255,77,0.5)]"></div> ACTIVE
                         </span>
                      </div>
                      <div className="w-[1px] h-8 bg-white/5 hidden md:block"></div>
                      <div>
-                        <div className="text-[9px] text-gray-500 uppercase font-semibold mb-0.5">Next Action</div>
-                        <div className="text-white text-[11px] font-bold">Discharge Battery 2.4 MW</div>
-                        <div className="text-[9px] text-gray-400 mt-0.5">Market Price: $82.67/MWh</div>
+                        <div className="text-[14px] text-gray-500 uppercase font-semibold mb-0.5">Next Action</div>
+                        <div className="text-white text-[14px] font-bold">Discharge Battery 2.4 MW</div>
+                        <div className="text-[14px] text-gray-400 mt-0.5">Market Price: $82.67/MWh</div>
                      </div>
                      <div className="w-[1px] h-8 bg-white/5 hidden md:block"></div>
                      <div>
-                        <div className="text-[9px] text-gray-500 uppercase font-semibold mb-0.5">Next 5 Min Forecast</div>
-                        <div className="text-[#ff7a00] text-[11px] font-bold flex items-center gap-1">
+                        <div className="text-[14px] text-gray-500 uppercase font-semibold mb-0.5">Next 5 Min Forecast</div>
+                        <div className="text-[#ff7a00] text-[14px] font-bold flex items-center gap-1">
                           High Price Event
                         </div>
-                        <div className="text-[9px] text-gray-400 mt-0.5">Increase Export</div>
+                        <div className="text-[14px] text-gray-400 mt-0.5">Increase Export</div>
                      </div>
                   </div>
                   <div className="flex items-center gap-2 border border-white/5 bg-[#12141a] px-2.5 py-1.5 rounded-lg shrink-0">
                      <Leaf size={12} className="text-[#8dff4d]" />
                      <div>
-                        <div className="text-[8px] text-gray-400 uppercase font-semibold leading-none mb-0.5">CO₂ Offset Today</div>
-                        <div className="text-white text-[11px] font-bold leading-none mt-1">28.4 Tons</div>
+                        <div className="text-[14px] text-gray-400 uppercase font-semibold leading-none mb-0.5">CO₂ Offset Today</div>
+                        <div className="text-white text-[14px] font-bold leading-none mt-1">28.4 Tons</div>
                      </div>
                   </div>
                 </div>
@@ -518,25 +521,25 @@ export default function Home() {
       </section>
 
       {/* 5. CTA BANNER */}
-      <section className="py-24 bg-[#05070a] relative border-t border-white/5">
-        <div className="container mx-auto px-6 relative z-10">
+      <section className="py-[60px] bg-[#05070a] relative border-t border-white/5">
+        <div className="w-full px-[50px] relative z-10">
           <div className="bg-[#111318] border border-white/5 rounded p-12 lg:p-14 flex flex-col lg:flex-row items-center justify-between gap-10 relative overflow-hidden">
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+            <div className="absolute inset-0 bg-cover bg-center opacity-50" style={{ backgroundImage: "url('/demo/background.png')" }}></div>
             <div className="absolute inset-0 bg-gradient-to-r from-[#111318] via-[#111318]/90 to-[#111318]/50"></div>
             <div className="absolute top-0 right-0 w-[400px] h-full bg-gradient-to-l from-[#ff7a00]/20 to-transparent pointer-events-none"></div>
 
             <div className="lg:w-1/2 relative z-10">
-              <h2 className="text-3xl lg:text-[40px] font-bold text-white mb-4 leading-tight">Your Assets. Our Technology.<br/>Shared Success.</h2>
-              <p className="text-gray-400 text-base font-light max-w-md">Join the growing number of forward-thinking real estate owners who are turning their properties into long-term cash-flowing assets.</p>
+              <h2 className="text-[42px] lg:text-[40px] font-bold text-white mb-4 leading-tight">Your Assets. Our Technology.<br/>Shared Success.</h2>
+              <p className="text-gray-400 text-[22px] font-light max-w-md">Join the growing number of forward-thinking real estate owners who are turning their properties into long-term cash-flowing assets.</p>
             </div>
             
             <div className="flex flex-col sm:flex-row items-center gap-10 lg:w-1/2 justify-end relative z-10">
               <div className="flex flex-col gap-3">
-                <div className="flex items-center gap-3 text-white text-sm font-medium"><div className="w-3.5 h-3.5 border border-[#ff7a00] rounded-full flex items-center justify-center text-[#ff7a00]"><div className="w-1.5 h-1.5 bg-[#ff7a00] rounded-full"></div></div> Zero risk</div>
-                <div className="flex items-center gap-3 text-white text-sm font-medium"><div className="w-3.5 h-3.5 border border-[#ff7a00] rounded-full flex items-center justify-center text-[#ff7a00]"><div className="w-1.5 h-1.5 bg-[#ff7a00] rounded-full"></div></div> Zero capital</div>
-                <div className="flex items-center gap-3 text-white text-sm font-medium"><div className="w-3.5 h-3.5 border border-[#ff7a00] rounded-full flex items-center justify-center text-[#ff7a00]"><div className="w-1.5 h-1.5 bg-[#ff7a00] rounded-full"></div></div> Maximum reward</div>
+                <div className="flex items-center gap-3 text-white text-[20px] font-medium"><div className="w-3.5 h-3.5 border border-[#ff7a00] rounded-full flex items-center justify-center text-[#ff7a00]"><div className="w-1.5 h-1.5 bg-[#ff7a00] rounded-full"></div></div> Zero risk</div>
+                <div className="flex items-center gap-3 text-white text-[20px] font-medium"><div className="w-3.5 h-3.5 border border-[#ff7a00] rounded-full flex items-center justify-center text-[#ff7a00]"><div className="w-1.5 h-1.5 bg-[#ff7a00] rounded-full"></div></div> Zero capital</div>
+                <div className="flex items-center gap-3 text-white text-[20px] font-medium"><div className="w-3.5 h-3.5 border border-[#ff7a00] rounded-full flex items-center justify-center text-[#ff7a00]"><div className="w-1.5 h-1.5 bg-[#ff7a00] rounded-full"></div></div> Maximum reward</div>
               </div>
-              <Link to="/contact" className="px-8 py-3.5 rounded bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-bold text-xs tracking-wider uppercase transition-all whitespace-nowrap flex items-center gap-2">
+              <Link to="/contact" className="px-8 py-3.5 rounded bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-bold text-[17px] tracking-wider uppercase transition-all whitespace-nowrap flex items-center gap-2">
                 GET YOUR FREE SITE ASSESSMENT <ArrowRight size={16} />
               </Link>
             </div>
@@ -546,66 +549,66 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer className="bg-[#05070a] pt-16 pb-8 border-t border-white/5">
-        <div className="container mx-auto px-6">
+        <div className="w-full px-[50px]">
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-16">
             
             <div className="col-span-2 lg:col-span-2 pr-12">
               <img src={logoImg} alt="TechOps Global" className="h-8 object-contain mb-6" style={{ filter: 'invert(1)', mixBlendMode: 'screen' }} />
-              <p className="text-white text-base leading-relaxed mb-6 font-light">
+              <p className="text-white text-[22px] leading-relaxed mb-6 font-light">
                 AI-powered energy infrastructure developer specializing in behind-the-meter solar, battery storage, and VPP solutions across the PJM markets.
               </p>
               <div className="flex gap-3">
-                 <div className="w-8 h-8 rounded-full border border-white/20 text-white flex items-center justify-center text-xs cursor-pointer hover:border-white transition-colors">in</div>
-                 <div className="w-8 h-8 rounded-full border border-white/20 text-white flex items-center justify-center text-xs cursor-pointer hover:border-white transition-colors">X</div>
-                 <div className="w-8 h-8 rounded-full border border-white/20 text-white flex items-center justify-center text-xs cursor-pointer hover:border-white transition-colors">YT</div>
+                 <div className="w-8 h-8 rounded-full border border-white/20 text-white flex items-center justify-center text-[17px] cursor-pointer hover:border-white transition-colors">in</div>
+                 <div className="w-8 h-8 rounded-full border border-white/20 text-white flex items-center justify-center text-[17px] cursor-pointer hover:border-white transition-colors">X</div>
+                 <div className="w-8 h-8 rounded-full border border-white/20 text-white flex items-center justify-center text-[17px] cursor-pointer hover:border-white transition-colors">YT</div>
               </div>
             </div>
 
             <div>
-              <h4 className="text-white font-bold mb-5 text-base tracking-widest uppercase">SOLUTIONS</h4>
+              <h4 className="text-white font-bold mb-5 text-[22px] tracking-widest uppercase">SOLUTIONS</h4>
               <ul className="space-y-3">
                 {["Warehouse & Logistics", "Idle Land", "Parking Lots", "Battery Storage", "VPP & Markets"].map(l => (
-                  <li key={l}><Link to="#" className="text-white text-sm hover:text-gray-300 transition-colors">{l}</Link></li>
+                  <li key={l}><Link to="#" className="text-white text-[20px] hover:text-gray-300 transition-colors">{l}</Link></li>
                 ))}
               </ul>
             </div>
 
             <div>
-              <h4 className="text-white font-bold mb-5 text-base tracking-widest uppercase">COMPANY</h4>
+              <h4 className="text-white font-bold mb-5 text-[22px] tracking-widest uppercase">COMPANY</h4>
               <ul className="space-y-3">
                 {["About Us", "Leadership", "Careers", "News", "Contact Us"].map(l => (
-                  <li key={l}><Link to="#" className="text-white text-sm hover:text-gray-300 transition-colors">{l}</Link></li>
+                  <li key={l}><Link to="#" className="text-white text-[20px] hover:text-gray-300 transition-colors">{l}</Link></li>
                 ))}
               </ul>
             </div>
 
             <div>
-              <h4 className="text-white font-bold mb-5 text-base tracking-widest uppercase">RESOURCES</h4>
+              <h4 className="text-white font-bold mb-5 text-[22px] tracking-widest uppercase">RESOURCES</h4>
               <ul className="space-y-3">
                 {["Case Studies", "Whitepapers", "Blog", "FAQs", "Investor Relations"].map(l => (
-                  <li key={l}><Link to="#" className="text-white text-base hover:text-gray-300 transition-colors">{l}</Link></li>
+                  <li key={l}><Link to="#" className="text-white text-[22px] hover:text-gray-300 transition-colors">{l}</Link></li>
                 ))}
               </ul>
             </div>
 
             <div className="col-span-2 md:col-span-1 lg:col-span-1">
-              <h4 className="text-white font-bold mb-5 text-base tracking-widest uppercase">CONTACT US</h4>
+              <h4 className="text-white font-bold mb-5 text-[22px] tracking-widest uppercase">CONTACT US</h4>
               <ul className="space-y-2 mb-6">
-                <li className="text-white text-base">hello@techopsglobal.com</li>
-                <li className="text-white text-base">(608) 555-0123</li>
-                <li className="text-white text-base flex items-center gap-2 mt-2"><MapPin size={14}/> Princeton, NJ</li>
+                <li className="text-white text-[22px]">hello@techopsglobal.com</li>
+                <li className="text-white text-[22px]">(608) 555-0123</li>
+                <li className="text-white text-[22px] flex items-center gap-2 mt-2"><MapPin size={14}/> Princeton, NJ</li>
               </ul>
 
             </div>
 
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between items-center pt-6 border-t border-white/5 text-gray-400 text-sm">
+          <div className="flex flex-col md:flex-row justify-between items-center pt-6 border-t border-white/5 text-gray-400 text-[20px]">
             <p>© 2025 TechOps Global. All rights reserved.</p>
             <div className="flex gap-6 mt-4 md:mt-0">
-              <Link to="#" className="text-gray-500 hover:text-gray-400 transition-colors">Privacy Policy</Link>
-              <Link to="#" className="text-gray-500 hover:text-gray-400 transition-colors">Terms of Service</Link>
-              <Link to="#" className="text-gray-500 hover:text-gray-400 transition-colors">Sitemap</Link>
+              <Link to="#" className="text-white hover:text-gray-300 transition-colors">Privacy Policy</Link>
+              <Link to="#" className="text-white hover:text-gray-300 transition-colors">Terms of Service</Link>
+              <Link to="#" className="text-white hover:text-gray-300 transition-colors">Sitemap</Link>
             </div>
           </div>
         </div>
