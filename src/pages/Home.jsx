@@ -113,7 +113,7 @@ export default function Home() {
 
       {/* 1. HERO SECTION */}
       <section className="relative min-h-[75vh] flex items-center pt-24 pb-16 lg:py-0 border-b border-white/5 overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-cover bg-center" style={{ backgroundImage: "url('/assets/images/slider/slider2.jpg')" }}>
+        <div className="absolute inset-0 z-0 bg-cover bg-center" style={{ backgroundImage: "url('/demo/herobg.png')" }}>
           <div className="absolute inset-0 bg-gradient-to-r from-[#05070a] via-[#05070a]/60 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#05070a] via-transparent to-transparent"></div>
           {/* Sunset glow effect on the right */}
