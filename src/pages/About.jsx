@@ -399,7 +399,7 @@ function About() {
 					].map((industry, i) => (
 						<div className="col-lg-3 col-md-6" key={i}>
 							<div className="service-box style-two text-center" style={{ padding: '30px', background: '#fff', borderRadius: '10px', boxShadow: '0 5px 15px rgba(0,0,0,0.05)', height: '100%' }}>
-								<div className="industry-icon mb-3" style={{ fontSize: '40px', color: '#fba500' }}>
+								<div className="industry-icon mb-3" style={{ fontSize: '32px', color: '#fba500' }}>
 									<i className={`bi ${industry.icon}`}></i>
 								</div>
 								<h4>{industry.title}</h4>

@@ -1,22 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Team from "./pages/Team";
-import FounderProfile from "./pages/FounderProfile";
-import JohnProfile from "./pages/JohnProfile";
-import AlphaProfile from "./pages/AlphaProfile";
-import SaffaProfile from "./pages/SaffaProfile";
-import AhmedProfile from "./pages/AhmedProfile";
-import PreetamProfile from "./pages/PreetamProfile";
-import MosesProfile from "./pages/MosesProfile";
-import RobinProfile from "./pages/RobinProfile";
-import SaioProfile from "./pages/SaioProfile";
+
 import Contact from "./pages/Contact";
 import Success from "./pages/Success";
 import Videos from "./pages/Videos";
+import WarehouseSolution from "./pages/WarehouseSolution";
 import logoImg from "./assets/image.png";
+import { MapPin } from "lucide-react";
+import HowItWorks from "./pages/HowItWorks";
+import PropertyTypes from "./pages/PropertyTypes";
 
 // Inner layout that re-initializes jQuery theme on every route change
 function Layout() {
@@ -49,56 +46,98 @@ function Layout() {
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
-  return (
+    return (
     <>
     {/*==================================================*/}
     {/* Start Solar Panel  Header Section */}
     {/*==================================================*/}
-    <header className="solar-header-section" id="sticky-header">
-      <div className="container">
-        <div className="row align-items-center justify-content-between">
-          <div className="col-8 col-md-3 col-lg-3">
-            <div className="logo" style={{ padding: '15px 0' }}>
-              <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'150px', width:'auto', borderRadius: '10px', display: 'block', overflow: 'hidden'}} loading="lazy" /></Link>
+    <header className="custom-dark-navbar" id="sticky-header" style={{position: 'absolute', top: 0, left: 0, width: '100%', zIndex: 1000, background: 'transparent'}}>
+      <div className="container-fluid px-[50px]">
+        <div className="row align-items-center justify-content-between py-3">
+          {/* Logo */}
+          <div className="col-auto">
+            <div className="logo">
+              <Link to="/">
+                <img 
+                  src={logoImg} 
+                  alt="TechOps Global Logo" 
+                  style={{height: '42px', width: 'auto', filter: 'invert(1)', mixBlendMode: 'screen'}} 
+                  loading="lazy" 
+                />
+              </Link>
             </div>
           </div>
 
-          {/* Mobile Toggle Button */}
-          <div className="col-4 col-md-9 d-lg-none text-end">
+          {/* Desktop Nav Links */}
+          <div className="col-auto d-none d-lg-flex">
+            <nav className="d-flex align-items-center gap-4 custom-nav-links">
+              <Link to="/" className="text-white text-decoration-none uppercase tracking-wider hover-orange" style={{fontSize: '14px', fontWeight: '800'}}>
+                Home
+              </Link>
+              <Link to="/solutions/warehouse" className="text-white text-decoration-none uppercase tracking-wider hover-orange" style={{fontSize: '14px', fontWeight: '800'}}>
+                Solution
+              </Link>
+              <Link to="/property-types" className="text-white text-decoration-none uppercase tracking-wider hover-orange" style={{fontSize: '14px', fontWeight: '800'}}>
+                Property Types
+              </Link>
+              <Link to="/how-it-works" className="text-white text-decoration-none uppercase tracking-wider hover-orange" style={{fontSize: '14px', fontWeight: '800'}}>
+                How It Works
+              </Link>
+            </nav>
+          </div>
+
+          {/* Right Area: Button & Hamburger */}
+          <div className="col-auto d-flex align-items-center gap-4">
+            <Link 
+              to="/contact" 
+              className="d-none d-md-inline-flex text-decoration-none align-items-center justify-content-center px-4 py-2.5" 
+              style={{
+                background: '#ff7a00',
+                border: '1px solid #ff7a00', 
+                color: '#000000', 
+                fontSize: '14px', 
+                fontWeight: '800', 
+                letterSpacing: '1px', 
+                borderRadius: '4px'
+              }}
+            >
+              GET SITE ASSESSMENT
+            </Link>
+            
             <button 
-              className="mobile-nav-toggle" 
+              className="mobile-nav-toggle flex items-center justify-center p-0" 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle navigation"
               style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}
             >
-              <i className={isMobileMenuOpen ? "bi bi-x" : "bi bi-list"} style={{ fontSize: '2.5rem', color: '#1c1632' }}></i>
+              <i className={isMobileMenuOpen ? "bi bi-x" : "bi bi-list"} style={{ fontSize: '2rem', color: '#fff' }}></i>
             </button>
-          </div>
-
-          {/* Collapsible Wrapper for Mobile / display:contents for Desktop */}
-          <div className={`mobile-nav-wrapper ${isMobileMenuOpen ? 'open' : ''}`}>
-            <div className="col-12 col-lg-6">
-              <div className="solar-menu">
-                <ul>
-                  <li><Link to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
-                  <li><Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>About</Link></li>
-                  <li><Link to="/services" onClick={() => setIsMobileMenuOpen(false)}>Services</Link></li>
-                  <li><Link to="/team" onClick={() => setIsMobileMenuOpen(false)}>Team</Link></li>
-                  <li><Link to="/videos" onClick={() => setIsMobileMenuOpen(false)}>Videos</Link></li>
-                  <li><Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contacts</Link></li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-12 col-lg-3 pb-4 pb-lg-0">
-              <div className="solar-search-button">
-                <div className="solar-btn">
-                  <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Get A Quote <i className="bi bi-arrow-right"></i></Link>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
+
+      {/* Mobile Nav Wrapper (Hidden on Desktop) */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="custom-mobile-nav-menu d-lg-none" 
+            style={{background: '#161821', position: 'absolute', top: '100%', left: 0, width: '100%', borderBottom: '1px solid rgba(255,255,255,0.05)', zIndex: 999}}
+          >
+            <div className="solar-menu" style={{padding: '20px'}}>
+              <ul style={{listStyle:'none', padding:0, margin:0, display:'flex', flexDirection:'column', gap:'15px'}}>
+                <li><Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="hover-orange" style={{color:'#fff', textDecoration:'none', fontWeight: 700, fontSize: '14px', textTransform: 'uppercase'}}>Home</Link></li>
+                <li><Link to="/solutions/warehouse" onClick={() => setIsMobileMenuOpen(false)} className="hover-orange" style={{color:'#fff', textDecoration:'none', fontWeight: 700, fontSize: '14px', textTransform: 'uppercase'}}>Solution</Link></li>
+                <li><Link to="/property-types" onClick={() => setIsMobileMenuOpen(false)} className="hover-orange" style={{color:'#fff', textDecoration:'none', fontWeight: 700, fontSize: '14px', textTransform: 'uppercase'}}>Property Types</Link></li>
+                <li><Link to="/how-it-works" onClick={() => setIsMobileMenuOpen(false)} className="hover-orange" style={{color:'#fff', textDecoration:'none', fontWeight: 700, fontSize: '14px', textTransform: 'uppercase'}}>How It Works</Link></li>
+              </ul>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
     {/*==================================================*/}
     {/* End Solar Panel  Header Section */}
@@ -110,90 +149,86 @@ function Layout() {
       <Route path="/about" element={<About />} />
       <Route path="/services" element={<Services />} />
       <Route path="/team" element={<Team />} />
-      <Route path="/founder" element={<FounderProfile />} />
-      <Route path="/john-huggins" element={<JohnProfile />} />
-      <Route path="/alpha-lavalie" element={<AlphaProfile />} />
-      <Route path="/paul-saffa" element={<SaffaProfile />} />
-      <Route path="/ahmed-fomba" element={<AhmedProfile />} />
-      <Route path="/preetam-bagalkotkar" element={<PreetamProfile />} />
-      <Route path="/moses-sawyerr" element={<MosesProfile />} />
-      <Route path="/robin-mansaray" element={<RobinProfile />} />
-      <Route path="/saio-conteh" element={<SaioProfile />} />
+
       <Route path="/contact" element={<Contact />} />
       <Route path="/videos" element={<Videos />} />
+      <Route path="/solutions/warehouse" element={<WarehouseSolution />} />
+      <Route path="/property-types" element={<PropertyTypes />} />
+      <Route path="/how-it-works" element={<HowItWorks />} />
     </Routes>
 
     {/*==================================================*/}
     {/* Start Solar Panel  Footer  Section */}
     {/*==================================================*/} 
-     <footer className="footer-section">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-3 col-md-6">
-            <div className="footer-wiget ">
-              <div className="footer-wiget-log">
-                <Link to="/"><img src={logoImg} alt="TechOps Global Logo" style={{maxHeight:'60px', width:'auto', borderRadius: '6px', display: 'block', overflow: 'hidden'}} loading="lazy" /></Link>
-              </div>
-              <div className="footer-wiget-text">
-                <p>TechOps Global is a forward-thinking energy solutions company committed to building reliable and sustainable power systems for businesses, communities, and governments.</p>
-              </div>
-              <div className="footer-wiget-social">
-                <ul>
-                  <li><Link to="/contact"><i className="fab fa-facebook-f"></i></Link></li>
-                  <li><Link to="/contact"><i className="fab fa-twitter"></i></Link></li>
-                  <li><Link to="/contact"><i className="fab fa-vimeo-v"></i></Link></li>
-                  <li><Link to="/contact"><i className="fab fa-instagram"></i></Link></li>
-                </ul>
+      <footer className="bg-[#05070a] pt-16 pb-8 border-t border-white/5 mt-auto">
+        <div className="w-full px-[50px]">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-16">
+            
+            <div className="col-span-2 lg:col-span-2 pr-12">
+              <img src={logoImg} alt="TechOps Global" className="h-8 object-contain mb-6" style={{ filter: 'invert(1)', mixBlendMode: 'screen' }} />
+              <p className="text-white text-[22px] leading-relaxed mb-6 font-light">
+                AI-powered energy infrastructure developer specializing in behind-the-meter solar, battery storage, and VPP solutions across the PJM markets.
+              </p>
+              <div className="flex gap-3">
+                 <div className="w-8 h-8 rounded-full border border-white/20 text-white flex items-center justify-center text-[17px] cursor-pointer hover:border-white transition-colors">in</div>
+                 <div className="w-8 h-8 rounded-full border border-white/20 text-white flex items-center justify-center text-[17px] cursor-pointer hover:border-white transition-colors">X</div>
+                 <div className="w-8 h-8 rounded-full border border-white/20 text-white flex items-center justify-center text-[17px] cursor-pointer hover:border-white transition-colors">YT</div>
               </div>
             </div>
-          </div>
-          <div className="col-lg-2 col-md-6">
-            <div className="footer-wiget ">
-              <div className="footer-wiget-title">
-                <h4>Industry Sectors</h4>
-              </div>
-              <div className="footer-wiget-menu">
-                <ul>
-                  <li><Link to="/services">Healthcare</Link></li>
-                  <li><Link to="/services">Education</Link></li>
-                  <li><Link to="/services">Government</Link></li>
-                  <li><Link to="/services">Finance</Link></li>
-                  <li><Link to="/services">Commercial</Link></li>
-                </ul>
-              </div>
+
+            <div>
+              <h4 className="text-white font-bold mb-5 text-[22px] tracking-widest uppercase">SOLUTIONS</h4>
+              <ul className="space-y-3">
+                {["Warehouse & Logistics", "Idle Land", "Parking Lots", "Battery Storage", "VPP & Markets"].map(l => (
+                  <li key={l}>
+                    <Link to={l === "Warehouse & Logistics" ? "/solutions/warehouse" : "#"} className="text-white text-[20px] hover:text-gray-300 transition-colors">
+                      {l}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
-          <div className="col-lg-4 col-md-6">
-            <div className="footer-wiget-quick-contanct ">
-              <div className="footer-wiget-title">
-                <h4>Get In Touch</h4>
-              </div>
-              <div className="footer-wiget-contact-menu">
-                <ul>
-                  <li>USA: 7454 Old Alexandria Ferry Road Clinton, Md. 20744</li>
-                  <li>SL: 2 Taylor Lewis Drive Freetown, Sierra Leone</li>
-                  <li style={{ whiteSpace: 'nowrap' }}>USA: +1 (240) 351-3209 | SL: +232 33 448 065</li>
-                  <li><Link to="/contact">info@techops-global.com</Link></li>
-                </ul>
-              </div>
+
+            <div>
+              <h4 className="text-white font-bold mb-5 text-[22px] tracking-widest uppercase">COMPANY</h4>
+              <ul className="space-y-3">
+                {["About Us", "Leadership", "Careers", "News", "Contact Us"].map(l => (
+                  <li key={l}><Link to="#" className="text-white text-[20px] hover:text-gray-300 transition-colors">{l}</Link></li>
+                ))}
+              </ul>
             </div>
+
+            <div>
+              <h4 className="text-white font-bold mb-5 text-[22px] tracking-widest uppercase">RESOURCES</h4>
+              <ul className="space-y-3">
+                {["Case Studies", "Whitepapers", "Blog", "FAQs", "Investor Relations"].map(l => (
+                  <li key={l}><Link to="#" className="text-white text-[22px] hover:text-gray-300 transition-colors">{l}</Link></li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="col-span-2 md:col-span-1 lg:col-span-1">
+              <h4 className="text-white font-bold mb-5 text-[22px] tracking-widest uppercase">CONTACT US</h4>
+              <ul className="space-y-2 mb-6">
+                <li className="text-white text-[22px]">hello@techopsglobal.com</li>
+                <li className="text-white text-[22px]">(608) 555-0123</li>
+                <li className="text-white text-[22px] flex items-center gap-2 mt-2"><MapPin size={14}/> Princeton, NJ</li>
+              </ul>
+
+            </div>
+
           </div>
-          <div className="col-lg-3">
-            <div className="footer-thumb ">
-              <img src="assets/images/resource/footer-thumb.png" alt="" loading="lazy" />
+
+          <div className="flex flex-col md:flex-row justify-between items-center pt-6 border-t border-white/5 text-gray-400 text-[20px]">
+            <p>© 2025 TechOps Global. All rights reserved.</p>
+            <div className="flex gap-6 mt-4 md:mt-0">
+              <Link to="#" className="text-white hover:text-gray-300 transition-colors">Privacy Policy</Link>
+              <Link to="#" className="text-white hover:text-gray-300 transition-colors">Terms of Service</Link>
+              <Link to="#" className="text-white hover:text-gray-300 transition-colors">Sitemap</Link>
             </div>
           </div>
         </div>
-        <div className="row footer-line">
-          <div className="col-lg-12">
-            <div className="copyright-text text-center">
-              <p>TechOps Global © 2026 All Rights Reserved</p>
-              <p style={{ marginTop: '10px', fontSize: '0.9rem', opacity: 0.8 }}>Renewable Energy | Industrial Power | Infrastructure Solutions</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+      </footer>
     {/*==================================================*/}
     {/* End Solar Panel  Footer  Section */}
     {/*==================================================*/} 
@@ -215,26 +250,30 @@ function Layout() {
     {/* End Search Popup Area */}
     {/*==================================================*/}
 
-    {/*==================================================*/}
-    {/* Start scrollup section Area */}
-    {/*==================================================*/}
-     <div className="scroll-area">
-      <div className="top-wrap">
-        <div className="go-top-btn-wraper">
-          <div className="go-top go-top-button">
-            <i className="fas fa-arrow-up"></i>
-            <i className="fas fa-arrow-up"></i>
+    {location.pathname !== '/' && (
+      <>
+        {/*==================================================*/}
+        {/* Start scrollup section Area */}
+        {/*==================================================*/}
+        <div className="scroll-area">
+          <div className="top-wrap">
+            <div className="go-top-btn-wraper">
+              <div className="go-top go-top-button">
+                <i className="fas fa-arrow-up"></i>
+                <i className="fas fa-arrow-up"></i>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    {/*==================================================*/}
-    {/* End scrollup section Area */}
-    {/*==================================================*/}
-    {/* WhatsApp Floating Button */}
-    <a href="https://wa.me/12403513209" className="whatsapp-float" target="_blank" rel="noopener noreferrer">
-      <i className="fab fa-whatsapp"></i>
-    </a>
+        {/*==================================================*/}
+        {/* End scrollup section Area */}
+        {/*==================================================*/}
+        {/* WhatsApp Floating Button */}
+        <a href="https://wa.me/12403513209" className="whatsapp-float" target="_blank" rel="noopener noreferrer">
+          <i className="fab fa-whatsapp"></i>
+        </a>
+      </>
+    )}
     </>
   );
 }
