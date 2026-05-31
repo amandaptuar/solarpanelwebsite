@@ -8,14 +8,12 @@ import {
 } from "lucide-react";
 
 // ─── Stat Item ─────────────────────────────────────────────────────────────
-function StatItem({ icon: Icon, value, label, last = false }) {
+function StatItem({ icon: Icon, value, label, isLastOnDesktop = false }) {
   return (
     <div
-      className="flex items-center gap-4"
-      style={{
-        padding: "20px 28px",
-        borderRight: last ? "none" : "1px solid rgba(255,255,255,0.08)",
-      }}
+      className={`flex items-center gap-4 p-6 md:p-8 border-b border-white/5 lg:border-b-0 lg:border-r ${
+        isLastOnDesktop ? "lg:border-r-0" : "border-white/5"
+      }`}
     >
       <div
         className="shrink-0 flex items-center justify-center rounded-full"
@@ -112,13 +110,13 @@ export default function About() {
 
       {/* ── HERO SECTION WITH BACKGROUND ─────────────────────────────────── */}
       <section 
-        className="relative w-full px-[50px] pt-32 pb-24 overflow-hidden bg-cover bg-center border-b border-white/5"
+        className="relative w-full px-6 md:px-[50px] pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden bg-cover bg-center border-b border-white/5"
         style={{
           backgroundImage: "linear-gradient(to right, rgba(5, 7, 11, 0.98) 35%, rgba(5, 7, 11, 0.6) 100%), url('/img/concept-of-an-energy-storage-system-based-on-elect-2026-03-24-07-19-07-utc.jpg')"
         }}
       >
         {/* Breadcrumbs inside hero */}
-        <div className="relative z-10 flex items-center gap-2 text-[16px] font-bold text-gray-400 tracking-wider uppercase mb-8">
+        <div className="relative z-10 flex items-center gap-2 text-[14px] md:text-[16px] font-bold text-gray-400 tracking-wider uppercase mb-8">
           <Link to="/" className="text-white hover:text-[#ff7a00] transition-colors">Home</Link>
           <span className="text-gray-600">&gt;</span>
           <span className="text-gray-300">About Us</span>
@@ -126,14 +124,14 @@ export default function About() {
 
         {/* Text Content */}
         <div className="relative z-10 max-w-[800px]">
-          <h1 className="!text-white text-[60px] lg:text-[64px] font-extrabold leading-[1.1] tracking-tight mb-6">
+          <h1 className="!text-white text-[36px] sm:text-[48px] md:text-[60px] lg:text-[64px] font-extrabold leading-[1.1] tracking-tight mb-6">
             About <span className="!text-[#ff7a00] text-[#ff7a00]">TechOps Global</span>
           </h1>
-          <p className="text-[20px] lg:text-[24px] text-white font-semibold mb-5 leading-relaxed">
+          <p className="text-[18px] md:text-[20px] lg:text-[24px] text-white font-semibold mb-5 leading-relaxed">
             Powering the Future Through Innovation,<br />
             Sustainability, and Excellence.
           </p>
-          <p className="text-[18px] text-gray-400 font-light leading-relaxed">
+          <p className="text-[16px] md:text-[18px] text-gray-400 font-light leading-relaxed">
             TechOps Global is a forward-thinking energy solutions company
             committed to building reliable and sustainable power systems for
             businesses, communities, and governments across the USA and
@@ -143,33 +141,30 @@ export default function About() {
       </section>
 
       {/* Container for Stats Bar below the hero */}
-      <section className="w-full px-[50px] pb-0 pt-12">
+      <section className="w-full px-6 md:px-[50px] pb-0 pt-8 md:pt-12">
 
         {/* ── STATS BAR ──────────────────────────────────────────────────── */}
         <div
-          className="mt-12 rounded-xl"
+          className="rounded-xl overflow-hidden"
           style={{
             background: "#0d1020",
             border: "1px solid rgba(255,255,255,0.08)",
           }}
         >
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             <StatItem icon={Award}       value="100MW+"        label="Commissioned Projects" />
             <StatItem icon={Clock}       value="29+"           label="Years of Industry Experience" />
             <StatItem icon={Globe}       value="International" label="Presence in USA & Global Markets" />
-            <StatItem icon={ShieldCheck} value="100%"          label="Commitment to Quality & Safety" last />
+            <StatItem icon={ShieldCheck} value="100%"          label="Commitment to Quality & Safety" isLastOnDesktop />
           </div>
         </div>
       </section>
 
       {/* ── OUR STORY ───────────────────────────────────────────────────── */}
-      <section className="w-full px-[50px] py-16 border-b border-white/5">
-        <div
-          className="grid items-stretch"
-          style={{ gridTemplateColumns: "5fr 7fr", gap: 56 }}
-        >
+      <section className="w-full px-6 md:px-[50px] py-16 border-b border-white/5">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-stretch">
           {/* Left Column: text & button */}
-          <div className="flex flex-col justify-between py-2">
+          <div className="lg:col-span-5 flex flex-col justify-between py-2 gap-8">
             <div className="flex flex-col gap-6">
               <div className="flex items-center gap-3">
                 <h2 className="!text-white font-extrabold text-[32px]">Our Story</h2>
@@ -187,7 +182,7 @@ export default function About() {
               </p>
             </div>
             {/* Pill-shaped border button matching mockup */}
-            <div className="mt-8">
+            <div>
               <Link
                 to="/how-it-works"
                 className="inline-flex items-center gap-2 px-6 py-2.5 border border-[#ff7a00] text-white hover:bg-[#ff7a00] transition-colors rounded-full text-[15px] font-medium group"
@@ -199,15 +194,14 @@ export default function About() {
 
           {/* Right Column: Combined Card Container (Image left flush, Values right padded) */}
           <div
-            className="rounded-3xl overflow-hidden grid"
+            className="lg:col-span-7 rounded-3xl overflow-hidden grid grid-cols-1 sm:grid-cols-2"
             style={{
               background: "rgba(13,16,32,0.45)",
               border: "1px solid rgba(255,255,255,0.08)",
-              gridTemplateColumns: "1fr 1.1fr",
             }}
           >
             {/* Left side: Image flush */}
-            <div className="h-full min-h-[400px]">
+            <div className="h-72 sm:h-full min-h-[300px] sm:min-h-[400px]">
               <img
                 src="/solutiondemo/industrial-solar.png"
                 alt="Solar panels at sunset"
@@ -216,7 +210,7 @@ export default function About() {
               />
             </div>
             {/* Right side: Values List (padded) */}
-            <div className="p-8 md:p-10 flex flex-col justify-center gap-8">
+            <div className="p-6 md:p-8 flex flex-col justify-center gap-8">
               {[
                 {
                   icon: Target,
@@ -264,15 +258,15 @@ export default function About() {
       </section>
 
       {/* ── WHAT WE DO ──────────────────────────────────────────────────── */}
-      <section className="w-full px-[50px] py-24 border-b border-white/5">
+      <section className="w-full px-6 md:px-[50px] py-16 md:py-24 border-b border-white/5">
         <div className="flex items-center gap-4 mb-14">
-          <h2 className="!text-white font-extrabold text-[32px] uppercase tracking-widest whitespace-nowrap">
+          <h2 className="!text-white font-extrabold text-[28px] md:text-[32px] uppercase tracking-widest whitespace-nowrap">
             What We Do
           </h2>
           <div style={{ height: 3, background: "#ff7a00", width: 40, flexShrink: 0, borderRadius: 2 }} />
         </div>
 
-        <div className="grid gap-6" style={{ gridTemplateColumns: "repeat(5, 1fr)" }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           <WhatWeDoCard
             icon={Cpu}
             title="Engineering Excellence"
@@ -302,17 +296,17 @@ export default function About() {
       </section>
 
       {/* ── OUR EXPERTISE ───────────────────────────────────────────────── */}
-      <section className="w-full px-[50px] py-24 border-b border-white/5">
+      <section className="w-full px-6 md:px-[50px] py-16 md:py-24 border-b border-white/5">
         {/* Header layout matching mockup (Title left, intro right) */}
-        <div className="grid lg:grid-cols-12 gap-10 items-center mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
           <div className="lg:col-span-5 flex items-center gap-4">
-            <h2 className="!text-white font-extrabold text-[32px] uppercase tracking-widest whitespace-nowrap">
+            <h2 className="!text-white font-extrabold text-[28px] md:text-[32px] uppercase tracking-widest whitespace-nowrap">
               Our Expertise
             </h2>
             <div style={{ height: 3, background: "#ff7a00", flex: 1, minWidth: 50, borderRadius: 2 }} />
           </div>
           <div className="lg:col-span-7">
-            <p className="text-[18px] text-gray-300 font-light leading-relaxed">
+            <p className="text-[16px] md:text-[18px] text-gray-300 font-light leading-relaxed">
               We specialize in renewable energy development, energy storage
               systems, engineering support, and industrial infrastructure
               solutions. Our team combines technical expertise with strategic
@@ -321,10 +315,10 @@ export default function About() {
           </div>
         </div>
 
-        <div className="grid items-stretch" style={{ gridTemplateColumns: "5fr 7fr", gap: 56 }}>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-stretch">
 
           {/* Left: image with competency overlay bottom-right */}
-          <div className="relative rounded-2xl overflow-hidden flex items-end justify-end" style={{ minHeight: 460, border: "1px solid rgba(255,255,255,0.08)" }}>
+          <div className="lg:col-span-5 relative rounded-2xl overflow-hidden flex items-end justify-end min-h-[380px] sm:min-h-[460px]" style={{ border: "1px solid rgba(255,255,255,0.08)" }}>
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{
@@ -336,7 +330,7 @@ export default function About() {
             
             {/* Overlay card touching bottom right corner */}
             <div
-              className="relative z-10 w-[60%] lg:w-[55%] rounded-tl-2xl p-7 shadow-2xl"
+              className="relative z-10 w-full sm:w-[60%] lg:w-[55%] rounded-t-2xl sm:rounded-tr-none sm:rounded-tl-2xl p-7 shadow-2xl"
               style={{
                 background: "rgba(10,13,22,0.92)",
                 borderTop: "1px solid rgba(255,255,255,0.15)",
@@ -373,8 +367,8 @@ export default function About() {
           </div>
 
           {/* Right: 2-column capability grid */}
-          <div className="flex flex-col justify-center">
-            <div className="grid gap-x-10 gap-y-12" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
+          <div className="lg:col-span-7 flex flex-col justify-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-12">
               <CapItem icon={Sun}             title="Solar Energy Systems"         subtitle="Utility-scale & Distributed" />
               <CapItem icon={BatteryCharging} title="Battery Energy Storage"       subtitle="BESS Solutions" />
               <CapItem icon={Wind}            title="Wind Power Infrastructure"    subtitle="Resource Assessment & Development" />
@@ -387,7 +381,7 @@ export default function About() {
       </section>
 
       {/* ── CTA SECTION ─────────────────────────────────────────────────── */}
-      <section className="w-full px-[50px] py-20">
+      <section className="w-full px-6 md:px-[50px] py-16 md:py-20">
         <div
           className="relative rounded-2xl overflow-hidden"
           style={{ border: "1px solid rgba(255,255,255,0.08)" }}
@@ -402,15 +396,14 @@ export default function About() {
           />
 
           <div
-            className="relative z-10 flex items-center justify-between flex-wrap gap-10"
-            style={{ padding: "56px 64px" }}
+            className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-10 p-8 sm:p-14 lg:p-16"
           >
             <div>
-              <h2 className="!text-white font-extrabold text-[40px] leading-tight mb-4">
+              <h2 className="!text-white font-extrabold text-[28px] sm:text-[36px] lg:text-[40px] leading-tight mb-4">
                 Let's Build a Smarter,<br />
                 Sustainable Energy Future—Together.
               </h2>
-              <p className="text-[18px] text-gray-400 font-light">
+              <p className="text-[16px] md:text-[18px] text-gray-400 font-light">
                 Partner with TechOps Global for reliable, efficient, and future-ready energy solutions.
               </p>
             </div>
