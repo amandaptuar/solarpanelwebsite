@@ -1,457 +1,433 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import {
+  ArrowRight, ShieldCheck, Clock, Award, Globe,
+  Check, Target, Rocket, Shield,
+  Cpu, Leaf, Users, Activity,
+  Sun, BatteryCharging, Wind, LayoutGrid, Settings, Wrench
+} from "lucide-react";
 
-function About() {
-	// Re-initialize jQuery theme plugins when this page mounts
-	useEffect(() => {
-		window.scrollTo(0, 0);
-		const timer = setTimeout(() => {
-			try {
-				if (window.initTheme && window.jQuery) {
-					window.initTheme(window.jQuery);
-				}
-			} catch (err) {
-				console.error("Theme init error on About page:", err);
-			}
-		}, 100);
-		return () => clearTimeout(timer);
-	}, []);
-
-	// Set dynamic SEO Meta Tags for About Page
-	useEffect(() => {
-		document.title = "TechOps Global | Solar, Wind & Energy Storage Solutions USA";
-
-		const setMetaTag = (attrName, attrValue, content) => {
-			let element = document.querySelector(`meta[${attrName}="${attrValue}"]`);
-			if (!element) {
-				element = document.createElement('meta');
-				element.setAttribute(attrName, attrValue);
-				document.head.appendChild(element);
-			}
-			element.setAttribute('content', content);
-		};
-
-		setMetaTag('name', 'title', 'TechOps Global | Solar, Wind & Energy Storage Solutions USA');
-		setMetaTag('name', 'description', 'TechOps Global provides renewable energy, solar power, wind systems, battery storage, and industrial infrastructure solutions across the USA and global markets.');
-		setMetaTag('name', 'keywords', 'TechOps Global about, clean energy solutions company, renewable energy development, industrial power solutions, solar energy USA');
-		setMetaTag('name', 'robots', 'index, follow');
-		setMetaTag('http-equiv', 'Content-Type', 'text/html; charset=utf-8');
-		setMetaTag('name', 'language', 'English');
-	}, []);
-
-
-	return (
-		<>
-		{/*==================================================*/}
-		{/* Breadcrumb / Page Title Banner */}
-		{/*==================================================*/}
-		<div className="breatcome-section" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/img/multigeneration-family-walking-on-field-on-wind-fa-2026-01-05-22-45-03-utc.jpg")', backgroundSize: 'cover', backgroundPosition: 'center center' }}>
-			<div className="container">
-				<div className="row">
-					<div className="col-lg-12 col-md-12">
-						<div className="breatcome-content">
-							<div className="breatcome-title">
-								<h1>About Us</h1>
-							</div>
-							<div className="bratcome-text">
-								<ul>
-									<li><Link to="/">Home</Link></li>
-									<li>About Us</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		{/*==================================================*/}
-		{/* End Breadcrumb */}
-		{/*==================================================*/}
-
-		{/*==================================================*/}
-		{/* Start Solar Panel  About Section */}
-		{/*==================================================*/}
-		<div className="about-section style-three">
-			<div className="container">
-				<div className="row">
-					<div className="col-lg-6 col-md-12">
-						<div className="about-thumb">
-							<img src="assets/images/about/about-thumb.jpg" alt="" loading="lazy" />
-							<div className="about-counter">
-								<div className="about-counter-text">
-									<div className="about-numbar">
-										<h4 className="counter">29</h4>
-										<span>+</span>
-									</div>
-									<div className="about-text">
-										<h5>Years Experience</h5>
-									</div>
-								</div>
-							</div>
-							<div className="about-counter-two d-flex align-items-center ">
-								<div className="about-counter-img">
-									<img src="assets/images/about/about-shape.png" alt="" loading="lazy" />
-								</div>
-								<div className="about-number-two">
-									<h4 className="counter">2900</h4>
-									<span>+</span>
-									<h5>Satisfied Clients</h5>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div className="col-lg-6 col-md-12">
-						<div className="about-section-title">
-							<div className="about-section-sub-title">
-								<h4>About TechOps Global</h4>
-							</div>
-							<div className="about-section-main-title">
-								<h2>Powering the Future Through Smart Energy Solutions</h2>
-							</div>
-						</div>
-						{/* tab */}
-						<div className="tab">
-							<ul className="tabs active">
-								<li className="current"><Link to="/contact">About Us <i className="bi bi-arrow-up-right"></i></Link></li>
-								<li className=""><Link to="/contact">Mission <i className="bi bi-arrow-up-right"></i></Link></li>
-								<li className=""><Link to="/contact">Vision <i className="bi bi-arrow-up-right"></i></Link></li>
-							</ul>
-							<div className="tab_content">
-								<div className="tabs_item">
-									<div className="tabs-items-content">
-										<div className="about-content-discription">
-											<p>TechOps Global is a forward-thinking energy solutions company committed to building reliable and sustainable power systems for businesses, communities, and governments. We specialize in renewable energy development, industrial operations, engineering support, and advanced infrastructure solutions across domestic and international markets.</p>
-										</div>
-										<div className="row">
-											<div className="col-lg-6 col-md-6 col-sm-6 col-6">
-												<div className="about-list">
-													<ul>
-														<li><i className="bi bi-chevron-double-right"></i> Universal Access to Energy</li>
-														<li><i className="bi bi-chevron-double-right"></i> Reduced Fuel Dependence</li>
-														<li><i className="bi bi-chevron-double-right"></i> Lower Energy Costs</li>
-													</ul>
-												</div>
-											</div>
-											<div className="col-lg-6 col-md-6 col-sm-6 col-6">
-												<div className="about-list">
-													<ul>
-														<li><i className="bi bi-chevron-double-right"></i> Dedicated Support </li>
-														<li><i className="bi bi-chevron-double-right"></i> Board Composition</li>
-														<li><i className="bi bi-chevron-double-right"></i> Board Committees</li>
-													</ul>
-												</div>
-											</div>
-											<div className="solar-btn about">
-												<Link to="/services">Our Service <i className="bi bi-arrow-right"></i></Link>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div className="tabs_item" style={{ display: 'none' }}>
-									<div className="tabs-items-content">
-										<div className="about-content-discription">
-											<p>Our mission is to help organizations transition toward cleaner, smarter, and more efficient energy systems. We combine technical excellence with strategic execution to deliver measurable results and long-term value for our partners and the communities we serve.</p>
-										</div>
-										<div className="row">
-											<div className="col-lg-6 col-md-6 col-sm-6 col-6">
-												<div className="about-list">
-													<ul>
-														<li><i className="bi bi-chevron-double-right"></i> Resource Assessment</li>
-														<li><i className="bi bi-chevron-double-right"></i> Efficient Engineering</li>
-														<li><i className="bi bi-chevron-double-right"></i> Strong Collaborations</li>
-													</ul>
-												</div>
-											</div>
-											<div className="col-lg-6 col-md-6 col-sm-6 col-6">
-												<div className="about-list">
-													<ul>
-														<li><i className="bi bi-chevron-double-right"></i> Power Evacuation</li>
-														<li><i className="bi bi-chevron-double-right"></i> Land Procurement</li>
-														<li><i className="bi bi-chevron-double-right"></i> Utility Liaisoning</li>
-													</ul>
-												</div>
-											</div>
-											<div className="solar-btn about">
-												<Link to="/services">Our Service <i className="bi bi-arrow-right"></i></Link>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div className="tabs_item" style={{ display: 'none' }}>
-									<div className="tabs-items-content">
-										<div className="about-content-discription">
-											<p>We aim to be the global leader in sustainable energy infrastructure, driving innovation and efficiency in every project we deliver. Our vision is a world powered by reliable, clean energy for a sustainable tomorrow.</p>
-										</div>
-										<div className="row">
-											<div className="col-lg-6 col-md-6 col-sm-6 col-6">
-												<div className="about-list">
-													<ul>
-														<li><i className="bi bi-chevron-double-right"></i> Financial Feasibility</li>
-														<li><i className="bi bi-chevron-double-right"></i> PPA Negotiations</li>
-														<li><i className="bi bi-chevron-double-right"></i> O&M Design Integration</li>
-													</ul>
-												</div>
-											</div>
-											<div className="col-lg-6 col-md-6 col-sm-6 col-6">
-												<div className="about-list">
-													<ul>
-														<li><i className="bi bi-chevron-double-right"></i> SCADA Monitoring</li>
-														<li><i className="bi bi-chevron-double-right"></i> Remote Access</li>
-														<li><i className="bi bi-chevron-double-right"></i> Predictive Maintenance</li>
-													</ul>
-												</div>
-											</div>
-											<div className="solar-btn about">
-												<Link to="/services">Our Service <i className="bi bi-arrow-right"></i></Link>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div> 
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		{/*==================================================*/}
-		{/* End Solar Panel  About Section */}
-		{/*==================================================*/}
-
-		{/*==================================================*/}
-		{/* Start Solar Panel  Service Section */}
-		{/*==================================================*/}
-		<div className="service-section">
-			<div className="container">
-				<div className="row">
-					<div className="col-lg-12">
-						<div className="section-title text-center">
-							<div className="section-sub-title">
-								<h4>Our Core Services</h4>
-							</div>
-							<div className="section-main-title">
-								<h2>Comprehensive Solar Solutions</h2>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div className="row">
-					{/* Solar Panels Services */}
-					<div className="col-lg-4 col-md-6">
-						<div className="service-box">
-							<div className="service-thumb">
-								<img src="assets/images/resource/service1.png" alt="" loading="lazy" />
-								<div className="service-content">
-									<div className="service-text">
-										<h4><Link to="/contact">Commercial Solar</Link></h4>
-										<p>Large-scale solar integration for industrial campuses, utility farms, and corporate infrastructure.</p>
-										<Link to="/contact">Explore Solutions <i className="bi bi-arrow-up-right"></i></Link>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					{/* Roof Solar Panels */}
-					<div className="col-lg-4 col-md-6">
-						<div className="service-box">
-							<div className="service-thumb">
-								<img src="assets/images/resource/service2.png" alt="" loading="lazy" />
-								<div className="service-content">
-									<div className="service-text">
-										<h4><Link to="/contact">Off-Grid Systems</Link></h4>
-										<p>Specialized standalone energy systems for remote facilities without access to the national grid.</p>
-										<Link to="/contact">Explore Solutions <i className="bi bi-arrow-up-right"></i></Link>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					{/* Commercial Roofing */}
-					<div className="col-lg-4 col-md-6">
-						<div className="service-box">
-							<div className="service-thumb">
-								<img src="assets/images/resource/service3.png" alt="" loading="lazy" />
-								<div className="service-content">
-									<div className="service-text">
-										<h4><Link to="/contact">Energy Storage</Link></h4>
-										<p>Industrial battery energy storage systems (BESS) for peak shaving and emergency backup power.</p>
-										<Link to="/contact">Explore Solutions <i className="bi bi-arrow-up-right"></i></Link>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		{/*==================================================*/}
-		{/* End Solar Panel  Service Section */}
-		{/*==================================================*/}
-
-		{/*==================================================*/}
-		{/* Start Solar Panel  contanct us Section */}
-		{/*==================================================*/}
-		<div className="contact-us-section">
-			<div className="container">
-				<div className="row contact-us align-items-center">
-					<div className="col-lg-2"></div>
-					<div className="col-lg-7 col-md-6">
-						<div className="section-title">
-							<div className="section-main-title contact-us">
-								<h2>How We Create Solar Energy</h2>
-							</div>
-						</div>
-						<div className="contact-us-discription">
-							<p>Building &amp; Maintaining Sustainable Energy Systems</p>
-						</div>
-					</div>
-					<div className="col-lg-3 col-md-6">
-						<div className="solar-btn contact-us">
-							<Link to="/contact">Contact Now <i className="bi bi-arrow-right"></i></Link>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		{/*==================================================*/}
-		{/* End Solar Panel  contanct us Section */}
-		{/*==================================================*/}
-
-		{/*==================================================*/}
-		{/* Start Solar Panel  Team  Section */}
-		{/*==================================================*/}
-		<div className="team-section">
-			<div className="container">
-				<div className="row">
-					<div className="col-lg-12">
-						<div className="section-title text-center">
-							<div className="section-sub-title">
-								<h4>Our Team</h4>
-							</div>
-							<div className="section-main-title ">
-								<h2>Meet Our Experienced Team</h2>
-							</div>
-							<div className="team-discription mt-3">
-								<p>Our leadership team brings decades of expertise in power generation, engineering, renewable energy, infrastructure development, and industrial operations. We combine technical excellence with strategic execution to deliver measurable results.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div className="row">
-					{[
-						{ img: 'john-huggins.jpeg', name: 'John L. Huggins', role: 'Executive Vice President', path: 'team', profileLink: '/john-huggins' },
-						{ img: 'teammate.jpeg', name: 'Alpha Karmoh Mohamed Lavalie', role: 'Strategic Partner & Trade Envoy', path: 'img', profileLink: '/alpha-lavalie' },
-						{ img: 'teammate2.png', name: 'Dr. Paul Charles Saffa', role: 'Director & Energy Policy Expert', path: 'img', profileLink: '/paul-saffa' },
-						{ img: 'teammate3.png', name: 'Ahmed Jumui Sumoi Fomba', role: 'Electrical Engineer & Power Systems Specialist', path: 'img', profileLink: '/ahmed-fomba' },
-						{ img: 'teammate4.jpeg', name: 'Preetam Bagalkotkar', role: 'Chief Operations Officer', path: 'img', profileLink: '/preetam-bagalkotkar' },
-						{ img: 'teammate5.png', name: 'Moses P. Sawyerr', role: 'Director, Power Operations', path: 'img', profileLink: '/moses-sawyerr' },
-						{ img: 'teammate6.png', name: 'Robin Fola Mansaray', role: 'Renewable Energy Specialist & Policy Advisor', path: 'img', profileLink: '/robin-mansaray' },
-					].map((member) => (
-						<div className="col-lg-3 col-md-6" key={member.name}>
-							<div className="team-items-box">
-								<div className="team-thumb">
-									<img src={member.path === 'img' ? `/img/${member.img}` : `assets/images/team/${member.img}`} alt={member.name} style={{ width: '100%', height: '350px', objectFit: 'cover', objectPosition: 'top' }} loading="lazy" />
-									<div className="team-icon">
-										<ul>
-											<li><Link to="/contact"><i className="fab fa-facebook-f"></i></Link></li>
-											<li><Link to="/contact"><i className="fab fa-twitter"></i></Link></li>
-											<li><Link to="/contact"><i className="fab fa-vimeo-v"></i></Link></li>
-											<li><Link to="/contact"><i className="fab fa-instagram"></i></Link></li>
-										</ul>
-									</div>
-
-									<div className="team-content">
-										<h4><Link to={member.profileLink || "/contact"}>{member.name}</Link></h4>
-										<span>{member.role}</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					))}
-				</div>
-			</div>
-		</div>
-		{/*==================================================*/}
-		{/* End Solar Panel  Team  Section */}
-		{/*==================================================*/}
-		{/*==================================================*/}
-		{/* Start Industries We Serve Section */}
-		{/*==================================================*/}
-		<div id="industries" className="service-section style-three" style={{ backgroundColor: '#f8f9fa', padding: '100px 0' }}>
-			<div className="container">
-				<div className="row">
-					<div className="col-lg-12">
-						<div className="section-title text-center">
-							<div className="section-sub-title">
-								<h4>Industries We Serve</h4>
-							</div>
-							<div className="section-main-title">
-								<h2>Powering Growth Across Sectors</h2>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div className="row mt-4">
-					{[
-						{ title: "Healthcare", desc: "Providing mission-critical backup power and energy independence to ensure life-saving medical equipment operates without interruption.", icon: "bi-hospital" },
-						{ title: "Education", desc: "Reducing operational costs for schools and universities with high-efficiency solar campuses, enabling more funds for student success.", icon: "bi-book" },
-						{ title: "Government", desc: "Supporting energy security and infrastructure stability with reliable, large-scale renewable projects tailored for public utility needs.", icon: "bi-bank2" },
-						{ title: "Finance", desc: "Optimizing ROI through predictable energy overheads and long-term asset management of renewable energy portfolios.", icon: "bi-currency-dollar" }
-					].map((industry, i) => (
-						<div className="col-lg-3 col-md-6" key={i}>
-							<div className="service-box style-two text-center" style={{ padding: '30px', background: '#fff', borderRadius: '10px', boxShadow: '0 5px 15px rgba(0,0,0,0.05)', height: '100%' }}>
-								<div className="industry-icon mb-3" style={{ fontSize: '32px', color: '#fba500' }}>
-									<i className={`bi ${industry.icon}`}></i>
-								</div>
-								<h4>{industry.title}</h4>
-								<p style={{ fontSize: '14px' }}>{industry.desc}</p>
-							</div>
-						</div>
-					))}
-				</div>
-			</div>
-		</div>
-		{/*==================================================*/}
-		{/* End Industries We Serve Section */}
-		{/*==================================================*/}
-		{/*==================================================*/}
-		{/* Start Solar Panel  Subscribe  Section */}
-		{/*==================================================*/} 
-		<div className="subscribe-section">
-			<div className="container">
-				<div className="row">
-					<div className="col-lg-6 col-md-6">
-						<div className="section-title">
-							<div className="section-main-title Subscribe">
-								<h2>Subscribe For </h2>
-								<h2>Exclusive Updates</h2>
-							</div>
-						</div>
-					</div>
-					<div className="col-lg-6 col-md-6">
-						<form action="https://formsubmit.co/matrikaventures2020@gmail.com" method="POST" id="about-subscribe-form">
-							<input type="hidden" name="_next" value={typeof window !== 'undefined' ? window.location.origin + "/success" : "https://techops-global.com/success"} />
-							<input type="hidden" name="_subject" value="New Newsletter Subscription From Techops Global" />
-							<div className="form-box Subscribe wow animate__slideInRight">
-								<input type="text" name="email" placeholder="Your Email Address..." />
-								<button type="submit" className="icons">
-									<i className="bi bi-send"></i>
-								</button>
-							</div>
-							<div className="checkbox-box">
-								<input type="checkbox" id="aboutreviewcheck" name="reviewcheck" />
-								<label htmlFor="aboutreviewcheck"> I agree to the <Link to="/contact">Privacy Policy</Link></label>
-							</div>
-						</form>
-						<div id="about-status"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		{/*==================================================*/}
-		{/* End Solar Panel  Subscribe  Section */}
-		{/*==================================================*/} 
-		</>
-	);
+// ─── Stat Item ─────────────────────────────────────────────────────────────
+function StatItem({ icon: Icon, value, label, last = false }) {
+  return (
+    <div
+      className="flex items-center gap-4"
+      style={{
+        padding: "20px 28px",
+        borderRight: last ? "none" : "1px solid rgba(255,255,255,0.08)",
+      }}
+    >
+      <div
+        className="shrink-0 flex items-center justify-center rounded-full"
+        style={{
+          width: 56,
+          height: 56,
+          border: "2px solid #ff7a00",
+          background: "rgba(255,122,0,0.06)",
+          color: "#ff7a00",
+        }}
+      >
+        <Icon size={24} strokeWidth={1.5} />
+      </div>
+      <div>
+        <div className="text-white font-extrabold text-[28px] leading-none mb-1">
+          {value}
+        </div>
+        <div className="text-gray-400 uppercase font-bold tracking-wider text-[13px]">
+          {label}
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default About;
+// ─── What We Do Card ────────────────────────────────────────────────────────
+function WhatWeDoCard({ icon: Icon, title, desc }) {
+  return (
+    <div
+      className="flex flex-col gap-4 rounded-xl p-6 transition-all hover:border-[#ff7a00]/40"
+      style={{ background: "#0d1020", border: "1px solid rgba(255,255,255,0.08)" }}
+    >
+      <div
+        className="flex items-center justify-center rounded-full shrink-0"
+        style={{
+          width: 48,
+          height: 48,
+          border: "1.5px solid rgba(255,122,0,0.5)",
+          background: "rgba(255,122,0,0.06)",
+          color: "#ff7a00",
+        }}
+      >
+        <Icon size={22} strokeWidth={1.5} />
+      </div>
+      <div>
+        <h3 className="!text-white font-extrabold text-[18px] mb-2 leading-snug">
+          {title}
+        </h3>
+        <p className="text-gray-400 text-[16px] leading-relaxed font-light">
+          {desc}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+// ─── Expertise Capability Item ──────────────────────────────────────────────
+function CapItem({ icon: Icon, title, subtitle }) {
+  return (
+    <div className="flex items-start gap-3">
+      <div
+        className="shrink-0 flex items-center justify-center rounded-full mt-0.5"
+        style={{
+          width: 44,
+          height: 44,
+          border: "1.5px solid rgba(255,122,0,0.45)",
+          background: "rgba(255,122,0,0.07)",
+          color: "#ff7a00",
+        }}
+      >
+        <Icon size={20} strokeWidth={1.5} />
+      </div>
+      <div>
+        <div className="text-white font-extrabold text-[18px] leading-snug mb-1">
+          {title}
+        </div>
+        <div className="text-gray-400 text-[16px] font-light">
+          {subtitle}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Main Component ─────────────────────────────────────────────────────────
+export default function About() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = "TechOps Global | About Us - Clean Energy Developer";
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-[#05070b] text-white font-sans overflow-x-hidden selection:bg-[#ff7a00]/30 selection:text-[#ff7a00]">
+
+      {/* ── HERO SECTION WITH BACKGROUND ─────────────────────────────────── */}
+      <section 
+        className="relative w-full px-[50px] pt-32 pb-24 overflow-hidden bg-cover bg-center border-b border-white/5"
+        style={{
+          backgroundImage: "linear-gradient(to right, rgba(5, 7, 11, 0.98) 35%, rgba(5, 7, 11, 0.6) 100%), url('/img/concept-of-an-energy-storage-system-based-on-elect-2026-03-24-07-19-07-utc.jpg')"
+        }}
+      >
+        {/* Breadcrumbs inside hero */}
+        <div className="relative z-10 flex items-center gap-2 text-[16px] font-bold text-gray-400 tracking-wider uppercase mb-8">
+          <Link to="/" className="text-white hover:text-[#ff7a00] transition-colors">Home</Link>
+          <span className="text-gray-600">&gt;</span>
+          <span className="text-gray-300">About Us</span>
+        </div>
+
+        {/* Text Content */}
+        <div className="relative z-10 max-w-[800px]">
+          <h1 className="!text-white text-[60px] lg:text-[64px] font-extrabold leading-[1.1] tracking-tight mb-6">
+            About <span className="!text-[#ff7a00] text-[#ff7a00]">TechOps Global</span>
+          </h1>
+          <p className="text-[20px] lg:text-[24px] text-white font-semibold mb-5 leading-relaxed">
+            Powering the Future Through Innovation,<br />
+            Sustainability, and Excellence.
+          </p>
+          <p className="text-[18px] text-gray-400 font-light leading-relaxed">
+            TechOps Global is a forward-thinking energy solutions company
+            committed to building reliable and sustainable power systems for
+            businesses, communities, and governments across the USA and
+            international markets.
+          </p>
+        </div>
+      </section>
+
+      {/* Container for Stats Bar below the hero */}
+      <section className="w-full px-[50px] pb-0 pt-12">
+
+        {/* ── STATS BAR ──────────────────────────────────────────────────── */}
+        <div
+          className="mt-12 rounded-xl"
+          style={{
+            background: "#0d1020",
+            border: "1px solid rgba(255,255,255,0.08)",
+          }}
+        >
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
+            <StatItem icon={Award}       value="100MW+"        label="Commissioned Projects" />
+            <StatItem icon={Clock}       value="29+"           label="Years of Industry Experience" />
+            <StatItem icon={Globe}       value="International" label="Presence in USA & Global Markets" />
+            <StatItem icon={ShieldCheck} value="100%"          label="Commitment to Quality & Safety" last />
+          </div>
+        </div>
+      </section>
+
+      {/* ── OUR STORY ───────────────────────────────────────────────────── */}
+      <section className="w-full px-[50px] py-16 border-b border-white/5">
+        <div
+          className="grid items-stretch"
+          style={{ gridTemplateColumns: "5fr 7fr", gap: 56 }}
+        >
+          {/* Left Column: text & button */}
+          <div className="flex flex-col justify-between py-2">
+            <div className="flex flex-col gap-6">
+              <div className="flex items-center gap-3">
+                <h2 className="!text-white font-extrabold text-[32px]">Our Story</h2>
+                <div style={{ width: 40, height: 3, background: "#ff7a00", borderRadius: 2, flexShrink: 0 }} />
+              </div>
+              <p className="text-[18px] text-gray-300 font-light leading-relaxed">
+                Founded with a vision to accelerate the global transition to clean
+                energy, TechOps Global has grown into a trusted partner for
+                delivering end-to-end energy and infrastructure solutions.
+              </p>
+              <p className="text-[18px] text-gray-400 font-light leading-relaxed">
+                From renewable energy development and engineering support to
+                large-scale project execution and operations, we bring decades of
+                expertise and a strong commitment to sustainability and innovation.
+              </p>
+            </div>
+            {/* Pill-shaped border button matching mockup */}
+            <div className="mt-8">
+              <Link
+                to="/how-it-works"
+                className="inline-flex items-center gap-2 px-6 py-2.5 border border-[#ff7a00] text-white hover:bg-[#ff7a00] transition-colors rounded-full text-[15px] font-medium group"
+              >
+                Our Journey <span className="text-[#ff7a00] group-hover:text-white transition-colors">&rarr;</span>
+              </Link>
+            </div>
+          </div>
+
+          {/* Right Column: Combined Card Container (Image left flush, Values right padded) */}
+          <div
+            className="rounded-3xl overflow-hidden grid"
+            style={{
+              background: "rgba(13,16,32,0.45)",
+              border: "1px solid rgba(255,255,255,0.08)",
+              gridTemplateColumns: "1fr 1.1fr",
+            }}
+          >
+            {/* Left side: Image flush */}
+            <div className="h-full min-h-[400px]">
+              <img
+                src="/solutiondemo/industrial-solar.png"
+                alt="Solar panels at sunset"
+                className="w-full h-full object-cover"
+                style={{ display: "block" }}
+              />
+            </div>
+            {/* Right side: Values List (padded) */}
+            <div className="p-8 md:p-10 flex flex-col justify-center gap-8">
+              {[
+                {
+                  icon: Target,
+                  title: "Our Vision",
+                  body: "A world powered by clean, affordable, and reliable energy.",
+                },
+                {
+                  icon: Rocket,
+                  title: "Our Mission",
+                  body: "Deliver innovative energy solutions that drive progress and create lasting value.",
+                },
+                {
+                  icon: Shield,
+                  title: "Our Values",
+                  body: "Integrity, Safety, Innovation, Collaboration, and Excellence.",
+                },
+              ].map(({ icon: Icon, title, body }) => (
+                <div key={title} className="flex items-start gap-4">
+                  <div
+                    className="shrink-0 flex items-center justify-center rounded-full"
+                    style={{
+                      width: 44,
+                      height: 44,
+                      border: "1.5px solid rgba(255,122,0,0.4)",
+                      background: "rgba(255,122,0,0.07)",
+                      color: "#ff7a00",
+                      marginTop: 2,
+                    }}
+                  >
+                    <Icon size={20} strokeWidth={1.5} />
+                  </div>
+                  <div>
+                    <div className="text-white font-extrabold text-[18px] uppercase tracking-wide mb-1.5">
+                      {title}
+                    </div>
+                    <div className="text-gray-400 text-[16px] font-light leading-relaxed">
+                      {body}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── WHAT WE DO ──────────────────────────────────────────────────── */}
+      <section className="w-full px-[50px] py-24 border-b border-white/5">
+        <div className="flex items-center gap-4 mb-14">
+          <h2 className="!text-white font-extrabold text-[32px] uppercase tracking-widest whitespace-nowrap">
+            What We Do
+          </h2>
+          <div style={{ height: 3, background: "#ff7a00", width: 40, flexShrink: 0, borderRadius: 2 }} />
+        </div>
+
+        <div className="grid gap-6" style={{ gridTemplateColumns: "repeat(5, 1fr)" }}>
+          <WhatWeDoCard
+            icon={Cpu}
+            title="Engineering Excellence"
+            desc="Delivering innovative and reliable energy systems with precision."
+          />
+          <WhatWeDoCard
+            icon={Leaf}
+            title="Sustainable Solutions"
+            desc="Promoting clean energy technologies for a greener tomorrow."
+          />
+          <WhatWeDoCard
+            icon={Users}
+            title="Strategic Partnerships"
+            desc="Building long-term relationships based on trust and performance."
+          />
+          <WhatWeDoCard
+            icon={Activity}
+            title="Operational Excellence"
+            desc="Ensuring efficiency, safety, and quality in every project we deliver."
+          />
+          <WhatWeDoCard
+            icon={ShieldCheck}
+            title="Safety & Compliance"
+            desc="Upholding the highest standards of safety, quality, and compliance."
+          />
+        </div>
+      </section>
+
+      {/* ── OUR EXPERTISE ───────────────────────────────────────────────── */}
+      <section className="w-full px-[50px] py-24 border-b border-white/5">
+        {/* Header layout matching mockup (Title left, intro right) */}
+        <div className="grid lg:grid-cols-12 gap-10 items-center mb-16">
+          <div className="lg:col-span-5 flex items-center gap-4">
+            <h2 className="!text-white font-extrabold text-[32px] uppercase tracking-widest whitespace-nowrap">
+              Our Expertise
+            </h2>
+            <div style={{ height: 3, background: "#ff7a00", flex: 1, minWidth: 50, borderRadius: 2 }} />
+          </div>
+          <div className="lg:col-span-7">
+            <p className="text-[18px] text-gray-300 font-light leading-relaxed">
+              We specialize in renewable energy development, energy storage
+              systems, engineering support, and industrial infrastructure
+              solutions. Our team combines technical expertise with strategic
+              execution to deliver measurable results.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid items-stretch" style={{ gridTemplateColumns: "5fr 7fr", gap: 56 }}>
+
+          {/* Left: image with competency overlay bottom-right */}
+          <div className="relative rounded-2xl overflow-hidden flex items-end justify-end" style={{ minHeight: 460, border: "1px solid rgba(255,255,255,0.08)" }}>
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage:
+                  "url('/img/multigeneration-family-walking-on-field-on-wind-fa-2026-01-05-22-45-03-utc.jpg')",
+              }}
+            />
+            <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.45)" }} />
+            
+            {/* Overlay card touching bottom right corner */}
+            <div
+              className="relative z-10 w-[60%] lg:w-[55%] rounded-tl-2xl p-7 shadow-2xl"
+              style={{
+                background: "rgba(10,13,22,0.92)",
+                borderTop: "1px solid rgba(255,255,255,0.15)",
+                borderLeft: "1px solid rgba(255,255,255,0.15)",
+                backdropFilter: "blur(12px)",
+              }}
+            >
+              <ul className="flex flex-col gap-4" style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                {[
+                  "Mega Project Management",
+                  "NIWE Validated Data",
+                  "Industrial Grid-Tie",
+                  "Power Evacuation",
+                  "Land Procurement",
+                  "Utility Liaisoning",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-white font-semibold text-[16px]">
+                    <div
+                      className="shrink-0 flex items-center justify-center rounded-full"
+                      style={{
+                        width: 24,
+                        height: 24,
+                        background: "#ff7a00",
+                        color: "#fff",
+                      }}
+                    >
+                      <Check size={14} strokeWidth={3} />
+                    </div>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Right: 2-column capability grid */}
+          <div className="flex flex-col justify-center">
+            <div className="grid gap-x-10 gap-y-12" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
+              <CapItem icon={Sun}             title="Solar Energy Systems"         subtitle="Utility-scale & Distributed" />
+              <CapItem icon={BatteryCharging} title="Battery Energy Storage"       subtitle="BESS Solutions" />
+              <CapItem icon={Wind}            title="Wind Power Infrastructure"    subtitle="Resource Assessment & Development" />
+              <CapItem icon={LayoutGrid}      title="Virtual Power Plant Services" subtitle="VPP Platforms & Optimization" />
+              <CapItem icon={Settings}        title="Energy Management Solutions"  subtitle="Efficiency & Monitoring" />
+              <CapItem icon={Wrench}          title="Operations & Maintenance"     subtitle="Reliable & Safe Operations" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA SECTION ─────────────────────────────────────────────────── */}
+      <section className="w-full px-[50px] py-20">
+        <div
+          className="relative rounded-2xl overflow-hidden"
+          style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+        >
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: "url('/solutiondemo/warehouse-solar.png')" }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(to right, rgba(5,7,11,0.96) 40%, rgba(5,7,11,0.82) 100%)" }}
+          />
+
+          <div
+            className="relative z-10 flex items-center justify-between flex-wrap gap-10"
+            style={{ padding: "56px 64px" }}
+          >
+            <div>
+              <h2 className="!text-white font-extrabold text-[40px] leading-tight mb-4">
+                Let's Build a Smarter,<br />
+                Sustainable Energy Future—Together.
+              </h2>
+              <p className="text-[18px] text-gray-400 font-light">
+                Partner with TechOps Global for reliable, efficient, and future-ready energy solutions.
+              </p>
+            </div>
+
+            <div className="shrink-0">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-3 px-8 py-4 rounded text-white font-extrabold text-[16px] tracking-wider uppercase transition-all shadow-[0_4px_24px_rgba(255,102,0,0.4)] hover:opacity-90"
+                style={{ background: "#ff6600", textDecoration: "none" }}
+              >
+                Get in Touch <ArrowRight size={18} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
+}

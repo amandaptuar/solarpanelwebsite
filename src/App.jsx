@@ -18,6 +18,7 @@ import PropertyTypes from "./pages/PropertyTypes";
 // Inner layout that re-initializes jQuery theme on every route change
 function Layout() {
   const location = useLocation();
+  const isActive = (path) => location.pathname === path;
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -71,18 +72,28 @@ function Layout() {
           {/* Desktop Nav Links */}
           <div className="col-auto d-none d-lg-flex">
             <nav className="d-flex align-items-center gap-4 custom-nav-links">
-              <Link to="/" className="text-white text-decoration-none uppercase tracking-wider hover-orange" style={{fontSize: '14px', fontWeight: '800'}}>
-                Home
-              </Link>
-              <Link to="/solutions/warehouse" className="text-white text-decoration-none uppercase tracking-wider hover-orange" style={{fontSize: '14px', fontWeight: '800'}}>
-                Solution
-              </Link>
-              <Link to="/property-types" className="text-white text-decoration-none uppercase tracking-wider hover-orange" style={{fontSize: '14px', fontWeight: '800'}}>
-                Property Types
-              </Link>
-              <Link to="/how-it-works" className="text-white text-decoration-none uppercase tracking-wider hover-orange" style={{fontSize: '14px', fontWeight: '800'}}>
-                How It Works
-              </Link>
+              {[
+                { name: "Home", path: "/" },
+                { name: "About", path: "/about" },
+                { name: "Warehouse", path: "/solutions/warehouse" },
+                { name: "Property Types", path: "/property-types" },
+                { name: "How It Works", path: "/how-it-works" }
+              ].map(link => (
+                <Link 
+                  key={link.path}
+                  to={link.path} 
+                  className="text-decoration-none uppercase tracking-wider hover-orange transition-all"
+                  style={{
+                    fontSize: '14px', 
+                    fontWeight: '800',
+                    color: isActive(link.path) ? '#ff7a00' : '#ffffff',
+                    borderBottom: isActive(link.path) ? '2px solid #ff7a00' : '2px solid transparent',
+                    paddingBottom: '4px'
+                  }}
+                >
+                  {link.name}
+                </Link>
+              ))}
             </nav>
           </div>
 
@@ -129,10 +140,30 @@ function Layout() {
           >
             <div className="solar-menu" style={{padding: '20px'}}>
               <ul style={{listStyle:'none', padding:0, margin:0, display:'flex', flexDirection:'column', gap:'15px'}}>
-                <li><Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="hover-orange" style={{color:'#fff', textDecoration:'none', fontWeight: 700, fontSize: '14px', textTransform: 'uppercase'}}>Home</Link></li>
-                <li><Link to="/solutions/warehouse" onClick={() => setIsMobileMenuOpen(false)} className="hover-orange" style={{color:'#fff', textDecoration:'none', fontWeight: 700, fontSize: '14px', textTransform: 'uppercase'}}>Solution</Link></li>
-                <li><Link to="/property-types" onClick={() => setIsMobileMenuOpen(false)} className="hover-orange" style={{color:'#fff', textDecoration:'none', fontWeight: 700, fontSize: '14px', textTransform: 'uppercase'}}>Property Types</Link></li>
-                <li><Link to="/how-it-works" onClick={() => setIsMobileMenuOpen(false)} className="hover-orange" style={{color:'#fff', textDecoration:'none', fontWeight: 700, fontSize: '14px', textTransform: 'uppercase'}}>How It Works</Link></li>
+                {[
+                  { name: "Home", path: "/" },
+                  { name: "About", path: "/about" },
+                  { name: "Warehouse", path: "/solutions/warehouse" },
+                  { name: "Property Types", path: "/property-types" },
+                  { name: "How It Works", path: "/how-it-works" }
+                ].map(link => (
+                  <li key={link.name}>
+                    <Link
+                      to={link.path}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="hover-orange"
+                      style={{
+                        color: isActive(link.path) ? '#ff7a00' : '#ffffff',
+                        textDecoration: 'none',
+                        fontWeight: 700,
+                        fontSize: '14px',
+                        textTransform: 'uppercase'
+                      }}
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </motion.div>
@@ -192,9 +223,18 @@ function Layout() {
             <div>
               <h4 className="text-white font-bold mb-5 text-[22px] tracking-widest uppercase">COMPANY</h4>
               <ul className="space-y-3">
-                {["About Us", "Leadership", "Careers", "News", "Contact Us"].map(l => (
-                  <li key={l}><Link to="#" className="text-white text-[20px] hover:text-gray-300 transition-colors">{l}</Link></li>
-                ))}
+                {["About Us", "Leadership", "Careers", "News", "Contact Us"].map(l => {
+                  let path = "#";
+                  if (l === "About Us") path = "/about";
+                  if (l === "Contact Us") path = "/contact";
+                  return (
+                    <li key={l}>
+                      <Link to={path} className="text-white text-[20px] hover:text-gray-300 transition-colors">
+                        {l}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
 
@@ -214,7 +254,11 @@ function Layout() {
                 <li className="text-white text-[22px]">(608) 555-0123</li>
                 <li className="text-white text-[22px] flex items-center gap-2 mt-2"><MapPin size={14}/> Princeton, NJ</li>
               </ul>
-
+              <img 
+                src="/assets/images/resource/footer-thumb.png" 
+                alt="USA map indicating PJM markets" 
+                className="w-full max-w-[160px] opacity-80 mt-4" 
+              />
             </div>
 
           </div>

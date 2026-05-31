@@ -25,7 +25,7 @@ export default function WarehouseSolution() {
         {/* Top Breadcrumb Inside Hero */}
         <div className="w-full px-[50px] mb-8">
           <div className="flex items-center gap-2 text-[16px] font-bold text-gray-400 tracking-wider uppercase">
-            <Link to="/" className="hover:text-[#ff7a00] transition-colors">Home</Link>
+            <Link to="/" className="text-white hover:text-[#ff7a00] transition-colors">Home</Link>
             <span>&gt;</span>
             <span className="text-gray-400">Solutions</span>
             <span>&gt;</span>

@@ -126,7 +126,7 @@ export default function PropertyTypes() {
           
           {/* Breadcrumbs */}
           <div className="flex items-center gap-2 mb-12 text-[18px] sm:text-[18px]">
-            <Link to="/" className="text-gray-400 hover:text-white no-underline transition-colors">Home</Link>
+            <Link to="/" className="text-white hover:text-[#ff7a00] no-underline transition-colors">Home</Link>
             <span className="text-gray-600 font-light">&gt;</span>
             <span className="text-white font-medium">Property Types</span>
           </div>

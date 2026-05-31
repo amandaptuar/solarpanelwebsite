@@ -28,7 +28,7 @@ function PreetamProfile() {
 							</div>
 							<div className="bratcome-text">
 								<ul>
-									<li><Link to="/">Home</Link></li>
+									<li><Link to="/" className="!text-white hover:!text-[#ff7a00]">Home</Link></li>
 									<li><Link to="/team">Team</Link></li>
 									<li> Profile</li>
 								</ul>
