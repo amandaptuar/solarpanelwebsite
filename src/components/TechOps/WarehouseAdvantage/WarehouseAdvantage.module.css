@@ -1,0 +1,175 @@
+/* WarehouseAdvantage */
+.section {
+    background: #0a0a0a;
+    padding: 100px 24px;
+}
+
+.inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* Left */
+.left {}
+
+.label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #e85d04;
+    margin-bottom: 20px;
+}
+
+.h2 {
+    font-size: clamp(26px, 3vw, 40px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    margin-bottom: 24px;
+}
+
+.body {
+    font-size: 15px;
+    color: #888;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.featureItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.featureItem:first-child {
+    padding-top: 0;
+}
+
+.featureIcon {
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 200, 150, 0.1);
+    border: 1px solid rgba(0, 200, 150, 0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00c896;
+    flex-shrink: 0;
+    font-size: 18px;
+}
+
+.featureText {}
+
+.featureTitle {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #00c896;
+    margin-bottom: 4px;
+}
+
+.featureDesc {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.6;
+}
+
+/* Right */
+.right {
+    position: relative;
+}
+
+.imageWrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.image {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+}
+
+.annotation {
+    position: absolute;
+    background: rgba(10, 10, 10, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px 18px;
+    max-width: 220px;
+    backdrop-filter: blur(12px);
+}
+
+.annotation.topRight {
+    top: 28px;
+    right: -20px;
+}
+
+.annotation.bottomLeft {
+    bottom: 40px;
+    left: -20px;
+}
+
+.annotationTitle {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #00c896;
+    margin-bottom: 6px;
+}
+
+.annotationDesc {
+    font-size: 11px;
+    color: #777;
+    line-height: 1.5;
+}
+
+.annotationDot {
+    width: 8px;
+    height: 8px;
+    background: #00c896;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+    box-shadow: 0 0 8px rgba(0, 200, 150, 0.6);
+}
+
+@media (max-width: 1024px) {
+    .annotation.topRight {
+        right: 10px;
+    }
+
+    .annotation.bottomLeft {
+        left: 10px;
+    }
+}
+
+@media (max-width: 900px) {
+    .inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .image {
+        height: 320px;
+    }
+}

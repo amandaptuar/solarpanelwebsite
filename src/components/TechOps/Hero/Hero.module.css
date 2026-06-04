@@ -1,0 +1,233 @@
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1400');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg,
+            rgba(10, 10, 10, 0.92) 0%,
+            rgba(10, 10, 10, 0.75) 55%,
+            rgba(10, 10, 10, 0.35) 100%);
+    z-index: 1;
+}
+
+.inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 140px 24px 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.content {
+    max-width: 620px;
+    flex: 1;
+}
+
+.breadcrumb {
+    font-size: 12px;
+    color: #777;
+    letter-spacing: 0.05em;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.breadcrumb span {
+    color: #999;
+}
+
+.breadcrumb .active {
+    color: #e85d04;
+}
+
+.h1 {
+    font-size: clamp(32px, 4vw, 54px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.h1Orange {
+    color: #e85d04;
+    display: block;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #aaaaaa;
+    line-height: 1.7;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    max-width: 520px;
+}
+
+.buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btnPrimary {
+    background: #e85d04;
+    color: #fff;
+    border: none;
+    padding: 14px 28px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: background 0.2s, transform 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btnPrimary:hover {
+    background: #d14f00;
+    transform: translateY(-2px);
+}
+
+.btnSecondary {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    padding: 14px 28px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btnSecondary:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+/* Floating card */
+.floatingCard {
+    flex-shrink: 0;
+    background: rgba(15, 15, 15, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 28px 32px;
+    width: 290px;
+    backdrop-filter: blur(16px);
+    margin-top: 40px;
+}
+
+.cardRow {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cardRow:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.cardRow:first-child {
+    padding-top: 0;
+}
+
+.cardIcon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 16px;
+}
+
+.cardIcon.green {
+    background: rgba(0, 200, 150, 0.15);
+    color: #00c896;
+}
+
+.cardIcon.orange {
+    background: rgba(232, 93, 4, 0.15);
+    color: #e85d04;
+}
+
+.cardIcon.blue {
+    background: rgba(59, 130, 246, 0.15);
+    color: #3b82f6;
+}
+
+.cardLabel {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.cardDesc {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+    .floatingCard {
+        width: 260px;
+    }
+}
+
+@media (max-width: 900px) {
+    .inner {
+        flex-direction: column;
+        padding: 120px 24px 60px;
+    }
+
+    .floatingCard {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 600px) {
+    .inner {
+        padding: 100px 16px 50px;
+    }
+
+    .h1 {
+        font-size: 30px;
+    }
+}
