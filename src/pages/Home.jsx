@@ -36,12 +36,12 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { label: "Solutions", dropdown: true },
-    { label: "Property Types", dropdown: true },
-    { label: "How It Works", dropdown: false },
-    { label: "Markets", dropdown: false },
-    { label: "Resources", dropdown: true },
-    { label: "Company", dropdown: true },
+    { label: "Solutions", path: "/services", dropdown: true },
+    { label: "Property Types", path: "/property-types", dropdown: true },
+    { label: "How It Works", path: "/how-it-works", dropdown: false },
+    { label: "Markets", path: "/contact", dropdown: false },
+    { label: "Resources", path: "/contact", dropdown: true },
+    { label: "Company", path: "/about", dropdown: true },
   ];
 
   return (
@@ -54,7 +54,7 @@ const Navbar = () => {
         {/* Desktop Links */}
         <div className="hidden lg:flex items-center gap-7">
           {navLinks.map((item) => (
-            <Link key={item.label} to="#" className="text-[14px] font-medium tracking-wide text-gray-300 hover:text-white transition-colors flex items-center gap-1">
+            <Link key={item.label} to={item.path} className="text-[14px] font-medium tracking-wide text-gray-300 hover:text-white transition-colors flex items-center gap-1">
               {item.label} {item.dropdown && <ChevronRight size={12} className="rotate-90 opacity-60" />}
             </Link>
           ))}
@@ -87,7 +87,7 @@ const Navbar = () => {
           >
             <div className="px-6 py-6 flex flex-col gap-4">
               {navLinks.map((item) => (
-                <Link key={item.label} to="#" className="text-[20px] font-medium text-gray-300 flex justify-between">
+                <Link key={item.label} to={item.path} className="text-[20px] font-medium text-gray-300 flex justify-between">
                   {item.label} {item.dropdown && <ChevronRight size={18} className="opacity-60" />}
                 </Link>
               ))}

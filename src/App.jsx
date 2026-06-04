@@ -449,10 +449,16 @@ function Layout() {
             <div>
               <h4 className="text-white font-bold mb-5 text-[22px] tracking-widest uppercase">SOLUTIONS</h4>
               <ul className="space-y-3">
-                {["Warehouse & Logistics", "Idle Land", "Parking Lots", "Battery Storage", "VPP & Markets"].map(l => (
-                  <li key={l}>
-                    <Link to={l === "Warehouse & Logistics" ? "/solutions/warehouse" : "#"} className="text-white text-[20px] hover:text-gray-300 transition-colors">
-                      {l}
+                {[
+                  { label: "Warehouse & Logistics", path: "/solutions/warehouse" },
+                  { label: "Idle Land", path: "/property-types" },
+                  { label: "Parking Lots", path: "/solutions/parking" },
+                  { label: "Battery Storage", path: "/solutions/battery" },
+                  { label: "VPP & Markets", path: "/contact" },
+                ].map(l => (
+                  <li key={l.label}>
+                    <Link to={l.path} className="text-white text-[20px] hover:text-gray-300 transition-colors">
+                      {l.label}
                     </Link>
                   </li>
                 ))}
@@ -463,8 +469,9 @@ function Layout() {
               <h4 className="text-white font-bold mb-5 text-[22px] tracking-widest uppercase">COMPANY</h4>
               <ul className="space-y-3">
                 {["About Us", "Leadership", "Careers", "News", "Contact Us"].map(l => {
-                  let path = "#";
+                  let path = "/contact";
                   if (l === "About Us") path = "/about";
+                  if (l === "Leadership") path = "/team";
                   if (l === "Contact Us") path = "/contact";
                   return (
                     <li key={l}>
@@ -480,9 +487,9 @@ function Layout() {
             <div>
               <h4 className="text-white font-bold mb-5 text-[22px] tracking-widest uppercase">RESOURCES</h4>
               <ul className="space-y-3">
-                {["Case Studies", "Whitepapers", "Blog", "FAQs", "Investor Relations"].map(l => (
-                  <li key={l}><Link to="#" className="text-white text-[22px] hover:text-gray-300 transition-colors">{l}</Link></li>
-                ))}
+                  {["Case Studies", "Whitepapers", "Blog", "FAQs", "Investor Relations"].map(l => (
+                    <li key={l}><Link to="/contact" className="text-white text-[22px] hover:text-gray-300 transition-colors">{l}</Link></li>
+                  ))}
               </ul>
             </div>
 
@@ -501,9 +508,9 @@ function Layout() {
           <div className="flex flex-col md:flex-row justify-between items-center pt-6 border-t border-white/5 text-gray-400 text-[20px]">
             <p>© 2025 TechOps Global. All rights reserved.</p>
             <div className="flex gap-6 mt-4 md:mt-0">
-              <Link to="#" className="text-white hover:text-gray-300 transition-colors">Privacy Policy</Link>
-              <Link to="#" className="text-white hover:text-gray-300 transition-colors">Terms of Service</Link>
-              <Link to="#" className="text-white hover:text-gray-300 transition-colors">Sitemap</Link>
+              <Link to="/contact" className="text-white hover:text-gray-300 transition-colors">Privacy Policy</Link>
+              <Link to="/contact" className="text-white hover:text-gray-300 transition-colors">Terms of Service</Link>
+              <Link to="/contact" className="text-white hover:text-gray-300 transition-colors">Sitemap</Link>
             </div>
           </div>
         </div>

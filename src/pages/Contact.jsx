@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
 	Phone, Mail, Clock, MapPin, ChevronRight,
-	CheckCircle2, ArrowRight, Globe, Shield, Zap, Users
+	CheckCircle2, ArrowRight, Shield, Lock
 } from "lucide-react";
 
 function Contact() {
@@ -14,156 +14,122 @@ function Contact() {
 		document.title = "Contact Us | TechOps Global";
 	}, []);
 
-	const inputClass = (field) =>
-		`w-full bg-white/5 border rounded-xl px-5 py-4 text-white placeholder:text-gray-500 outline-none transition-all duration-300 ${
-			focused === field
-				? "border-[#ff7a00] ring-1 ring-[#ff7a00]/30 bg-white/8"
-				: "border-white/10 hover:border-white/20"
+	const inputCls = (f) =>
+		`w-full bg-transparent border rounded-md px-4 py-3 text-white text-[14px] placeholder:text-gray-500 outline-none transition-all duration-200 ${
+			focused === f ? "border-[#ff7a00]" : "border-white/20 focus:border-[#ff7a00]"
 		}`;
 
 	return (
 		<div className="min-h-screen bg-[#05070b] text-white font-sans selection:bg-[#ff7a00]/30 selection:text-[#ff7a00]">
 
-			{/* ===== 1. HERO SECTION ===== */}
+			{/* ===== 1. HERO — split layout ===== */}
 			<section
-				className="relative min-h-screen flex flex-col justify-center pt-28 pb-16 overflow-hidden"
+				className="relative pt-24 pb-20 overflow-hidden bg-cover bg-center"
 				style={{
-					backgroundImage: "url('/img/business-solution-2026-03-10-02-05-05-utc.JPG')",
-					backgroundSize: "cover",
-					backgroundPosition: "center top"
+					backgroundImage:
+						"linear-gradient(to right, rgba(5,7,11,0.95) 0%, rgba(5,7,11,0.85) 50%, rgba(5,7,11,0.5) 100%), url('/img/business-solution-2026-03-10-02-05-05-utc.JPG')",
 				}}
 			>
-				{/* Dark overlay */}
-				<div className="absolute inset-0 bg-gradient-to-r from-[#05070b] via-[#05070b]/85 to-[#05070b]/50" />
-				<div className="absolute inset-0 bg-gradient-to-t from-[#05070b] via-transparent to-[#05070b]/40" />
-				{/* Orange glow */}
-				<div className="absolute top-1/3 right-10 w-[600px] h-[400px] bg-[#ff7a00]/8 blur-[120px] rounded-full pointer-events-none" />
-
 				<div className="w-full px-6 md:px-[50px] relative z-10">
 					{/* Breadcrumb */}
-					<div className="flex items-center gap-2 type-body-sm font-bold text-gray-500 tracking-wider uppercase mb-12">
-						<Link to="/" className="text-gray-400 hover:text-[#ff7a00] transition-colors">Home</Link>
-						<ChevronRight size={14} className="text-gray-600" />
-						<span className="text-[#ff7a00]">Contact Us</span>
+					<div className="flex items-center gap-2 text-[12px] font-bold text-gray-400 tracking-wider uppercase mb-10 pt-6">
+						<Link to="/" className="text-white hover:text-[#ff7a00] transition-colors">Home</Link>
+						<ChevronRight size={13} className="text-gray-600" />
+						<span className="text-gray-400">Contact Us</span>
 					</div>
 
-					<div className="grid lg:grid-cols-12 gap-16 items-start">
+					<div className="grid lg:grid-cols-12 gap-10 items-start">
 						{/* Left Content */}
-						<div className="lg:col-span-6">
-							<div className="mb-4 text-[#ff7a00] text-[13px] font-bold tracking-[4px] uppercase">
+						<div className="lg:col-span-7 pr-4 lg:pr-10">
+							<div className="text-[#ff7a00] text-[12px] font-extrabold tracking-[4px] uppercase mb-4">
 								WE'RE HERE TO HELP
 							</div>
-							<h1 className="!text-white type-hero mb-8 leading-[1.05]">
+							<h1 className="!text-white text-[40px] md:text-[52px] font-extrabold leading-[1.1] mb-6">
 								Let's Build a<br />
 								Smarter Energy<br />
 								Future—<span className="text-[#ff7a00]">Together.</span>
 							</h1>
-							<p className="text-gray-300 text-[20px] leading-relaxed mb-12 max-w-xl font-light">
+							<p className="text-gray-300 text-[16px] leading-relaxed mb-10 max-w-lg font-light">
 								Have a question, project idea, or looking for more information? Our team is ready to help you unlock the potential of your property with AI-powered energy solutions.
 							</p>
 
-							{/* Quick stats */}
-							<div className="grid grid-cols-3 gap-6 mb-12">
-								{[
-									{ icon: <Zap size={18} />, val: "24/7", label: "AI Monitoring" },
-									{ icon: <Globe size={18} />, val: "15+", label: "States Active" },
-									{ icon: <Users size={18} />, val: "500+", label: "Sites Deployed" },
-								].map((s, i) => (
-									<div key={i} className="bg-white/5 border border-white/10 rounded-xl p-4 text-center hover:border-[#ff7a00]/30 transition-all">
-										<div className="text-[#ff7a00] flex justify-center mb-2">{s.icon}</div>
-										<div className="text-white text-[22px] font-extrabold leading-none mb-1">{s.val}</div>
-										<div className="text-gray-500 text-[11px] font-bold uppercase tracking-wider">{s.label}</div>
-									</div>
-								))}
-							</div>
-
-							{/* Quick Contact Info */}
-							<div className="space-y-5">
+							{/* 3 contact items horizontal */}
+							<div className="flex flex-col sm:flex-row gap-8">
 								{[
 									{ icon: <Phone size={18} />, label: "Call Us", value: "(609) 555-0123" },
 									{ icon: <Mail size={18} />, label: "Email Us", value: "hello@techopsglobal.com" },
 									{ icon: <Clock size={18} />, label: "Business Hours", value: "Mon – Fri: 8AM – 6PM EST" },
 								].map((item, i) => (
-									<div key={i} className="flex items-center gap-4">
-										<div className="w-10 h-10 rounded-xl border border-[#ff7a00]/30 flex items-center justify-center text-[#ff7a00] bg-[#ff7a00]/8 shrink-0">
+									<div key={i} className="flex items-center gap-3">
+										<div className="w-11 h-11 rounded-full border-2 border-[#ff7a00]/40 flex items-center justify-center text-[#ff7a00] shrink-0">
 											{item.icon}
 										</div>
 										<div>
 											<div className="text-gray-500 text-[11px] font-bold uppercase tracking-wider">{item.label}</div>
-											<div className="text-white font-semibold text-[15px]">{item.value}</div>
+											<div className="text-white font-semibold text-[13px]">{item.value}</div>
 										</div>
 									</div>
 								))}
 							</div>
 						</div>
 
-						{/* Right Form */}
-						<div className="lg:col-span-6">
-							<div className="bg-[#0a0c12]/80 backdrop-blur-2xl border border-white/10 rounded-2xl p-8 lg:p-10 shadow-[0_32px_80px_rgba(0,0,0,0.6)]">
-								<div className="mb-2 text-[#ff7a00] text-[12px] font-bold tracking-[3px] uppercase">GET IN TOUCH</div>
-								<h3 className="!text-white text-[26px] font-extrabold mb-8">Send Us a Message</h3>
+						{/* Right: Floating Form Card */}
+						<div className="lg:col-span-5">
+							<div className="bg-[#0b0d12] border border-white/10 rounded-xl p-8 shadow-2xl max-w-[440px] ml-auto">
+								<h3 className="!text-white text-[22px] font-bold mb-6">Send Us a Message</h3>
 
 								<form action="https://formsubmit.co/matrikaventures2020@gmail.com" method="POST" className="space-y-4">
-									<input type="hidden" name="_next" value={typeof window !== 'undefined' ? window.location.origin + "/success" : "https://techops-global.com/success"} />
-									<input type="hidden" name="_subject" value={`New Contact Submission By ${formName || 'a User'} From Techops Global`} />
+									<input type="hidden" name="_next" value={typeof window !== "undefined" ? window.location.origin + "/success" : "https://techops-global.com/success"} />
+									<input type="hidden" name="_subject" value={`New Contact Submission By ${formName || "a User"} From Techops Global`} />
 
-									<div className="grid sm:grid-cols-2 gap-4">
-										<input
-											type="text" name="name" placeholder="Full Name*" required
-											onChange={(e) => setFormName(e.target.value)}
-											onFocus={() => setFocused("name")} onBlur={() => setFocused("")}
-											className={inputClass("name")}
-										/>
-										<input
-											type="email" name="email" placeholder="Work Email*" required
-											onFocus={() => setFocused("email")} onBlur={() => setFocused("")}
-											className={inputClass("email")}
-										/>
-									</div>
-
-									<div className="grid sm:grid-cols-2 gap-4">
-										<input
-											type="tel" name="phone" placeholder="Phone Number*" required
-											onFocus={() => setFocused("phone")} onBlur={() => setFocused("")}
-											className={inputClass("phone")}
-										/>
-										<input
-											type="text" name="company" placeholder="Company Name*" required
-											onFocus={() => setFocused("company")} onBlur={() => setFocused("")}
-											className={inputClass("company")}
-										/>
-									</div>
-
+									<input
+										type="text" name="name" placeholder="Full Name*" required
+										onChange={(e) => setFormName(e.target.value)}
+										onFocus={() => setFocused("name")} onBlur={() => setFocused("")}
+										className={inputCls("name")}
+									/>
+									<input
+										type="email" name="email" placeholder="Work Email*" required
+										onFocus={() => setFocused("email")} onBlur={() => setFocused("")}
+										className={inputCls("email")}
+									/>
+									<input
+										type="tel" name="phone" placeholder="Phone Number*" required
+										onFocus={() => setFocused("phone")} onBlur={() => setFocused("")}
+										className={inputCls("phone")}
+									/>
+									<input
+										type="text" name="company" placeholder="Company Name*" required
+										onFocus={() => setFocused("company")} onBlur={() => setFocused("")}
+										className={inputCls("company")}
+									/>
 									<select
 										name="interest" required
 										onFocus={() => setFocused("interest")} onBlur={() => setFocused("")}
-										className={inputClass("interest") + " appearance-none"}
+										className={inputCls("interest") + " appearance-none"}
 									>
 										<option value="" disabled>I'm interested in...*</option>
-										<option value="Solar Energy">Solar Energy</option>
-										<option value="Battery Storage">Battery Storage</option>
-										<option value="Wind Energy">Wind Energy</option>
-										<option value="Parking Lot Solar">Parking Lot Solar</option>
-										<option value="VPP Solutions">VPP Solutions</option>
-										<option value="Other">Other</option>
+										<option>Solar Energy</option>
+										<option>Battery Storage</option>
+										<option>Wind Energy</option>
+										<option>Parking Lot Solar</option>
+										<option>VPP Solutions</option>
+										<option>Other</option>
 									</select>
-
 									<textarea
-										name="message" placeholder="Tell us about your project or inquiry..." required rows="4"
+										name="message" placeholder="Tell us about your project or inquiry...*" required rows="4"
 										onFocus={() => setFocused("message")} onBlur={() => setFocused("")}
-										className={inputClass("message") + " resize-none"}
+										className={inputCls("message") + " resize-none"}
 									></textarea>
 
 									<button
 										type="submit"
-										className="w-full bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold py-4 rounded-xl transition-all uppercase tracking-wider flex items-center justify-center gap-2 text-[15px] shadow-[0_4px_25px_rgba(255,122,0,0.4)] hover:shadow-[0_4px_35px_rgba(255,122,0,0.6)]"
+										className="w-full bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-bold py-3.5 rounded-md transition-all uppercase flex items-center justify-center gap-2 text-[14px] mt-2"
 									>
-										SEND MESSAGE <ArrowRight size={18} />
+										SEND MESSAGE <ArrowRight size={16} />
 									</button>
-
-									<p className="text-center text-gray-600 text-[12px] flex items-center justify-center gap-2 mt-2">
-										<Shield size={12} className="text-gray-500" />
-										Your information is secure and 100% confidential.
+									<p className="text-center text-gray-600 text-[11px] flex items-center justify-center gap-1.5 pt-1">
+										<Lock size={11} /> Your information is secure and confidential.
 									</p>
 								</form>
 							</div>
@@ -172,123 +138,136 @@ function Contact() {
 				</div>
 			</section>
 
-			{/* ===== 2. GET IN TOUCH INFO CARDS ===== */}
-			<section className="py-24 bg-[#07090e] border-b border-white/5">
+			{/* ===== 2. GET IN TOUCH ===== */}
+			<section className="py-20 bg-[#05070b] border-b border-white/5">
 				<div className="w-full px-6 md:px-[50px]">
-					<div className="flex items-center gap-6 mb-16">
-						<div className="h-[1px] bg-white/10 flex-1" />
-						<h2 className="!text-white text-[22px] font-extrabold tracking-[4px] uppercase whitespace-nowrap">
-							Contact Information
-						</h2>
-						<div className="h-[1px] bg-white/10 flex-1" />
+					{/* Title with decorative line */}
+					<div className="flex items-center justify-center mb-3">
+						<h2 className="!text-white text-[26px] font-extrabold tracking-wide">Get in Touch</h2>
+					</div>
+					<div className="flex justify-center mb-12">
+						<div className="w-12 h-[3px] bg-[#ff7a00] rounded-full" />
 					</div>
 
-					<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+					{/* 5-column grid: 4 info cards + 1 map */}
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
 						{[
 							{
-								icon: <MapPin size={26} />,
+								icon: <MapPin size={22} />,
 								title: "Our Headquarters",
-								details: ["200 Princeton Hightstown Rd", "Suite 201, Princeton, NJ 08540", "USA"],
-								color: "#ff7a00"
+								lines: ["TechOps Global, Inc.", "200 Princeton Hightstown Rd", "Suite 201", "Princeton, NJ 08540", "USA"]
 							},
 							{
-								icon: <Phone size={26} />,
+								icon: <Phone size={22} />,
 								title: "Call Us",
-								details: ["(609) 555-0123", "Toll Free: (833) TECH-OPS", "(833-832-4677)"],
-								color: "#8dff4d"
+								lines: ["(609) 555-0123", "", "Toll Free:", "(833) TECH-OPS", "(833-832-4677)"]
 							},
 							{
-								icon: <Mail size={26} />,
+								icon: <Mail size={22} />,
 								title: "Email Us",
-								details: ["hello@techopsglobal.com", "info@techopsglobal.com", "investors@techopsglobal.com"],
-								color: "#ff7a00"
+								lines: ["hello@techopsglobal.com", "info@techopsglobal.com", "", "Investor Relations", "investors@techopsglobal.com"]
 							},
 							{
-								icon: <Clock size={26} />,
+								icon: <Clock size={22} />,
 								title: "Business Hours",
-								details: ["Monday – Friday", "8:00 AM – 6:00 PM EST", "Saturday – Sunday: By Appt."],
-								color: "#8dff4d"
-							}
+								lines: ["Monday – Friday", "8:00 AM – 6:00 PM EST", "", "Saturday – Sunday", "By Appointment"]
+							},
 						].map((card, i) => (
-							<div key={i} className="bg-[#0d0f15] border border-white/8 rounded-2xl p-8 hover:border-[#ff7a00]/30 transition-all group relative overflow-hidden">
-								<div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#ff7a00]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-								<div
-									className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110"
-									style={{ background: `${card.color}15`, border: `1px solid ${card.color}30`, color: card.color }}
-								>
-									{card.icon}
-								</div>
-								<h4 className="!text-white text-[18px] font-bold mb-4">{card.title}</h4>
-								<div className="space-y-2">
-									{card.details.map((line, j) => (
-										<p key={j} className="text-gray-400 text-[14px] leading-relaxed">{line}</p>
+							<div key={i} className="bg-[#0d0f15] border border-white/8 rounded-xl p-6 flex flex-col items-center text-center hover:border-[#ff7a00]/30 transition-all group">
+								<div className="text-[#ff7a00] mb-4 group-hover:scale-110 transition-transform duration-300">{card.icon}</div>
+								<h4 className="!text-white text-[15px] font-extrabold mb-3">{card.title}</h4>
+								<div className="space-y-0.5">
+									{card.lines.map((line, j) => (
+										<p key={j} className={`text-[13px] leading-relaxed ${line === "" ? "h-3" : "text-gray-400"}`}>{line}</p>
 									))}
 								</div>
 							</div>
 						))}
+
+						{/* Map card */}
+						<div className="bg-[#0d0f15] border border-white/8 rounded-xl overflow-hidden relative min-h-[220px] hover:border-[#ff7a00]/30 transition-all">
+							{/* Dark map background */}
+							<div className="absolute inset-0 bg-[#111420]">
+								{/* Simulated dark map grid */}
+								<svg className="w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+									<defs>
+										<pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+											<path d="M 20 0 L 0 0 0 20" fill="none" stroke="#4a5568" strokeWidth="0.5"/>
+										</pattern>
+									</defs>
+									<rect width="100%" height="100%" fill="url(#grid)" />
+									{/* Roads */}
+									<line x1="0" y1="50%" x2="100%" y2="50%" stroke="#2d3748" strokeWidth="2"/>
+									<line x1="0" y1="30%" x2="100%" y2="35%" stroke="#2d3748" strokeWidth="1.5"/>
+									<line x1="0" y1="70%" x2="100%" y2="65%" stroke="#2d3748" strokeWidth="1.5"/>
+									<line x1="30%" y1="0" x2="35%" y2="100%" stroke="#2d3748" strokeWidth="1.5"/>
+									<line x1="60%" y1="0" x2="65%" y2="100%" stroke="#2d3748" strokeWidth="1.5"/>
+									<line x1="50%" y1="0" x2="50%" y2="100%" stroke="#374151" strokeWidth="2"/>
+								</svg>
+							</div>
+							{/* Pin */}
+							<div className="absolute inset-0 flex flex-col items-center justify-center">
+								<div className="w-10 h-10 bg-[#ff7a00] rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(255,122,0,0.5)] mb-2">
+									<MapPin size={20} className="text-black" />
+								</div>
+								<div className="bg-black/80 backdrop-blur-sm border border-white/20 px-3 py-1.5 rounded text-white text-[13px] font-bold shadow-xl">
+									Princeton, NJ
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
 
 			{/* ===== 3. OUR LOCATIONS ===== */}
-			<section className="py-24 bg-[#05070b] border-b border-white/5">
+			<section className="py-20 bg-[#07090e] border-b border-white/5">
 				<div className="w-full px-6 md:px-[50px]">
-					<div className="flex items-center gap-6 mb-16">
-						<div className="h-[1px] bg-white/10 flex-1" />
-						<h2 className="!text-white text-[22px] font-extrabold tracking-[4px] uppercase whitespace-nowrap">
-							Our Locations
-						</h2>
-						<div className="h-[1px] bg-white/10 flex-1" />
+					<div className="flex items-center justify-center mb-3">
+						<h2 className="!text-white text-[26px] font-extrabold tracking-wide">Our Locations</h2>
+					</div>
+					<div className="flex justify-center mb-12">
+						<div className="w-12 h-[3px] bg-[#ff7a00] rounded-full" />
 					</div>
 
-					<div className="grid md:grid-cols-3 gap-8">
+					<div className="grid md:grid-cols-3 gap-6">
 						{[
 							{
 								city: "Princeton, New Jersey",
 								type: "Headquarters",
 								address: ["200 Princeton Hightstown Rd", "Suite 201", "Princeton, NJ 08540", "USA"],
-								img: "/unsplash/office-solar.jpg"
+								img: "/unsplash/choose-thumb.jpg"
 							},
 							{
 								city: "Houston, Texas",
-								type: "Regional Office",
+								type: "Office",
 								address: ["5444 Westheimer Rd", "Suite 1000", "Houston, TX 77056", "USA"],
 								img: "/unsplash/industrial-solar.jpg"
 							},
 							{
 								city: "Los Angeles, California",
-								type: "West Coast Office",
+								type: "Office",
 								address: ["1900 Avenue of the Stars", "Suite 200", "Los Angeles, CA 90067", "USA"],
 								img: "/unsplash/la.jpg"
 							}
 						].map((loc, i) => (
-							<div key={i} className="bg-[#0d0f15] border border-white/10 rounded-2xl overflow-hidden group hover:border-[#ff7a00]/30 transition-all">
-								<div className="h-[220px] overflow-hidden relative">
+							<div key={i} className="bg-[#0d0f15] border border-white/10 rounded-xl overflow-hidden group hover:border-white/20 transition-all">
+								<div className="h-[180px] overflow-hidden relative">
 									<img
 										src={loc.img}
 										alt={loc.city}
 										className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
 									/>
-									<div className="absolute inset-0 bg-gradient-to-t from-[#0d0f15] via-[#0d0f15]/30 to-transparent" />
-									<div className="absolute top-4 left-4">
-										<span className="px-3 py-1 bg-[#ff7a00] text-black text-[11px] font-extrabold uppercase tracking-wider rounded">
-											{loc.type}
-										</span>
-									</div>
-									<div className="absolute bottom-4 left-4 right-4">
-										<h4 className="!text-white text-[20px] font-extrabold leading-tight">{loc.city}</h4>
+									<div className="absolute inset-0 bg-gradient-to-t from-[#0d0f15] via-black/30 to-transparent" />
+									<div className="absolute bottom-4 left-4">
+										<h4 className="!text-white text-[18px] font-extrabold leading-tight">{loc.city}</h4>
 									</div>
 								</div>
 								<div className="p-6">
-									<div className="space-y-1 mb-5">
+									<div className="text-[#ff7a00] text-[11px] font-extrabold tracking-wider uppercase mb-3">{loc.type}</div>
+									<div className="space-y-0.5">
 										{loc.address.map((line, j) => (
 											<p key={j} className="text-gray-400 text-[14px] leading-relaxed">{line}</p>
 										))}
-									</div>
-									<div className="flex items-center gap-2 text-[#ff7a00] text-[13px] font-bold uppercase tracking-wider">
-										<MapPin size={14} />
-										<span>Get Directions</span>
-										<ArrowRight size={13} />
 									</div>
 								</div>
 							</div>
@@ -297,74 +276,30 @@ function Contact() {
 				</div>
 			</section>
 
-			{/* ===== 4. WHY WORK WITH US ===== */}
+			{/* ===== 4. CTA SECTION ===== */}
 			<section
-				className="py-24 relative overflow-hidden"
+				className="py-20 relative overflow-hidden"
 				style={{
-					backgroundImage: "url('/img/team-technicians-carrying-photovoltaic-solar-modul-2026-01-09-10-53-57-utc.jpg')",
+					backgroundImage: "linear-gradient(to right, rgba(10,12,18,0.95) 50%, rgba(10,12,18,0.80) 100%), url('/unsplash/wind-battery.jpg')",
 					backgroundSize: "cover",
 					backgroundPosition: "center"
 				}}
 			>
-				<div className="absolute inset-0 bg-gradient-to-r from-[#05070b] via-[#05070b]/90 to-[#05070b]/70" />
 				<div className="w-full px-6 md:px-[50px] relative z-10">
-					<div className="grid lg:grid-cols-2 gap-16 items-center">
-						<div>
-							<div className="mb-4 text-[#ff7a00] text-[13px] font-bold tracking-[4px] uppercase">WHY TECHOPS GLOBAL</div>
-							<h2 className="!text-white text-[38px] lg:text-[48px] font-extrabold leading-[1.1] mb-8">
-								Your Assets.<br />
-								Our Technology.<br />
-								<span className="text-[#ff7a00]">Shared Success.</span>
+					<div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+						<div className="lg:w-1/2">
+							<h2 className="!text-white text-[32px] lg:text-[40px] font-extrabold leading-tight mb-5">
+								Let's Talk About Your Project
 							</h2>
-							<p className="text-gray-300 text-[18px] leading-relaxed mb-10 font-light max-w-lg">
-								Join hundreds of property owners who are already generating passive income with zero capital investment through our AI-powered energy platform.
-							</p>
-							<Link
-								to="/contact"
-								className="inline-flex items-center gap-2 px-8 py-4 bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold uppercase tracking-wider rounded-xl transition-all shadow-[0_4px_25px_rgba(255,122,0,0.4)]"
-							>
-								GET FREE SITE ASSESSMENT <ArrowRight size={18} />
-							</Link>
-						</div>
-						<div className="grid grid-cols-2 gap-5">
-							{[
-								{ icon: <Zap size={22} />, title: "Zero Capex", desc: "We fund, build, own and operate everything." },
-								{ icon: <Shield size={22} />, title: "Zero Risk", desc: "Your operations remain completely unaffected." },
-								{ icon: <CheckCircle2 size={22} />, title: "Guaranteed Income", desc: "Long-term lease payments from day one." },
-								{ icon: <Globe size={22} />, title: "Maximum Returns", desc: "Stack multiple revenue streams simultaneously." },
-							].map((item, i) => (
-								<div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-[#ff7a00]/30 transition-all backdrop-blur-sm">
-									<div className="text-[#ff7a00] mb-4">{item.icon}</div>
-									<h4 className="!text-white font-bold text-[16px] mb-2">{item.title}</h4>
-									<p className="text-gray-400 text-[14px] leading-relaxed">{item.desc}</p>
-								</div>
-							))}
-						</div>
-					</div>
-				</div>
-			</section>
-
-			{/* ===== 5. FINAL CTA ===== */}
-			<section className="py-20 bg-[#05070b]">
-				<div className="w-full px-6 md:px-[50px]">
-					<div className="bg-gradient-to-r from-[#ff7a00]/10 to-[#0d0f15] border border-[#ff7a00]/20 rounded-2xl p-12 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-12 relative overflow-hidden">
-						<div className="absolute left-0 top-0 bottom-0 w-[4px] bg-[#ff7a00] rounded-l-2xl" />
-						<div className="absolute top-0 right-0 w-[400px] h-full bg-gradient-to-l from-[#ff7a00]/5 to-transparent pointer-events-none" />
-
-						<div className="lg:w-1/2 relative z-10">
-							<h2 className="!text-white text-[32px] lg:text-[42px] font-extrabold leading-tight mb-4">
-								Ready to Get Started?<br />
-								<span className="text-[#ff7a00]">Let's Talk Today.</span>
-							</h2>
-							<p className="text-gray-400 text-[17px] leading-relaxed max-w-md">
-								Whether you have a single site or an entire portfolio, we'll craft a custom energy solution that maximizes your returns.
+							<p className="text-gray-400 text-[16px] leading-relaxed max-w-md">
+								Whether you have a single site or a portfolio, we'll help you transform your real estate into high-performing energy assets with zero capex and maximum returns.
 							</p>
 						</div>
 
-						<div className="lg:w-1/2 relative z-10 w-full">
-							<div className="grid sm:grid-cols-2 gap-4 mb-8">
-								{["Zero Capex", "Sustainable Impact", "Long-Term Value", "AI-Powered Platform"].map((item, i) => (
-									<div key={i} className="flex items-center gap-3 text-white text-[15px] font-semibold">
+						<div className="lg:w-1/2 flex flex-col items-start gap-6">
+							<div className="grid grid-cols-2 gap-x-12 gap-y-3">
+								{["Zero Capex", "Sustainable Impact", "Long-Term Value", "Maximum Performance"].map((item, i) => (
+									<div key={i} className="flex items-center gap-2 text-white text-[15px] font-semibold">
 										<CheckCircle2 size={18} className="text-[#ff7a00] shrink-0" />
 										{item}
 									</div>
@@ -372,9 +307,9 @@ function Contact() {
 							</div>
 							<Link
 								to="/contact"
-								className="inline-flex items-center justify-center gap-3 w-full sm:w-auto bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold px-10 py-5 rounded-xl text-[15px] uppercase tracking-wider transition-all shadow-[0_4px_25px_rgba(255,122,0,0.4)]"
+								className="inline-flex items-center gap-3 bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold px-8 py-4 rounded-lg text-[14px] uppercase tracking-wider transition-all shadow-[0_4px_25px_rgba(255,122,0,0.4)] whitespace-nowrap"
 							>
-								GET YOUR FREE SITE ASSESSMENT <ArrowRight size={20} />
+								GET YOUR FREE SITE ASSESSMENT <ArrowRight size={18} />
 							</Link>
 						</div>
 					</div>
