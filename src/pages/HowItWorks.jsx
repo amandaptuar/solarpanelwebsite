@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { 
-  Sun, BatteryCharging, Activity, Coins, ClipboardCheck, 
-  Ruler, Wrench, Monitor, DollarSign, ShieldCheck, 
+import {
+  Sun, BatteryCharging, Activity, Coins, ClipboardCheck,
+  Ruler, Wrench, Monitor, DollarSign, ShieldCheck,
   Shield, Leaf, TrendingUp, ArrowRight
 } from "lucide-react";
 
@@ -46,7 +46,7 @@ export default function HowItWorks() {
       title: "Optimize",
       desc: "We continuously optimize your system to increase savings, extend equipment life, and maximize value.",
       icon: <DollarSign className="text-[#ff7a00]" size={22} />,
-      img: "/demo/optimize-dashboard.png"
+      img: "/unsplash/dashboard.jpg"
     }
   ];
 
@@ -85,32 +85,32 @@ export default function HowItWorks() {
 
   return (
     <div className="bg-[#05070b] min-h-screen text-white font-sans overflow-x-hidden pt-0">
-      
+
       {/* 2. Hero Section */}
-      <section 
+      <section
         className="relative pt-[110px] pb-16 md:pt-[140px] md:pb-20 lg:pt-[180px] lg:pb-32 w-full overflow-hidden border-b border-white/5 bg-cover bg-center"
         style={{
-          backgroundImage: `linear-gradient(to right, rgba(5,7,11,0.92) 40%, rgba(5,7,11,0.6) 100%), url("/solutiondemo/ChatGPT Image May 29, 2026, 10_05_44 AM.png")`,
+          backgroundImage: `linear-gradient(to right, rgba(5,7,11,0.92) 40%, rgba(5,7,11,0.6) 100%), url("/unsplash/warehouse-solar.jpg")`,
         }}
       >
         <div className="w-full px-6 sm:px-[50px] relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Copy Column */}
             <div className="lg:col-span-5 flex flex-col justify-center">
-              <div className="text-[#ff7a00] text-[16px] font-bold tracking-[3px] uppercase mb-4">
+              <div className="text-[#ff7a00] type-body font-bold tracking-[3px] uppercase mb-4">
                 HOW IT WORKS
               </div>
-              <h1 className="!text-white text-white text-[40px] sm:text-[48px] lg:text-[60px] font-extrabold leading-[1.2] lg:leading-[1.1] mb-6 tracking-tight">
+              <h1 className="!text-white type-hero mb-6">
                 Simple Process.<br />
                 Powerful Results.
               </h1>
-              <p className="text-gray-300 text-[18px] sm:text-[20px] lg:text-[20px] leading-relaxed mb-8 font-light max-w-lg">
+              <p className="text-gray-300 type-body-lg mb-8 max-w-lg">
                 We make clean energy simple. From your first assessment to long-term performance, TechOps Global handles everything — so you can focus on your business while we power your property.
               </p>
-              <Link 
-                to="/contact" 
-                className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold text-[18px] tracking-wider uppercase transition-all shadow-[0_4px_20px_rgba(255,122,0,0.3)] w-fit gap-2"
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold type-body-sm tracking-wider uppercase transition-all shadow-[0_4px_20px_rgba(255,122,0,0.3)] w-fit gap-2"
                 style={{ textDecoration: 'none' }}
               >
                 GET YOUR FREE SITE ASSESSMENT <ArrowRight size={16} />
@@ -119,7 +119,7 @@ export default function HowItWorks() {
 
             {/* Right Interactive Solar Callouts Column */}
             <div className="lg:col-span-7 relative min-h-[460px] lg:min-h-[520px] w-full">
-              
+
               {/* Desktop Absolute Positioned Layout (Hidden on Mobile/Tablet) */}
               <div className="hidden lg:block absolute inset-0 z-10">
                 {/* Pointer Lines */}
@@ -142,7 +142,7 @@ export default function HowItWorks() {
                 </svg>
 
                 {/* Card 1: SOLAR POWER (Top Left-Center) */}
-                <div 
+                <div
                   className="absolute bg-[#0b0f19]/90 backdrop-blur-md border border-[#ff7a00]/30 rounded-xl p-4 flex items-center gap-3 shadow-[0_0_20px_rgba(255,122,0,0.1)] hover:border-[#ff7a00] transition-colors"
                   style={{ top: '6%', left: '8%', width: '235px' }}
                 >
@@ -150,13 +150,13 @@ export default function HowItWorks() {
                     <Sun className="text-[#ff7a00]" size={18} />
                   </div>
                   <div className="min-w-0 flex-grow">
-                    <h4 className="text-white font-bold text-[16px] mb-0.5 tracking-wider uppercase">SOLAR POWER</h4>
-                    <p className="text-gray-400 text-[14px] mb-0 font-light leading-snug">Clean. Reliable. Scalable.</p>
+                    <h4 className="text-white type-card mb-0.5 tracking-wider uppercase">SOLAR POWER</h4>
+                    <p className="text-gray-400 type-body-sm mb-0">Clean. Reliable. Scalable.</p>
                   </div>
                 </div>
 
                 {/* Card 2: BATTERY STORAGE (Top Right) */}
-                <div 
+                <div
                   className="absolute bg-[#0b0f19]/90 backdrop-blur-md border border-[#ff7a00]/30 rounded-xl p-4 flex items-center gap-3 shadow-[0_0_20px_rgba(255,122,0,0.1)] hover:border-[#ff7a00] transition-colors"
                   style={{ top: '6%', right: '8%', width: '235px' }}
                 >
@@ -170,7 +170,7 @@ export default function HowItWorks() {
                 </div>
 
                 {/* Card 3: SMART MONITORING (Bottom Left-Center) */}
-                <div 
+                <div
                   className="absolute bg-[#0b0f19]/90 backdrop-blur-md border border-[#ff7a00]/30 rounded-xl p-4 flex items-center gap-3 shadow-[0_0_20px_rgba(255,122,0,0.1)] hover:border-[#ff7a00] transition-colors"
                   style={{ bottom: '12%', left: '2%', width: '245px' }}
                 >
@@ -184,7 +184,7 @@ export default function HowItWorks() {
                 </div>
 
                 {/* Card 4: ENERGY SAVINGS (Bottom Right) */}
-                <div 
+                <div
                   className="absolute bg-[#0b0f19]/90 backdrop-blur-md border border-[#ff7a00]/30 rounded-xl p-4 flex items-center gap-3 shadow-[0_0_20px_rgba(255,122,0,0.1)] hover:border-[#ff7a00] transition-colors"
                   style={{ bottom: '12%', right: '2%', width: '235px' }}
                 >
@@ -256,26 +256,26 @@ export default function HowItWorks() {
       {/* 3. Our Process Section */}
       <section className="py-20 lg:py-28 bg-[#05070b] border-b border-white/5">
         <div className="w-full px-6 sm:px-[50px]">
-          
+
           <div className="text-center mb-16">
-            <div className="text-[#ff7a00] text-[16px] font-bold tracking-[3px] uppercase mb-3">
+            <div className="text-[#ff7a00] type-body font-bold tracking-[3px] uppercase mb-3">
               OUR PROCESS
             </div>
-            <h2 className="!text-white text-white text-[40px] lg:text-[48px] font-extrabold tracking-tight">
+            <h2 className="!text-white type-h1">
               From Start to Savings in 5 Simple Steps
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 relative">
             {steps.map((s, index) => (
-              <div 
-                key={s.num} 
+              <div
+                key={s.num}
                 className="bg-[#0a0c10] border border-white/10 rounded-2xl relative flex flex-col items-start hover:border-[#ff7a00]/30 transition-all group overflow-hidden shadow-2xl"
               >
                 {/* Photo box (flush with top, left, right) */}
                 <div className="w-full h-48 bg-cover bg-center relative border-b border-white/5 shrink-0" style={{ backgroundImage: `url(${s.img})` }}>
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all"></div>
-                  
+
                   {/* Step Badge (inside image, top left) */}
                   <div className="absolute top-5 left-5 w-12 h-12 rounded-full bg-[#ff7a00] text-black font-extrabold flex items-center justify-center shadow-lg text-[20px]">
                     {s.num}
@@ -291,8 +291,8 @@ export default function HowItWorks() {
                   </div>
 
                   {/* Text content */}
-                  <h3 className="!text-white text-white font-bold text-[24px] tracking-wide mb-3">{s.title}</h3>
-                  <p className="text-gray-400 text-[18px] leading-relaxed font-light mb-0">{s.desc}</p>
+                  <h3 className="!text-white type-h3 mb-3">{s.title}</h3>
+                  <p className="text-gray-400 type-body mb-0">{s.desc}</p>
                 </div>
 
                 {/* Desktop Connection Arrow */}
@@ -313,17 +313,17 @@ export default function HowItWorks() {
       {/* 4. Difference Section */}
       <section className="py-20 lg:py-28 bg-[#05070b]">
         <div className="w-full px-6 sm:px-[50px]">
-          
+
           <div className="flex items-center justify-center gap-6 mb-6">
             <div className="flex-grow h-[1px] bg-white/10 max-w-[200px] hidden md:block"></div>
-            <div className="text-[#ff7a00] text-[16px] font-bold tracking-[3px] uppercase">
+            <div className="text-[#ff7a00] type-body font-bold tracking-[3px] uppercase">
               THE TECHOPS GLOBAL DIFFERENCE
             </div>
             <div className="flex-grow h-[1px] bg-white/10 max-w-[200px] hidden md:block"></div>
           </div>
 
           <div className="mb-16">
-            <h2 className="!text-white text-white font-extrabold text-[40px] lg:text-[48px] text-center tracking-tight">
+            <h2 className="!text-white type-h1 text-center">
               Built for Performance. Backed by Experts.
             </h2>
           </div>
@@ -335,8 +335,8 @@ export default function HowItWorks() {
                   {d.icon}
                 </div>
                 <div>
-                  <h3 className="!text-white text-white font-bold text-[20px] mb-2 tracking-wide">{d.title}</h3>
-                  <p className="text-gray-400 text-[18px] leading-relaxed font-light">{d.desc}</p>
+                  <h3 className="!text-white type-h4 mb-2 tracking-wide">{d.title}</h3>
+                  <p className="text-gray-400 type-body">{d.desc}</p>
                 </div>
               </div>
             ))}
@@ -348,10 +348,10 @@ export default function HowItWorks() {
       {/* 5. CTA Block */}
       <section className="py-16 bg-[#05070b]">
         <div className="w-full px-6 sm:px-[50px]">
-          <div 
+          <div
             className="rounded-2xl border border-white/10 p-10 md:p-14 overflow-hidden relative min-h-[250px] flex items-center bg-cover bg-center shadow-2xl"
             style={{
-              backgroundImage: `linear-gradient(to right, rgba(5,7,11,0.95) 45%, rgba(5,7,11,0.7) 100%), url("/solutiondemo/ChatGPT Image May 29, 2026, 10_05_44 AM.png")`,
+              backgroundImage: `linear-gradient(to right, rgba(5,7,11,0.95) 45%, rgba(5,7,11,0.7) 100%), url("/unsplash/warehouse-solar.jpg")`,
             }}
           >
             {/* Grid textures */}
@@ -359,17 +359,17 @@ export default function HowItWorks() {
 
             <div className="relative z-10 w-full flex flex-col md:flex-row justify-between items-center gap-8">
               <div className="text-left">
-                <h2 className="!text-white text-white text-[40px] md:text-[48px] font-extrabold tracking-tight">
+                <h2 className="!text-white type-h1">
                   Let's Power Your Property.
                 </h2>
-                <p className="text-gray-300 text-[20px] md:text-[20px] font-light mt-2 max-w-xl">
+                <p className="text-gray-300 type-body-lg mt-2 max-w-xl">
                   Take the first step toward lower costs, energy independence, and a sustainable future.
                 </p>
               </div>
-              
-              <Link 
-                to="/contact" 
-                className="px-8 py-4 rounded-full bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold text-[18px] tracking-wider uppercase transition-all shadow-[0_4px_20px_rgba(255,122,0,0.3)] shrink-0 gap-2 flex items-center"
+
+              <Link
+                to="/contact"
+                className="px-8 py-4 rounded-full bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold type-body-sm tracking-wider uppercase transition-all shadow-[0_4px_20px_rgba(255,122,0,0.3)] shrink-0 gap-2 flex items-center"
                 style={{ textDecoration: 'none' }}
               >
                 GET YOUR FREE SITE ASSESSMENT <ArrowRight size={16} />
