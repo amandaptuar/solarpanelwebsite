@@ -18,6 +18,7 @@ import TechOpsPage from "./pages/TechOpsPage";
 import WindEnergy from "./pages/WindEnergy";
 import BatteryStorage from "./pages/BatteryStorage";
 import ParkingLot from "./pages/ParkingLot";
+import SolarEnergy from "./pages/SolarEnergy";
 
 // Inner layout that re-initializes jQuery theme on every route change
 function Layout() {
@@ -91,7 +92,7 @@ function Layout() {
                 {
                   name: "Solution",
                   dropdown: [
-                    { name: "Solar Energy", path: "/services" },
+                    { name: "Solar Energy", path: "/solutions/solar" },
                     { name: "Wind Energy", path: "/solutions/wind" },
                     { name: "Battery Storage", path: "/solutions/battery" }
                   ]
@@ -257,7 +258,7 @@ function Layout() {
                   {
                     name: "Solution",
                     dropdown: [
-                      { name: "Solar Energy", path: "/services" },
+                      { name: "Solar Energy", path: "/solutions/solar" },
                       { name: "Wind Energy", path: "/solutions/wind" },
                       { name: "Battery Storage", path: "/solutions/battery" }
                     ]
@@ -422,6 +423,7 @@ function Layout() {
       <Route path="/property-types" element={<PropertyTypes />} />
       <Route path="/how-it-works" element={<HowItWorks />} />
       <Route path="/techops" element={<TechOpsPage />} />
+      <Route path="/solutions/solar" element={<SolarEnergy />} />
       <Route path="/solutions/wind" element={<WindEnergy />} />
       <Route path="/solutions/battery" element={<BatteryStorage />} />
       <Route path="/solutions/parking" element={<ParkingLot />} />

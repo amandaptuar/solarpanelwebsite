@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
-	Phone, Mail, Clock, MapPin, ChevronRight,
+	Phone, Mail, Clock, MapPin, ChevronRight, ChevronDown,
 	CheckCircle2, ArrowRight, Shield, Lock
 } from "lucide-react";
 
@@ -15,8 +15,8 @@ function Contact() {
 	}, []);
 
 	const inputCls = (f) =>
-		`w-full bg-transparent border rounded-md px-4 py-3 text-white text-[14px] placeholder:text-gray-500 outline-none transition-all duration-200 ${
-			focused === f ? "border-[#ff7a00]" : "border-white/20 focus:border-[#ff7a00]"
+		`w-full bg-[#151821] border rounded-lg px-4 py-3.5 text-white text-[15px] placeholder:text-gray-500 outline-none transition-all duration-300 shadow-inner ${
+			focused === f ? "border-[#ff7a00] ring-1 ring-[#ff7a00]/30" : "border-white/10 hover:border-white/30 focus:border-[#ff7a00]"
 		}`;
 
 	return (
@@ -32,41 +32,41 @@ function Contact() {
 			>
 				<div className="w-full px-6 md:px-[50px] relative z-10">
 					{/* Breadcrumb */}
-					<div className="flex items-center gap-2 text-[12px] font-bold text-gray-400 tracking-wider uppercase mb-10 pt-6">
+					<div className="flex items-center gap-2 text-[18px] font-bold text-gray-400 tracking-wider uppercase mb-10 pt-6">
 						<Link to="/" className="text-white hover:text-[#ff7a00] transition-colors">Home</Link>
-						<ChevronRight size={13} className="text-gray-600" />
+						<ChevronRight size={18} className="text-gray-600" />
 						<span className="text-gray-400">Contact Us</span>
 					</div>
 
 					<div className="grid lg:grid-cols-12 gap-10 items-start">
 						{/* Left Content */}
 						<div className="lg:col-span-7 pr-4 lg:pr-10">
-							<div className="text-[#ff7a00] text-[12px] font-extrabold tracking-[4px] uppercase mb-4">
+							<div className="text-[#ff7a00] text-[18px] font-extrabold tracking-[4px] uppercase mb-4">
 								WE'RE HERE TO HELP
 							</div>
-							<h1 className="!text-white text-[40px] md:text-[52px] font-extrabold leading-[1.1] mb-6">
+							<h1 className="!text-white text-[60px] lg:text-[72px] font-extrabold leading-[1.1] mb-6">
 								Let's Build a<br />
 								Smarter Energy<br />
 								Future—<span className="text-[#ff7a00]">Together.</span>
 							</h1>
-							<p className="text-gray-300 text-[16px] leading-relaxed mb-10 max-w-lg font-light">
+							<p className="text-gray-300 text-[24px] leading-relaxed mb-10 max-w-lg font-light">
 								Have a question, project idea, or looking for more information? Our team is ready to help you unlock the potential of your property with AI-powered energy solutions.
 							</p>
 
 							{/* 3 contact items horizontal */}
 							<div className="flex flex-col sm:flex-row gap-8">
 								{[
-									{ icon: <Phone size={18} />, label: "Call Us", value: "(609) 555-0123" },
-									{ icon: <Mail size={18} />, label: "Email Us", value: "hello@techopsglobal.com" },
-									{ icon: <Clock size={18} />, label: "Business Hours", value: "Mon – Fri: 8AM – 6PM EST" },
+									{ icon: <Phone size={32} />, label: "Call Us", value: "(609) 555-0123" },
+									{ icon: <Mail size={32} />, label: "Email Us", value: "hello@techopsglobal.com" },
+									{ icon: <Clock size={32} />, label: "Business Hours", value: "Mon – Fri: 8AM – 6PM EST" },
 								].map((item, i) => (
 									<div key={i} className="flex items-center gap-3">
-										<div className="w-11 h-11 rounded-full border-2 border-[#ff7a00]/40 flex items-center justify-center text-[#ff7a00] shrink-0">
+										<div className="w-16 h-16 rounded-full border-2 border-[#ff7a00]/40 flex items-center justify-center text-[#ff7a00] shrink-0">
 											{item.icon}
 										</div>
 										<div>
-											<div className="text-gray-500 text-[11px] font-bold uppercase tracking-wider">{item.label}</div>
-											<div className="text-white font-semibold text-[13px]">{item.value}</div>
+											<div className="text-gray-500 text-[16px] font-bold uppercase tracking-wider">{item.label}</div>
+											<div className="text-white font-semibold text-[20px]">{item.value}</div>
 										</div>
 									</div>
 								))}
@@ -75,61 +75,65 @@ function Contact() {
 
 						{/* Right: Floating Form Card */}
 						<div className="lg:col-span-5">
-							<div className="bg-[#0b0d12] border border-white/10 rounded-xl p-8 shadow-2xl max-w-[440px] ml-auto">
-								<h3 className="!text-white text-[22px] font-bold mb-6">Send Us a Message</h3>
+							<div className="bg-gradient-to-b from-[#0f121b] to-[#0a0c11] border border-white/10 rounded-2xl p-8 lg:p-10 shadow-2xl max-w-[480px] ml-auto relative">
+								<div className="absolute top-0 left-0 w-full h-[4px] bg-[#ff7a00] rounded-t-2xl" />
+								<h3 className="!text-white text-[26px] font-extrabold mb-2">Send Us a Message</h3>
+								<p className="text-gray-400 text-[14px] mb-8">Fill out the form below and we'll get back to you shortly.</p>
 
-								<form action="https://formsubmit.co/matrikaventures2020@gmail.com" method="POST" className="space-y-4">
+								<form action="https://formsubmit.co/matrikaventures2020@gmail.com" method="POST" className="space-y-5">
 									<input type="hidden" name="_next" value={typeof window !== "undefined" ? window.location.origin + "/success" : "https://techops-global.com/success"} />
 									<input type="hidden" name="_subject" value={`New Contact Submission By ${formName || "a User"} From Techops Global`} />
 
-									<input
-										type="text" name="name" placeholder="Full Name*" required
-										onChange={(e) => setFormName(e.target.value)}
-										onFocus={() => setFocused("name")} onBlur={() => setFocused("")}
-										className={inputCls("name")}
-									/>
-									<input
-										type="email" name="email" placeholder="Work Email*" required
-										onFocus={() => setFocused("email")} onBlur={() => setFocused("")}
-										className={inputCls("email")}
-									/>
-									<input
-										type="tel" name="phone" placeholder="Phone Number*" required
-										onFocus={() => setFocused("phone")} onBlur={() => setFocused("")}
-										className={inputCls("phone")}
-									/>
-									<input
-										type="text" name="company" placeholder="Company Name*" required
-										onFocus={() => setFocused("company")} onBlur={() => setFocused("")}
-										className={inputCls("company")}
-									/>
-									<select
-										name="interest" required
-										onFocus={() => setFocused("interest")} onBlur={() => setFocused("")}
-										className={inputCls("interest") + " appearance-none"}
-									>
-										<option value="" disabled>I'm interested in...*</option>
-										<option>Solar Energy</option>
-										<option>Battery Storage</option>
-										<option>Wind Energy</option>
-										<option>Parking Lot Solar</option>
-										<option>VPP Solutions</option>
-										<option>Other</option>
-									</select>
-									<textarea
-										name="message" placeholder="Tell us about your project or inquiry...*" required rows="4"
-										onFocus={() => setFocused("message")} onBlur={() => setFocused("")}
-										className={inputCls("message") + " resize-none"}
-									></textarea>
+									<div>
+										<input
+											type="text" name="name" placeholder="Full Name*" required
+											onChange={(e) => setFormName(e.target.value)}
+											onFocus={() => setFocused("name")} onBlur={() => setFocused("")}
+											className={inputCls("name")}
+										/>
+									</div>
+									<div>
+										<input
+											type="email" name="email" placeholder="Email Address*" required
+											onFocus={() => setFocused("email")} onBlur={() => setFocused("")}
+											className={inputCls("email")}
+										/>
+									</div>
+									<div className="relative">
+										<select
+											name="interest" required
+											defaultValue=""
+											onFocus={() => setFocused("interest")} onBlur={() => setFocused("")}
+											className={inputCls("interest") + " appearance-none cursor-pointer"}
+										>
+											<option value="" disabled className="bg-[#0b0d12] text-gray-400">I'm interested in...*</option>
+											<option className="bg-[#0b0d12] text-white">Solar Energy</option>
+											<option className="bg-[#0b0d12] text-white">Battery Storage</option>
+											<option className="bg-[#0b0d12] text-white">Wind Energy</option>
+											<option className="bg-[#0b0d12] text-white">Parking Lot Solar</option>
+											<option className="bg-[#0b0d12] text-white">VPP Solutions</option>
+											<option className="bg-[#0b0d12] text-white">Other</option>
+										</select>
+										<div className="absolute right-4 top-[50%] -translate-y-1/2 pointer-events-none text-gray-500">
+											<ChevronDown size={18} />
+										</div>
+									</div>
+									<div>
+										<textarea
+											name="message" placeholder="Tell us about your project or inquiry...*" required rows="4"
+											onFocus={() => setFocused("message")} onBlur={() => setFocused("")}
+											className={inputCls("message") + " resize-none"}
+										></textarea>
+									</div>
 
 									<button
 										type="submit"
-										className="w-full bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-bold py-3.5 rounded-md transition-all uppercase flex items-center justify-center gap-2 text-[14px] mt-2"
+										className="w-full bg-[#ff7a00] hover:bg-[#ff8a1c] hover:-translate-y-1 text-black font-extrabold py-4 rounded-lg transition-all duration-300 uppercase flex items-center justify-center gap-2 text-[15px] mt-4 shadow-[0_4px_20px_rgba(255,122,0,0.3)]"
 									>
-										SEND MESSAGE <ArrowRight size={16} />
+										SEND MESSAGE <ArrowRight size={18} />
 									</button>
-									<p className="text-center text-gray-600 text-[11px] flex items-center justify-center gap-1.5 pt-1">
-										<Lock size={11} /> Your information is secure and confidential.
+									<p className="text-center text-gray-500 text-[12px] flex items-center justify-center gap-1.5 pt-2">
+										<Lock size={12} className="text-[#ff7a00]" /> Your information is secure and encrypted.
 									</p>
 								</form>
 							</div>
@@ -143,7 +147,7 @@ function Contact() {
 				<div className="w-full px-6 md:px-[50px]">
 					{/* Title with decorative line */}
 					<div className="flex items-center justify-center mb-3">
-						<h2 className="!text-white text-[26px] font-extrabold tracking-wide">Get in Touch</h2>
+						<h2 className="!text-white text-[32px] font-extrabold tracking-wide">Get in Touch</h2>
 					</div>
 					<div className="flex justify-center mb-12">
 						<div className="w-12 h-[3px] bg-[#ff7a00] rounded-full" />
@@ -153,32 +157,32 @@ function Contact() {
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
 						{[
 							{
-								icon: <MapPin size={22} />,
+								icon: <MapPin size={28} />,
 								title: "Our Headquarters",
 								lines: ["TechOps Global, Inc.", "200 Princeton Hightstown Rd", "Suite 201", "Princeton, NJ 08540", "USA"]
 							},
 							{
-								icon: <Phone size={22} />,
+								icon: <Phone size={28} />,
 								title: "Call Us",
 								lines: ["(609) 555-0123", "", "Toll Free:", "(833) TECH-OPS", "(833-832-4677)"]
 							},
 							{
-								icon: <Mail size={22} />,
+								icon: <Mail size={28} />,
 								title: "Email Us",
 								lines: ["hello@techopsglobal.com", "info@techopsglobal.com", "", "Investor Relations", "investors@techopsglobal.com"]
 							},
 							{
-								icon: <Clock size={22} />,
+								icon: <Clock size={28} />,
 								title: "Business Hours",
 								lines: ["Monday – Friday", "8:00 AM – 6:00 PM EST", "", "Saturday – Sunday", "By Appointment"]
 							},
 						].map((card, i) => (
 							<div key={i} className="bg-[#0d0f15] border border-white/8 rounded-xl p-6 flex flex-col items-center text-center hover:border-[#ff7a00]/30 transition-all group">
 								<div className="text-[#ff7a00] mb-4 group-hover:scale-110 transition-transform duration-300">{card.icon}</div>
-								<h4 className="!text-white text-[15px] font-extrabold mb-3">{card.title}</h4>
+								<h4 className="!text-white text-[18px] font-extrabold mb-3">{card.title}</h4>
 								<div className="space-y-0.5">
 									{card.lines.map((line, j) => (
-										<p key={j} className={`text-[13px] leading-relaxed ${line === "" ? "h-3" : "text-gray-400"}`}>{line}</p>
+										<p key={j} className={`text-[16px] leading-relaxed ${line === "" ? "h-3" : "text-gray-400"}`}>{line}</p>
 									))}
 								</div>
 							</div>
@@ -223,7 +227,7 @@ function Contact() {
 			<section className="py-20 bg-[#07090e] border-b border-white/5">
 				<div className="w-full px-6 md:px-[50px]">
 					<div className="flex items-center justify-center mb-3">
-						<h2 className="!text-white text-[26px] font-extrabold tracking-wide">Our Locations</h2>
+						<h2 className="!text-white text-[32px] font-extrabold tracking-wide">Our Locations</h2>
 					</div>
 					<div className="flex justify-center mb-12">
 						<div className="w-12 h-[3px] bg-[#ff7a00] rounded-full" />
@@ -259,14 +263,14 @@ function Contact() {
 									/>
 									<div className="absolute inset-0 bg-gradient-to-t from-[#0d0f15] via-black/30 to-transparent" />
 									<div className="absolute bottom-4 left-4">
-										<h4 className="!text-white text-[18px] font-extrabold leading-tight">{loc.city}</h4>
+										<h4 className="!text-white text-[20px] font-extrabold leading-tight">{loc.city}</h4>
 									</div>
 								</div>
 								<div className="p-6">
-									<div className="text-[#ff7a00] text-[11px] font-extrabold tracking-wider uppercase mb-3">{loc.type}</div>
+									<div className="text-[#ff7a00] text-[14px] font-extrabold tracking-wider uppercase mb-3">{loc.type}</div>
 									<div className="space-y-0.5">
 										{loc.address.map((line, j) => (
-											<p key={j} className="text-gray-400 text-[14px] leading-relaxed">{line}</p>
+											<p key={j} className="text-gray-400 text-[16px] leading-relaxed">{line}</p>
 										))}
 									</div>
 								</div>
@@ -291,7 +295,7 @@ function Contact() {
 							<h2 className="!text-white text-[32px] lg:text-[40px] font-extrabold leading-tight mb-5">
 								Let's Talk About Your Project
 							</h2>
-							<p className="text-gray-400 text-[16px] leading-relaxed max-w-md">
+							<p className="text-gray-400 text-[20px] leading-relaxed max-w-md">
 								Whether you have a single site or a portfolio, we'll help you transform your real estate into high-performing energy assets with zero capex and maximum returns.
 							</p>
 						</div>
@@ -299,17 +303,17 @@ function Contact() {
 						<div className="lg:w-1/2 flex flex-col items-start gap-6">
 							<div className="grid grid-cols-2 gap-x-12 gap-y-3">
 								{["Zero Capex", "Sustainable Impact", "Long-Term Value", "Maximum Performance"].map((item, i) => (
-									<div key={i} className="flex items-center gap-2 text-white text-[15px] font-semibold">
-										<CheckCircle2 size={18} className="text-[#ff7a00] shrink-0" />
+									<div key={i} className="flex items-center gap-2 text-white text-[18px] font-semibold">
+										<CheckCircle2 size={20} className="text-[#ff7a00] shrink-0" />
 										{item}
 									</div>
 								))}
 							</div>
 							<Link
 								to="/contact"
-								className="inline-flex items-center gap-3 bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold px-8 py-4 rounded-lg text-[14px] uppercase tracking-wider transition-all shadow-[0_4px_25px_rgba(255,122,0,0.4)] whitespace-nowrap"
+								className="inline-flex items-center gap-3 bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold px-8 py-4 rounded-lg text-[16px] uppercase tracking-wider transition-all shadow-[0_4px_25px_rgba(255,122,0,0.4)] whitespace-nowrap"
 							>
-								GET YOUR FREE SITE ASSESSMENT <ArrowRight size={18} />
+								GET YOUR FREE SITE ASSESSMENT <ArrowRight size={20} />
 							</Link>
 						</div>
 					</div>
