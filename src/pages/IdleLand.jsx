@@ -39,28 +39,28 @@ export default function IdleLand() {
                     <div className="grid lg:grid-cols-12 gap-12 items-center">
 
                         {/* Left: Main copy */}
-                        <div className="lg:col-span-7 text-center lg:text-left">
+                        <div className="lg:col-span-7">
                             <div className="mb-4 text-[#ff7a00] type-body font-bold tracking-[3px] uppercase">
                                 Monetize Unused Space.
                             </div>
                             <h1 className="!text-white type-hero mb-6">
-                                Idle Land Solutions<br className="hidden md:block" />
-                                <span className="!text-[#ff7a00]">Turning Unused Space<br className="hidden md:block" />into Revenue.</span>
+                                Idle Land Solutions<br />
+                                <span className="!text-[#ff7a00]">Turning Unused Space<br />into Revenue.</span>
                             </h1>
-                            <p className="type-body-lg text-gray-300 mb-10 max-w-2xl mx-auto lg:mx-0">
+                            <p className="type-body-lg text-gray-300 mb-10 max-w-2xl">
                                 TechOps Global partners with landowners and commercial entities to develop, build, and operate high-performance energy projects on idle land and buffer acreage, creating long-term value and sustainable impact.
                             </p>
 
-                            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 justify-center lg:justify-start">
+                            <div className="flex flex-wrap items-center gap-5">
                                 <Link
                                     to="/contact"
-                                    className="px-7 py-3.5 rounded bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold tracking-wider transition-all flex items-center justify-center gap-2 type-body-sm uppercase shadow-[0_4px_25px_rgba(255,122,0,0.35)] w-full sm:w-auto"
+                                    className="px-7 py-3.5 rounded bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold tracking-wider transition-all flex items-center gap-2 type-body-sm uppercase shadow-[0_4px_25px_rgba(255,122,0,0.35)]"
                                 >
                                     GET SITE ASSESSMENT <ArrowRight size={16} />
                                 </Link>
                                 <a
                                     href="#how-it-works"
-                                    className="px-7 py-3.5 rounded border-2 border-white/50 hover:border-white text-white hover:bg-white/5 font-extrabold tracking-wider transition-all flex items-center justify-center gap-3 type-body-sm uppercase w-full sm:w-auto"
+                                    className="px-7 py-3.5 rounded border-2 border-white/50 hover:border-white text-white hover:bg-white/5 font-extrabold tracking-wider transition-all flex items-center gap-3 type-body-sm uppercase"
                                     style={{ textDecoration: "none" }}
                                 >
                                     SEE HOW IT WORKS <PlayCircle size={18} />
@@ -106,7 +106,7 @@ export default function IdleLand() {
                     {/* Title row */}
                     <div className="flex items-center gap-6 mb-16">
                         <div className="h-[1px] bg-white/10 flex-1" />
-                        <h2 className="!text-white text-[22px] md:text-[24px] font-extrabold tracking-[4px] uppercase whitespace-nowrap text-center">
+                        <h2 className="!text-white text-[16px] sm:text-[22px] md:text-[24px] font-extrabold tracking-[2px] sm:tracking-[4px] uppercase text-center whitespace-normal md:whitespace-nowrap">
                             THE IDLE LAND ADVANTAGE
                         </h2>
                         <div className="h-[1px] bg-white/10 flex-1" />
@@ -159,7 +159,7 @@ export default function IdleLand() {
                 <div className="w-full px-6 md:px-[50px]">
                     <div className="flex items-center gap-6 mb-14">
                         <div className="h-[1px] bg-white/10 flex-1" />
-                        <h2 className="!text-white text-[22px] md:text-[24px] font-extrabold tracking-[4px] uppercase whitespace-nowrap text-center">
+                        <h2 className="!text-white text-[16px] sm:text-[22px] md:text-[24px] font-extrabold tracking-[2px] sm:tracking-[4px] uppercase text-center whitespace-normal md:whitespace-nowrap">
                             SOLUTIONS FOR IDLE LAND
                         </h2>
                         <div className="h-[1px] bg-white/10 flex-1" />
@@ -229,7 +229,7 @@ export default function IdleLand() {
                 <div className="w-full px-6 md:px-[50px]">
                     <div className="flex items-center gap-6 mb-14">
                         <div className="h-[1px] bg-white/10 flex-1" />
-                        <h2 className="!text-white text-[22px] md:text-[24px] font-extrabold tracking-[4px] uppercase whitespace-nowrap text-center">
+                        <h2 className="!text-white text-[16px] sm:text-[22px] md:text-[24px] font-extrabold tracking-[2px] sm:tracking-[4px] uppercase text-center whitespace-normal md:whitespace-nowrap">
                             HOW IT WORKS
                         </h2>
                         <div className="h-[1px] bg-white/10 flex-1" />
