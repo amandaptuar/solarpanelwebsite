@@ -48,7 +48,7 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-black/95 backdrop-blur-md border-b border-white/5 py-0.5" : "bg-[#05070a]/80 backdrop-blur-sm border-b border-white/10 py-1"}`}>
       <div className="w-full px-[50px] flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logoImg} alt="TechOps Global" style={{width: '200px', height: 'auto', maxWidth: 'none', display: 'block'}} />
+          <img src={logoImg} alt="TechOps Global" style={{width: '320px', height: 'auto', maxWidth: 'none', display: 'block'}} />
         </Link>
         
         {/* Desktop Links */}

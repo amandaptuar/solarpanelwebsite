@@ -76,7 +76,7 @@ function Layout() {
                 <img 
                   src={logoImg} 
                   alt="TechOps Global Logo" 
-                  style={{width: '200px', height: 'auto', maxWidth: 'none', maxHeight: 'none', display: 'block'}} 
+                  style={{width: '320px', height: 'auto', maxWidth: 'none', maxHeight: 'none', display: 'block'}} 
                   loading="lazy" 
                 />
               </Link>
