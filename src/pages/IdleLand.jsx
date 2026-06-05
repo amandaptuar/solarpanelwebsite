@@ -25,7 +25,7 @@ export default function IdleLand() {
                 {/* Radial grid overlay */}
                 <div className="absolute inset-0 bg-[radial-gradient(#ffffff03_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
                 {/* Breadcrumb */}
-                <div className="w-full px-[50px] mb-8">
+                <div className="w-full px-6 md:px-[50px] mb-8">
                     <div className="flex items-center gap-2 type-body-sm font-bold text-gray-400 tracking-wider uppercase">
                         <Link to="/" className="text-white hover:text-[#ff7a00] transition-colors">Home</Link>
                         <span>&gt;</span>
@@ -35,32 +35,32 @@ export default function IdleLand() {
                     </div>
                 </div>
 
-                <div className="w-full px-[50px] relative z-10">
+                <div className="w-full px-6 md:px-[50px] relative z-10">
                     <div className="grid lg:grid-cols-12 gap-12 items-center">
 
                         {/* Left: Main copy */}
-                        <div className="lg:col-span-7">
+                        <div className="lg:col-span-7 text-center lg:text-left">
                             <div className="mb-4 text-[#ff7a00] type-body font-bold tracking-[3px] uppercase">
                                 Monetize Unused Space.
                             </div>
                             <h1 className="!text-white type-hero mb-6">
-                                Idle Land Solutions<br />
-                                <span className="!text-[#ff7a00]">Turning Unused Space<br />into Revenue.</span>
+                                Idle Land Solutions<br className="hidden md:block" />
+                                <span className="!text-[#ff7a00]">Turning Unused Space<br className="hidden md:block" />into Revenue.</span>
                             </h1>
-                            <p className="type-body-lg text-gray-300 mb-10 max-w-2xl">
+                            <p className="type-body-lg text-gray-300 mb-10 max-w-2xl mx-auto lg:mx-0">
                                 TechOps Global partners with landowners and commercial entities to develop, build, and operate high-performance energy projects on idle land and buffer acreage, creating long-term value and sustainable impact.
                             </p>
 
-                            <div className="flex flex-wrap items-center gap-5">
+                            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 justify-center lg:justify-start">
                                 <Link
                                     to="/contact"
-                                    className="px-7 py-3.5 rounded bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold tracking-wider transition-all flex items-center gap-2 type-body-sm uppercase shadow-[0_4px_25px_rgba(255,122,0,0.35)]"
+                                    className="px-7 py-3.5 rounded bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold tracking-wider transition-all flex items-center justify-center gap-2 type-body-sm uppercase shadow-[0_4px_25px_rgba(255,122,0,0.35)] w-full sm:w-auto"
                                 >
                                     GET SITE ASSESSMENT <ArrowRight size={16} />
                                 </Link>
                                 <a
                                     href="#how-it-works"
-                                    className="px-7 py-3.5 rounded border-2 border-white/50 hover:border-white text-white hover:bg-white/5 font-extrabold tracking-wider transition-all flex items-center gap-3 type-body-sm uppercase"
+                                    className="px-7 py-3.5 rounded border-2 border-white/50 hover:border-white text-white hover:bg-white/5 font-extrabold tracking-wider transition-all flex items-center justify-center gap-3 type-body-sm uppercase w-full sm:w-auto"
                                     style={{ textDecoration: "none" }}
                                 >
                                     SEE HOW IT WORKS <PlayCircle size={18} />
@@ -102,7 +102,7 @@ export default function IdleLand() {
 
             {/* ===== 2. THE IDLE LAND ADVANTAGE ===== */}
             <section className="py-4 bg-[#07090e] border-b border-white/5">
-                <div className="w-full px-[50px]">
+                <div className="w-full px-6 md:px-[50px]">
                     {/* Title row */}
                     <div className="flex items-center gap-6 mb-16">
                         <div className="h-[1px] bg-white/10 flex-1" />
@@ -140,13 +140,13 @@ export default function IdleLand() {
                             { icon: <Leaf size={26} strokeWidth={1.5} />, value: "500K+", label: "Tons CO₂ Offset" },
                             { icon: <Zap size={26} strokeWidth={1.5} />, value: "100%", label: "Clean Generation" },
                         ].map((s, i) => (
-                            <div key={i} className="flex items-center gap-5 p-7">
-                                <div className="w-14 h-14 rounded-full border-2 border-[#ff7a00] text-[#ff7a00] flex items-center justify-center bg-[#ff7a00]/5 shrink-0">
+                            <div key={i} className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3 sm:gap-5 p-5 sm:p-7">
+                                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-[#ff7a00] text-[#ff7a00] flex items-center justify-center bg-[#ff7a00]/5 shrink-0">
                                     {s.icon}
                                 </div>
                                 <div>
-                                    <h3 className="!text-white text-[32px] font-extrabold tracking-tight leading-none mb-1">{s.value}</h3>
-                                    <div className="!text-white text-[13px] font-bold tracking-widest uppercase leading-snug text-gray-400">{s.label}</div>
+                                    <h3 className="!text-white text-[24px] sm:text-[32px] font-extrabold tracking-tight leading-none mb-1">{s.value}</h3>
+                                    <div className="!text-white text-[11px] sm:text-[13px] font-bold tracking-widest uppercase leading-snug text-gray-400">{s.label}</div>
                                 </div>
                             </div>
                         ))}
@@ -156,7 +156,7 @@ export default function IdleLand() {
 
             {/* ===== 3. SOLUTIONS FOR EVERY PROPERTY ===== */}
             <section className="py-4 bg-[#05070b] border-b border-white/5">
-                <div className="w-full px-[50px]">
+                <div className="w-full px-6 md:px-[50px]">
                     <div className="flex items-center gap-6 mb-14">
                         <div className="h-[1px] bg-white/10 flex-1" />
                         <h2 className="!text-white text-[22px] md:text-[24px] font-extrabold tracking-[4px] uppercase whitespace-nowrap text-center">
@@ -226,7 +226,7 @@ export default function IdleLand() {
 
             {/* ===== 4. HOW IT WORKS ===== */}
             <section className="py-4 bg-[#07090e] border-b border-white/5" id="how-it-works">
-                <div className="w-full px-[50px]">
+                <div className="w-full px-6 md:px-[50px]">
                     <div className="flex items-center gap-6 mb-14">
                         <div className="h-[1px] bg-white/10 flex-1" />
                         <h2 className="!text-white text-[22px] md:text-[24px] font-extrabold tracking-[4px] uppercase whitespace-nowrap text-center">
@@ -262,12 +262,12 @@ export default function IdleLand() {
 
             {/* ===== 5. CASE STUDY ===== */}
             <section className="py-4 bg-[#05070b] border-b border-white/5">
-                <div className="w-full px-[50px]">
+                <div className="w-full px-6 md:px-[50px]">
                     <div className="grid lg:grid-cols-12 gap-12 items-stretch">
 
                         {/* Case Study Card */}
                         <div className="lg:col-span-8 bg-[#0f1117] border border-white/10 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
-                            <div className="w-full md:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
+                            <div className="w-full md:w-1/2 p-6 sm:p-8 lg:p-12 flex flex-col justify-center">
                                 <div className="text-[#8dff4d] text-[14px] font-bold tracking-[3px] uppercase mb-4">
                                     CASE STUDY
                                 </div>
@@ -316,16 +316,16 @@ export default function IdleLand() {
                                 </span>
                             </div>
 
-                            <div className="grid grid-cols-2 gap-4 mb-6">
+                            <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-6">
                                 {[
                                     { label: "Total Land Managed", val: "5,000+ Acres" },
                                     { label: "Energy Generated", val: "4.2 GWh" },
                                     { label: "CO₂ Offset Today", val: "1,200 Tons" },
                                     { label: "Land Yield Rate", val: "94.5%" },
                                 ].map((m, i) => (
-                                    <div key={i} className="bg-[#0a0c11] border border-white/8 rounded-xl p-4">
-                                        <div className="text-gray-500 text-[12px] font-bold uppercase tracking-wider mb-1">{m.label}</div>
-                                        <div className="!text-white font-extrabold text-[22px]">{m.val}</div>
+                                    <div key={i} className="bg-[#0a0c11] border border-white/8 rounded-xl p-3 sm:p-4">
+                                        <div className="text-gray-500 text-[10px] sm:text-[12px] font-bold uppercase tracking-wider mb-1">{m.label}</div>
+                                        <div className="!text-white font-extrabold text-[16px] sm:text-[22px] whitespace-nowrap">{m.val}</div>
                                     </div>
                                 ))}
                             </div>
@@ -348,14 +348,14 @@ export default function IdleLand() {
                                 </div>
                             </div>
 
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-2 gap-3 sm:gap-4">
                                 {[
                                     { label: "Lifetime Energy Generated", val: "4.6 TWh" },
                                     { label: "CO₂ Lifetime Offset", val: "1.2M Tons" },
                                 ].map((m, i) => (
-                                    <div key={i} className="bg-[#0a0c11] border border-white/8 rounded-xl p-4">
-                                        <div className="text-gray-500 text-[12px] font-bold uppercase tracking-wider mb-1">{m.label}</div>
-                                        <div className="!text-white font-extrabold text-[20px]">{m.val}</div>
+                                    <div key={i} className="bg-[#0a0c11] border border-white/8 rounded-xl p-3 sm:p-4">
+                                        <div className="text-gray-500 text-[10px] sm:text-[12px] font-bold uppercase tracking-wider mb-1">{m.label}</div>
+                                        <div className="!text-white font-extrabold text-[16px] sm:text-[20px] whitespace-nowrap">{m.val}</div>
                                     </div>
                                 ))}
                             </div>
@@ -372,9 +372,9 @@ export default function IdleLand() {
 
             {/* ===== 6. CTA BLOCK ===== */}
             <section className="py-4 bg-[#05070b] border-t border-white/5">
-                <div className="w-full px-[50px]">
+                <div className="w-full px-6 md:px-[50px]">
                     <div
-                        className="border border-white/10 rounded-2xl p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden shadow-2xl"
+                        className="border border-white/10 rounded-2xl p-8 sm:p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10 relative overflow-hidden shadow-2xl"
                         style={{
                             background: "linear-gradient(135deg, #0a0c12 0%, #111420 100%)"
                         }}
@@ -382,23 +382,23 @@ export default function IdleLand() {
                         <div className="absolute inset-0 bg-[radial-gradient(#ffffff03_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
                         <div className="absolute left-0 top-0 bottom-0 w-[4px] bg-[#ff7a00]" />
 
-                        <div className="md:w-5/12 relative z-10">
-                            <h2 className="!text-white text-[32px] lg:text-[48px] font-extrabold leading-tight">
+                        <div className="md:w-5/12 relative z-10 text-center md:text-left">
+                            <h2 className="!text-white text-[28px] md:text-[32px] lg:text-[48px] font-extrabold leading-tight">
                                 Maximize Value.<br />
                                 <span className="!text-[#ff7a00]">With Zero Investment.</span>
                             </h2>
                         </div>
 
-                        <div className="md:w-3/12 flex flex-col gap-4 relative z-10">
+                        <div className="md:w-3/12 flex flex-col gap-4 relative z-10 mx-auto w-max md:mx-0 md:w-auto">
                             {["Zero Capex", "Monetize Unused Space", "Minimal Impact", "Sustainable Future"].map((item, i) => (
-                                <div key={i} className="flex items-center gap-3 text-white text-[17px] font-bold tracking-wider">
+                                <div key={i} className="flex items-center gap-3 text-white text-[15px] sm:text-[17px] font-bold tracking-wider">
                                     <CheckCircle2 size={18} className="text-[#8dff4d]" />
                                     {item}
                                 </div>
                             ))}
                         </div>
 
-                        <div className="md:w-4/12 flex justify-end relative z-10 w-full">
+                        <div className="md:w-4/12 flex justify-center md:justify-end relative z-10 w-full">
                             <Link
                                 to="/contact"
                                 className="px-8 py-4 rounded bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold text-[18px] tracking-wider uppercase transition-all shadow-[0_4px_20px_rgba(255,122,0,0.4)] w-full text-center md:w-auto flex items-center justify-center gap-2"
