@@ -10,7 +10,7 @@ import Contact from "./pages/Contact";
 import Success from "./pages/Success";
 import Videos from "./pages/Videos";
 import WarehouseSolution from "./pages/WarehouseSolution";
-import logoImg from "./assets/image.png";
+const logoImg = "/img/Techops-Final-Logo.png";
 import { MapPin, ChevronDown, ChevronRight, Wind, Battery, CarFront } from "lucide-react";
 import HowItWorks from "./pages/HowItWorks";
 import PropertyTypes from "./pages/PropertyTypes";
@@ -68,7 +68,7 @@ function Layout() {
     {/*==================================================*/}
     <header className="custom-dark-navbar" id="sticky-header" style={{position: 'absolute', top: 0, left: 0, width: '100%', zIndex: 1000, background: 'transparent'}}>
       <div className="container-fluid px-[50px]">
-        <div className="row align-items-center justify-content-between py-3">
+        <div className="row align-items-center justify-content-between py-1">
           {/* Logo */}
           <div className="col-auto">
             <div className="logo">
@@ -76,7 +76,7 @@ function Layout() {
                 <img 
                   src={logoImg} 
                   alt="TechOps Global Logo" 
-                  style={{height: '63px', width: 'auto', filter: 'invert(1)', mixBlendMode: 'screen'}} 
+                  style={{width: '200px', height: 'auto', maxWidth: 'none', maxHeight: 'none', display: 'block'}} 
                   loading="lazy" 
                 />
               </Link>
@@ -84,7 +84,7 @@ function Layout() {
           </div>
 
           {/* Desktop Nav Links */}
-          <div className="col-auto d-none d-lg-flex">
+          <div className="col d-none d-lg-flex justify-content-center">
             <nav className="d-flex align-items-center gap-4 custom-nav-links">
               {[
                 { name: "Home", path: "/" },
@@ -234,7 +234,7 @@ function Layout() {
                 <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
                   <img
                     src={logoImg} alt="TechOps Global"
-                    style={{ height: '32px', width: 'auto', filter: 'invert(1)', mixBlendMode: 'screen' }}
+                    style={{ height: '48px', width: 'auto' }}
                   />
                 </Link>
                 <button
@@ -437,7 +437,7 @@ function Layout() {
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-16">
             
             <div className="col-span-2 lg:col-span-2 pr-12">
-              <img src={logoImg} alt="TechOps Global" className="h-8 object-contain mb-6" style={{ filter: 'invert(1)', mixBlendMode: 'screen' }} />
+              <img src={logoImg} alt="TechOps Global" className="h-16 object-contain mb-6" />
               <p className="text-white text-[22px] leading-relaxed mb-6 font-light">
                 AI-powered energy infrastructure developer specializing in behind-the-meter solar, battery storage, and VPP solutions across the PJM markets.
               </p>
@@ -491,9 +491,10 @@ function Layout() {
             <div className="col-span-2 md:col-span-1 lg:col-span-1">
               <h4 className="text-white font-bold mb-5 text-[22px] tracking-widest uppercase">CONTACT US</h4>
               <ul className="space-y-2 mb-6">
-                <li className="text-white text-[22px]">hello@techopsglobal.com</li>
-                <li className="text-white text-[22px]">(608) 555-0123</li>
-                <li className="text-white text-[22px] flex items-center gap-2 mt-2"><MapPin size={14}/> Princeton, NJ</li>
+                <li className="text-white text-[22px]">info@techops-global.com</li>
+                <li className="text-white text-[22px]">USA: +1 (240) 351-3209</li>
+                <li className="text-white text-[22px]">SL: +232 33 448 065</li>
+                <li className="text-white text-[22px] flex items-center gap-2 mt-2"><MapPin size={14}/> Clinton, MD 20744</li>
               </ul>
 
             </div>

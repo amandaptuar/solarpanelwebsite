@@ -58,15 +58,19 @@ export default function Footer() {
                         <div className={styles.colTitle}>CONTACT</div>
                         <div className={styles.contactItem}>
                             <span className={styles.contactIcon}>✉</span>
-                            <span>hello@techopsglobal.com</span>
+                            <span>info@techops-global.com</span>
                         </div>
                         <div className={styles.contactItem}>
                             <span className={styles.contactIcon}>📞</span>
-                            <span>(608) 555-0123</span>
+                            <span>USA: +1 (240) 351-3209</span>
+                        </div>
+                        <div className={styles.contactItem}>
+                            <span className={styles.contactIcon}>📞</span>
+                            <span>SL: +232 33 448 065</span>
                         </div>
                         <div className={styles.contactItem}>
                             <span className={styles.contactIcon}>📍</span>
-                            <span>Princeton, NJ</span>
+                            <span>Clinton, MD 20744 | Freetown, SL</span>
                         </div>
                     </div>
                 </div>

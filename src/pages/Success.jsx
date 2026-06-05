@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import logoImg from "../assets/image.png";
+const logoImg = "/img/Techops-Final-Logo.png";
 
 function Success() {
 	useEffect(() => {

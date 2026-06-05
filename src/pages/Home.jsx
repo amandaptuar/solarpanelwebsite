@@ -9,7 +9,7 @@ import {
   PlayCircle, Calendar, Clock, Share2, MapPin, AlertTriangle,
   ArrowRight, Globe, Cpu, CreditCard, Gauge, ClipboardList, Leaf
 } from "lucide-react";
-import logoImg from "../assets/image.png";
+const logoImg = "/img/Techops-Final-Logo.png";
 import "./Home.css";
 
 const fadeUp = {
@@ -48,7 +48,7 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-black/95 backdrop-blur-md border-b border-white/5 py-0.5" : "bg-[#05070a]/80 backdrop-blur-sm border-b border-white/10 py-1"}`}>
       <div className="w-full px-[50px] flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logoImg} alt="TechOps Global" className="h-2 object-contain" />
+          <img src={logoImg} alt="TechOps Global" style={{width: '200px', height: 'auto', maxWidth: 'none', display: 'block'}} />
         </Link>
         
         {/* Desktop Links */}
@@ -114,7 +114,7 @@ export default function Home() {
     <div className="min-h-screen bg-[#05070a] text-white font-sans overflow-x-hidden selection:bg-[#ff7a00]/30 selection:text-[#ff7a00]">
 
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-[70vh] flex items-center pt-24 pb-16 lg:py-0 border-b border-white/5 overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center pt-28 pb-16 lg:pt-32 lg:pb-16 border-b border-white/5 overflow-hidden">
         <div className="absolute inset-0 z-0 bg-cover bg-center" style={{ backgroundImage: "url('/demo/herobg.png')" }}>
           <div className="absolute inset-0 bg-gradient-to-r from-[#05070a] via-[#05070a]/60 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#05070a] via-transparent to-transparent"></div>

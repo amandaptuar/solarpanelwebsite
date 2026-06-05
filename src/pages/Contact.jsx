@@ -56,8 +56,8 @@ function Contact() {
 							{/* 3 contact items horizontal */}
 							<div className="flex flex-col sm:flex-row gap-8">
 								{[
-									{ icon: <Phone size={32} />, label: "Call Us", value: "(608) 555-0123" },
-									{ icon: <Mail size={32} />, label: "Email Us", value: "hello@techopsglobal.com" },
+									{ icon: <Phone size={32} />, label: "Call Us", value: "+1 (240) 351-3209" },
+									{ icon: <Mail size={32} />, label: "Email Us", value: "info@techops-global.com" },
 									{ icon: <Clock size={32} />, label: "Business Hours", value: "Mon – Fri: 8AM – 6PM EST" },
 								].map((item, i) => (
 									<div key={i} className="flex items-center gap-3">
@@ -159,17 +159,17 @@ function Contact() {
 							{
 								icon: <MapPin size={28} />,
 								title: "Our Headquarters",
-								lines: ["TechOps Global, Inc.", "Princeton, NJ"]
+								lines: ["USA Office", "7454 Old Alexandria Ferry Road,", "Clinton, MD 20744", "", "Sierra Leone Office", "2 Taylor Lewis Drive, Juba Hill,", "Freetown, Sierra Leone"]
 							},
 							{
 								icon: <Phone size={28} />,
 								title: "Call Us",
-								lines: ["(608) 555-0123", "", "Toll Free:", "(833) TECH-OPS", "(833-832-4677)"]
+								lines: ["USA: +1 (240) 351-3209", "", "SL: +232 33 448 065"]
 							},
 							{
 								icon: <Mail size={28} />,
 								title: "Email Us",
-								lines: ["hello@techopsglobal.com", "info@techopsglobal.com", "", "Investor Relations", "investors@techopsglobal.com"]
+								lines: ["info@techops-global.com"]
 							},
 							{
 								icon: <Clock size={28} />,
@@ -215,7 +215,7 @@ function Contact() {
 									<MapPin size={20} className="text-black" />
 								</div>
 								<div className="bg-black/80 backdrop-blur-sm border border-white/20 px-3 py-1.5 rounded text-white text-[13px] font-bold shadow-xl">
-									Princeton, NJ
+									Clinton, MD 20744
 								</div>
 							</div>
 						</div>
