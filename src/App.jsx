@@ -19,6 +19,7 @@ import WindEnergy from "./pages/WindEnergy";
 import BatteryStorage from "./pages/BatteryStorage";
 import ParkingLot from "./pages/ParkingLot";
 import SolarEnergy from "./pages/SolarEnergy";
+import IdleLand from "./pages/IdleLand";
 
 // Inner layout that re-initializes jQuery theme on every route change
 function Layout() {
@@ -101,7 +102,7 @@ function Layout() {
                   name: "VPP Solution",
                   dropdown: [
                     { name: "Warehouse & Logistics", path: "/solutions/warehouse" },
-                    { name: "Idle Land & Buffer Acerage", path: "/property-types" },
+                    { name: "Idle Land & Buffer Acerage", path: "/solutions/idle-land" },
                     { name: "Commercial Parking Lot", path: "/solutions/parking" }
                   ]
                 },
@@ -267,7 +268,7 @@ function Layout() {
                     name: "VPP Solution",
                     dropdown: [
                       { name: "Warehouse & Logistics", path: "/solutions/warehouse" },
-                      { name: "Idle Land & Buffer Acerage", path: "/property-types" },
+                      { name: "Idle Land & Buffer Acerage", path: "/solutions/idle-land" },
                       { name: "Commercial Parking Lot", path: "/solutions/parking" }
                     ]
                   },
@@ -427,6 +428,7 @@ function Layout() {
       <Route path="/solutions/wind" element={<WindEnergy />} />
       <Route path="/solutions/battery" element={<BatteryStorage />} />
       <Route path="/solutions/parking" element={<ParkingLot />} />
+      <Route path="/solutions/idle-land" element={<IdleLand />} />
     </Routes>
 
     {/*==================================================*/}
