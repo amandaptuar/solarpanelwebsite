@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { 
-  Building, CheckCircle2, ArrowRight, DollarSign, Activity, Zap, 
+import {
+  Building, CheckCircle2, ArrowRight, DollarSign, Activity, Zap,
   ShieldCheck, Shield, HelpCircle, HardHat, Compass, Clock, Award,
   Leaf, TrendingUp, Sparkles, Settings, PlayCircle, LayoutGrid, BatteryCharging
 } from "lucide-react";
@@ -14,10 +14,10 @@ export default function WarehouseSolution() {
 
   return (
     <div className="min-h-screen bg-[#05070b] text-white font-sans overflow-x-hidden selection:bg-[#ff7a00]/30 selection:text-[#ff7a00]">
-      
+
       {/* 1. HERO SECTION WITH IMAGING BACKDROP */}
-      <section 
-        className="relative min-h-[90vh] flex flex-col justify-center pt-32 pb-24 border-b border-white/5 overflow-hidden bg-cover bg-center"
+      <section
+        className="relative min-h-[70vh] flex flex-col justify-center pt-28 pb-16 border-b border-white/5 overflow-hidden bg-cover bg-center"
         style={{
           backgroundImage: "linear-gradient(to right, rgba(5, 7, 11, 0.96) 30%, rgba(5, 7, 11, 0.75) 60%, rgba(5, 7, 11, 0.45) 100%), url('/solutiondemo/warehouse-solar.png')"
         }}
@@ -48,17 +48,17 @@ export default function WarehouseSolution() {
               <p className="text-[20px] lg:text-[24px] text-gray-300 mb-10 leading-relaxed font-light max-w-2xl">
                 We transform massive flat-roof warehouses into high-performing energy assets—at zero cost to you. Behind-the-meter solar and battery storage systems deliver immediate savings and long-term revenue.
               </p>
-              
+
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-5">
-                <Link 
-                  to="/contact" 
+                <Link
+                  to="/contact"
                   className="px-7 py-3.5 rounded bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold tracking-wider transition-all flex items-center gap-2 text-[16px] uppercase shadow-[0_4px_25px_rgba(255,122,0,0.35)]"
                 >
                   GET SITE ASSESSMENT <ArrowRight size={16} />
                 </Link>
-                <a 
-                  href="#how-it-works" 
+                <a
+                  href="#how-it-works"
                   className="px-7 py-3.5 rounded border-2 border-white/50 hover:border-white text-white hover:bg-white/5 font-extrabold tracking-wider transition-all flex items-center gap-3 text-[16px] uppercase"
                   style={{ textDecoration: 'none' }}
                 >
@@ -69,7 +69,7 @@ export default function WarehouseSolution() {
 
             {/* Right Column - Stacked Feature Cards */}
             <div className="lg:col-span-5 flex flex-col gap-6 relative mt-10 lg:mt-0">
-              
+
               {/* Card 1: ZERO CAPEX */}
               <div className="bg-[#111318]/90 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-2xl hover:border-[#8dff4d]/40 transition-all">
                 <div className="flex gap-4 items-start">
@@ -115,10 +115,10 @@ export default function WarehouseSolution() {
       </section>
 
       {/* 2. THE WAREHOUSE ADVANTAGE SECTION (3-COLUMN MOCKUP SPEC) */}
-      <section className="py-28 bg-[#07090e] border-b border-white/5 relative">
+      <section className="py-4 bg-[#07090e] border-b border-white/5 relative">
         <div className="w-full px-[50px]">
           <div className="grid lg:grid-cols-12 gap-12 items-stretch">
-            
+
             {/* Left Column - Headline & Main Advantage List */}
             <div className="lg:col-span-4 flex flex-col justify-between">
               <div>
@@ -177,17 +177,17 @@ export default function WarehouseSolution() {
             <div className="lg:col-span-5 flex items-center justify-center relative bg-gradient-to-b from-white/[0.01] to-white/[0.03] rounded-2xl border border-white/5 p-4 overflow-hidden">
               {/* Tech blueprint background overlay lines */}
               <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
-              
-              <img 
-                src="/solutiondemo/ChatGPT Image May 29, 2026, 10_11_02 AM.png" 
-                alt="TechOps Warehouse Solar Model Blueprint" 
-                className="w-full h-auto object-cover rounded-xl relative z-10 border border-white/5 shadow-2xl" 
+
+              <img
+                src="/solutiondemo/ChatGPT Image May 29, 2026, 10_11_02 AM.png"
+                alt="TechOps Warehouse Solar Model Blueprint"
+                className="w-full h-auto object-cover rounded-xl relative z-10 border border-white/5 shadow-2xl"
               />
             </div>
 
             {/* Right Column - Spec Pointer Callouts */}
             <div className="lg:col-span-3 flex flex-col justify-center gap-12 border-l border-white/5 pl-8">
-              
+
               <div className="flex gap-4 items-start">
                 <div className="w-10 h-10 rounded-full bg-[#8dff4d]/10 border border-[#8dff4d]/20 text-[#8dff4d] flex items-center justify-center shrink-0">
                   <Building size={20} />
@@ -218,10 +218,10 @@ export default function WarehouseSolution() {
         </div>
       </section>
       {/* 3. KEY METRICS GRID BANNER */}
-      <section className="py-16 bg-[#05070b] relative">
+      <section className="py-4 bg-[#05070b] relative">
         <div className="w-full px-[50px]">
           <div className="grid md:grid-cols-4 gap-6 border border-white/10 rounded-2xl bg-[#0a0c10] p-8 lg:p-10 divide-y md:divide-y-0 md:divide-x divide-white/10 shadow-2xl">
-            
+
             {/* Metric 1 */}
             <div className="flex items-center gap-5 p-2">
               <div className="w-[60px] h-[60px] rounded-full border-2 border-[#ff7a00] text-[#ff7a00] flex items-center justify-center bg-[#ff7a00]/5 shrink-0">
@@ -271,9 +271,9 @@ export default function WarehouseSolution() {
       </section>
 
       {/* 4. DESIGNED FOR WAREHOUSE & LOGISTICS LEADERS (5-COLUMN MOCKUP SPEC) */}
-      <section className="py-24 bg-[#07090e] border-t border-b border-white/5">
+      <section className="py-4 bg-[#07090e] border-t border-b border-white/5">
         <div className="w-full px-[50px]">
-          
+
           {/* Header Title with lateral lines */}
           <div className="flex items-center gap-6 mb-16">
             <div className="h-[1px] bg-white/10 flex-1"></div>
@@ -284,7 +284,7 @@ export default function WarehouseSolution() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-            
+
             {/* Col 1 */}
             <div className="flex flex-col items-center text-center p-4">
               <div className="w-14 h-14 rounded-full border-2 border-[#8dff4d]/30 text-[#8dff4d] flex items-center justify-center bg-[#8dff4d]/5 mb-6">
@@ -345,14 +345,14 @@ export default function WarehouseSolution() {
       </section>
 
       {/* 5. CASE STUDY & HOW IT WORKS SPLIT ROW */}
-      <section className="py-24 bg-[#05070b]" id="how-it-works">
+      <section className="py-4 bg-[#05070b]" id="how-it-works">
         <div className="w-full px-[50px]">
           <div className="grid lg:grid-cols-12 gap-12 items-start">
 
             {/* Left Case Study Card (8 columns) */}
             <div className="lg:col-span-8">
               <div className="bg-[#0f1117] border border-white/10 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
-                
+
                 {/* Text Content (Left Half) */}
                 <div className="w-full md:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
                   <div className="text-[#8dff4d] text-[14px] font-bold tracking-[3px] uppercase mb-4">
@@ -389,7 +389,7 @@ export default function WarehouseSolution() {
                 </div>
 
                 {/* Photo (Right Half) */}
-                <div 
+                <div
                   className="w-full md:w-1/2 min-h-[300px] bg-cover bg-center border-l border-white/10"
                   style={{ backgroundImage: "url('/solutiondemo/warehouse-solar.png')" }}
                 >
@@ -430,9 +430,9 @@ export default function WarehouseSolution() {
 
 
       {/* 6. CTA BLOCK (3-COLUMN SPEC) */}
-      <section className="py-16 bg-[#05070b] relative border-t border-white/5">
+      <section className="py-4 bg-[#05070b] relative border-t border-white/5">
         <div className="w-full px-[50px] relative z-10">
-          <div 
+          <div
             className="border border-white/10 rounded-2xl p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden shadow-2xl"
             style={{
               backgroundImage: "linear-gradient(to right, rgba(10,12,18,0.97) 0%, rgba(10,12,18,0.90) 50%, rgba(10,12,18,0.75) 100%), url('/solutiondemo/warehouse-solar.png')",
@@ -442,18 +442,18 @@ export default function WarehouseSolution() {
           >
             {/* Grid textures */}
             <div className="absolute inset-0 bg-[radial-gradient(#ffffff03_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
-            
+
             {/* Accent orange borders */}
             <div className="absolute left-0 top-0 bottom-0 w-[4px] bg-[#ff7a00]"></div>
-            
+
             {/* Component 1 (Left) */}
             <div className="md:w-5/12 relative z-10">
               <h2 className="!text-white text-[32px] lg:text-[48px] font-extrabold leading-tight">
-                Your Roof. Our Technology. <br className="hidden lg:block"/>
+                Your Roof. Our Technology. <br className="hidden lg:block" />
                 <span className="!text-[#ff7a00] text-[#ff7a00]">Shared Success.</span>
               </h2>
             </div>
-            
+
             <div className="md:w-3/12 flex flex-col gap-4 font-semibold relative z-10">
               <div className="flex items-center gap-3 text-white text-[18px] font-bold tracking-wider">
                 <CheckCircle2 size={18} className="text-[#8dff4d]" /> Zero Capex
@@ -465,11 +465,11 @@ export default function WarehouseSolution() {
                 <CheckCircle2 size={18} className="text-[#8dff4d]" /> Maximum Reward
               </div>
             </div>
-            
+
             {/* Component 3 (Right CTA Button) */}
             <div className="md:w-4/12 flex justify-end relative z-10 w-full">
-              <Link 
-                to="/contact" 
+              <Link
+                to="/contact"
                 className="px-8 py-4 rounded bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold text-[18px] tracking-wider uppercase transition-all shadow-[0_4px_20px_rgba(255,122,0,0.4)] w-full text-center md:w-auto flex items-center justify-center gap-2"
               >
                 GET YOUR FREE SITE ASSESSMENT <ArrowRight size={16} />

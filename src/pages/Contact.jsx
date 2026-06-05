@@ -24,7 +24,7 @@ function Contact() {
 
 			{/* ===== 1. HERO — split layout ===== */}
 			<section
-				className="relative pt-24 pb-20 overflow-hidden bg-cover bg-center"
+				className="relative min-h-[70vh] flex flex-col justify-center pt-28 pb-16 overflow-hidden bg-cover bg-center"
 				style={{
 					backgroundImage:
 						"linear-gradient(to right, rgba(5,7,11,0.95) 0%, rgba(5,7,11,0.85) 50%, rgba(5,7,11,0.5) 100%), url('/img/business-solution-2026-03-10-02-05-05-utc.JPG')",
@@ -56,7 +56,7 @@ function Contact() {
 							{/* 3 contact items horizontal */}
 							<div className="flex flex-col sm:flex-row gap-8">
 								{[
-									{ icon: <Phone size={32} />, label: "Call Us", value: "(609) 555-0123" },
+									{ icon: <Phone size={32} />, label: "Call Us", value: "(608) 555-0123" },
 									{ icon: <Mail size={32} />, label: "Email Us", value: "hello@techopsglobal.com" },
 									{ icon: <Clock size={32} />, label: "Business Hours", value: "Mon – Fri: 8AM – 6PM EST" },
 								].map((item, i) => (
@@ -143,7 +143,7 @@ function Contact() {
 			</section>
 
 			{/* ===== 2. GET IN TOUCH ===== */}
-			<section className="py-20 bg-[#05070b] border-b border-white/5">
+			<section className="py-4 bg-[#05070b] border-b border-white/5">
 				<div className="w-full px-6 md:px-[50px]">
 					{/* Title with decorative line */}
 					<div className="flex items-center justify-center mb-3">
@@ -159,12 +159,12 @@ function Contact() {
 							{
 								icon: <MapPin size={28} />,
 								title: "Our Headquarters",
-								lines: ["TechOps Global, Inc.", "200 Princeton Hightstown Rd", "Suite 201", "Princeton, NJ 08540", "USA"]
+								lines: ["TechOps Global, Inc.", "Princeton, NJ"]
 							},
 							{
 								icon: <Phone size={28} />,
 								title: "Call Us",
-								lines: ["(609) 555-0123", "", "Toll Free:", "(833) TECH-OPS", "(833-832-4677)"]
+								lines: ["(608) 555-0123", "", "Toll Free:", "(833) TECH-OPS", "(833-832-4677)"]
 							},
 							{
 								icon: <Mail size={28} />,
@@ -223,8 +223,10 @@ function Contact() {
 				</div>
 			</section>
 
-			{/* ===== 3. OUR LOCATIONS ===== */}
-			<section className="py-20 bg-[#07090e] border-b border-white/5">
+			{/* ===== 3. OUR LOCATIONS (HIDDEN FOR NOW) ===== */}
+			{/* TODO: Checkpoint - Remove "false && (" below and the closing ")" to show locations again */}
+			{false && (
+			<section className="py-4 bg-[#07090e] border-b border-white/5">
 				<div className="w-full px-6 md:px-[50px]">
 					<div className="flex items-center justify-center mb-3">
 						<h2 className="!text-white text-[32px] font-extrabold tracking-wide">Our Locations</h2>
@@ -238,7 +240,7 @@ function Contact() {
 							{
 								city: "Princeton, New Jersey",
 								type: "Headquarters",
-								address: ["200 Princeton Hightstown Rd", "Suite 201", "Princeton, NJ 08540", "USA"],
+								address: ["Princeton, NJ"],
 								img: "/unsplash/choose-thumb.jpg"
 							},
 							{
@@ -279,10 +281,11 @@ function Contact() {
 					</div>
 				</div>
 			</section>
+			)}
 
 			{/* ===== 4. CTA SECTION ===== */}
 			<section
-				className="py-20 relative overflow-hidden"
+				className="py-4 relative overflow-hidden"
 				style={{
 					backgroundImage: "linear-gradient(to right, rgba(10,12,18,0.95) 50%, rgba(10,12,18,0.80) 100%), url('/unsplash/wind-battery.jpg')",
 					backgroundSize: "cover",

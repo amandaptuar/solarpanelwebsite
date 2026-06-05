@@ -114,7 +114,7 @@ export default function PropertyTypes() {
       
       {/* 1. Hero Section */}
       <section 
-        className="relative pt-[100px] pb-[70px] md:pt-[130px] md:pb-[96px] lg:pt-[150px] lg:pb-[112px] bg-cover bg-center overflow-hidden"
+        className="relative min-h-[70vh] flex flex-col justify-center pt-28 pb-16 bg-cover bg-center overflow-hidden"
         style={{
           backgroundImage: `linear-gradient(to right, rgba(5,7,11,0.95) 0%, rgba(5,7,11,0.85) 45%, rgba(5,7,11,0.2) 75%, rgba(5,7,11,0.05) 100%), url("/solutiondemo/warehouse-solar.png")`
         }}
@@ -149,7 +149,7 @@ export default function PropertyTypes() {
       </section>
 
       {/* 2. Solutions Grid Section */}
-      <section className="py-20 lg:py-28 bg-[#05070b] border-b border-white/5">
+      <section className="py-4 lg:py-4 bg-[#05070b] border-b border-white/5">
         <div className="w-full px-6 sm:px-[50px]">
           
           {/* Section Divider Header */}
@@ -211,7 +211,7 @@ export default function PropertyTypes() {
       </section>
 
       {/* 3. Steps Horizontal Timeline Section */}
-      <section className="py-20 lg:py-28 bg-[#05070b] border-b border-white/5">
+      <section className="py-4 lg:py-4 bg-[#05070b] border-b border-white/5">
         <div className="w-full px-6 sm:px-[50px]">
 
           {/* Section Divider Header */}
@@ -260,7 +260,7 @@ export default function PropertyTypes() {
       </section>
 
       {/* 4. CTA Section Block */}
-      <section className="py-16 bg-[#05070b]">
+      <section className="py-4 bg-[#05070b]">
         <div className="w-full px-6 sm:px-[50px]">
           <div 
             className="rounded-2xl border border-white/10 p-10 md:p-14 overflow-hidden relative min-h-[250px] flex items-center bg-cover bg-center shadow-2xl"

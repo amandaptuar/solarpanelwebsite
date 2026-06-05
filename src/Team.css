@@ -6,7 +6,7 @@
 /* ---- HERO SECTION ---- */
 .tg-team-hero {
 	position: relative;
-	min-height: 480px;
+	min-height: 70vh;
 	background-image:
 		linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.55) 60%, rgba(0, 0, 0, 0.3) 100%),
 		url('/img/team-hero-bg.jpg');
@@ -204,7 +204,7 @@
 .tg-cards-grid {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: flex-start;
 	gap: 16px;
 	max-width: 1400px;
 	margin: 0 auto;

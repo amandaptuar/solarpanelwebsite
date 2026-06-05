@@ -103,6 +103,8 @@ const Navbar = () => {
 };
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState("Overview");
+
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = "TechOps Global | Zero-Capex Revenue Engine";
@@ -112,7 +114,7 @@ export default function Home() {
     <div className="min-h-screen bg-[#05070a] text-white font-sans overflow-x-hidden selection:bg-[#ff7a00]/30 selection:text-[#ff7a00]">
 
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-[75vh] flex items-center pt-24 pb-16 lg:py-0 border-b border-white/5 overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center pt-24 pb-16 lg:py-0 border-b border-white/5 overflow-hidden">
         <div className="absolute inset-0 z-0 bg-cover bg-center" style={{ backgroundImage: "url('/demo/herobg.png')" }}>
           <div className="absolute inset-0 bg-gradient-to-r from-[#05070a] via-[#05070a]/60 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#05070a] via-transparent to-transparent"></div>
@@ -123,7 +125,7 @@ export default function Home() {
         <div className="w-full px-6 md:px-[50px] relative z-10">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             {/* Left Content */}
-            <motion.div variants={fadeUp} initial="hidden" animate="visible" className="lg:col-span-6 pt-24 lg:pt-32 lg:-ml-8 xl:-ml-16 lg:translate-x-[50px]">
+            <motion.div variants={fadeUp} initial="hidden" animate="visible" className="lg:col-span-6 pt-4 lg:pt-4 lg:-ml-8 xl:-ml-16 lg:translate-x-[50px]">
               <div className="mb-4 text-[#ff7a00] text-[14px] font-bold tracking-[4px] uppercase">
                 AI POWER. REAL ESTATE. REAL REVENUE.
               </div>
@@ -190,7 +192,7 @@ export default function Home() {
       </section>
 
       {/* 2. DUAL BENEFIT FRAMEWORK */}
-      <section className="py-[60px] relative bg-[#05070a]">
+      <section className="py-4 relative bg-[#05070a]">
         <div className="w-full px-[50px]">
           <div className="flex items-center justify-center gap-6 mb-12">
             <div className="h-[1px] flex-1 max-w-[100px] bg-white/20"></div>
@@ -256,7 +258,7 @@ export default function Home() {
       </section>
 
       {/* 3. PROPERTY TYPE CARDS */}
-      <section className="py-[60px] bg-[#0a0c10] relative border-t border-white/5">
+      <section className="py-4 bg-[#0a0c10] relative border-t border-white/5">
         <div className="w-full px-[50px]">
           <div className="flex items-center justify-start gap-6 mb-12">
             <h2 className="text-[18px] font-bold tracking-[2px] text-white uppercase">TAILORED SOLUTIONS FOR EVERY PROPERTY TYPE</h2>
@@ -283,7 +285,7 @@ export default function Home() {
                 loc: "INDUSTRIAL PA & MD",
                 desc: "Generating yield on land\nyou aren't using.",
                 points: ["Ground-mounted solar + storage", "Bypass long utility interconnection", "Plug into local distribution grids", "Operate as a Virtual Power Plant (VPP)"],
-                link: "#"
+                link: "/property-types"
               },
               {
                 img: "/demo/ChatGPT%20Image%20May%2027,%202026,%2005_06_12%20PM.png",
@@ -293,7 +295,7 @@ export default function Home() {
                 loc: "OFFICES & RETAIL",
                 desc: "Shade vehicles. Generate power.\nOffset demand.",
                 points: ["Solar carports & EV charging", "Reduce tenant energy costs", "Storage hidden in plain sight", "Enhance ESG & property value"],
-                link: "#"
+                link: "/solutions/parking"
               }
             ].map((card, i) => (
               <motion.div 
@@ -333,7 +335,7 @@ export default function Home() {
       </section>
 
       {/* 4. AI PLATFORM */}
-      <section className="py-[60px] bg-[#05070a] relative border-t border-white/5 overflow-hidden">
+      <section className="py-4 bg-[#05070a] relative border-t border-white/5 overflow-hidden">
         <div className="w-full px-[50px] relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}
@@ -382,7 +384,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col gap-1.5">
                   {[
-                    { icon: <LayoutDashboard size={14} />, label: "Overview", active: true },
+                    { icon: <LayoutDashboard size={14} />, label: "Overview" },
                     { icon: <Box size={14} />, label: "Assets" },
                     { icon: <TrendingUp size={14} />, label: "Forecasting" },
                     { icon: <CloudLightning size={14} />, label: "Dispatch" },
@@ -391,12 +393,19 @@ export default function Home() {
                     { icon: <FileText size={14} />, label: "Reports" },
                     { icon: <Bell size={14} />, label: "Alerts" },
                     { icon: <Settings size={14} />, label: "Settings" }
-                  ].map((item, i) => (
-                    <div key={i} className={`flex items-center gap-2.5 px-3 py-2 rounded-lg cursor-pointer transition-colors ${item.active ? 'text-[#ff7a00] font-bold bg-[#ff7a00]/10' : 'text-gray-500 hover:text-gray-300'}`}>
-                      {item.icon}
-                      <span className={`text-[16px] hidden md:block ${item.active ? 'font-bold' : 'font-medium'}`}>{item.label}</span>
-                    </div>
-                  ))}
+                  ].map((item, i) => {
+                    const isActive = activeTab === item.label;
+                    return (
+                      <div 
+                        key={i} 
+                        onClick={() => setActiveTab(item.label)}
+                        className={`flex items-center gap-2.5 px-3 py-2 rounded-lg cursor-pointer transition-colors ${isActive ? 'text-[#ff7a00] font-bold bg-[#ff7a00]/10' : 'text-gray-500 hover:text-gray-300'}`}
+                      >
+                        {item.icon}
+                        <span className={`text-[16px] hidden md:block ${isActive ? 'font-bold' : 'font-medium'}`}>{item.label}</span>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -485,38 +494,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Bottom Alerts Row */}
-                <div className="bg-[#12141a] border border-white/5 rounded-xl p-3 px-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shrink-0">
-                  <div className="flex flex-wrap items-center gap-6 flex-1">
-                     <div>
-                        <div className="text-[14px] text-gray-500 uppercase font-semibold mb-1">AI Dispatch Status</div>
-                        <span className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-[#8dff4d]/10 text-[#8dff4d] text-[14px] font-bold border border-[#8dff4d]/20">
-                          <div className="w-1.5 h-1.5 bg-[#8dff4d] rounded-full shadow-[0_0_5px_rgba(141,255,77,0.5)]"></div> ACTIVE
-                        </span>
-                     </div>
-                     <div className="w-[1px] h-8 bg-white/5 hidden md:block"></div>
-                     <div>
-                        <div className="text-[14px] text-gray-500 uppercase font-semibold mb-0.5">Next Action</div>
-                        <div className="text-white text-[14px] font-bold">Discharge Battery 2.4 MW</div>
-                        <div className="text-[14px] text-gray-400 mt-0.5">Market Price: $82.67/MWh</div>
-                     </div>
-                     <div className="w-[1px] h-8 bg-white/5 hidden md:block"></div>
-                     <div>
-                        <div className="text-[14px] text-gray-500 uppercase font-semibold mb-0.5">Next 5 Min Forecast</div>
-                        <div className="text-[#ff7a00] text-[14px] font-bold flex items-center gap-1">
-                          High Price Event
-                        </div>
-                        <div className="text-[14px] text-gray-400 mt-0.5">Increase Export</div>
-                     </div>
-                  </div>
-                  <div className="flex items-center gap-2 border border-white/5 bg-[#12141a] px-2.5 py-1.5 rounded-lg shrink-0">
-                     <Leaf size={12} className="text-[#8dff4d]" />
-                     <div>
-                        <div className="text-[14px] text-gray-400 uppercase font-semibold leading-none mb-0.5">CO₂ Offset Today</div>
-                        <div className="text-white text-[14px] font-bold leading-none mt-1">28.4 Tons</div>
-                     </div>
-                  </div>
-                </div>
               </div>
             </div>
           </motion.div>
@@ -524,7 +501,7 @@ export default function Home() {
       </section>
 
       {/* 5. CTA BANNER */}
-      <section className="py-[60px] bg-[#05070a] relative border-t border-white/5">
+      <section className="py-4 bg-[#05070a] relative border-t border-white/5">
         <div className="w-full px-[50px] relative z-10">
           <div className="bg-[#111318] border border-white/5 rounded p-12 lg:p-14 flex flex-col lg:flex-row items-center justify-between gap-10 relative overflow-hidden">
             <div className="absolute inset-0 bg-cover bg-center opacity-50" style={{ backgroundImage: "url('/demo/background.png')" }}></div>

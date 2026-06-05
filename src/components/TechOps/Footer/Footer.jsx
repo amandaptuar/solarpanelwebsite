@@ -2,8 +2,7 @@ import styles from './Footer.module.css';
 
 const solutions = ['Warehouse & Logistics', 'Retail', 'Parking Lots', 'Battery Storage', 'VPP & Markets'];
 const propertyTypes = ['Industrial', 'Commercial', 'Retail', 'Logistics', 'Multi-Tenant'];
-const resources = ['Case Studies', 'Whitepapers', 'Blog', 'FAQs', 'Investor Relations'];
-const company = ['About Us', 'Leadership', 'Careers', 'News', 'Contact Us'];
+const company = ['About Us', 'Leadership', 'Contact Us'];
 
 export default function Footer() {
     return (
@@ -46,16 +45,6 @@ export default function Footer() {
                     </ul>
                 </div>
 
-                {/* Resources */}
-                <div className={styles.col}>
-                    <div className={styles.colTitle}>RESOURCES</div>
-                    <ul className={styles.colLinks}>
-                        {resources.map((l) => (
-                            <li key={l}><a href="#">{l}</a></li>
-                        ))}
-                    </ul>
-                </div>
-
                 {/* Company + Contact */}
                 <div className={styles.col}>
                     <div className={styles.colTitle}>COMPANY</div>
@@ -73,7 +62,7 @@ export default function Footer() {
                         </div>
                         <div className={styles.contactItem}>
                             <span className={styles.contactIcon}>📞</span>
-                            <span>(888) 555-0123</span>
+                            <span>(608) 555-0123</span>
                         </div>
                         <div className={styles.contactItem}>
                             <span className={styles.contactIcon}>📍</span>

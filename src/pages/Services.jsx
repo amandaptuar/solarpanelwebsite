@@ -45,7 +45,7 @@ function Services() {
 		{/*==================================================*/}
 		{/* Start Solar Panel  slider Section */}
 		{/*==================================================*/}
-		<div className="breatcome-section" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/img/team-technicians-carrying-photovoltaic-solar-modul-2026-01-09-10-53-57-utc.jpg")', backgroundSize: 'cover', backgroundPosition: 'center center' }}>
+		<div className="breatcome-section min-h-[70vh] flex flex-col justify-center" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/img/team-technicians-carrying-photovoltaic-solar-modul-2026-01-09-10-53-57-utc.jpg")', backgroundSize: 'cover', backgroundPosition: 'center center' }}>
 			<div className="container">
 				<div className="row">
 					<div className="col-lg-12 col-md-12">

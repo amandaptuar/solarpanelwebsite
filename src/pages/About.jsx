@@ -110,7 +110,7 @@ export default function About() {
 
       {/* ── HERO SECTION WITH BACKGROUND ─────────────────────────────────── */}
       <section 
-        className="relative w-full px-6 md:px-[50px] pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden bg-cover bg-center border-b border-white/5"
+        className="relative min-h-[70vh] flex flex-col justify-center w-full px-6 md:px-[50px] pt-28 pb-16 overflow-hidden bg-cover bg-center border-b border-white/5"
         style={{
           backgroundImage: "linear-gradient(to right, rgba(5, 7, 11, 0.98) 35%, rgba(5, 7, 11, 0.6) 100%), url('/img/concept-of-an-energy-storage-system-based-on-elect-2026-03-24-07-19-07-utc.jpg')"
         }}
@@ -161,7 +161,7 @@ export default function About() {
       </section>
 
       {/* ── OUR STORY ───────────────────────────────────────────────────── */}
-      <section className="w-full px-6 md:px-[50px] py-16 border-b border-white/5">
+      <section className="w-full px-6 md:px-[50px] py-4 border-b border-white/5">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-stretch">
           {/* Left Column: text & button */}
           <div className="lg:col-span-5 flex flex-col justify-between py-2 gap-8">
@@ -258,7 +258,7 @@ export default function About() {
       </section>
 
       {/* ── WHAT WE DO ──────────────────────────────────────────────────── */}
-      <section className="w-full px-6 md:px-[50px] py-16 md:py-24 border-b border-white/5">
+      <section className="w-full px-6 md:px-[50px] py-4 md:py-4 border-b border-white/5">
         <div className="flex items-center gap-4 mb-14">
           <h2 className="!text-white font-extrabold text-[28px] md:text-[32px] uppercase tracking-widest whitespace-nowrap">
             What We Do
@@ -296,7 +296,7 @@ export default function About() {
       </section>
 
       {/* ── OUR EXPERTISE ───────────────────────────────────────────────── */}
-      <section className="w-full px-6 md:px-[50px] py-16 md:py-24 border-b border-white/5">
+      <section className="w-full px-6 md:px-[50px] py-4 md:py-4 border-b border-white/5">
         {/* Header layout matching mockup (Title left, intro right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
           <div className="lg:col-span-5 flex items-center gap-4">
@@ -381,7 +381,7 @@ export default function About() {
       </section>
 
       {/* ── CTA SECTION ─────────────────────────────────────────────────── */}
-      <section className="w-full px-6 md:px-[50px] py-16 md:py-20">
+      <section className="w-full px-6 md:px-[50px] py-4 md:py-4">
         <div
           className="relative rounded-2xl overflow-hidden"
           style={{ border: "1px solid rgba(255,255,255,0.08)" }}

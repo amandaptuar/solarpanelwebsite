@@ -19,7 +19,7 @@ export default function ParkingLot() {
 
             {/* ===== 1. HERO SECTION ===== */}
             <section
-                className="relative min-h-[90vh] flex flex-col justify-center pt-32 pb-24 border-b border-white/5 overflow-hidden bg-cover bg-center"
+                className="relative min-h-[70vh] flex flex-col justify-center pt-28 pb-16 border-b border-white/5 overflow-hidden bg-cover bg-center"
                 style={{
                     backgroundImage: "linear-gradient(to right, rgba(5,7,11,0.96) 30%, rgba(5,7,11,0.75) 60%, rgba(5,7,11,0.45) 100%), url('/solutiondemo/parking-solar.png')"
                 }}
@@ -40,24 +40,27 @@ export default function ParkingLot() {
 
                         {/* Left copy */}
                         <div className="lg:col-span-7">
-                            <h1 className="!text-white type-hero mb-6 leading-[1.1]">
+                            <div className="mb-4 text-[#ff7a00] text-[18px] font-bold tracking-[3px] uppercase">
+                                Commercial Solar Carports
+                            </div>
+                            <h1 className="!text-white text-[60px] lg:text-[64px] font-extrabold leading-[1.1] tracking-tight mb-6">
                                 Transform Underutilized<br />
                                 Parking Lots Into<br />
                                 <span className="text-[#ff7a00]">Revenue-Generating Energy Assets</span>
                             </h1>
-                            <p className="type-body-lg text-gray-300 mb-10 max-w-2xl">
+                            <p className="text-[20px] lg:text-[24px] text-gray-300 mb-10 leading-relaxed font-light max-w-2xl">
                                 Convert parking spaces into high-performance solar carports that generate clean energy, reduce operating costs, provide vehicle shade, and create long-term recurring revenue.
                             </p>
                             <div className="flex flex-wrap items-center gap-5">
                                 <Link
                                     to="/contact"
-                                    className="px-7 py-3.5 rounded bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold tracking-wider transition-all flex items-center gap-2 type-body-sm uppercase shadow-[0_4px_25px_rgba(255,122,0,0.35)]"
+                                    className="px-7 py-3.5 rounded bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold tracking-wider transition-all flex items-center gap-2 text-[16px] uppercase shadow-[0_4px_25px_rgba(255,122,0,0.35)]"
                                 >
                                     GET SITE ASSESSMENT <ArrowRight size={16} />
                                 </Link>
                                 <a
                                     href="#how-it-works"
-                                    className="px-7 py-3.5 rounded border-2 border-white/50 hover:border-white text-white hover:bg-white/5 font-extrabold tracking-wider transition-all flex items-center gap-3 type-body-sm uppercase"
+                                    className="px-7 py-3.5 rounded border-2 border-white/50 hover:border-white text-white hover:bg-white/5 font-extrabold tracking-wider transition-all flex items-center gap-3 text-[16px] uppercase"
                                     style={{ textDecoration: 'none' }}
                                 >
                                     SEE HOW IT WORKS <PlayCircle size={18} />
@@ -66,18 +69,18 @@ export default function ParkingLot() {
                         </div>
 
                         {/* Right feature cards */}
-                        <div className="lg:col-span-5 flex flex-col gap-6 mt-10 lg:mt-0 relative">
+                        <div className="lg:col-span-5 flex flex-col gap-4 mt-10 lg:mt-0 relative">
                             {[
                                 { icon: <DollarSign size={20} />, color: "#8dff4d", title: "ZERO CAPEX", desc: "We fund, build, own & operate." },
-                                { icon: <TrendingUp size={20} />, color: "#8dff4d", title: "ENERGY COST SAVINGS", desc: "Reduce utility bills and peak demand charges." },
+                                { icon: <TrendingUp size={20} />, color: "#8dff4d", title: "ENERGY COST SAVINGS", desc: "Reduce utility bills & peak demand." },
                                 { icon: <Car size={20} />, color: "#ff7a00", title: "EV CHARGING READY", desc: "Support EV charging infrastructure." },
-                                { icon: <Leaf size={20} />, color: "#ff7a00", title: "ESG LEADERSHIP", desc: "Meet sustainability and carbon reduction goals." },
+                                { icon: <Leaf size={20} />, color: "#ff7a00", title: "ESG LEADERSHIP", desc: "Meet sustainability & carbon goals." },
                             ].map((card, i) => (
                                 <div
                                     key={i}
-                                    className="bg-[#111318]/90 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-2xl transition-all hover:border-white/20"
+                                    className="bg-[#111318]/90 backdrop-blur-md border border-white/10 rounded-2xl p-5 shadow-2xl transition-all hover:border-white/20"
                                 >
-                                    <div className="flex gap-4 items-start">
+                                    <div className="flex gap-4 items-center">
                                         <div
                                             className="w-12 h-12 rounded-full flex items-center justify-center shrink-0"
                                             style={{ border: `2px solid ${card.color}`, color: card.color, background: `${card.color}0d` }}
@@ -85,8 +88,8 @@ export default function ParkingLot() {
                                             {card.icon}
                                         </div>
                                         <div>
-                                            <h4 className="!text-white type-card tracking-wide uppercase">{card.title}</h4>
-                                            <p className="type-body text-gray-400 mt-1">{card.desc}</p>
+                                            <h4 className="!text-white font-extrabold text-[18px] tracking-wide uppercase leading-tight">{card.title}</h4>
+                                            <p className="text-[15px] text-gray-400 mt-0.5 leading-snug">{card.desc}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -98,7 +101,7 @@ export default function ParkingLot() {
             </section>
 
             {/* ===== 2. THE PARKING LOT ADVANTAGE ===== */}
-            <section className="py-28 bg-[#07090e] border-b border-white/5 relative">
+            <section className="py-4 bg-[#07090e] border-b border-white/5 relative">
                 <div className="w-full px-[50px]">
                     <div className="grid lg:grid-cols-12 gap-12 items-center">
 
@@ -184,7 +187,7 @@ export default function ParkingLot() {
             </section>
 
             {/* ===== 3. KEY METRICS ===== */}
-            <section className="py-16 bg-[#05070b] relative">
+            <section className="py-4 bg-[#05070b] relative">
                 <div className="w-full px-[50px]">
                     <div className="grid md:grid-cols-4 gap-6 border border-white/10 rounded-2xl bg-[#0a0c10] p-8 lg:p-10 divide-y md:divide-y-0 md:divide-x divide-white/10 shadow-2xl">
                         {[
@@ -208,7 +211,7 @@ export default function ParkingLot() {
             </section>
 
             {/* ===== 4. DESIGNED FOR EVERY PROPERTY OWNER ===== */}
-            <section className="py-24 bg-[#07090e] border-t border-b border-white/5">
+            <section className="py-4 bg-[#07090e] border-t border-b border-white/5">
                 <div className="w-full px-[50px]">
                     <div className="flex items-center gap-6 mb-16">
                         <div className="h-[1px] bg-white/10 flex-1" />
@@ -241,7 +244,7 @@ export default function ParkingLot() {
             </section>
 
             {/* ===== 5. WHY SOLAR CARPORTS? ===== */}
-            <section className="py-28 bg-[#05070b] border-b border-white/5">
+            <section className="py-4 bg-[#05070b] border-b border-white/5">
                 <div className="w-full px-[50px]">
                     <div className="flex items-center gap-6 mb-16">
                         <div className="h-[1px] bg-white/10 flex-1" />
@@ -274,7 +277,7 @@ export default function ParkingLot() {
             </section>
 
             {/* ===== 6. CASE STUDY & HOW IT WORKS ===== */}
-            <section className="py-28 bg-[#07090e]" id="how-it-works">
+            <section className="py-4 bg-[#07090e]" id="how-it-works">
                 <div className="w-full px-[50px]">
                     <div className="grid lg:grid-cols-12 gap-12 items-start">
 
@@ -346,7 +349,7 @@ export default function ParkingLot() {
             </section>
 
             {/* ===== 7. SOLAR + EV CHARGING ===== */}
-            <section className="py-24 bg-[#05070b] border-t border-white/5">
+            <section className="py-4 bg-[#05070b] border-t border-white/5">
                 <div className="w-full px-[50px]">
                     <div
                         className="relative border border-white/10 rounded-2xl p-12 lg:p-16 overflow-hidden shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-12"
@@ -389,7 +392,7 @@ export default function ParkingLot() {
             </section>
 
             {/* ===== 8. CALCULATOR SECTION ===== */}
-            <section className="py-24 bg-[#07090e] border-t border-white/5">
+            <section className="py-4 bg-[#07090e] border-t border-white/5">
                 <div className="w-full px-[50px]">
                     <div className="bg-[#0d0f15] border border-white/10 rounded-2xl p-10 lg:p-12 shadow-2xl">
                         <div className="grid lg:grid-cols-12 gap-12 items-center">
@@ -432,7 +435,7 @@ export default function ParkingLot() {
             </section>
 
             {/* ===== 9. FINAL CTA ===== */}
-            <section className="py-24 bg-[#05070b]">
+            <section className="py-4 bg-[#05070b]">
                 <div className="w-full px-[50px]">
                     <div
                         className="relative border border-white/10 rounded-2xl p-12 lg:p-16 overflow-hidden shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-12"

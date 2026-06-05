@@ -88,7 +88,7 @@ export default function HowItWorks() {
       
       {/* 2. Hero Section */}
       <section 
-        className="relative pt-[110px] pb-16 md:pt-[140px] md:pb-20 lg:pt-[180px] lg:pb-32 w-full overflow-hidden border-b border-white/5 bg-cover bg-center"
+        className="relative min-h-[70vh] flex flex-col justify-center pt-28 pb-16 w-full overflow-hidden border-b border-white/5 bg-cover bg-center"
         style={{
           backgroundImage: `linear-gradient(to right, rgba(5,7,11,0.92) 40%, rgba(5,7,11,0.6) 100%), url("/solutiondemo/ChatGPT Image May 29, 2026, 10_05_44 AM.png")`,
         }}
@@ -254,7 +254,7 @@ export default function HowItWorks() {
       </section>
 
       {/* 3. Our Process Section */}
-      <section className="py-20 lg:py-28 bg-[#05070b] border-b border-white/5">
+      <section className="py-4 lg:py-4 bg-[#05070b] border-b border-white/5">
         <div className="w-full px-6 sm:px-[50px]">
           
           <div className="text-center mb-16">
@@ -311,7 +311,7 @@ export default function HowItWorks() {
       </section>
 
       {/* 4. Difference Section */}
-      <section className="py-20 lg:py-28 bg-[#05070b]">
+      <section className="py-4 lg:py-4 bg-[#05070b]">
         <div className="w-full px-6 sm:px-[50px]">
           
           <div className="flex items-center justify-center gap-6 mb-6">
@@ -346,7 +346,7 @@ export default function HowItWorks() {
       </section>
 
       {/* 5. CTA Block */}
-      <section className="py-16 bg-[#05070b]">
+      <section className="py-4 bg-[#05070b]">
         <div className="w-full px-6 sm:px-[50px]">
           <div 
             className="rounded-2xl border border-white/10 p-10 md:p-14 overflow-hidden relative min-h-[250px] flex items-center bg-cover bg-center shadow-2xl"

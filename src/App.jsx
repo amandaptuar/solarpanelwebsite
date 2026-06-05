@@ -76,7 +76,7 @@ function Layout() {
                 <img 
                   src={logoImg} 
                   alt="TechOps Global Logo" 
-                  style={{height: '42px', width: 'auto', filter: 'invert(1)', mixBlendMode: 'screen'}} 
+                  style={{height: '63px', width: 'auto', filter: 'invert(1)', mixBlendMode: 'screen'}} 
                   loading="lazy" 
                 />
               </Link>
@@ -434,7 +434,7 @@ function Layout() {
     {/*==================================================*/} 
       <footer className="bg-[#05070a] pt-16 pb-8 border-t border-white/5 mt-auto">
         <div className="w-full px-[50px]">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-16">
             
             <div className="col-span-2 lg:col-span-2 pr-12">
               <img src={logoImg} alt="TechOps Global" className="h-8 object-contain mb-6" style={{ filter: 'invert(1)', mixBlendMode: 'screen' }} />
@@ -470,7 +470,7 @@ function Layout() {
             <div>
               <h4 className="text-white font-bold mb-5 text-[22px] tracking-widest uppercase">COMPANY</h4>
               <ul className="space-y-3">
-                {["About Us", "Leadership", "Careers", "News", "Contact Us"].map(l => {
+                {["About Us", "Leadership", "Contact Us"].map(l => {
                   let path = "/contact";
                   if (l === "About Us") path = "/about";
                   if (l === "Leadership") path = "/team";
@@ -486,14 +486,7 @@ function Layout() {
               </ul>
             </div>
 
-            <div>
-              <h4 className="text-white font-bold mb-5 text-[22px] tracking-widest uppercase">RESOURCES</h4>
-              <ul className="space-y-3">
-                  {["Case Studies", "Whitepapers", "Blog", "FAQs", "Investor Relations"].map(l => (
-                    <li key={l}><Link to="/contact" className="text-white text-[22px] hover:text-gray-300 transition-colors">{l}</Link></li>
-                  ))}
-              </ul>
-            </div>
+
 
             <div className="col-span-2 md:col-span-1 lg:col-span-1">
               <h4 className="text-white font-bold mb-5 text-[22px] tracking-widest uppercase">CONTACT US</h4>

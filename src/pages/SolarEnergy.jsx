@@ -17,7 +17,7 @@ export default function SolarEnergy() {
 
             {/* ===== 1. HERO SECTION ===== */}
             <section
-                className="relative min-h-[90vh] flex flex-col justify-center pt-32 pb-24 border-b border-white/5 overflow-hidden bg-cover bg-center"
+                className="relative min-h-[70vh] flex flex-col justify-center pt-28 pb-16 border-b border-white/5 overflow-hidden bg-cover bg-center"
                 style={{
                     backgroundImage:
                         "linear-gradient(to right, rgba(5,7,11,0.96) 30%, rgba(5,7,11,0.75) 60%, rgba(5,7,11,0.40) 100%), url('/unsplash/industrial-solar.jpg')",
@@ -100,7 +100,7 @@ export default function SolarEnergy() {
             </section>
 
             {/* ===== 2. THE SOLAR ADVANTAGE ===== */}
-            <section className="py-24 bg-[#07090e] border-b border-white/5">
+            <section className="py-4 bg-[#07090e] border-b border-white/5">
                 <div className="w-full px-[50px]">
                     {/* Title row */}
                     <div className="flex items-center gap-6 mb-16">
@@ -154,7 +154,7 @@ export default function SolarEnergy() {
             </section>
 
             {/* ===== 3. SOLAR SOLUTIONS FOR EVERY PROPERTY TYPE ===== */}
-            <section className="py-24 bg-[#05070b] border-b border-white/5">
+            <section className="py-4 bg-[#05070b] border-b border-white/5">
                 <div className="w-full px-[50px]">
                     <div className="flex items-center gap-6 mb-14">
                         <div className="h-[1px] bg-white/10 flex-1" />
@@ -232,7 +232,7 @@ export default function SolarEnergy() {
             </section>
 
             {/* ===== 4. HOW IT WORKS ===== */}
-            <section className="py-24 bg-[#07090e] border-b border-white/5" id="how-it-works">
+            <section className="py-4 bg-[#07090e] border-b border-white/5" id="how-it-works">
                 <div className="w-full px-[50px]">
                     <div className="flex items-center gap-6 mb-14">
                         <div className="h-[1px] bg-white/10 flex-1" />
@@ -268,7 +268,7 @@ export default function SolarEnergy() {
             </section>
 
             {/* ===== 5. CASE STUDY ===== */}
-            <section className="py-24 bg-[#05070b] border-b border-white/5">
+            <section className="py-4 bg-[#05070b] border-b border-white/5">
                 <div className="w-full px-[50px]">
                     <div className="grid lg:grid-cols-12 gap-12 items-stretch">
 
@@ -378,7 +378,7 @@ export default function SolarEnergy() {
             </section>
 
             {/* ===== 6. CTA BLOCK ===== */}
-            <section className="py-16 bg-[#05070b] border-t border-white/5">
+            <section className="py-4 bg-[#05070b] border-t border-white/5">
                 <div className="w-full px-[50px]">
                     <div
                         className="border border-white/10 rounded-2xl p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden shadow-2xl"
