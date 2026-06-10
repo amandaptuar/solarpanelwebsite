@@ -52,10 +52,11 @@ export default function WarehouseSolution() {
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-5">
                 <Link
-                  to="/contact"
-                  className="px-7 py-3.5 rounded bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold tracking-wider transition-all flex items-center gap-2 text-[16px] uppercase shadow-[0_4px_25px_rgba(255,122,0,0.35)]"
+                  to="/site-assessment"
+                  style={{ background: '#ff7a00', border: '1px solid #ff7a00', color: '#000000', fontSize: '14px', fontWeight: '800', letterSpacing: '1px', borderRadius: '4px', textDecoration: 'none' }}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 hover:opacity-90 transition-opacity uppercase"
                 >
-                  GET SITE ASSESSMENT <ArrowRight size={16} />
+                  GET SITE ASSESSMENT <ArrowRight size={14} />
                 </Link>
                 <a
                   href="#how-it-works"
@@ -96,14 +97,14 @@ export default function WarehouseSolution() {
                 </div>
               </div>
 
-              {/* Card 3: PJM MARKET EXPOSURE */}
+              {/* Card 3: VPP ARBITRATION */}
               <div className="bg-[#111318]/90 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-2xl hover:border-[#ff7a00]/40 transition-all">
                 <div className="flex gap-4 items-start">
                   <div className="w-12 h-12 rounded-full border-2 border-[#ff7a00] text-[#ff7a00] flex items-center justify-center shrink-0 bg-[#ff7a00]/5">
                     <Zap size={20} />
                   </div>
                   <div>
-                    <h4 className="!text-white text-white font-extrabold text-[20px] tracking-wide uppercase">PJM MARKET EXPOSURE</h4>
+                    <h4 className="!text-white text-white font-extrabold text-[20px] tracking-wide uppercase">VPP ARBITRATION</h4>
                     <p className="text-[18px] text-gray-400 mt-1 leading-snug">Tap into billions in grid-balancing opportunities.</p>
                   </div>
                 </div>
@@ -469,10 +470,11 @@ export default function WarehouseSolution() {
             {/* Component 3 (Right CTA Button) */}
             <div className="md:w-4/12 flex justify-end relative z-10 w-full">
               <Link
-                to="/contact"
-                className="px-8 py-4 rounded bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold text-[18px] tracking-wider uppercase transition-all shadow-[0_4px_20px_rgba(255,122,0,0.4)] w-full text-center md:w-auto flex items-center justify-center gap-2"
+                to="/site-assessment"
+                style={{ background: '#ff7a00', border: '1px solid #ff7a00', color: '#000000', fontSize: '14px', fontWeight: '800', letterSpacing: '1px', borderRadius: '4px', textDecoration: 'none' }}
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 hover:opacity-90 transition-opacity uppercase w-full md:w-auto"
               >
-                GET YOUR FREE SITE ASSESSMENT <ArrowRight size={16} />
+                GET YOUR FREE SITE ASSESSMENT <ArrowRight size={14} />
               </Link>
             </div>
           </div>

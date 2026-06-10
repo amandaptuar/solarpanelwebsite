@@ -62,7 +62,7 @@ const Navbar = () => {
 
         {/* Right Nav */}
         <div className="hidden lg:flex items-center gap-6">
-          <Link to="/contact" className="px-5 py-2 rounded text-[14px] font-bold tracking-wider border border-white/30 hover:border-white text-white transition-all duration-300">
+          <Link to="/site-assessment" className="px-5 py-2 rounded text-[14px] font-bold tracking-wider border border-white/30 hover:border-white text-white transition-all duration-300">
             GET SITE ASSESSMENT
           </Link>
           <button className="text-white hover:text-orange-500 transition-colors">
@@ -91,7 +91,7 @@ const Navbar = () => {
                   {item.label} {item.dropdown && <ChevronRight size={18} className="opacity-60" />}
                 </Link>
               ))}
-              <Link to="/contact" className="mt-4 px-6 py-3 text-center rounded border border-white/30 text-white font-bold">
+              <Link to="/site-assessment" className="mt-4 px-6 py-3 text-center rounded border border-white/30 text-white font-bold">
                 GET SITE ASSESSMENT
               </Link>
             </div>
@@ -130,14 +130,14 @@ export default function Home() {
                 AI POWER. REAL ESTATE. REAL REVENUE.
               </div>
               <h1 className="text-[36px] sm:text-[48px] lg:text-[60px] font-bold leading-[1.05] tracking-wide mb-6 text-white">
-                Turn Your PJM<br/>Real Estate Footprint<br/>into a <span className="text-[#ff7a00]">Zero-Capex<br/>Revenue Engine.</span>
+                Turn Your<br/>Real Estate Footprint<br/>into a <span className="text-[#ff7a00]">Zero-Capex<br/>Revenue Engine.</span>
               </h1>
               <p className="text-[20px] lg:text-[20px] text-gray-300 mb-8 max-w-xl leading-relaxed font-light tracking-[0.5px]">
                 Monetize your unused warehouse rooftops, vacant acreage, and parking lots in Pennsylvania, <span className="text-white font-semibold">New Jersey</span>, and <span className="text-white font-semibold">Maryland</span>. We deploy behind-the-meter solar and battery storage systems at <span className="text-white font-semibold">zero cost</span> to you, driving immediate energy savings and massive grid-balancing cash flow.
               </p>
               <div className="flex flex-wrap items-center gap-5">
-                <Link to="/contact" className="px-10 py-4 rounded bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-bold tracking-widest transition-all flex items-center gap-2 text-[14px] uppercase">
-                  GET SITE ASSESSMENT <ArrowRight size={20} />
+                <Link to="/site-assessment" style={{ background: '#ff7a00', border: '1px solid #ff7a00', color: '#000000', fontSize: '14px', fontWeight: '800', letterSpacing: '1px', borderRadius: '4px', textDecoration: 'none' }} className="inline-flex items-center gap-2 px-5 py-2.5 hover:opacity-90 transition-opacity uppercase">
+                  GET SITE ASSESSMENT <ArrowRight size={14} />
                 </Link>
                 <Link to="/about" className="px-10 py-4 rounded border border-white/30 hover:border-white text-white font-bold tracking-widest transition-all flex items-center gap-3 text-[14px] uppercase">
                   SEE HOW IT WORKS <div className="w-6 h-6 rounded-full border border-white text-[#ff7a00] flex items-center justify-center bg-transparent"><div className="w-0 h-0 border-t-[5px] border-t-transparent border-l-[8px] border-l-[#ff7a00] border-b-[5px] border-b-transparent ml-1"></div></div>
@@ -174,13 +174,13 @@ export default function Home() {
                     </div>
                   </div>
                   
-                  {/* PJM MARKET - Orange */}
+                  {/* VPP ARBITRATION - Orange */}
                   <div className="flex gap-4 items-start">
                     <div className="w-10 h-10 rounded-full border border-[#ff7a00]/30 text-[#ff7a00] flex items-center justify-center shrink-0">
                       <Zap size={20} />
                     </div>
                     <div>
-                      <h4 className="text-white font-bold mb-1 text-[18px] tracking-wide">PJM MARKET EXPOSURE</h4>
+                      <h4 className="text-white font-bold mb-1 text-[18px] tracking-wide">VPP ARBITRATION</h4>
                       <p className="text-[16px] text-gray-400">Tap into billions in grid-balancing<br/>opportunities.</p>
                     </div>
                   </div>
@@ -226,7 +226,7 @@ export default function Home() {
                 </div>
                 <div className="pt-1">
                   <h3 className="text-[14px] font-bold text-white mb-2 uppercase tracking-wide">2. BEHIND-THE-METER (BTM) PEAK SHAVING</h3>
-                  <p className="text-gray-400 text-[20px] leading-relaxed">Shield your facility from PJM's exploding<br/>capacity pass-through costs (30%+<br/>of corporate electric bills).</p>
+                  <p className="text-gray-400 text-[20px] leading-relaxed">Shield your facility from exploding<br/>capacity pass-through costs (30%+<br/>of corporate electric bills).</p>
                 </div>
               </div>
             </div>
@@ -236,7 +236,7 @@ export default function Home() {
           <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }} className="w-[calc(100%+40px)] -mx-[20px] pt-8">
             <div className="flex flex-col lg:flex-row items-stretch border border-white/10 rounded-2xl bg-white/[0.02] divide-y lg:divide-y-0 lg:divide-x divide-white/10">
               {[
-                { icon: <Globe size={24}/>, val: "$BILLIONS", desc: "in PJM market\nrevenue potential" },
+                { icon: <Globe size={24}/>, val: "$BILLIONS", desc: "in energy market\nrevenue potential" },
                 { icon: <ClipboardList size={24}/>, val: "0", desc: "Upfront cost\nto you" },
                 { icon: <Building size={24}/>, val: "15-20 YEARS", desc: "Long-term predictable\ncash flow" },
                 { icon: <Gauge size={24}/>, val: "100%", desc: "Turnkey development\n& operations" },
@@ -284,7 +284,7 @@ export default function Home() {
                 title: "IDLE LAND &\nBUFFER ACREAGE",
                 loc: "INDUSTRIAL PA & MD",
                 desc: "Generating yield on land\nyou aren't using.",
-                points: ["Ground-mounted solar + storage", "Bypass long utility interconnection", "Plug into local distribution grids", "Operate as a Virtual Power Plant (VPP)"],
+                points: ["Ground-mounted solar + storage", "Bypass long utility interconnection", "Plug into local distribution grids", "Operate as a Virtual Power Producer (VPP)"],
                 link: "/property-types"
               },
               {
@@ -358,7 +358,7 @@ export default function Home() {
                     "Forecast generation, facility load & market prices",
                     "Dynamically optimize battery charge/discharge",
                     "Reduce peak demand charges automatically",
-                    "Sell stored energy into PJM markets at peak rates",
+                    "Sell stored energy into energy markets at peak rates",
                     "Maximize passive revenue while minimizing risk",
                     "Real-time anomaly detection and reporting"
                   ].map((item, i) => (
@@ -519,8 +519,8 @@ export default function Home() {
                 <div className="flex items-center gap-3 text-white text-[18px] font-medium"><div className="w-3.5 h-3.5 border border-[#ff7a00] rounded-full flex items-center justify-center text-[#ff7a00]"><div className="w-1.5 h-1.5 bg-[#ff7a00] rounded-full"></div></div> Zero capital</div>
                 <div className="flex items-center gap-3 text-white text-[18px] font-medium"><div className="w-3.5 h-3.5 border border-[#ff7a00] rounded-full flex items-center justify-center text-[#ff7a00]"><div className="w-1.5 h-1.5 bg-[#ff7a00] rounded-full"></div></div> Maximum reward</div>
               </div>
-              <Link to="/contact" className="px-8 py-3.5 rounded bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-bold text-[16px] tracking-wider uppercase transition-all whitespace-nowrap flex items-center gap-2">
-                GET YOUR FREE SITE ASSESSMENT <ArrowRight size={16} />
+              <Link to="/site-assessment" style={{ background: '#ff7a00', border: '1px solid #ff7a00', color: '#000000', fontSize: '14px', fontWeight: '800', letterSpacing: '1px', borderRadius: '4px', textDecoration: 'none' }} className="inline-flex items-center gap-2 px-5 py-2.5 hover:opacity-90 transition-opacity uppercase whitespace-nowrap">
+                GET YOUR FREE SITE ASSESSMENT <ArrowRight size={14} />
               </Link>
             </div>
           </div>

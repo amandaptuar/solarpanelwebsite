@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -20,6 +20,7 @@ import BatteryStorage from "./pages/BatteryStorage";
 import ParkingLot from "./pages/ParkingLot";
 import SolarEnergy from "./pages/SolarEnergy";
 import IdleLand from "./pages/IdleLand";
+import SiteAssessment from "./pages/SiteAssessment";
 
 // Inner layout that re-initializes jQuery theme on every route change
 function Layout() {
@@ -163,7 +164,7 @@ function Layout() {
           {/* Right Area: Button & Hamburger */}
           <div className="col-auto d-flex align-items-center gap-4">
             <Link 
-              to="/contact" 
+              to="/site-assessment" 
               className="d-none d-md-inline-flex text-decoration-none align-items-center justify-content-center px-4 py-2.5" 
               style={{
                 background: '#ff7a00',
@@ -371,7 +372,7 @@ function Layout() {
               {/* CTA Button */}
               <div style={{ padding: '0 20px 20px' }}>
                 <Link
-                  to="/contact"
+                  to="/site-assessment"
                   onClick={() => setIsMobileMenuOpen(false)}
                   style={{
                     display: 'block', textAlign: 'center',
@@ -429,6 +430,7 @@ function Layout() {
       <Route path="/solutions/battery" element={<BatteryStorage />} />
       <Route path="/solutions/parking" element={<ParkingLot />} />
       <Route path="/solutions/idle-land" element={<IdleLand />} />
+      <Route path="/site-assessment" element={<SiteAssessment />} />
     </Routes>
 
     {/*==================================================*/}
@@ -441,7 +443,7 @@ function Layout() {
             <div className="col-span-2 lg:col-span-2 pr-12">
               <img src={logoImg} alt="TechOps Global" className="h-16 object-contain mb-6" />
               <p className="text-white text-[22px] leading-relaxed mb-6 font-light">
-                AI-powered energy infrastructure developer specializing in behind-the-meter solar, battery storage, and VPP solutions across the PJM markets.
+                AI-powered energy infrastructure developer specializing in behind-the-meter solar, battery storage, and VPP solutions across energy markets.
               </p>
               <div className="flex gap-3">
                  <div className="w-8 h-8 rounded-full border border-white/20 text-white flex items-center justify-center text-[17px] cursor-pointer hover:border-white transition-colors">in</div>
@@ -564,12 +566,12 @@ function Layout() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route path="/success" element={<Success />} />
         <Route path="*" element={<Layout />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 

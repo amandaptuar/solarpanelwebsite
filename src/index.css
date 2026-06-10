@@ -420,3 +420,22 @@ a {
 .mobile-dropdown-container {
     width: 100%;
 }
+
+/* Mobile Navbar UI Fixes - Keep Burger Menu on Same Line */
+@media screen and (max-width: 767px) {
+  .custom-dark-navbar .container-fluid {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  nav.fixed.top-0 > div.px-\[50px\] {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  .custom-dark-navbar .logo img,
+  nav.fixed.top-0 img[alt="TechOps Global"] {
+    width: 220px !important;
+  }
+  .custom-dark-navbar .row {
+    flex-wrap: nowrap !important;
+  }
+}

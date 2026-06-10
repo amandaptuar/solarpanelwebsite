@@ -53,10 +53,11 @@ export default function ParkingLot() {
                             </p>
                             <div className="flex flex-wrap items-center gap-5">
                                 <Link
-                                    to="/contact"
-                                    className="px-7 py-3.5 rounded bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold tracking-wider transition-all flex items-center gap-2 text-[16px] uppercase shadow-[0_4px_25px_rgba(255,122,0,0.35)]"
+                                    to="/site-assessment"
+                                    style={{ background: '#ff7a00', border: '1px solid #ff7a00', color: '#000000', fontSize: '14px', fontWeight: '800', letterSpacing: '1px', borderRadius: '4px', textDecoration: 'none' }}
+                                    className="inline-flex items-center gap-2 px-5 py-2.5 hover:opacity-90 transition-opacity uppercase"
                                 >
-                                    GET SITE ASSESSMENT <ArrowRight size={16} />
+                                    GET SITE ASSESSMENT <ArrowRight size={14} />
                                 </Link>
                                 <a
                                     href="#how-it-works"
@@ -463,10 +464,11 @@ export default function ParkingLot() {
                                 ))}
                             </div>
                             <Link
-                                to="/contact"
-                                className="inline-flex items-center justify-center gap-3 w-full sm:w-auto bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold px-10 py-5 rounded-lg text-[16px] uppercase tracking-wider transition-all shadow-[0_4px_25px_rgba(255,122,0,0.4)]"
+                                to="/site-assessment"
+                                style={{ background: '#ff7a00', border: '1px solid #ff7a00', color: '#000000', fontSize: '14px', fontWeight: '800', letterSpacing: '1px', borderRadius: '4px', textDecoration: 'none' }}
+                                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 hover:opacity-90 transition-opacity uppercase w-full sm:w-auto"
                             >
-                                GET YOUR FREE SITE ASSESSMENT <ArrowRight size={20} />
+                                GET YOUR FREE SITE ASSESSMENT <ArrowRight size={14} />
                             </Link>
                         </div>
                     </div>

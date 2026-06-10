@@ -16,7 +16,7 @@ export default function Footer() {
                     </div>
                     <p className={styles.brandDesc}>
                         AI-powered energy infrastructure developer specializing in behind-the-meter
-                        solar, battery storage, and VPP solutions across the PJM markets.
+                        solar, battery storage, and VPP solutions across energy markets.
                     </p>
                     <div className={styles.socials}>
                         {['in', 'X', '▶', '⊡'].map((s) => (

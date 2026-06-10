@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
 
 const navLinks = [
@@ -34,7 +35,7 @@ export default function Navbar() {
         </ul>
 
         {/* CTA */}
-        <button className={styles.ctaBtn}>GET SITE ASSESSMENT →</button>
+        <Link to="/site-assessment" className={styles.ctaBtn} style={{ textDecoration: 'none' }}>GET SITE ASSESSMENT →</Link>
 
         {/* Hamburger */}
         <button className={styles.hamburger} aria-label="Menu">

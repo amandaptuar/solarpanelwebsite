@@ -282,11 +282,11 @@ export default function PropertyTypes() {
               </div>
               
               <Link 
-                to="/contact" 
-                className="px-8 py-4 rounded-full bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold text-[18px] tracking-wider uppercase transition-all shadow-[0_4px_20px_rgba(255,122,0,0.3)] shrink-0 gap-2 flex items-center"
-                style={{ textDecoration: 'none' }}
+                to="/site-assessment" 
+                style={{ background: '#ff7a00', border: '1px solid #ff7a00', color: '#000000', fontSize: '14px', fontWeight: '800', letterSpacing: '1px', borderRadius: '4px', textDecoration: 'none' }}
+                className="inline-flex items-center gap-2 px-5 py-2.5 hover:opacity-90 transition-opacity uppercase shrink-0"
               >
-                GET YOUR FREE SITE ASSESSMENT <ArrowRight size={16} />
+                GET YOUR FREE SITE ASSESSMENT <ArrowRight size={14} />
               </Link>
             </div>
           </div>

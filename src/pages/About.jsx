@@ -372,7 +372,7 @@ export default function About() {
               <CapItem icon={Sun}             title="Solar Energy Systems"         subtitle="Utility-scale & Distributed" />
               <CapItem icon={BatteryCharging} title="Battery Energy Storage"       subtitle="BESS Solutions" />
               <CapItem icon={Wind}            title="Wind Power Infrastructure"    subtitle="Resource Assessment & Development" />
-              <CapItem icon={LayoutGrid}      title="Virtual Power Plant Services" subtitle="VPP Platforms & Optimization" />
+              <CapItem icon={LayoutGrid}      title="Virtual Power Producer Services" subtitle="VPP Platforms & Optimization" />
               <CapItem icon={Settings}        title="Energy Management Solutions"  subtitle="Efficiency & Monitoring" />
               <CapItem icon={Wrench}          title="Operations & Maintenance"     subtitle="Reliable & Safe Operations" />
             </div>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './CTA.module.css';
 
 export default function CTA() {
@@ -19,9 +20,9 @@ export default function CTA() {
                 </div>
 
                 <div className={styles.right}>
-                    <button className={styles.ctaBtn}>
+                    <Link to="/site-assessment" className={styles.ctaBtn} style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
                         GET YOUR FREE SITE ASSESSMENT →
-                    </button>
+                    </Link>
                 </div>
             </div>
         </section>

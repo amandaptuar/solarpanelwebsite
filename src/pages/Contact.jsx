@@ -80,7 +80,7 @@ function Contact() {
 								<h3 className="!text-white text-[26px] font-extrabold mb-2">Send Us a Message</h3>
 								<p className="text-gray-400 text-[14px] mb-8">Fill out the form below and we'll get back to you shortly.</p>
 
-								<form action="https://formsubmit.co/matrikaventures2020@gmail.com" method="POST" className="space-y-5">
+								<form action="https://formsubmit.co/info@techops-global.com" method="POST" className="space-y-5">
 									<input type="hidden" name="_next" value={typeof window !== "undefined" ? window.location.origin + "/success" : "https://techops-global.com/success"} />
 									<input type="hidden" name="_subject" value={`New Contact Submission By ${formName || "a User"} From Techops Global`} />
 
@@ -313,10 +313,11 @@ function Contact() {
 								))}
 							</div>
 							<Link
-								to="/contact"
-								className="inline-flex items-center gap-3 bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold px-8 py-4 rounded-lg text-[16px] uppercase tracking-wider transition-all shadow-[0_4px_25px_rgba(255,122,0,0.4)] whitespace-nowrap"
+								to="/site-assessment"
+								style={{ background: '#ff7a00', border: '1px solid #ff7a00', color: '#000000', fontSize: '14px', fontWeight: '800', letterSpacing: '1px', borderRadius: '4px', textDecoration: 'none' }}
+								className="inline-flex items-center gap-2 px-5 py-2.5 hover:opacity-90 transition-opacity uppercase whitespace-nowrap"
 							>
-								GET YOUR FREE SITE ASSESSMENT <ArrowRight size={20} />
+								GET YOUR FREE SITE ASSESSMENT <ArrowRight size={14} />
 							</Link>
 						</div>
 					</div>

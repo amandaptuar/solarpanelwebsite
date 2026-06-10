@@ -1,9 +1,55 @@
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME} !-l
-  RewriteRule . index.html [L]
+Options -MultiViews -Indexes
+RewriteEngine On
+
+DirectoryIndex index.html
+
+# ─── Allow access to all files ─────────────────────────────────────────────
+<IfModule mod_authz_core.c>
+  Require all granted
+</IfModule>
+<IfModule !mod_authz_core.c>
+  Order allow,deny
+  Allow from all
+</IfModule>
+
+# ─── MIME types (critical: tells Apache to serve JS as JavaScript) ───────────
+<IfModule mod_mime.c>
+  AddType application/javascript .js .mjs
+  AddType text/javascript        .js .mjs
+  AddType text/css               .css
+  AddType image/svg+xml          .svg .svgz
+  AddType application/json       .json
+  AddType image/x-icon           .ico
+  AddType font/woff              .woff
+  AddType font/woff2             .woff2
+  AddType image/webp             .webp
+</IfModule>
+
+# ─── React Router Fallback (Fixes white screen on reload) ──────────────────
+# Serve index.html for all routes that are not real files or directories.
+# This allows BrowserRouter to handle client-side routing correctly.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ /index.html [QSA,L]
+
+# ─── Security & CORS headers ────────────────────────────────────────────────
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  # Allow assets (JS modules, fonts, etc.) to load without CORS errors
+  Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+# ─── Cache static assets ────────────────────────────────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg        "access plus 1 year"
+  ExpiresByType image/png         "access plus 1 year"
+  ExpiresByType image/webp        "access plus 1 year"
+  ExpiresByType image/svg+xml     "access plus 1 year"
+  ExpiresByType text/css          "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType font/woff2        "access plus 1 year"
 </IfModule>

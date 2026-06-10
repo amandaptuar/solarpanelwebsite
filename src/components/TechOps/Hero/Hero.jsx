@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './Hero.module.css';
 
 export default function Hero() {
@@ -31,7 +32,7 @@ export default function Hero() {
                     </p>
 
                     <div className={styles.buttons}>
-                        <button className={styles.btnPrimary}>GET SITE ASSESSMENT →</button>
+                        <Link to="/site-assessment" className={styles.btnPrimary} style={{ textDecoration: 'none' }}>GET SITE ASSESSMENT →</Link>
                         <button className={styles.btnSecondary}>SEE HOW IT WORKS ⊙</button>
                     </div>
                 </div>
@@ -66,7 +67,7 @@ export default function Hero() {
                             </svg>
                         </div>
                         <div>
-                            <div className={styles.cardLabel}>PJM MARKET EXPOSURE</div>
+                            <div className={styles.cardLabel}>VPP ARBITRATION</div>
                             <div className={styles.cardDesc}>Tap into billions in grid-balancing opportunities.</div>
                         </div>
                     </div>

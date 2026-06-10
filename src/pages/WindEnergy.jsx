@@ -52,10 +52,11 @@ export default function WindEnergy() {
 
                             <div className="flex flex-wrap items-center gap-5">
                                 <Link
-                                    to="/contact"
-                                    className="px-7 py-3.5 rounded bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold tracking-wider transition-all flex items-center gap-2 type-body-sm uppercase shadow-[0_4px_25px_rgba(255,122,0,0.35)]"
+                                    to="/site-assessment"
+                                    style={{ background: '#ff7a00', border: '1px solid #ff7a00', color: '#000000', fontSize: '14px', fontWeight: '800', letterSpacing: '1px', borderRadius: '4px', textDecoration: 'none' }}
+                                    className="inline-flex items-center gap-2 px-5 py-2.5 hover:opacity-90 transition-opacity uppercase"
                                 >
-                                    GET SITE ASSESSMENT <ArrowRight size={16} />
+                                    GET SITE ASSESSMENT <ArrowRight size={14} />
                                 </Link>
                                 <a
                                     href="#how-it-works"
@@ -402,10 +403,11 @@ export default function WindEnergy() {
 
                         <div className="md:w-4/12 flex justify-end relative z-10 w-full">
                             <Link
-                                to="/contact"
-                                className="px-8 py-4 rounded bg-[#ff7a00] hover:bg-[#ff8a1c] text-black font-extrabold text-[18px] tracking-wider uppercase transition-all shadow-[0_4px_20px_rgba(255,122,0,0.4)] w-full text-center md:w-auto flex items-center justify-center gap-2"
+                                to="/site-assessment"
+                                style={{ background: '#ff7a00', border: '1px solid #ff7a00', color: '#000000', fontSize: '14px', fontWeight: '800', letterSpacing: '1px', borderRadius: '4px', textDecoration: 'none' }}
+                                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 hover:opacity-90 transition-opacity uppercase w-full md:w-auto"
                             >
-                                GET YOUR FREE SITE ASSESSMENT <ArrowRight size={16} />
+                                GET YOUR FREE SITE ASSESSMENT <ArrowRight size={14} />
                             </Link>
                         </div>
                     </div>
