@@ -104,11 +104,18 @@ const Navbar = () => {
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("Overview");
+  const [videoOpen, setVideoOpen] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = "TechOps Global | Zero-Capex Revenue Engine";
   }, []);
+
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === "Escape") setVideoOpen(false); };
+    if (videoOpen) document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [videoOpen]);
 
   return (
     <div className="min-h-screen bg-[#05070a] text-white font-sans overflow-x-hidden selection:bg-[#ff7a00]/30 selection:text-[#ff7a00]">
@@ -139,9 +146,9 @@ export default function Home() {
                 <Link to="/site-assessment" style={{ background: '#ff7a00', border: '1px solid #ff7a00', color: '#000000', fontSize: '14px', fontWeight: '800', letterSpacing: '1px', borderRadius: '4px', textDecoration: 'none' }} className="inline-flex items-center gap-2 px-5 py-2.5 hover:opacity-90 transition-opacity uppercase">
                   GET SITE ASSESSMENT <ArrowRight size={14} />
                 </Link>
-                <Link to="/about" className="px-10 py-4 rounded border border-white/30 hover:border-white text-white font-bold tracking-widest transition-all flex items-center gap-3 text-[14px] uppercase">
+                <button onClick={() => setVideoOpen(true)} className="px-10 py-4 rounded border border-white/30 hover:border-white text-white font-bold tracking-widest transition-all flex items-center gap-3 text-[14px] uppercase" style={{background:"transparent",cursor:"pointer"}}>
                   SEE HOW IT WORKS <div className="w-6 h-6 rounded-full border border-white text-[#ff7a00] flex items-center justify-center bg-transparent"><div className="w-0 h-0 border-t-[5px] border-t-transparent border-l-[8px] border-l-[#ff7a00] border-b-[5px] border-b-transparent ml-1"></div></div>
-                </Link>
+                </button>
               </div>
             </motion.div>
 
@@ -527,6 +534,60 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Video Modal */}
+      <AnimatePresence>
+        {videoOpen && (
+          <motion.div
+            key="video-modal"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setVideoOpen(false)}
+            style={{
+              position: "fixed", inset: 0, zIndex: 9999,
+              background: "rgba(0,0,0,0.92)",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              backdropFilter: "blur(8px)"
+            }}
+          >
+            <motion.div
+              initial={{ scale: 0.88, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.88, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                position: "relative", width: "min(92vw,1100px)",
+                borderRadius: "16px", overflow: "hidden",
+                boxShadow: "0 0 80px rgba(255,122,0,0.15), 0 40px 80px rgba(0,0,0,0.6)",
+                border: "1px solid rgba(255,255,255,0.08)"
+              }}
+            >
+              {/* Close button */}
+              <button
+                onClick={() => setVideoOpen(false)}
+                style={{
+                  position: "absolute", top: "14px", right: "14px",
+                  zIndex: 10, width: "36px", height: "36px",
+                  borderRadius: "50%", background: "rgba(0,0,0,0.7)",
+                  border: "1px solid rgba(255,255,255,0.15)",
+                  color: "#fff", display: "flex", alignItems: "center",
+                  justifyContent: "center", cursor: "pointer", fontSize: "18px",
+                  lineHeight: 1
+                }}
+              >
+                ✕
+              </button>
+              <video
+                src="/videos/how-it-works.mp4"
+                autoPlay
+                controls
+                style={{ width: "100%", display: "block", maxHeight: "80vh", background: "#000" }}
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
