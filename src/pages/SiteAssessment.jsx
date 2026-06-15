@@ -26,7 +26,7 @@ export default function SiteAssessment() {
     setStatus("loading_location"); setErrorMsg(""); setManualError("");
     if(!navigator.geolocation){ setErrorMsg("Geolocation not supported."); setStatus("error"); return; }
     navigator.geolocation.getCurrentPosition(
-      p=>fetchAnalysis(p.coords.latitude,p.coords.longitude),
+      p=>fetchAnalysis(parseFloat(p.coords.latitude.toFixed(4)),parseFloat(p.coords.longitude.toFixed(4))),
       ()=>{ setErrorMsg("Location access denied. Please allow location or use manual input."); setStatus("error"); },
       {timeout:10000}
     );
@@ -90,29 +90,28 @@ export default function SiteAssessment() {
   };
 
   const handleDownloadPDF = async () => {
-    if (!dashRef.current) return;
     setIsPDF(true);
     try {
-      const canvas = await html2canvas(dashRef.current, {
-        scale: 2,
-        useCORS: true,
-        backgroundColor: "#05070a",
-        logging: false,
+      const lat = parseFloat((data?.coordinates?.latitude || parseFloat(manualLat)).toFixed(4));
+      const lng = parseFloat((data?.coordinates?.longitude || parseFloat(manualLng)).toFixed(4));
+
+      const res = await fetch(`${BASE}/generate-report`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ latitude: lat, longitude: lng })
       });
-      const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF({ orientation: "portrait", unit: "px", format: "a4" });
-      const pageW = pdf.internal.pageSize.getWidth();
-      const pageH = pdf.internal.pageSize.getHeight();
-      const imgW = pageW;
-      const imgH = (canvas.height * pageW) / canvas.width;
-      let y = 0;
-      let remaining = imgH;
-      while (remaining > 0) {
-        pdf.addImage(imgData, "PNG", 0, y, imgW, imgH);
-        remaining -= pageH;
-        if (remaining > 0) { pdf.addPage(); y -= pageH; }
-      }
-      pdf.save("VPP-Site-Assessment.pdf");
+
+      if (!res.ok) throw new Error("Failed to generate PDF from backend");
+
+      const blob = await res.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", "VPP-Site-Assessment.pdf");
+      document.body.appendChild(link);
+      link.click();
+      link.parentNode.removeChild(link);
+      window.URL.revokeObjectURL(url);
     } catch(e) {
       alert("PDF error: " + e.message);
     } finally {
