@@ -18,7 +18,7 @@ export default function SiteAssessment() {
   const [manualLng, setManualLng] = useState("");
   const [manualError, setManualError] = useState("");
   const dashRef = useRef(null);
-  const BASE = "https://vpp-backened-model.onrender.com";
+  const BASE = "https://uvicorn-main-production-84d1.up.railway.app";
 
   useEffect(()=>{ window.scrollTo(0,0); document.title="Live Site Assessment | TechOps Global"; },[]);
 
@@ -49,7 +49,11 @@ export default function SiteAssessment() {
       if(!res.ok) throw new Error("API error");
       const d = await res.json();
       if(d.error) throw new Error(d.error);
-      if(!d.coordinates) throw new Error("No building data found.");
+      
+      const coords = d.coordinates || d.property?.coordinates;
+      if(!coords) throw new Error("No building data found.");
+      if (!d.coordinates) d.coordinates = coords;
+      
       setData(d); setStatus("success");
     } catch(e) {
       setErrorMsg(e.message==="Failed to fetch"?"Server busy — try Simulate instead.":e.message);
@@ -92,8 +96,15 @@ export default function SiteAssessment() {
   const handleDownloadPDF = async () => {
     setIsPDF(true);
     try {
-      const lat = parseFloat((data?.coordinates?.latitude || parseFloat(manualLat)).toFixed(4));
-      const lng = parseFloat((data?.coordinates?.longitude || parseFloat(manualLng)).toFixed(4));
+      let lat = data?.coordinates?.latitude;
+      if (lat === undefined || lat === null) lat = parseFloat(manualLat);
+      let lng = data?.coordinates?.longitude;
+      if (lng === undefined || lng === null) lng = parseFloat(manualLng);
+      
+      lat = parseFloat(lat.toFixed(4));
+      lng = parseFloat(lng.toFixed(4));
+
+      if (isNaN(lat) || isNaN(lng)) throw new Error("Invalid coordinates for PDF generation");
 
       const res = await fetch(`${BASE}/generate-report`, {
         method: "POST",
